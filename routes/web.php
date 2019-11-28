@@ -20,3 +20,8 @@ Route::get('/usuario/{id}', 'UsuariosController@destroy')->name('usuarios.delete
 Route::get('/usuarios/create', 'UsuariosController@create')->name('usuarios.create');
 
 Route::post('/Contacto', 'ContactController@store')->name('store');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
