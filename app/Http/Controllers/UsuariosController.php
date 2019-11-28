@@ -36,7 +36,8 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $name = $request->input('name');
+        
     }
 
     /**
