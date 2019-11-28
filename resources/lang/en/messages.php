@@ -1,6 +1,6 @@
 <?php
   return [
-      'Carro medicinal automático'       => 'Automated medical cart',
+      'Carro medicinal automático' => 'Automaton medical cart',
       'inicio' => 'HOME',
       'usuarios' => 'USERS',
       'inicioParrafo1' => 'The nurses perform a physical overexertion by having to transport the medical carts throughout the hospital. To counteract this situation, our idea is to offer an automated transport system that will be in charge of performing this function without any other need of the nurse than to press on a touch screen.',
