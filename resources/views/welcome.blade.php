@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 @include('layouts.head')
 <body id="page-top">
         @include('layouts.nav')
-
             <!-- Masthead -->
             <section class="masthead text-center">
                 <div class="container d-flex align-items-center flex-column">
@@ -20,16 +19,15 @@
                         <div class="divider-custom-line"></div>
                     </div>
                     <!-- Masthead Subheading -->
-                    <p class="masthead-subheading font-weight-light mb-0">Carro medicinal automático</p>
+                    <p class="masthead-subheading font-weight-light mb-0">{{ __('messages.Carro medicinal automático') }}</p>
                 </div>
             </section>
-
             <section class="masthead bg-primary">
                 <div class="container d-flex align-items-center flex-column">
                     <p class="masthead-subheading font-weight-light mb-0">
-                        Los enfermeros y enfermeras realizan un sobreesfuerzo físico al tener que transportar los carros medicinales por todo el hospital. Para contrarrestar esta situación, nuestra idea es ofrecer un sistema de transporte automatizado que se encargará de realizar dicha función sin ninguna otra necesidad del enfermero que la de pulsar en una pantalla táctil.
+                        {{ __('messages.inicioParrafo1') }}
                         <br><br>
-                        Queremos que los trabajadores del hospital no tengan que hacer tanto esfuerzo físico en sus labores y así poder estar con más energía a la hora de atender a los enfermos. Creemos que el cansancio es un factor a tener en cuenta cuando hablamos del estado anímico de una persona. Por ello uno de nuestros objetivos es  facilitar todo lo que podamos el trabajo de las enfermeras para que así puedan ser más eficientes.
+                        {{ __('messages.inicioParrafo2') }}
                     </p>
                 </div>
             </section>
@@ -37,7 +35,7 @@
             <section class="page-section" id="contact">
                 <div class="container">
                     <!-- Contact Section Heading -->
-                    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contacta con nosotros</h2>
+                    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">{{ __('messages.Contacta con nosotros') }}</h2>
                     <!-- Icon Divider -->
                     <div class="divider-custom">
                         <div class="divider-custom-line"></div>
@@ -54,8 +52,7 @@
                                 @csrf
                                 <div class="control-group">
                                     <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                        <label>Nombre</label>
-                                        <input class="form-control" name="name" type="text" placeholder="Nombre" >
+                                        <input class="form-control" name="name" type="text" placeholder="{{ __('messages.Nombre') }}" >
                                         @if ($errors->has('name'))
                                         <b>{{$errors->first('name')}}</b>
                                         @endif
@@ -63,8 +60,7 @@
                                 </div>
                                 <div class="control-group">
                                     <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                        <label>Email</label>
-                                        <input class="form-control" name="email" type="text" placeholder="Email">
+                                        <input class="form-control" name="email" type="text" placeholder="{{ __('messages.Email') }}">
                                         @if ($errors->has('email'))
                                         <b>{{$errors->first('email')}}</b>
                                         @endif
@@ -72,8 +68,7 @@
                                 </div>
                                 <div class="control-group">
                                     <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                        <label>Mensaje</label>
-                                        <textarea class="form-control" name="message" placeholder="Mensaje" ></textarea>
+                                        <textarea class="form-control" name="message" placeholder="{{ __('messages.Mensaje') }}" ></textarea>
                                         @if ($errors->has('message'))
                                         <b>{{$errors->first('message')}}</b>
                                         @endif
@@ -82,7 +77,7 @@
                                 <br>
                                 <div id="success"></div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Enviar</button>
+                                    <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">{{ __('messages.Email') }}</button>
                                 </div>
                             </form>
                         </div>

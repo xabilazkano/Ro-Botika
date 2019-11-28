@@ -20,3 +20,8 @@ Route::get('/usuario/{id}', 'UsuariosController@destroy')->name('usuarios.delete
 Route::get('/usuarios/create', 'UsuariosController@create')->name('usuarios.create');
 
 Route::post('/Contacto', 'ContactController@store')->name('store');
+
+Route::get('locale/{locale}', function ($locale){
+    Session::put('locale', $locale);
+    return redirect()->back();
+});

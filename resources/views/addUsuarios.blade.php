@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 @include('layouts.head')
 <body id="page-top">
         @include('layouts.nav')
@@ -15,8 +15,7 @@
                             @csrf
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Name</label>
-                                    <input class="form-control" name="name" type="text" placeholder="Name" >
+                                    <input class="form-control" name="name" type="text" placeholder="{{ __('messages.Nombre') }}" >
                                     @if ($errors->has('name'))
                                     <b>{{$errors->first('name')}}</b>
                                     @endif
@@ -24,8 +23,7 @@
                             </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Lastname</label>
-                                    <input class="form-control" name="lastname" type="text" placeholder="Lastname" >
+                                    <input class="form-control" name="lastname" type="text" placeholder="{{ __('messages.Apellido') }}" >
                                     @if ($errors->has('lastname'))
                                     <b>{{$errors->first('lastname')}}</b>
                                     @endif
@@ -33,8 +31,7 @@
                             </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Email</label>
-                                    <input class="form-control" name="email" type="text" placeholder="Email">
+                                    <input class="form-control" name="email" type="text" placeholder="{{ __('messages.Email') }}">
                                     @if ($errors->has('email'))
                                     <b>{{$errors->first('email')}}</b>
                                     @endif
@@ -42,8 +39,7 @@
                             </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Phone number</label>
-                                    <textarea class="form-control" name="message" placeholder="Phone number" ></textarea>
+                                    <textarea class="form-control" name="message" placeholder="{{ __('messages.Número de teléfono') }}" ></textarea>
                                     @if ($errors->has('phone_number'))
                                     <b>{{$errors->first('phone_number')}}</b>
                                     @endif
@@ -51,8 +47,7 @@
                             </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Type of user</label>
-                                    <input class="form-control" name="name" type="text" placeholder="Type of user" >
+                                    <input class="form-control" name="name" type="text" placeholder="{{ __('messages.Tipo de usuario') }}" >
                                     @if ($errors->has('type_of_user'))
                                     <b>{{$errors->first('type_of_user')}}</b>
                                     @endif
@@ -61,7 +56,7 @@
                             <br>
                             <div id="success"></div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Enviar</button>
+                                <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">{{ __('messages.Enviar') }}</button>
                             </div>
                         </form>
                     </div>
