@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-})->name('home');
+})->name('welcome');
 
 Route::get('/usuarios', 'UsuariosController@index')->name('usuarios.index');
 Route::get('/usuario/{id}', 'UsuariosController@destroy')->name('usuarios.delete');
