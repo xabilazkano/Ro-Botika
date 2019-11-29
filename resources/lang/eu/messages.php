@@ -32,6 +32,8 @@
       'confirm2' => 'Mesedez, berretsi pasahitza jarraitu aurretik.',
       'Resetear contraseña' => 'Pasahitza reseteatu',
       'Enviar enlace para resetear la contraseña' => 'Pasahitza reseteatzeko linka bidali',
-      'Cerrar sesión' => 'Saioa itxi'
+      'Cerrar sesión' => 'Saioa itxi',
+      'Modificar' => 'Aldatu',
+      'Modificar usuario' => 'Erabiltzailea aldatu'
   ];
 ?>

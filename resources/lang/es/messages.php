@@ -32,6 +32,8 @@
       'confirm2' => 'Por favor confirme su contraseña antes de continuar.',
       'Resetear contraseña' => 'Resetear contraseña',
       'Enviar enlace para resetear la contraseña' => 'Enviar enlace para resetear la contraseña',
-      'Cerrar sesión' => 'Cerrar sesión'
+      'Cerrar sesión' => 'Cerrar sesión',
+      'Modificar' => 'Modificar',
+      'Modificar usuario' => 'Modificar usuario'
   ];
 ?>
