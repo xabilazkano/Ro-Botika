@@ -31,10 +31,10 @@
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
                         <a class="dropdown-item" href="{{ route('usuarios.edit',Auth::user()->id) }}">
-                            {{ __('Modify user') }}
+                            {{ __('messages.Modificar usuario') }}
                         </a>
                         <a class="dropdown-item" href="{{ route('usuarios.delete',Auth::user()->id) }}">
-                            {{ __('Delete user') }}
+                            {{ __('messages.Eliminar usuario') }}
                         </a>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
