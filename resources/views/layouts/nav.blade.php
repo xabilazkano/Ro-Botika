@@ -18,11 +18,11 @@
         
                 @guest
                  <li class="nav-item mx-1 mx-lg-1">
-                    <a class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    <a class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger" href="{{ route('login') }}">{{ __('messages.Iniciar sesión') }}</a>
                 </li>
                 @if (Route::has('register'))
                 <li class="nav-item mx-1 mx-lg-1">
-                    <a class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    <a class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger" href="{{ route('register') }}">{{ __('messages.Registrarse') }}</a>
                 </li>
                 @endif
                 @else
@@ -35,7 +35,7 @@
                         <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
+                        {{ __('messages.Cerrar sesión') }}
                     </a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" >

@@ -14,7 +14,7 @@
                 </div>
                 @endif
 
-                You are logged in!
+                {{__('messages.mensajeInicioSesion')}}
             </div>
         </div>
     </div>

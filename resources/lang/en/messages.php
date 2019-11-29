@@ -15,6 +15,23 @@
       'Número de teléfono' => 'Telephone number',
       'Tipo de usuario' => 'Type of user',
       'Eliminar usuario' => 'Delete user',
-      'Añadir usuario' => 'Add user'
+      'Añadir usuario' => 'Add user',
+      'Iniciar sesión' => 'Log in',
+      'Registrarse' => 'Register',
+      'Contraseña' => 'Password',
+      'Acuérdate de mi' => 'Remember me',
+      '¿Olvidaste tu contraseña?' => 'Forgot your password?',
+      'mensajeInicioSesion' => 'You are logged in!',
+      'Confirmar contraseña' => 'Confirm password',
+      'Estándar' => 'Standar',
+      'Verificar email' => 'Verify Your Email Address',
+      'mensajeVerificacion' => 'A fresh verification link has been sent to your email address.',
+      'mensajeVerificacion2' => 'Before proceeding, please check your email for a verification link.',
+      'mensajeVerificacion3' => 'If you did not receive the email',
+      'mensajeVerificacion4' => 'click here to request another',
+      'confirm2' => 'Please confirm your password before continuing.',
+      'Resetear contraseña' => 'Reset password',
+      'Enviar enlace para resetear la contraseña' => 'Send Password Reset Link',
+      'Cerrar sesión' => 'Logout'
   ];
 ?>

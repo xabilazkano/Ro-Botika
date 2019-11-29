@@ -15,6 +15,23 @@
       'Número de teléfono' => 'Telefono zenbakia',
       'Tipo de usuario' => 'Erabiltzaile mota',
       'Eliminar usuario' => 'Erabiltzailea ezabatu',
-      'Añadir usuario' => 'Erabiltzailea gehitu'
+      'Añadir usuario' => 'Erabiltzailea gehitu',
+      'Iniciar sesión' => 'Saioa hasi',
+      'Registrarse' => 'Erregistratu',
+      'Contraseña' => 'Pasahitza',
+      'Acuérdate de mi' => 'Gogoratu nitaz',
+      '¿Olvidaste tu contraseña?' => 'Pasahitza ahaztu duzu?',
+      'mensajeInicioSesion' => 'Saioa hasi duzu!',
+      'Confirmar contraseña' => 'Pasahitza berretsi',
+      'Estándar' => 'Estandarra',
+      'Verificar email' => 'Emaila ziurtatu',
+      'mensajeVerificacion' => 'Egiaztapen esteka berria bidali da zure helbide elektronikora.',
+      'mensajeVerificacion2' => 'Jarraitu aurretik, egiaztatu zure posta elektronikoa egiaztapen esteka lortzeko.',
+      'mensajeVerificacion3' => 'Posta elektronikoa jaso ez bazenu',
+      'mensajeVerificacion4' => 'egin klik hemen beste bat eskatzeko',
+      'confirm2' => 'Mesedez, berretsi pasahitza jarraitu aurretik.',
+      'Resetear contraseña' => 'Pasahitza reseteatu',
+      'Enviar enlace para resetear la contraseña' => 'Pasahitza reseteatzeko linka bidali',
+      'Cerrar sesión' => 'Saioa itxi'
   ];
 ?>
