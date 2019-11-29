@@ -15,8 +15,25 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+Route::get('/registerform', function (){
+	return view('auth.register');
+})->name('registerform');
+
 Route::get('/usuarios', 'UsuariosController@index')->name('usuarios.index');
 Route::get('/usuario/{id}', 'UsuariosController@destroy')->name('usuarios.delete');
 Route::get('/usuarios/create', 'UsuariosController@create')->name('usuarios.create');
 
 Route::post('/Contacto', 'ContactController@store')->name('store');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
