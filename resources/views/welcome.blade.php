@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
 <section class="masthead text-center">
     <div class="container d-flex align-items-center flex-column">
         <!-- Masthead Avatar Image -->
@@ -16,6 +17,7 @@
         </div>
         <!-- Masthead Subheading -->
         <p class="masthead-subheading font-weight-light mb-0">{{ __('messages.Carro medicinal automático') }}</p>
+        
     </div>
 </section>
 
