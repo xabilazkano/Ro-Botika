@@ -2,7 +2,7 @@
 <html lang="{{ app()->getLocale() }}">
 @include('layouts.head')
 <body id="page-top">
-        @include('layouts.nav')
+    @include('layouts.nav')
 
         <!-- Contact Section -->
         <section class="page-section" id="contact">
@@ -62,12 +62,13 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
 
-            <footer class="footer">
-            @include('layouts.footer')
-            </footer>
+    <footer class="footer">
+        @include('layouts.footer')
+    </footer>
 
-            </body>
-            </html>
+</body>
+</html>
