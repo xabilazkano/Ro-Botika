@@ -21,7 +21,7 @@
       'Contraseña' => 'Pasahitza',
       'Acuérdate de mi' => 'Gogoratu nitaz',
       '¿Olvidaste tu contraseña?' => 'Pasahitza ahaztu duzu?',
-      'mensajeInicioSesion' => 'Saioa hasi duzu!',
+      'mensajeInicioSesion' => 'Saioa hasi duzu erabiltzaile batekin hurrengo rola duena:',
       'Confirmar contraseña' => 'Pasahitza berretsi',
       'Estándar' => 'Estandarra',
       'Verificar email' => 'Emaila ziurtatu',

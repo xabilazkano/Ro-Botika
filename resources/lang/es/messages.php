@@ -21,7 +21,7 @@
       'Contraseña' => 'Contraseña',
       'Acuérdate de mi' => 'Acuérdate de mi',
       '¿Olvidaste tu contraseña?' => '¿Olvidaste tu contraseña?',
-      'mensajeInicioSesion' => '¡Has iniciado sesión!',
+      'mensajeInicioSesion' => 'Has iniciado sesión con un usuario cuyo rol es el de ',
       'Confirmar contraseña' => 'Confirmar contraseña',
       'Estándar' => 'Estándar',
       'Verificar email' => 'Verificar email',

@@ -21,7 +21,7 @@
       'Contraseña' => 'Password',
       'Acuérdate de mi' => 'Remember me',
       '¿Olvidaste tu contraseña?' => 'Forgot your password?',
-      'mensajeInicioSesion' => 'You are logged in!',
+      'mensajeInicioSesion' => "You are logged in with a user who's is ",
       'Confirmar contraseña' => 'Confirm password',
       'Estándar' => 'Standar',
       'Verificar email' => 'Verify Your Email Address',
