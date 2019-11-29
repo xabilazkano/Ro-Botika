@@ -13,6 +13,9 @@
 
 
                 @guest
+                 <li class="nav-item mx-1 mx-lg-1">
+                    <a class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger" href="{{ route('login') }}">{{ __('messages.Iniciar sesión') }}</a>
+
                 </li>
                 @if (Route::has('register'))
                 <li class="nav-item mx-1 mx-lg-1">
