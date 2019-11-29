@@ -15,16 +15,16 @@
             <div class="divider-custom-line"></div>
         </div>
         <!-- Masthead Subheading -->
-        <p class="masthead-subheading font-weight-light mb-0">Carro medicinal automático</p>
+        <p class="masthead-subheading font-weight-light mb-0">{{ __('messages.Carro medicinal automático') }}</p>
     </div>
 </section>
 
 <section class="masthead bg-primary">
     <div class="container d-flex align-items-center flex-column">
         <p class="masthead-subheading font-weight-light mb-0">
-            Los enfermeros y enfermeras realizan un sobreesfuerzo físico al tener que transportar los carros medicinales por todo el hospital. Para contrarrestar esta situación, nuestra idea es ofrecer un sistema de transporte automatizado que se encargará de realizar dicha función sin ninguna otra necesidad del enfermero que la de pulsar en una pantalla táctil.
+            {{ __('messages.inicioParrafo1') }}
             <br><br>
-            Queremos que los trabajadores del hospital no tengan que hacer tanto esfuerzo físico en sus labores y así poder estar con más energía a la hora de atender a los enfermos. Creemos que el cansancio es un factor a tener en cuenta cuando hablamos del estado anímico de una persona. Por ello uno de nuestros objetivos es  facilitar todo lo que podamos el trabajo de las enfermeras para que así puedan ser más eficientes.
+            {{ __('messages.inicioParrafo2') }}
         </p>
     </div>
 </section>
@@ -36,7 +36,7 @@
         <div class="row">
             <div class="col-lg-8 mx-auto">
              <div class="card">
-                <div class="card-header">{{ __('Contact us') }}</div>
+                <div class="card-header">{{ __('messages.Contacta con nosotros') }}</div>
 
                 <div class="card-body">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
@@ -44,7 +44,7 @@
                         @csrf
 
                         <div class="form-group controls mb-0 pb-2">
-                            <label>Name</label>
+                            <label>{{__('messages.Nombre')}}</label>
                             <input class="form-control" name="name" type="text">
                             @if ($errors->has('name'))
                             <b>{{$errors->first('name')}}</b>
@@ -52,7 +52,7 @@
                         </div>
 
                         <div class="form-group controls mb-0 pb-2">
-                            <label>Email</label>
+                            <label>{{__('messages.Email')}}</label>
                             <input class="form-control" name="email" type="text">
                             @if ($errors->has('email'))
                             <b>{{$errors->first('email')}}</b>
@@ -60,7 +60,7 @@
                         </div>
 
                         <div class="form-group controls mb-0 pb-2">
-                            <label>Mensaje</label>
+                            <label>{{__('messages.Mensaje')}}</label>
                             <textarea class="form-control" name="message"></textarea>
                             @if ($errors->has('message'))
                             <b>{{$errors->first('message')}}</b>
@@ -70,7 +70,7 @@
                         <br>
                         <div id="success"></div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Enviar</button>
+                            <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">{{__('messages.Enviar')}}</button>
                         </div>
                     </form>
                 </div>
