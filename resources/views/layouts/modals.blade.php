@@ -1,8 +1,12 @@
-<script>
-@if (count($errors) > 0)
-$('#login-modal').modal('show');
-@endif
-</script>
+@if ($errors->any())
+
+    <script>
+        //Muestra la ventana modal en caso de que existan errores
+        $(function() {
+            $('#registroModal').modal('show');
+        });
+    </script>
+    @endif
 
 <!-- Modal Registro-->
 <div class="modal" id="registroModal">
