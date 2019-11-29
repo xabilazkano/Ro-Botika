@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-  <div class="row justify-content-center">
+<section class="masthead text-center">
+ <div class="container d-flex align-items-center flex-column">
     <div class="col-md-8">
       <div class="card">
         <div class="card-header">{{ __('Verify Your Email Address') }}</div>
@@ -24,5 +24,5 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 @endsection
