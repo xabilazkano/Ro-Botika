@@ -21,7 +21,7 @@
       'Contraseña' => 'Contraseña',
       'Acuérdate de mi' => 'Acuérdate de mi',
       '¿Olvidaste tu contraseña?' => '¿Olvidaste tu contraseña?',
-      'mensajeInicioSesion' => '¡Has iniciado sesión!',
+      'mensajeInicioSesion' => 'Has iniciado sesión con un usuario cuyo rol es el de ',
       'Confirmar contraseña' => 'Confirmar contraseña',
       'Estándar' => 'Estándar',
       'Verificar email' => 'Verificar email',
@@ -32,6 +32,8 @@
       'confirm2' => 'Por favor confirme su contraseña antes de continuar.',
       'Resetear contraseña' => 'Resetear contraseña',
       'Enviar enlace para resetear la contraseña' => 'Enviar enlace para resetear la contraseña',
-      'Cerrar sesión' => 'Cerrar sesión'
+      'Cerrar sesión' => 'Cerrar sesión',
+      'Modificar' => 'Modificar',
+      'Modificar usuario' => 'Modificar usuario'
   ];
 ?>

@@ -60,7 +60,7 @@ class UsuariosController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('updateuser');
     }
 
     /**
@@ -72,7 +72,16 @@ class UsuariosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        User::find($id)->update([
+            'name'=>$request->input('name'),
+            'lastname'=>$request->input('lastname'),
+            'email'=>$request->input('email'),
+            'phone_number'=>$request->input('phone_number'),
+            'password'=>$request->input('password'),
+            'type_of_user'=>$request->input('type')
+        ]);
+
+        return view('home');
     }
 
     /**
@@ -84,7 +93,6 @@ class UsuariosController extends Controller
     public function destroy($id)
     {
         User::find($id)->delete();
-        $usuarios=User::all();
-        return view("usuarios",['usuarios'=>$usuarios]);
+        return view('welcome');
     }
 }
