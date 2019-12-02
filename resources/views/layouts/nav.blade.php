@@ -14,7 +14,7 @@
 
                     @guest
         <li class="nav-item mx-1 mx-lg-1">
-          <a style="color: #2c3e50" class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger login bg-light" href="#loginModal" data-toggle="modal">{{ __('messages.Iniciar sesión') }}</a>
+          <a class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger login" href="#loginModal" data-toggle="modal">{{ __('messages.Iniciar sesión') }}</a>
         </li>
         @if (Route::has('register'))
         <li class="nav-item mx-1 mx-lg-1">
