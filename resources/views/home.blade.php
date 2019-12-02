@@ -13,7 +13,7 @@
                     {{ session('status') }}
                 </div>
                 @endif
-                {{__('messages.mensajeInicioSesion') . $usuario->type_of_user}}
+                {{__('messages.mensajeInicioSesion') . Auth::user()->type_of_user}}
             </div>
         </div>
     </div>

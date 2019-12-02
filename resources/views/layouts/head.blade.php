@@ -7,7 +7,9 @@
 
 	<link href="{{asset('css/montserrat.css')}}" rel="stylesheet" type="text/css">
 	<link href="{{asset('css/lato.css')}}" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
 	<!-- Theme CSS -->
 	<link href="{{asset('css/freelancer.min.css')}}" rel="stylesheet">
 	<meta charset="utf-8">
@@ -26,6 +28,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
 	<script src="{{ asset('js/jquery.js') }}"></script>
+
+
+	
+
 
 
 </head>

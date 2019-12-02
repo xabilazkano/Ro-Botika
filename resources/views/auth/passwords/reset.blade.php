@@ -5,7 +5,7 @@
  <div class="container d-flex align-items-center flex-column">
   <div class="col-md-8">
     <div class="card">
-      <div class="card-header">{{ __('messages.Resetear la contraseña') }}</div>
+      <div class="card-header">{{ __('messages.Resetear contraseña') }}</div>
 
       <div class="card-body">
         <form method="POST" action="{{ route('password.update') }}">
