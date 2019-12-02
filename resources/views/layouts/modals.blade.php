@@ -160,7 +160,7 @@
           <div class="form-group row">
             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('messages.Email') }}</label>
             <div class="col-md-6">
-              <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}">
+              <input id="emailLog" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}">
               @error('email')
               <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -171,7 +171,7 @@
           <div class="form-group row">
             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('messages.Contraseña') }}</label>
             <div class="col-md-6">
-              <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password">
+              <input id="passwordLog" type="password" class="form-control @error('password') is-invalid @enderror" name="password">
               @error('password')
               <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -191,8 +191,8 @@
         <script type="text/javascript">
           $(document).ready(function(){
             $("#loginForm").submit(function(){
-              email = $('#email').val();
-              contraseña = $('#password').val();
+              email = $('#emailLog').val();
+              contraseña = $('#passwordLog').val();
               if (email === ""|| contraseña === ""){
                 $("#textLogin").show();
                 $('#textLogin').val("{{__('messages.Inserte todos los campos')}}");
