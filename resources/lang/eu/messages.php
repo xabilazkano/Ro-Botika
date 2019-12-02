@@ -35,6 +35,8 @@
       'Cerrar sesión' => 'Saioa itxi',
       'Modificar' => 'Aldatu',
       'Modificar usuario' => 'Erabiltzailea aldatu',
-      'Inserte todos los campos' => 'Txertatu eremu guztiak'
+      'Inserte todos los campos' => 'Txertatu eremu guztiak',
+      'Las contraseñas deben coincidir' => 'Pasahitzek bat egin behar dute',
+      'Inserte un número de teléfono válido' => 'Idatzi baliozko telefono zenbakia'
   ];
 ?>

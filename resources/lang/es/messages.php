@@ -35,6 +35,8 @@
       'Cerrar sesión' => 'Cerrar sesión',
       'Modificar' => 'Modificar',
       'Modificar usuario' => 'Modificar usuario',
-      'Inserte todos los campos' => 'Inserte todos los campos'
+      'Inserte todos los campos' => 'Inserte todos los campos',
+      'Las contraseñas deben coincidir' => 'Las contraseñas deben coincidir',
+      'Inserte un número de teléfono válido' => 'Inserte un número de teléfono válido'
   ];
 ?>
