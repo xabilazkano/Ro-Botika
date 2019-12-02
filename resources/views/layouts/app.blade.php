@@ -3,9 +3,11 @@
     @include('layouts.head')
 <body>
     @include('layouts.nav')
+    @include('layouts.modals')
         <main class="py-4">
             @yield('content')
         </main>
     @include('layouts.footer')
+
 </body>
 </html>
