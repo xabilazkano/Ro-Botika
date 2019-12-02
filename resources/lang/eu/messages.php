@@ -21,7 +21,7 @@
       'Contraseña' => 'Pasahitza',
       'Acuérdate de mi' => 'Gogoratu nitaz',
       '¿Olvidaste tu contraseña?' => 'Pasahitza ahaztu duzu?',
-      'mensajeInicioSesion' => 'Saioa hasi duzu!',
+      'mensajeInicioSesion' => 'Saioa hasi duzu erabiltzaile batekin hurrengo rola duena:',
       'Confirmar contraseña' => 'Pasahitza berretsi',
       'Estándar' => 'Estandarra',
       'Verificar email' => 'Emaila ziurtatu',
@@ -32,6 +32,8 @@
       'confirm2' => 'Mesedez, berretsi pasahitza jarraitu aurretik.',
       'Resetear contraseña' => 'Pasahitza reseteatu',
       'Enviar enlace para resetear la contraseña' => 'Pasahitza reseteatzeko linka bidali',
-      'Cerrar sesión' => 'Saioa itxi'
+      'Cerrar sesión' => 'Saioa itxi',
+      'Modificar' => 'Aldatu',
+      'Modificar usuario' => 'Erabiltzailea aldatu'
   ];
 ?>

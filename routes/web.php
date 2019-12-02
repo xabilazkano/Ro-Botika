@@ -20,8 +20,9 @@ Route::get('/registerform', function (){
 })->name('registerform');
 
 Route::get('/usuarios', 'UsuariosController@index')->name('usuarios.index');
-Route::get('/usuario/{id}', 'UsuariosController@destroy')->name('usuarios.delete');
-Route::get('/usuarios/create', 'UsuariosController@create')->name('usuarios.create');
+Route::get('/usuarios/{id}', 'UsuariosController@destroy')->name('usuarios.delete');
+Route::get('/usuarios/{id}/edit', 'UsuariosController@edit')->name('usuarios.edit');
+Route::put('/usuarios/{id}', 'UsuariosController@update')->name('usuarios.update');
 
 Route::post('/Contacto', 'ContactController@store')->name('store');
 
