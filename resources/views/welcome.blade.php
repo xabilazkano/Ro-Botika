@@ -40,12 +40,12 @@
 
                 <div class="card-body">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                    <form name="sentMessage" id="contactForm" action="{{route('store')}}" method="post">
+                    <form name="contactForm" id="contactForm" action="{{route('store')}}" method="post">
                         @csrf
 
                         <div class="form-group controls mb-0 pb-2">
                             <label>{{__('messages.Nombre')}}</label>
-                            <input class="form-control" name="name" type="text">
+                            <input class="form-control" name="name" type="text" id="name">
                             @if ($errors->has('name'))
                             <b>{{$errors->first('name')}}</b>
                             @endif
@@ -53,7 +53,7 @@
 
                         <div class="form-group controls mb-0 pb-2">
                             <label>{{__('messages.Email')}}</label>
-                            <input class="form-control" name="email" type="text">
+                            <input class="form-control" name="email" type="email" id="email">
                             @if ($errors->has('email'))
                             <b>{{$errors->first('email')}}</b>
                             @endif
@@ -61,7 +61,7 @@
 
                         <div class="form-group controls mb-0 pb-2">
                             <label>{{__('messages.Mensaje')}}</label>
-                            <textarea class="form-control" name="message"></textarea>
+                            <textarea class="form-control" name="message" id="message"></textarea>
                             @if ($errors->has('message'))
                             <b>{{$errors->first('message')}}</b>
                             @endif
@@ -70,7 +70,8 @@
                         <br>
                         <div id="success"></div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">{{__('messages.Enviar')}}</button>
+                            <input type="submit" class="btn btn-primary btn-xl" id="sendMessageButton" value="{{__('messages.Enviar')}}"><br><br>
+                            <input type="text" class="form-control" name="texto" id="texto" style="display:none" readonly>
                         </div>
                     </form>
                 </div>
@@ -79,4 +80,22 @@
     </div>
 </div>
 </section>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#contactForm").submit(function(){
+      nombre = $('#name').val();
+      email = $('#email').val();
+      mensaje = $('#message').text();
+      if (nombre === "" || email === "" || mensaje === ""){
+        $("#texto").show();
+        $('#texto').val("{{__('messages.Inserte todos los campos')}}");
+        return false;
+      }else{
+        return true;
+      }
+  	});
+  });
+</script>
+
 @endsection

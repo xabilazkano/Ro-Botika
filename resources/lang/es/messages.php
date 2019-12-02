@@ -34,6 +34,7 @@
       'Enviar enlace para resetear la contraseña' => 'Enviar enlace para resetear la contraseña',
       'Cerrar sesión' => 'Cerrar sesión',
       'Modificar' => 'Modificar',
-      'Modificar usuario' => 'Modificar usuario'
+      'Modificar usuario' => 'Modificar usuario',
+      'Inserte todos los campos' => 'Inserte todos los campos'
   ];
 ?>

@@ -34,6 +34,7 @@
       'Enviar enlace para resetear la contraseña' => 'Pasahitza reseteatzeko linka bidali',
       'Cerrar sesión' => 'Saioa itxi',
       'Modificar' => 'Aldatu',
-      'Modificar usuario' => 'Erabiltzailea aldatu'
+      'Modificar usuario' => 'Erabiltzailea aldatu',
+      'Inserte todos los campos' => 'Txertatu eremu guztiak'
   ];
 ?>
