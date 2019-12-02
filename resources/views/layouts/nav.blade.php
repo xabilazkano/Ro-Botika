@@ -18,7 +18,7 @@
         </li>
         @if (Route::has('register'))
         <li class="nav-item mx-1 mx-lg-1">
-          <a style="color: #2c3e50" class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger bg-light registrate" href="#registroModal" data-toggle="modal">{{ __('messages.Registrarse') }}</a>
+          <a class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger registrate" href="#registroModal" data-toggle="modal">{{ __('messages.Registrarse') }}</a>
         </li>
 
         @endif
