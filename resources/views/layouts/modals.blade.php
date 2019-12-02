@@ -1,9 +1,3 @@
-<script>
-@if (count($errors) > 0)
-$('#login-modal').modal('show');
-@endif
-</script>
-
 <!-- The Modal -->
 <div class="modal" id="registroModal">
   <div class="modal-dialog">
@@ -113,6 +107,52 @@ $('#login-modal').modal('show');
             <div class="col-md-6 offset-md-4">
               <button type="submit" class="btn btn-primary">
                 {{ __('messages.Registrarse') }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Login-->
+<div class="modal" id="loginModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">{{ __('messages.Iniciar sesión') }}</h4>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form method="POST" action="{{route('login')}}">
+          @csrf
+          <div class="form-group row">
+            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('messages.Email') }}</label>
+            <div class="col-md-6">
+              <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+              @error('email')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+              @enderror
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('messages.Contraseña') }}</label>
+            <div class="col-md-6">
+              <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+              @error('password')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+              @enderror
+            </div>
+          </div>
+          <div class="form-group row mb-0">
+            <div class="col-md-6 offset-md-4">
+              <button type="submit" class="btn btn-primary">
+              {{ __('messages.Iniciar sesión') }}
               </button>
             </div>
           </div>
