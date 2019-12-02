@@ -12,16 +12,16 @@
                 <li class="nav-item mx-1 mx-lg-1"><a class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger" href="{{ url('locale/eu') }}" ><i class="fa fa-language"></i> EU</a></li>
 
 
-                @guest
-                 <li class="nav-item mx-1 mx-lg-1">
-                    <a class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger" href="{{ route('login') }}">{{ __('messages.Iniciar sesión') }}</a>
+                    @guest
+        <li class="nav-item mx-1 mx-lg-1">
+          <a style="color: #2c3e50" class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger login bg-light" href="#loginModal" data-toggle="modal">{{ __('messages.Iniciar sesión') }}</a>
+        </li>
+        @if (Route::has('register'))
+        <li class="nav-item mx-1 mx-lg-1">
+          <a style="color: #2c3e50" class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger bg-light registrate" href="#registroModal" data-toggle="modal">{{ __('messages.Registrarse') }}</a>
+        </li>
 
-                </li>
-                @if (Route::has('register'))
-                <li class="nav-item mx-1 mx-lg-1">
-                    <a class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger" href="{{ route('register') }}">{{ __('messages.Registrarse') }}</a>
-                </li>
-                @endif
+        @endif
                 @else
                 <li class="nav-item dropdown mx-1 mx-lg-1">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle py-3 px-3 px-lg-3 rounded js-scroll-trigger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
