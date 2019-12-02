@@ -152,10 +152,34 @@
           <div class="form-group row mb-0">
             <div class="col-md-6 offset-md-4">
               <button type="submit" class="btn btn-primary">
-              {{ __('messages.Iniciar sesión') }}
+                {{ __('messages.Iniciar sesión') }}
               </button>
+              @if (Route::has('password.request'))
+              <a class="btn btn-link" href="{{ route('password.request') }}">
+                {{ __('messages.¿Olvidaste tu contraseña?') }}
+              </a>
+              @endif
             </div>
           </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Error-->
+<div class="modal" id="errorModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Error</h4>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        {{  Session::get('warning')}}
+        <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
+          @csrf
+          <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('messages.mensajeVerificacion4') }}</button>.
         </form>
       </div>
     </div>
