@@ -17,7 +17,7 @@
         </div>
         <!-- Masthead Subheading -->
         <p class="masthead-subheading font-weight-light mb-0">{{ __('messages.Carro medicinal automático') }}</p>
-        
+
     </div>
 </section>
 
@@ -47,7 +47,7 @@
 
                         <div class="form-group controls mb-0 pb-2">
                             <label>{{__('messages.Nombre')}}</label>
-                            <input class="form-control" name="name" type="text" id="name">
+                            <input class="form-control" name="nameWelcome" type="text" id="nameWelcome">
                             @if ($errors->has('name'))
                             <b>{{$errors->first('name')}}</b>
                             @endif
@@ -55,7 +55,7 @@
 
                         <div class="form-group controls mb-0 pb-2">
                             <label>{{__('messages.Email')}}</label>
-                            <input class="form-control" name="email" type="email" id="email">
+                            <input class="form-control" name="emailWelcome" type="email" id="emailWelcome">
                             @if ($errors->has('email'))
                             <b>{{$errors->first('email')}}</b>
                             @endif
@@ -73,7 +73,7 @@
                         <div id="success"></div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary btn-xl" id="sendMessageButton" value="{{__('messages.Enviar')}}"><br><br>
-                            <input type="text" class="form-control" name="texto" id="texto" style="display:none" readonly>
+                            <input type="text" class="form-control" name="textoWelcome" id="textoWelcome" style="display:none" readonly>
                         </div>
                     </form>
                 </div>
@@ -86,12 +86,12 @@
 <script type="text/javascript">
   $(document).ready(function() {
     $("#contactForm").submit(function(){
-      nombre = $('#name').val();
-      email = $('#email').val();
-      mensaje = $('#message').text();
+      nombre = $('#nameWelcome').val();
+      email = $('#emailWelcome').val();
+      mensaje = $('#message').val();
       if (nombre === "" || email === "" || mensaje === ""){
-        $("#texto").show();
-        $('#texto').val("{{__('messages.Inserte todos los campos')}}");
+        $("#textoWelcome").show();
+        $('#textoWelcome').val("{{__('messages.Inserte todos los campos')}}");
         return false;
       }else{
         return true;
