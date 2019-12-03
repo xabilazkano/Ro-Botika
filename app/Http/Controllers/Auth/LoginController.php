@@ -21,7 +21,9 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    protected $redirectTo = "/home";
+    protected function redirectTo(){
+      return route('homeAdmin');
+    }
 
     /**
      * Create a new controller instance.

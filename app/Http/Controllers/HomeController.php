@@ -27,4 +27,12 @@ class HomeController extends Controller
         $user = Auth::user();
         return view('home',['usuario' => $user]);
     }
+
+    /*
+    public function someAdminStuff(Request $request)
+    {
+        $request->user()->authorizeRoles(‘admin’);
+        return view(‘some.view’);
+    }
+    */
 }

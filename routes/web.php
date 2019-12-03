@@ -33,5 +33,7 @@ Route::get('locale/{locale}', function ($locale){
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/homeAdmin', 'HomeController@index')->middleware('auth', 'role:admin')->name('homeAdmin');
+
+Route::get('/homeStandar', 'HomeController@index')->middleware('auth', 'role:standar')->name('homeStandar');
 Route::get('/verify', 'Auth\RegisterController@index')->name('verify');
