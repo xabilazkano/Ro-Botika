@@ -17,7 +17,7 @@
             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('messages.Nombre') }}</label>
 
             <div class="col-md-6">
-              <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}">
+              <input id="nameRegister" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}">
 
               @error('name')
               <span class="invalid-feedback" role="alert">
@@ -45,7 +45,7 @@
             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('messages.Email') }}</label>
 
             <div class="col-md-6">
-              <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}">
+              <input id="emailRegister" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}">
 
               @error('email')
               <span class="invalid-feedback" role="alert">
@@ -116,9 +116,9 @@
         <script type="text/javascript">
           $(document).ready(function(){
             $("#registerForm").submit(function(){
-              nombre = $('#name').val();
+              nombre = $('#nameRegister').val();
               apellido = $('#surname').val();
-              email = $('#email').val();
+              email = $('#emailRegister').val();
               contraseña = $('#password').val();
               contraseña2 = $('#password_confirmation').val();
               numeroTelefono = $('#phone_number').val();
