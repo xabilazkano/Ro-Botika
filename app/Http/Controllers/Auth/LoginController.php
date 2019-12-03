@@ -21,7 +21,7 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
     protected function redirectTo(){
-      return route('home');
+      return route('homeAdmin');
     }
 
     /**
