@@ -20,6 +20,7 @@ class UserTableSeeder extends Seeder
       $user->name = 'Standar';
       $user->lastname = 'StandarLastname';
       $user->email = 'agonzalezam18dw@ikzubirimanteo.com';
+      $user->email_verified_at = getdate();
       $user->password = bcrypt('secret');
       $user->phone_number = '666666666';
       $user->type_of_user = 'standar';
@@ -30,6 +31,7 @@ class UserTableSeeder extends Seeder
       $user->name = 'Admin';
       $user->lastname = 'AdminLastname';
       $user->email = 'angoaminf3@gmail.com';
+      $user->email_verified_at = getdate();
       $user->password = bcrypt('secret');
       $user->phone_number = '943943943';
       $user->type_of_user = 'admin';
