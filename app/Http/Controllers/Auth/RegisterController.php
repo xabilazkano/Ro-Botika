@@ -76,5 +76,6 @@ class RegisterController extends Controller
       }else{
         $user->roles()->attach(Role::where('name', 'standar')->first());
       }
+      return $user;
     }
 }
