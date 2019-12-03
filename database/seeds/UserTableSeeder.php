@@ -15,12 +15,13 @@ class UserTableSeeder extends Seeder
     {
       $role_user = Role::where('name', 'standar')->first();
       $role_admin = Role::where('name', 'admin')->first();
+      $date = new DateTime();
 
       $user = new User();
       $user->name = 'Standar';
       $user->lastname = 'StandarLastname';
-      $user->email = 'agonzalezam18dw@ikzubirimanteo.com';
-      $user->email_verified_at = getdate();
+      $user->email = 'standar@robotika.com';
+      $user->email_verified_at = $date->getTimestamp();
       $user->password = bcrypt('secret');
       $user->phone_number = '666666666';
       $user->type_of_user = 'standar';
@@ -30,8 +31,8 @@ class UserTableSeeder extends Seeder
       $user = new User();
       $user->name = 'Admin';
       $user->lastname = 'AdminLastname';
-      $user->email = 'angoaminf3@gmail.com';
-      $user->email_verified_at = getdate();
+      $user->email = 'admin@robotika.com';
+      $user->email_verified_at = $date->getTimestamp();
       $user->password = bcrypt('secret');
       $user->phone_number = '943943943';
       $user->type_of_user = 'admin';
