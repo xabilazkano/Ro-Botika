@@ -122,7 +122,6 @@
               contraseña = $('#password').val();
               contraseña2 = $('#password_confirmation').val();
               numeroTelefono = $('#phone_number').val();
-
               if (nombre === "" || email === ""|| contraseña === ""|| apellido === ""|| contraseña2 === ""|| numeroTelefono === ""){
                 $("#textRegister").show();
                 $('#textRegister').val("{{__('messages.Inserte todos los campos')}}");
@@ -182,6 +181,11 @@
           <div class="form-group row mb-0">
             <div class="col-md-6 offset-md-4">
               <input type="submit" class="btn btn-primary" value="{{ __('messages.Iniciar sesión') }}">
+              @if (Route::has('password.request'))
+              <a class="btn btn-link" href="{{ route('password.request') }}">
+                {{ __('messages.¿Olvidaste tu contraseña?') }}
+              </a>
+              @endif
             </div><br><br><br>
             <div class="col-md-12 offset-md-12">
               <input type="text" class="form-control" id="textLogin" style="display:none" readonly>
@@ -203,6 +207,22 @@
             });
           });
         </script>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Error-->
+<div class="modal" id="errorModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Error</h4>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+      {{  Session::get('warning')}}
+      
       </div>
     </div>
   </div>

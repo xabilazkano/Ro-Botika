@@ -7,6 +7,9 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -23,9 +26,7 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
-    protected function redirectTo(){
-      return route('home');
-    }
+    protected $redirectTo = "/home";
 
     /**
      * Create a new controller instance.
@@ -72,4 +73,6 @@ class RegisterController extends Controller
 
         ]);
     }
+
+
 }

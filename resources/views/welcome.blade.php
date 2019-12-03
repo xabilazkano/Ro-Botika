@@ -1,6 +1,13 @@
 @extends('layouts.app')
 @section('content')
-
+@if (Session::has('warning'))
+<script>
+//Muestra exista una notificación
+$(function() {
+    $('#errorModal').modal('show');
+});
+</script>
+@endif
 <section class="masthead text-center">
     <div class="container d-flex align-items-center flex-column">
         <!-- Masthead Avatar Image -->
@@ -20,7 +27,6 @@
 
     </div>
 </section>
-
 <section class="masthead bg-primary">
     <div class="container d-flex align-items-center flex-column">
         <p class="masthead-subheading font-weight-light mb-0">
@@ -33,10 +39,10 @@
 <!-- Contact Section -->
 <section class="page-section" id="contact">
     <div class="container">
-
         <!-- Contact Section Form -->
         <div class="row">
             <div class="col-lg-8 mx-auto">
+<<<<<<< HEAD
              <div class="card">
                 <div class="card-header">{{ __('messages.Contacta con nosotros') }}</div>
 
@@ -76,14 +82,50 @@
                             <input type="text" class="form-control" name="textoWelcome" id="textoWelcome" style="display:none" readonly>
                         </div>
                     </form>
+=======
+                <div class="card">
+                    <div class="card-header">{{ __('messages.Contacta con nosotros') }}</div>
+                    <div class="card-body">
+                        <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                        <form name="contactForm" id="contactForm" action="{{route('store')}}" method="post">
+                            @csrf
+                            <div class="form-group controls mb-0 pb-2">
+                                <label>{{__('messages.Nombre')}}</label>
+                                <input class="form-control" name="name" type="text" id="name">
+                                @if ($errors->has('name'))
+                                <b>{{$errors->first('name')}}</b>
+                                @endif
+                            </div>
+                            <div class="form-group controls mb-0 pb-2">
+                                <label>{{__('messages.Email')}}</label>
+                                <input class="form-control" name="email" type="email" id="email">
+                                @if ($errors->has('email'))
+                                <b>{{$errors->first('email')}}</b>
+                                @endif
+                            </div>
+                            <div class="form-group controls mb-0 pb-2">
+                                <label>{{__('messages.Mensaje')}}</label>
+                                <textarea class="form-control" name="message" id="message"></textarea>
+                                @if ($errors->has('message'))
+                                <b>{{$errors->first('message')}}</b>
+                                @endif
+                            </div>
+                            <br>
+                            <div id="success"></div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary btn-xl" id="sendMessageButton" value="{{__('messages.Enviar')}}"><br><br>
+                                <input type="text" class="form-control" name="texto" id="texto" style="display:none" readonly>
+                            </div>
+                        </form>
+                    </div>
+>>>>>>> master
                 </div>
             </div>
         </div>
     </div>
-</div>
 </section>
-
 <script type="text/javascript">
+<<<<<<< HEAD
   $(document).ready(function() {
     $("#contactForm").submit(function(){
       nombre = $('#nameWelcome').val();
@@ -98,6 +140,21 @@
       }
   	});
   });
+=======
+    $(document).ready(function() {
+        $("#contactForm").submit(function(){
+            nombre = $('#name').val();
+            email = $('#email').val();
+            mensaje = $('#message').text();
+            if (nombre === "" || email === "" || mensaje === ""){
+                $("#texto").show();
+                $('#texto').val("{{__('messages.Inserte todos los campos')}}");
+                return false;
+            }else{
+                return true;
+            }
+        });
+    });
+>>>>>>> master
 </script>
-
 @endsection
