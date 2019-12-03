@@ -13,13 +13,11 @@
                     {{ session('status') }}
                 </div>
                 @endif
-                {{__('messages.mensajeInicioSesion') . Auth::user()->type_of_user}}
                 @if(Auth::user()->hasRole('admin'))
-                    Acceso como administrador
+                    {{__('messages.mensajeInicioSesionStandar')}}
                 @else
-                    Acceso usuario
+                    {{__('messages.mensajeInicioSesionAdmin')}}
                 @endif
-                You are logged in!
             </div>
         </div>
     </div>
