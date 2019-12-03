@@ -37,6 +37,7 @@
       'Modificar usuario' => 'Modificar usuario',
       'Inserte todos los campos' => 'Inserte todos los campos',
       'Las contraseñas deben coincidir' => 'Las contraseñas deben coincidir',
-      'Inserte un número de teléfono válido' => 'Inserte un número de teléfono válido'
+      'Inserte un número de teléfono válido' => 'Inserte un número de teléfono válido',
+      'La contraseña debe contener como mínimo 8 caractéres' => 'La contraseña debe contener como mínimo 8 caractéres'
   ];
 ?>

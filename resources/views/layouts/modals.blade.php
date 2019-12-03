@@ -130,6 +130,10 @@
                 $("#textRegister").show();
                 $('#textRegister').val("{{__('messages.Las contraseñas deben coincidir')}}");
                 return false;
+              }else if(contraseña.length < 8){
+                $("#textRegister").show();
+                $('#textRegister').val("{{__('messages.La contraseña debe contener como mínimo 8 caractéres')}}");
+                return false;
               }else if(isNaN(numeroTelefono) || numeroTelefono.length < 9 || numeroTelefono.length >9){
                 $("#textRegister").show();
                 $('#textRegister').val("{{__('messages.Inserte un número de teléfono válido')}}");
@@ -222,7 +226,7 @@
       <!-- Modal body -->
       <div class="modal-body">
       {{  Session::get('warning')}}
-      
+
       </div>
     </div>
   </div>
