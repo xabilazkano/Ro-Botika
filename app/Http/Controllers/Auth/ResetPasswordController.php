@@ -20,7 +20,11 @@ class ResetPasswordController extends Controller
 
 
 
-    protected function redirectTo(){
-      return route('homeAdmin');
-    }
+    use ResetsPasswords;
+    /**
+     * Where to redirect users after resetting their password.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/';
 }
