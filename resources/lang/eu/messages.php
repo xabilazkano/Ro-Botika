@@ -39,6 +39,8 @@
       'Inserte todos los campos' => 'Txertatu eremu guztiak',
       'Las contraseñas deben coincidir' => 'Pasahitzek bat egin behar dute',
       'Inserte un número de teléfono válido' => 'Idatzi baliozko telefono zenbakia',
-      'La contraseña debe contener como mínimo 8 caractéres' => 'Pasahitzak gutxienez 8 karaktere izan behar ditu.'
+      'La contraseña debe contener como mínimo 8 caractéres' => 'Pasahitzak gutxienez 8 karaktere izan behar ditu.',
+      'Panel de administrador' => 'Administradore panela',
+      'Panel estándar' => 'Panel estandarra'
   ];
 ?>

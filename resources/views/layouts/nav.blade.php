@@ -26,6 +26,13 @@
                         {{ Auth::user()->name }} <span class="caret"></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('homeAdmin')}}">
+                          @if(Auth::user()->hasRole('admin'))
+                              {{__('messages.Panel de administrador')}}
+                          @else
+                              {{__('messages.Panel estándar')}}
+                          @endif
+                        </a>
                         <a class="dropdown-item" href="{{ route('usuarios.edit',Auth::user()->id) }}">
                             {{ __('messages.Modificar usuario') }}
                         </a>
