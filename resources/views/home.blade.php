@@ -14,9 +14,9 @@
                 </div>
                 @endif
                 @if(Auth::user()->hasRole('admin'))
-                    {{__('messages.mensajeInicioSesionStandar')}}
-                @else
                     {{__('messages.mensajeInicioSesionAdmin')}}
+                @else
+                    {{__('messages.mensajeInicioSesionStandar')}}
                 @endif
             </div>
         </div>
