@@ -39,6 +39,8 @@
       'Inserte todos los campos' => 'Insert all fields',
       'Las contraseñas deben coincidir' => 'Passwords must match',
       'Inserte un número de teléfono válido' => 'Enter a valid phone number',
-      'La contraseña debe contener como mínimo 8 caractéres' => 'The password must contain at least 8 characters'
+      'La contraseña debe contener como mínimo 8 caractéres' => 'The password must contain at least 8 characters',
+      'Panel de administrador' => 'Administrator panel',
+      'Panel estándar' => 'Standar panel'
   ];
 ?>
