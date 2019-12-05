@@ -46,6 +46,8 @@
                         </form>
                     </div>
                 </li>
+                @endif
+                @endguest
                 <li class="nav-item dropdown mx-1 mx-lg-1">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle py-3 px-3 px-lg-3 rounded js-scroll-trigger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                          <span class="caret"><i class="fa fa-language"></i></span>
@@ -56,8 +58,6 @@
                         <a class="dropdown-item" href="{{ url('locale/eu') }}">EU</a>
                     </div>
                 </li>
-                @endif
-                @endguest
             </ul>
         </div>
     </div>
