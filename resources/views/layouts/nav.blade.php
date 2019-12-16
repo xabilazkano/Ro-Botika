@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+<nav class="navbar navbar-expand-lg bg-secondary text-uppercase " id="mainNav">
     <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="{{route('welcome')}}">Ro-Botika</a>
         <div id="navbarResponsive">
