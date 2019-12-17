@@ -62,12 +62,8 @@ footer{
   height:100%;
 }
 
-html{
+html,body,.row,main,section,nav .container{
   height: 100%;
 }
-body{
-  height: 100%;
-}
-.row{
-  height: 100%;
-}
+
+
