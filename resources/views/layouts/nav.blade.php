@@ -1,9 +1,9 @@
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-    <div class="container">
+<nav class="navbar navbar-expand-lg bg-secondary text-uppercase vertical" id="mainNav">
+    <div class="container flex-column">
         <a class="navbar-brand js-scroll-trigger" href="{{route('welcome')}}">Ro-Botika</a>
         <div id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto flex-column">
                 <li class="nav-item mx-1 mx-lg-1">
                     <a class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger" href="{{route('welcome')}}">{{ __('messages.inicio') }}</a>
                 </li>
@@ -11,11 +11,6 @@
                 <li class="nav-item mx-1 mx-lg-1">
                     <a style="color: #1abc9c" class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger login" href="#loginModal" data-toggle="modal">{{ __('messages.Iniciar sesión') }}</a>
                 </li>
-                @if (Route::has('register'))
-                <li class="nav-item mx-1 mx-lg-1">
-                    <a style="color: #2c3e50" class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger bg-light registrate" href="#registroModal" data-toggle="modal">{{ __('messages.Registrarse') }}</a>
-                </li>
-                @endif
                 @else
                 @if (Auth::user()->hasVerifiedEmail())
                 <li class="nav-item dropdown mx-1 mx-lg-1">

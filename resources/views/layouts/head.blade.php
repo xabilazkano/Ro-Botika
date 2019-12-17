@@ -5,6 +5,7 @@
 	<meta name="author" content="">
 	<title>Ro-Botika</title>
 
+	<link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css">
 	<link href="{{asset('css/montserrat.css')}}" rel="stylesheet" type="text/css">
 	<link href="{{asset('css/lato.css')}}" rel="stylesheet" type="text/css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -30,7 +31,7 @@
 	<script src="{{ asset('js/jquery.js') }}"></script>
 
 
-	
+
 
 
 

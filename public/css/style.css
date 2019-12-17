@@ -1,3 +1,9 @@
+*{
+  margin:0;
+  padding:0;
+  width:100%;
+}
+
 footer{
   position: absolute;
   background: #343A40;
@@ -46,4 +52,12 @@ footer{
 
 #lab_social_icon_footer #social-em {
   color: #f39c12;
+}
+
+.vertical{
+  height:100%;
+}
+
+.content{
+  height:669px;
 }
