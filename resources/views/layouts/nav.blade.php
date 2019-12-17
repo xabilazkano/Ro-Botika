@@ -1,4 +1,5 @@
 <!-- Navigation -->
+
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase vertical" id="mainNav">
     <div class="container flex-column">
         <a class="navbar-brand js-scroll-trigger" href="{{route('welcome')}}">Ro-Botika</a>
