@@ -71,3 +71,8 @@ body{
 .row{
   height: 100%;
 }
+
+/*HOME NURSE*/
+#patienticon {
+  font-size: 5em;
+}
