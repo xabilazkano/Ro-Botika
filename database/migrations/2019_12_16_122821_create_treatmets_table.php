@@ -15,9 +15,12 @@ class CreateTreatmetsTable extends Migration
   {
     Schema::create('treatmets', function (Blueprint $table) {
       $table->bigIncrements('id');
-      $table->integer('patient_id');
-      $table->integer('nurse_id');
-      $table->integer('medicine_id');
+      $table->unsignedBigInteger('patient_id');
+      $table->foreign('patient_id')->references('id')->on('patients');
+      $table->unsignedBigInteger('nurse_id');
+      $table->foreign('nurse_id')->references('id')->on('users');
+      $table->unsignedBigInteger('medicine_id');
+      $table->foreign('medicine_id')->references('id')->on('medicines');
       $table->timestamps();
     });
   }
