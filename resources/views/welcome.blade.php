@@ -27,20 +27,4 @@ $(function() {
 
     </div>
 </section>
-<script type="text/javascript">
-  $(document).ready(function() {
-    $("#contactForm").submit(function(){
-      nombre = $('#nameWelcome').val();
-      email = $('#emailWelcome').val();
-      mensaje = $('#message').val();
-      if (nombre === "" || email === "" || mensaje === ""){
-        $("#textoWelcome").show();
-        $('#textoWelcome').val("{{__('messages.Inserte todos los campos')}}");
-        return false;
-      }else{
-        return true;
-      }
-  	});
-  });
-</script>
 @endsection
