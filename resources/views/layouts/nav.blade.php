@@ -54,6 +54,9 @@
                         <a class="dropdown-item" href="{{ url('locale/eu') }}">EU</a>
                     </div>
                 </li>
+                <li class="nav-item dropdown mx-1 mx-lg-1">
+                  <a class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger" href="{{route('landingpage')}}">Landing page</a>
+                </li>
             </ul>
         </div>
     </div>

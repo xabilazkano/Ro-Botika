@@ -38,3 +38,7 @@ Route::get('/admin', 'HomeController@index')->middleware('auth', 'role:admin')->
 Route::get('/home', 'HomeController@index')->middleware('auth', 'role:standar')->name('homeStandar');
 
 Route::get('/verify', 'Auth\RegisterController@index')->name('verify');
+
+Route::get('/landingPage', function(){
+  return view('landingpage');
+})->name('landingpage');
