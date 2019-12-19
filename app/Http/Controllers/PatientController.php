@@ -16,7 +16,7 @@ class PatientController extends Controller
     {
         $patients = Patient::all();
 
-        return view('patient.index',['patients' => $patients]);
+        return view('patients.index',['patients' => $patients]);
     }
 
     /**
@@ -26,7 +26,7 @@ class PatientController extends Controller
      */
     public function create()
     {
-        return view('patient.create');
+        return view('patients.create');
     }
 
     /**
@@ -45,6 +45,10 @@ class PatientController extends Controller
         $patient->disease = $request->input('disease');
 
         $patient->save();
+
+        $patients = Patient::all();
+
+        return view('patients.index',['patients' => $patients]);
     }
 
     /**
@@ -57,7 +61,7 @@ class PatientController extends Controller
     {
         $patient = Patient::find($id);
 
-        return view('patient.show',['patient'=>$patient]);
+        return view('patients.show',['patient'=>$patient]);
     }
 
     /**
@@ -70,7 +74,7 @@ class PatientController extends Controller
     {
         $patient = Patient::find($id);
 
-        return view('patient.edit',['patient'=>$patient]);
+        return view('patients.edit',['patient'=>$patient]);
     }
 
     /**
@@ -93,7 +97,7 @@ class PatientController extends Controller
 
         $patients = Patient::all();
 
-        return view('patient.index',['patients' => $patients]);
+        return view('patients.index',['patients' => $patients]);
     }
 
     /**
@@ -108,6 +112,6 @@ class PatientController extends Controller
 
         $patients = Patient::all();
 
-        return view('patient.index',['patients'=>$patients]);
+        return view('patients.index',['patients'=>$patients]);
     }
 }
