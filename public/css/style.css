@@ -73,6 +73,8 @@ body{
 }
 
 /*HOME NURSE*/
-#patienticon {
+.patienticon {
   font-size: 5em;
+  width: auto;
+  margin-left: 5%;
 }
