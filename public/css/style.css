@@ -36,34 +36,43 @@ footer{
 }
 /*
     Multicoloured Hover Variations
-*/
+    */
 
-#lab_social_icon_footer #social-fb {
-  color: #3B5998;
-}
+    #lab_social_icon_footer #social-fb {
+      color: #3B5998;
+    }
 
-#lab_social_icon_footer #social-tw {
-  color: #4099FF;
-}
+    #lab_social_icon_footer #social-tw {
+      color: #4099FF;
+    }
 
-#lab_social_icon_footer #social-gp {
-  color: #d34836;
-}
+    #lab_social_icon_footer #social-gp {
+      color: #d34836;
+    }
 
-#lab_social_icon_footer #social-em {
-  color: #f39c12;
-}
+    #lab_social_icon_footer #social-em {
+      color: #f39c12;
+    }
 
-.vertical{
-  height:100%;
-}
+    .vertical{
+      height:100%;
+    }
 
-.content{
-  height:100%;
-}
+    .content{
+      height:100%;
+    }
 
-html,body,.row,main,section,nav .container{
-  height: 100%;
-}
+    html,body,.row,main,section,nav .container{
+      height: 100%;
+    }
 
 
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu .dropdown-menu {
+      top: 0;
+      left: 100%;
+      margin-top: -1px;
+    }
