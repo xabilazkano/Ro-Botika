@@ -44,9 +44,9 @@ Route::get('/admin', 'AdminController@index')->name('homeAdmin');
 Route::get('/home', 'HomeController@index')->name('homeStandar');
 
 Route::group(['middleware' => ['auth','verified']], function(){
-  Route::resource('patients','PatientController')->only(['index','show'])->name('patients');
+  Route::resource('patients','PatientController')->only(['index','show']);
 });
 
 Route::group(['middleware' => ['role']], function () {
-  Route::resource('patients','PatientController')->only(['create','store','edit','update','destroy'])->name('adminPatients');
+  Route::resource('patients','PatientController')->only(['create','store','edit','update','destroy']);
 });
