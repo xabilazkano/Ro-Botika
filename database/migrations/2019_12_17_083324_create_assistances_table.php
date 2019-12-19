@@ -19,8 +19,6 @@ class CreateAssistancesTable extends Migration
           $table->foreign('patient_id')->references('id')->on('patients');
           $table->unsignedBigInteger('nurse_id');
           $table->foreign('nurse_id')->references('id')->on('users');
-          $table->unsignedBigInteger('medicine_id');
-          $table->foreign('medicine_id')->references('id')->on('medicines');
           $table->date('estimated_date');
           $table->date('firm_date');
           $table->timestamps();

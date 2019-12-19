@@ -33,8 +33,12 @@ Route::get('locale/{locale}', function ($locale){
 
 Auth::routes(['verify' => true]);
 
-Route::get('/admin', 'HomeController@index')->middleware('auth', 'role:admin')->name('homeAdmin');
-
-Route::get('/home', 'HomeController@index')->middleware('auth', 'role:standar')->name('homeStandar');
-
 Route::get('/verify', 'Auth\RegisterController@index')->name('verify');
+
+Route::get('/landingPage', function(){
+  return view('landingpage');
+})->name('landingpage');
+
+Route::get('/admin', 'AdminController@index')->name('homeAdmin');
+
+Route::get('/home', 'HomeController@index')->name('homeStandar');

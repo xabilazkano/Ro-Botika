@@ -6,8 +6,8 @@ use Closure;
 
 class CheckRole
 {
-    public function handle($request, Closure $next, $role){
-      if (! $request->user()->hasRole($role)) {
+    public function handle($request, Closure $next){
+      if (! $request->user()->hasRole("admin")) {
         return redirect("home");
       }
       return $next($request);
