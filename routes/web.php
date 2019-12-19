@@ -42,3 +42,5 @@ Route::get('/landingPage', function(){
 Route::get('/admin', 'AdminController@index')->name('homeAdmin');
 
 Route::get('/home', 'HomeController@index')->name('homeStandar');
+Route::resource('beds','BedController');
+Route::resource('medicines','MedicineController')->only('index');

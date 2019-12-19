@@ -67,7 +67,9 @@
 				</ul>
 			</a>
 		</li>
-		<li class="text-center"><i class="fa fa-question-circle fa-3x text-dark"></i></li>
+		<li><a tabindex="-1" class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger text-dark" href="{{route('beds.index')}}">Beds</a></li>
+		<li><a tabindex="-1" class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger text-dark" href="{{route('medicines.index')}}">Medicines</a></li>
+		<li class="text-center"><a href="{{route('beds.index')}}"><i class="fa fa-question-circle fa-3x text-dark"></i></a></li>
 	</ul>
 </div>
 </nav>
