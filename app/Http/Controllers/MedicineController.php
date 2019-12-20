@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Medicine;
 
 class MedicineController extends Controller
 {
@@ -13,7 +14,9 @@ class MedicineController extends Controller
      */
     public function index()
     {
-        //
+        $medicines = Medicine::all();
+
+        return view('medicines.index',['medicines'=>$medicines]);
     }
 
     /**

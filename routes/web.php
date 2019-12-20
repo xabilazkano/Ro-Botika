@@ -47,6 +47,7 @@ Route::group(['middleware' => ['auth','verified']], function(){
   Route::resource('patients','PatientController')->only(['index','show']);
   Route::resource('beds','BedController')->only(['index','show']);
   Route::resource('assistances','AssistanceController')->only(['index','show']);
+  Route::resource('medicines','MedicineController')->only('index');
 });
 
 Route::group(['middleware' => ['role']], function () {

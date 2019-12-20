@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Bed;
 
 class BedController extends Controller
 {
@@ -13,7 +14,8 @@ class BedController extends Controller
      */
     public function index()
     {
-        //
+        $beds = Bed::all();
+        return view('beds.index',['beds'=>$beds]);
     }
 
     /**
@@ -23,7 +25,7 @@ class BedController extends Controller
      */
     public function create()
     {
-        //
+        return view('beds.create');
     }
 
     /**
@@ -34,7 +36,12 @@ class BedController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $floor = $request->input('floor');
+        $room = $request->input('room');
+        $bed = $request->input('bed');
+
+        Bed::insert(['floor'=>$floor,'room'=>$room,'bed'=>$bed]);
+        return view('beds.index');
     }
 
     /**
@@ -45,7 +52,8 @@ class BedController extends Controller
      */
     public function show($id)
     {
-        //
+        $bed = Bed::where('id',$id)->get();
+        return view('beds.show',['bed'=>$bed]);
     }
 
     /**
@@ -56,7 +64,7 @@ class BedController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('beds.edit');
     }
 
     /**
@@ -68,7 +76,12 @@ class BedController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $floor = $request->input('floor');
+        $room = $request->input('room');
+        $bed = $request->input('bed');
+
+        Bed::where('id',$id)->update(['floor'=>$floor,'room'=>$room,'bed'=>$bed]);
+        return view('beds.index');
     }
 
     /**
@@ -79,6 +92,7 @@ class BedController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Bed::where('id',$id)->delete();
+        return view('beds.index');
     }
 }
