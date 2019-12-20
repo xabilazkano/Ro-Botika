@@ -47,11 +47,12 @@ Route::group(['middleware' => ['auth','verified']], function(){
   Route::resource('patients','PatientController')->only(['index','show']);
   Route::resource('beds','BedController')->only(['index','show']);
   Route::resource('assistances','AssistanceController')->only(['index','show']);
-  Route::resource('medicines','MedicineController')->only('index');
+  Route::resource('medicines','MedicineController')->only(['index','show']);
 });
 
 Route::group(['middleware' => ['role']], function () {
   Route::resource('adminPatients','PatientController')->only(['create','store','edit','update','destroy']);
   Route::resource('adminBeds','BedController')->only(['create','store','edit','update','destroy']);
   Route::resource('adminAssistances','AssistanceController')->only(['create','store','edit','update','destroy']);
+  Route::resource('adminMedicines','MedicineController')->only(['create','store','edit','update','destroy']);
 });

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="col-md-12">
-	<a href="{{route('beds.create')}}">Add bed</a><br><br>
+	<a href="{{route('adminBeds.create')}}">Add bed</a><br><br>
 	<table>
 		<tr>
 			<th>ID</th>
@@ -16,15 +16,16 @@
 		<tr>
 			<td>{{$bed->id}}</td>
 			<td>{{$bed->floor}}</td>
+			<td>{{$bed->room}}</td>
 			<td>{{$bed->bed}}</td>
 			<td>
-				@foreach ($beds->patient as $patient)
+				@foreach ($bed->patients as $patient)
 				{{$patient->name}} {{$patient->surname}}
 				@endforeach
 			</td>
-			<td><a href="{{route('beds.edit',$bed->id)}}"><i class="fa fa-edit"></i></a></td>
+			<td><a href="{{route('adminBeds.edit',$bed->id)}}"><i class="fa fa-edit"></i></a></td>
 			<td>
-				<form method="post" action="{{route('beds.destroy',$bed->index)}}">
+				<form method="post" action="{{route('adminBeds.destroy',$bed->id)}}">
 					@csrf
 					@method('DELETE')
 					<button type="submit" class="btn btn-success">

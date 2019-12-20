@@ -11,7 +11,7 @@ class AssistancesMedicinesTableSeeder extends Seeder
      */
     public function run()
     {
-      DB::table('assistances_medicines')->insert([
+      DB::table('assistance_medicine')->insert([
         'assistance_id' => rand(1,20),
         'medicine_id' => rand(1,20)
       ]);

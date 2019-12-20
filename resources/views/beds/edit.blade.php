@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="col-md-14 text-center">
-	<form action="{{route('beds.update')}}" method="post">
+	<form action="{{route('adminBeds.update')}}" method="post">
 		@csrf
 		Floor: <input type="number" name="floor"><br><br>
 		Room: <input type="number" name="room"><br><br>
