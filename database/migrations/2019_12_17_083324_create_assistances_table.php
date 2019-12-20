@@ -20,7 +20,7 @@ class CreateAssistancesTable extends Migration
           $table->unsignedBigInteger('nurse_id');
           $table->foreign('nurse_id')->references('id')->on('users');
           $table->date('estimated_date');
-          $table->date('firm_date');
+          $table->date('firm_date')->nullable();
           $table->timestamps();
         });
     }
