@@ -7,7 +7,9 @@
       <li>Nombre: {{$patient->name}}</li>
       <li>Apellidos: {{$patient->lastname}}</li>
       <li>Enfermedad: {{$patient->disease}}</li>
-      <li><a href="{{route('adminPatients.edit',$patient->id)}}">Edit</a></li>
-      <li><a href="{{route('adminPatients.destroy',$patient->id)}}">Destroy</a></li>
+      @if (Auth::user()->hasRole("admin"))
+        <li><a href="{{route('adminPatients.edit',$patient->id)}}">Edit</a></li>
+        <li><a href="{{route('adminPatients.destroy',$patient->id)}}">Destroy</a></li>
+      @endif
     </ul>
 @endsection

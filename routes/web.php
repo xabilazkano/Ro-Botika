@@ -48,5 +48,5 @@ Route::group(['middleware' => ['auth','verified']], function(){
 });
 
 Route::group(['middleware' => ['role']], function () {
-  Route::resource('patients','PatientController')->only(['create','store','edit','update','destroy']);
+  Route::resource('adminPatients','PatientController')->only(['create','store','edit','update','destroy']);
 });
