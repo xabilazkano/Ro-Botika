@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Medicine;
 
 class MedicinesTableSeeder extends Seeder
 {
@@ -11,6 +12,8 @@ class MedicinesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+      for ($i=0;$i<20;$i++){
+        factory(Medicine::class)->create();
+      }
     }
 }
