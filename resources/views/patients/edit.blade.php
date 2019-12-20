@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <h2>Editar paciente {{$patient->id}}</h2>
-    <form class="" action="{{route('adminPatient.update',$patient->id)}}" method="post">
+    <form class="" action="{{route('adminPatients.update',$patient->id)}}" method="post">
       @csrf
       @method('put')
       <label>Número de la seguridad social: </label><input type="text" name="ss_number" value="{{$patient->ss_number}}"><br>

@@ -21,8 +21,8 @@
         @if (Auth::user()->hasRole("admin"))
           <td><a href="{{route('adminPatients.edit',$patient->id)}}">Edit</a></td>
           <td>
-            <form action="{{route('patients.destroy',$patient->id)}}" method="post">
-              @csrf;
+            <form action="{{route('adminPatients.destroy',$patient->id)}}" method="post">
+              @csrf
               @method('delete')
               <input type="submit" value="Destroy">
             </form>
