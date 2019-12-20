@@ -2,25 +2,32 @@
 
 @section('content')
 <section class="masthead text-center">
-   <div class="container d-flex align-items-center flex-column">
-    <div class="col-md-8">
-        <div class="card">
-            <div class="card-header">Dashboard</div>
-
-            <div class="card-body">
-                @if (session('status'))
-                <div class="alert alert-success" role="alert">
-                    {{ session('status') }}
-                </div>
-                @endif
-                @if(Auth::user()->hasRole('admin'))
-                    {{__('messages.mensajeInicioSesionAdmin')}}
-                @else
-                    {{__('messages.mensajeInicioSesionStandar')}}
-                @endif
-            </div>
-        </div>
-    </div>
+   <div class="container d-flex align-content-around flex-wrap">
+       <div class="col-md-6">
+         <button type="button" class="btn btn-secondary d-flex flex-row justify-content-around align-items-center">
+           <i class="patienticon fa fa-user"></i>
+           <h2>PACIENTES</h2>
+         </button>
+       </div>
+       <div class="col-md-6">
+         <button type="button" class="btn btn-secondary d-flex flex-row justify-content-around align-items-center">
+           <i class="patienticon fa fa-user"></i>
+           <h2>PACIENTES</h2>
+         </button>
+       </div>
+       <br>
+       <div class="col-md-6">
+         <button type="button" class="btn btn-secondary d-flex flex-row justify-content-around align-items-center">
+           <i class="patienticon fa fa-user"></i>
+           <h2>PACIENTES</h2>
+         </button>
+       </div>
+       <div class="col-md-6">
+         <button type="button" class="btn btn-secondary d-flex flex-row justify-content-around align-items-center">
+           <i class="patienticon fa fa-user"></i>
+           <h2>PACIENTES</h2>
+         </button>
+       </div>
 </div>
 </section>
 @endsection
