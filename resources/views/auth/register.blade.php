@@ -94,7 +94,7 @@
               <label for="radio" class="col-md-6 col-form-label text-md-right">{{ __('messages.Tipo de usuario') }}</label>
             </div>
             <div id="radio" class="col-md-10">
-              <input id="standar" type="radio"  name="type" checked value="standar">{{__('messages.Estándar')}}
+              <input id="nurse" type="radio"  name="type" checked value="nurse">Nurse
               <input id="admin" type="radio"  name="type" value="admin"> Admin
             </div>
           </div>

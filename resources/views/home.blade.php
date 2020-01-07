@@ -29,7 +29,7 @@
       </a>
     </div>
     <div class="col-md-6">
-      <a href="#">
+      <a href="{{route('medicines.index')}}">
         <button type="button" class="botonhome btn btn-secondary d-flex flex-row justify-content-around align-items-center">
           <i class="patienticon fa fa-list-alt"></i>
           <h2>STOCK</h2>

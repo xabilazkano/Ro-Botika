@@ -13,7 +13,7 @@ class CreateAssistancesMedicinesTable extends Migration
      */
     public function up()
     {
-        Schema::create('assistances_medicines', function (Blueprint $table) {
+        Schema::create('assistance_medicine', function (Blueprint $table) {
           $table->unsignedBigInteger('assistance_id');
           $table->foreign('assistance_id')->references('id')->on('assistances');
           $table->unsignedBigInteger('medicine_id');

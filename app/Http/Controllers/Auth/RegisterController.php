@@ -77,7 +77,7 @@ class RegisterController extends Controller
       if ($data['type'] === "admin"){
         $user->roles()->attach(Role::where('name', 'admin')->first());
       }else{
-        $user->roles()->attach(Role::where('name', 'standar')->first());
+        $user->roles()->attach(Role::where('name', 'nurse')->first());
       }
       return $user;
     }

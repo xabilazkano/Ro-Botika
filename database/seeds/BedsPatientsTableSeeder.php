@@ -18,7 +18,7 @@ class BedsPatientsTableSeeder extends Seeder
 
         $down_date = strtotime ( "+".rand(30,500)." day" , strtotime ( $fecha ) ) ;
         $down_date = date ( 'Y/m/d' , $down_date );
-        DB::table('beds_patients')->insert([
+        DB::table('bed_patient')->insert([
           'bed_id' => rand(1,20),
           'patient_id' => rand(1,20),
           'up_date' => $up_date,

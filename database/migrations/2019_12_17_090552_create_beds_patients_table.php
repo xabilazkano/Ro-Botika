@@ -13,7 +13,7 @@ class CreateBedsPatientsTable extends Migration
      */
     public function up()
     {
-        Schema::create('beds_patients', function (Blueprint $table) {
+        Schema::create('bed_patient', function (Blueprint $table) {
             $table->unsignedBigInteger('bed_id');
             $table->foreign('bed_id')->references('id')->on('beds');
             $table->unsignedBigInteger('patient_id');

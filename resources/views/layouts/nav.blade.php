@@ -22,7 +22,7 @@
 								@if(Auth::user()->hasRole('admin'))
 								{{__('messages.Panel de administrador')}}
 								@else
-								{{__('messages.Panel estándar')}}
+								Nurse panel
 								@endif
 							</a>
 						</li>
