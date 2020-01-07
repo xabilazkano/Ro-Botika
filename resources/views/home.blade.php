@@ -59,7 +59,7 @@
       </a>
     </div>
     <div class="col-md-4">
-      <a href="{{route('medicines.index')}}">
+      <a href="{{route('adminNurses.index')}}">
         <button type="button" class="botonhome btn btn-secondary d-flex flex-row justify-content-around align-items-center">
           <h2>ENFERMER@S</h2>
         </button>

@@ -15,6 +15,8 @@ class NurseController extends Controller
     public function index()
     {
         $nurses = User::all()->where('type_of_user','nurse');
+
+        return view('nurses.index',['nurses' => $nurses]);
     }
 
     /**
@@ -24,7 +26,7 @@ class NurseController extends Controller
      */
     public function create()
     {
-        //
+        return view('nurses.create');
     }
 
     /**
@@ -35,7 +37,18 @@ class NurseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nurse = new User;
+
+        $nurse->name = $request->input('name');
+        $nurse->lastname = $request->input('lastname');
+        $nurse->email = $request->input('email');
+        $nurse->phone_number = $request->input('phone_number');
+
+        $nurse->save();
+
+        $nurses = User::all()->where('type_of_user','nurse');
+
+        return view('nurses.index',['nurses' => $nurses]);
     }
 
     /**
@@ -46,7 +59,9 @@ class NurseController extends Controller
      */
     public function show($id)
     {
-        //
+        $nurse = User::find($id);
+
+        return view('nurses.edit',['nurse' => $nurse]);
     }
 
     /**
@@ -57,7 +72,9 @@ class NurseController extends Controller
      */
     public function edit($id)
     {
-        //
+      $nurse = User::find($id);
+
+      return view('nurses.edit',['nurse' => $nurse]);
     }
 
     /**
@@ -69,7 +86,18 @@ class NurseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nurse = User::find($id);
+
+        $nurse->name = $request->input('name');
+        $nurse->lastname = $request->input('lastname');
+        $nurse->email = $request->input('email');
+        $nurse->phone_number = $request->input('phone_number');
+
+        $nurse->save();
+
+        $nurses = User::all()->where('type_of_user','nurse');
+
+        return view('nurses.index',['nurses' => $nurses]);
     }
 
     /**
@@ -80,6 +108,10 @@ class NurseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::find($id)->delete();
+
+        $nurses = User::all()->where('type_of_user','nurse');
+
+        return view('nurses.index',['nurses' => $nurses]);
     }
 }
