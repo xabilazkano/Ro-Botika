@@ -15,9 +15,9 @@ class CreateBedsPatientsTable extends Migration
     {
         Schema::create('bed_patient', function (Blueprint $table) {
             $table->unsignedBigInteger('bed_id');
-            $table->foreign('bed_id')->references('id')->on('beds');
+            $table->foreign('bed_id')->references('id')->on('beds')->onDelete('cascade');
             $table->unsignedBigInteger('patient_id');
-            $table->foreign('patient_id')->references('id')->on('patients');
+            $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
             $table->date('up_date');
             $table->date('down_date');
             $table->timestamps();
