@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <section class="masthead text-center">
   <div class="container d-flex align-content-around flex-wrap">
 
