@@ -22,7 +22,7 @@
       </a>
     </div>
 
-    @if (Auth::user()->hasRole("standar"))
+    @if (Auth::user()->hasRole("nurse"))
     <div class="col-md-6">
       <a href="{{route('beds.index')}}">
         <button type="button" class="botonhome btn btn-secondary d-flex flex-row justify-content-around align-items-center">
