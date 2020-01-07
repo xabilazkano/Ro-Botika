@@ -7,9 +7,19 @@
 	</a>
 	<div class="col-md-2">
 		<ul class="dropdown-menu">
-			<li><a tabindex="-1" class="navbar-brand js-scroll-trigger text-dark" href="{{route('welcome')}}">Ro-Botika</a></li>
-			<li><a tabindex="-1" class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger text-dark" href="">Landing Page</a></li>
-			<li><a tabindex="-1" class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger text-dark" href="{{route('welcome')}}">{{ __('messages.inicio') }}</a></li>
+			@guest
+
+			@else
+				@if (Auth::user()->hasRole("standar"))
+				<li><a tabindex="-1" class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger text-dark" href="{{route('homeStandar')}}">HOME</a></li>
+				@endif
+				@if (Auth::user()->hasRole("admin"))
+				<li><a tabindex="-1" class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger text-dark" href="{{route('homeAdmin')}}">HOME</a></li>
+				@endif
+			@endguest
+
+
+
 			@guest
 			<li><a tabindex="-1" class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger text-dark" href="#loginModal" data-toggle="modal">{{ __('messages.Iniciar sesión') }}</a></li>
 			@else
@@ -67,9 +77,9 @@
 				</ul>
 			</a>
 		</li>
-		<li><a tabindex="-1" class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger text-dark" href="{{route('beds.index')}}">Beds</a></li>
-		<li><a tabindex="-1" class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger text-dark" href="{{route('medicines.index')}}">Medicines</a></li>
 		<li class="text-center"><a href="{{route('beds.index')}}"><i class="fa fa-question-circle fa-3x text-dark"></i></a></li>
+		<hr>
+		<li><a tabindex="-1" class="landingpage nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger text-dark" href="{{route('landingpage')}}">Landing Page</a></li>
 	</ul>
 </div>
 </nav>
