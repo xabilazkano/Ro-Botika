@@ -36,6 +36,16 @@
         </button>
       </a>
     </div>
+    @if (Auth::user()->hasRole("admin"))
+    <div class="col-md-6">
+      <a href="{{route('medicines.index')}}">
+        <button type="button" class="botonhome btn btn-secondary d-flex flex-row justify-content-around align-items-center">
+          <i class="patienticon fa fa-list-alt"></i>
+          <h2>ENFERMER@S</h2>
+        </button>
+      </a>
+    </div>
+    @endif
   </div>
 </section>
 @endsection
