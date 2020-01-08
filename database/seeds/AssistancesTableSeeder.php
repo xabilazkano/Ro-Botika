@@ -18,7 +18,7 @@ class AssistancesTableSeeder extends Seeder
 
         DB::table('assistances')->insert([
           'patient_id' => rand(1,20),
-          'nurse_id' => rand(1,22),
+          'user_id' => rand(1,22),
           'estimated_date' => $estimated_date
         ]);
       }

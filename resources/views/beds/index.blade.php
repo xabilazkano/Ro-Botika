@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="col-md-12">
-	<a href="{{route('adminBeds.create')}}">Add bed</a><br><br>
+	
 	<table>
 		<tr>
 			<th>ID</th>
@@ -9,8 +9,6 @@
 			<th>Room</th>
 			<th>Bed</th>
 			<th>Patient</th>
-			<th>Update</th>
-			<th>Delete</th>
 		</tr>
 		@foreach ($beds as $bed)
 		<tr>
@@ -23,18 +21,26 @@
 				{{$patient->name}} {{$patient->surname}}
 				@endforeach
 			</td>
-			<td><a href="{{route('adminBeds.edit',$bed->id)}}"><i class="fa fa-edit"></i></a></td>
+			<td><a href="{{route('beds.show',$bed->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
+			@if (Auth::user()->hasRole("admin"))
+			<td><a href="{{route('adminBeds.edit',$bed->id)}}"><i class="blackIcon fa fa-edit"></i></a></td>
 			<td>
 				<form method="post" action="{{route('adminBeds.destroy',$bed->id)}}">
 					@csrf
 					@method('DELETE')
-					<button type="submit" class="btn btn-success">
-						<i class="fa fa-trash-alt"></i>
+					<button type="submit" id="deleteIcon">
+						<i class="fa fa-trash-o"></i>
 					</button>
 				</form>
 			</td>
+			@endif
 		</tr>
 		@endforeach
+		@if (Auth::user()->hasRole("admin"))
+		<tr>
+			<td><a href="{{route('adminBeds.create')}}">Create</a></td>
+		</tr>
+		@endif
 	</table>
 </div>
 @endsection

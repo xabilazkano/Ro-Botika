@@ -61,15 +61,15 @@ Multicoloured Hover Variations
   height:100%;
 }
 
-html{
-  height: 100%;
-}
-body{
-  height: 100%;
-}
-.row{
-  height: 100%;
-}
+    html{
+      height: 100%;
+    }
+    body{
+      height: 100%;
+    }
+    .row{
+      height: 100%;
+    }
 
 /*HOME NURSE*/
 .patienticon {
@@ -109,3 +109,25 @@ td{
 .landingpage {
    font-size: 0.9em;
 }
+
+    table {
+      text-align: center;
+    }
+
+    .blackIcon{
+      color:black;
+      font-size: 2em;
+    }
+
+    .confirm{
+      color: green;
+      font-size: 2em;
+    }
+
+    #deleteIcon{
+      background: none;
+      padding: 0px;
+      border: none;
+      color: red;
+      font-size: 2em;
+    }
