@@ -15,6 +15,6 @@ class Assistance extends Model
   }
 
   public function medicines(){
-    return $this->hasMany('App\Medicine');
+    return $this->belongsToMany('App\Medicine');
   }
 }

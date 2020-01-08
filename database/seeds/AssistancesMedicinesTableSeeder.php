@@ -11,9 +11,12 @@ class AssistancesMedicinesTableSeeder extends Seeder
      */
     public function run()
     {
-      DB::table('assistance_medicine')->insert([
-        'assistance_id' => rand(1,20),
-        'medicine_id' => rand(1,20)
-      ]);
+        for ($i = 0;$i<20;$i++){
+            DB::table('assistance_medicine')->insert([
+                'assistance_id' => rand(1,20),
+                'medicine_id' => rand(1,20)
+            ]);
+        }
+        
     }
 }

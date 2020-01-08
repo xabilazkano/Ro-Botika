@@ -17,10 +17,11 @@ class CreateAssistancesTable extends Migration
           $table->bigIncrements('id');
           $table->unsignedBigInteger('patient_id');
           $table->foreign('patient_id')->references('id')->on('patients');
-          $table->unsignedBigInteger('nurse_id');
-          $table->foreign('nurse_id')->references('id')->on('users');
+          $table->unsignedBigInteger('user_id');
+          $table->foreign('user_id')->references('id')->on('users');
           $table->date('estimated_date');
           $table->date('firm_date')->nullable();
+          $table->boolean('confirmed')->nullable();
           $table->timestamps();
         });
     }

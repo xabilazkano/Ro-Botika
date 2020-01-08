@@ -62,15 +62,15 @@ footer{
       height:100%;
     }
 
-html{
-  height: 100%;
-}
-body{
-  height: 100%;
-}
-.row{
-  height: 100%;
-}
+    html{
+      height: 100%;
+    }
+    body{
+      height: 100%;
+    }
+    .row{
+      height: 100%;
+    }
 
 /*HOME NURSE*/
 .patienticon {
@@ -79,18 +79,39 @@ body{
   margin-left: 5%;
 }
 
-.dropdown-submenu {
-  position: relative;
-}
+    .dropdown-submenu {
+      position: relative;
+    }
 
-.dropdown-submenu .dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -1px;
-}
+    .dropdown-submenu .dropdown-menu {
+      top: 0;
+      left: 100%;
+      margin-top: -1px;
+    }
 
-.botonhome {
-  font-size: 10em;
-  height: 10em;
-  margin-top: 2em;
-}
+    .botonhome {
+      height: 10em;
+      margin-top: 2em;
+    }
+
+    table {
+      text-align: center;
+    }
+
+    .blackIcon{
+      color:black;
+      font-size: 2em;
+    }
+
+    .confirm{
+      color: green;
+      font-size: 2em;
+    }
+
+    #deleteIcon{
+      background: none;
+      padding: 0px;
+      border: none;
+      color: red;
+      font-size: 2em;
+    }

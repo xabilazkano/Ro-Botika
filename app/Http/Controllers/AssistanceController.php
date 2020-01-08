@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Assistance;
+use App\Patient;
+use App\User;
+use App\Medicine;
 
 class AssistanceController extends Controller
 {
@@ -13,7 +17,9 @@ class AssistanceController extends Controller
      */
     public function index()
     {
-        //
+        $assistances = Assistance::all();
+
+        return view ('assistances.index',['assistances' => $assistances]);
     }
 
     /**
@@ -45,7 +51,9 @@ class AssistanceController extends Controller
      */
     public function show($id)
     {
-        //
+        $assist = Assistance::find($id);
+
+        return view ('assistances.show',['assist'=>$assist]);
     }
 
     /**
@@ -56,7 +64,11 @@ class AssistanceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $assistance = Assistance::find($id);
+        $patients = Patient::all();
+        $nurses = User::where('type_of_user','standar')->get();
+        
+        return view('assistances.edit',['assistance'=>$assistance,'patients'=>$patients,'nurses'=>$nurses]);
     }
 
     /**
@@ -68,7 +80,15 @@ class AssistanceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $assistance = Assistance::find($id);
+        $assistance->patient_id = $request->input('patient');
+        $assistance->user_id = $request->input('nurse');
+        $assistance->estimated_date = $request->input('date');
+        $assistance->id = $id;
+        $assistance->save();
+
+        $assistances = Assistance::all();
+        return view ('assistances.index',['assistances' => $assistances]);
     }
 
     /**
@@ -79,6 +99,20 @@ class AssistanceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Assistance::where('id',$id)->delete();
+        $assistances = Assistance::all();
+
+        return view ('assistances.index',['assistances' => $assistances]);
     }
+
+    public function confirmAssist($id)
+    {
+        Assistance::where('id',$id)->update(['confirmed'=>1]);
+
+        $assistances = Assistance::all();
+
+        return view ('assistances.index',['assistances' => $assistances]);
+    }
+
+   
 }

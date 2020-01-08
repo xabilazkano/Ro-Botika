@@ -41,7 +41,8 @@ class BedController extends Controller
         $bed = $request->input('bed');
 
         Bed::insert(['floor'=>$floor,'room'=>$room,'bed'=>$bed]);
-        return view('beds.index');
+        $beds = Bed::all();
+        return view('beds.index',['beds'=>$beds]);
     }
 
     /**
@@ -52,7 +53,7 @@ class BedController extends Controller
      */
     public function show($id)
     {
-        $bed = Bed::where('id',$id)->get();
+        $bed = Bed::find($id);
         return view('beds.show',['bed'=>$bed]);
     }
 
@@ -64,7 +65,7 @@ class BedController extends Controller
      */
     public function edit($id)
     {
-        return view('beds.edit');
+        return view('beds.edit',['id'=>$id]);
     }
 
     /**
@@ -81,7 +82,8 @@ class BedController extends Controller
         $bed = $request->input('bed');
 
         Bed::where('id',$id)->update(['floor'=>$floor,'room'=>$room,'bed'=>$bed]);
-        return view('beds.index');
+        $beds = Bed::all();
+        return view('beds.index',['beds'=>$beds]);
     }
 
     /**
@@ -93,6 +95,7 @@ class BedController extends Controller
     public function destroy($id)
     {
         Bed::where('id',$id)->delete();
-        return view('beds.index');
+        $beds = Bed::all();
+        return view('beds.index',['beds'=>$beds]);
     }
 }
