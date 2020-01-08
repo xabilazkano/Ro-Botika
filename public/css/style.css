@@ -94,3 +94,16 @@ body{
   height: 10em;
   margin-top: 2em;
 }
+
+.thead{
+  background-color:teal;
+  color:white;
+}
+
+th{
+  width:auto;
+}
+
+td{
+  width:auto;
+}
