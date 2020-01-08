@@ -124,7 +124,7 @@ td{
       font-size: 2em;
     }
 
-    #deleteIcon{
+    .deleteIcon{
       background: none;
       padding: 0px;
       border: none;

@@ -1,7 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<h2>Asistencias</h2>
+<h2 class="row">
+	<span class="col-11">Asistencias</span>
+	@if (Auth::user()->hasRole("admin"))
+	<a href="{{route('adminAssistances.create')}}" class="col-1"><i class="fa fa-plus"></i></a>
+	@endif
+</h2>
 <table class="table">
 	<thead class="thead">
 		<tr>
@@ -11,8 +16,8 @@
 			<th>Fecha</th>
 			<th>Medicinas</th>
 			<th>Confirmado</th>
-			@if (Auth::user()->hasRole("admin"))
 			<th></th>
+			@if (Auth::user()->hasRole("admin"))
 			<th></th>
 			<th></th>
 			@endif
@@ -46,7 +51,7 @@
 			<form method="post" action="{{route('adminAssistances.destroy',$assist->id)}}">
 				@csrf
 				@method('DELETE')
-				<button type="submit" id="deleteIcon">
+				<button type="submit" class="deleteIcon">
 					<i class="fa fa-trash-o"></i>
 				</button>
 			</form>
