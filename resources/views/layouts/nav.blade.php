@@ -1,5 +1,6 @@
 <nav class="navbar text-uppercase" id="mainNav">
-	<div class="row d-flex justify-content-between">
+	<div class="row">
+		<!-- Hamburguesa -->
 		<div class="col-1">
 			<a class="text-dark fa-3x" data-toggle="dropdown" href="#">
 				<i class="fa fa-bars"></i>
@@ -65,8 +66,11 @@
 			<li class="text-center"><a tabindex="-1" class="landingpage nav-link py-0 px-0 px-lg-0 rounded js-scroll-trigger text-dark" href="{{route('landingpage')}}">Landing Page</a></li>
 		</ul>
 	</div>
+	<!-- FIN Hamburguesa -->
 
 	<div class="col-1">
+
+		<!-- Idiomas -->
 		<div class="btn-group btn-group-inline">
 			<button class="btn" data-toggle="dropdown">
 				<span class="caret"><i class="fa fa-language fa-3x"></i></span>
@@ -77,6 +81,7 @@
 				<li><a tabindex="-1" class="dropdown-item" href="{{ url('locale/eu') }}">EUS</a></li>
 			</ul>
 		</div>
+		<!-- FIN Idiomas -->
 	</div>
 </div>
 </nav>
