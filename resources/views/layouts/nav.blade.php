@@ -22,6 +22,9 @@
 				<li class="dropdown-submenu">
 					<a class="test py-3 px-3 px-lg-3 rounded text-dark"  tabindex="-1" href="#">{{ Auth::user()->name }}
 						<ul class="dropdown-menu">
+							@if (Auth::user()->hasRole("nurse"))
+								
+							@endif
 							<li>
 								<a tabindex="-1" class="dropdown-item" href="{{ route('homeAdmin')}}">
 									@if(Auth::user()->hasRole('admin'))
