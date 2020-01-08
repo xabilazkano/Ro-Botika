@@ -26,7 +26,7 @@ class MedicineController extends Controller
      */
     public function create()
     {
-        //
+        return view('medicines.create');
     }
 
     /**
@@ -37,7 +37,16 @@ class MedicineController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $medicine = new Medicine;
+
+        $medicine->name = $request->input('name');
+        $medicine->amount = intval($request->input('amount'));
+
+        $medicine->save();
+
+        $medicines = Medicine::all();
+
+        return view('medicines.index',['medicines'=>$medicines]);
     }
 
     /**
@@ -48,7 +57,9 @@ class MedicineController extends Controller
      */
     public function show($id)
     {
-        //
+      $medicine = Medicine::find($id);
+
+      return view('medicines.show',['medicine'=>$medicine]);
     }
 
     /**
@@ -59,7 +70,9 @@ class MedicineController extends Controller
      */
     public function edit($id)
     {
-        //
+      $medicine = Medicine::find($id);
+
+      return view('medicines.edit',['medicine'=>$medicine]);
     }
 
     /**
@@ -71,7 +84,16 @@ class MedicineController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $medicine = Medicine::find($id);
+
+      $medicine->name = $request->input('name');
+      $medicine->amount = intval($request->input('amount'));
+
+      $medicine->save();
+
+      $medicines = Medicine::all();
+
+      return view('medicines.index',['medicines' => $medicines]);
     }
 
     /**
@@ -82,6 +104,10 @@ class MedicineController extends Controller
      */
     public function destroy($id)
     {
-        //
+      Medicine::find($id)->delete();
+
+      $medicines = Medicine::all();
+
+      return view('medicines.index',['medicines'=>$medicines]);
     }
 }
