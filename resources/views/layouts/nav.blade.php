@@ -9,7 +9,7 @@
 				<li><a tabindex="-1" class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger text-dark" href="#loginModal" data-toggle="modal">{{ __('messages.Iniciar sesión') }}</a></li>
 				@else
 				@if (Auth::user()->hasRole("standar"))
-				<li><a tabindex="-1" class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger text-dark" href="{{route('homeStandar')}}">HOME</a></li>
+				<li><a tabindex="-1" class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger text-dark" href="{{route('homeNurse')}}">HOME</a></li>
 				@endif
 				@if (Auth::user()->hasRole("admin"))
 				<li><a tabindex="-1" class="nav-link py-3 px-3 px-lg-3 rounded js-scroll-trigger text-dark" href="{{route('homeAdmin')}}">HOME</a></li>
