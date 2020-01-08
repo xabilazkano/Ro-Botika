@@ -11,7 +11,6 @@ footer{
 
 #lab_social_icon_footer {
   padding: 40px 0;
-
 }
 
 #lab_social_icon_footer a {
@@ -35,32 +34,32 @@ footer{
   -o-transition-duration: 0.5s;
 }
 /*
-    Multicoloured Hover Variations
-    */
+Multicoloured Hover Variations
+*/
 
-    #lab_social_icon_footer #social-fb {
-      color: #3B5998;
-    }
+#lab_social_icon_footer #social-fb {
+  color: #3B5998;
+}
 
-    #lab_social_icon_footer #social-tw {
-      color: #4099FF;
-    }
+#lab_social_icon_footer #social-tw {
+  color: #4099FF;
+}
 
-    #lab_social_icon_footer #social-gp {
-      color: #d34836;
-    }
+#lab_social_icon_footer #social-gp {
+  color: #d34836;
+}
 
-    #lab_social_icon_footer #social-em {
-      color: #f39c12;
-    }
+#lab_social_icon_footer #social-em {
+  color: #f39c12;
+}
 
-    .vertical{
-      height:100%;
-    }
+.vertical{
+  height:100%;
+}
 
-    .content{
-      height:100%;
-    }
+.content{
+  height:100%;
+}
 
 html{
   height: 100%;
@@ -93,4 +92,8 @@ body{
   font-size: 10em;
   height: 10em;
   margin-top: 2em;
+}
+
+.landingpage {
+   font-size: 0.9em;
 }
