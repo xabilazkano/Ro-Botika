@@ -2,16 +2,22 @@
 
 @section('content')
 <h2>Asistencias</h2>
-<table>
-	<tr>
-		<th>Id</th>
-		<th>Nombre del paciente</th>
-		<th>Nombre de la enfermera</th>
-		<th>Fecha</th>
-		<th>Medicinas</th>
-		<th>Confirmado</th>
-	</tr>
-
+<table class="table">
+	<thead class="thead">
+		<tr>
+			<th>Id</th>
+			<th>Nombre del paciente</th>
+			<th>Nombre de la enfermera</th>
+			<th>Fecha</th>
+			<th>Medicinas</th>
+			<th>Confirmado</th>
+			@if (Auth::user()->hasRole("admin"))
+			<th></th>
+			<th></th>
+			<th></th>
+			@endif
+		</tr>
+	</thead>
 	@foreach ($assistances as $assist)
 	<tr>
 		<td>{{$assist->id}}</td>
