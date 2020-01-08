@@ -12,7 +12,7 @@
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 	<!-- Theme CSS -->
-	<link href="{{asset('css/freelancer.min.css')}}" rel="stylesheet">
+	<link href="{{asset('css/freelancer.css')}}" rel="stylesheet">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 

@@ -1,39 +1,50 @@
 @extends('layouts.app')
 
 @section('content')
-  <h2>Pacientes</h2>
-  <table>
-    <tr>
-      <th>Id</th>
-      <th>Número de la seguridad social</th>
-      <th>Nombre</th>
-      <th>Apellidos</th>
-      <th>Enfermedad</th>
-    </tr>
-    @foreach ($patients as $patient)
+  <h2 class="row">
+    <span class="col-11">Pacientes</span>
+    @if (Auth::user()->hasRole("admin"))
+      <a href="{{route('adminPatients.create')}}" class="col-1"><i class="fa fa-plus"></i></a>
+    @endif
+  </h2>
+  <table class="table">
+    <thead class="thead">
       <tr>
-        <td>{{$patient->id}}</td>
-        <td>{{$patient->ss_number}}</td>
-        <td>{{$patient->name}}</td>
-        <td>{{$patient->lastname}}</td>
-        <td>{{$patient->disease}}</td>
-        <td><a href="{{route('patients.show',$patient->id)}}">Show</a></td>
+        <th scope="col">Id</th>
+        <th scope="col">Número S.S.</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Enfermedad</th>
+        <th></th>
         @if (Auth::user()->hasRole("admin"))
-          <td><a href="{{route('adminPatients.edit',$patient->id)}}">Edit</a></td>
-          <td>
-            <form action="{{route('adminPatients.destroy',$patient->id)}}" method="post">
-              @csrf
-              @method('delete')
-              <input type="submit" value="Destroy">
-            </form>
-          </td>
+          <th></th>
+          <th></th>
         @endif
       </tr>
-    @endforeach
-    @if (Auth::user()->hasRole("admin"))
-      <tr>
-        <td><a href="{{route('adminPatients.create')}}">Create</a></td>
-      </tr>
-    @endif
+    </thead>
+    <tbody>
+      @foreach ($patients as $patient)
+        <tr>
+          <th scope="row">{{$patient->id}}</td>
+          <td>{{$patient->ss_number}}</td>
+          <td>{{$patient->name}}</td>
+          <td>{{$patient->lastname}}</td>
+          <td>{{$patient->disease}}</td>
+          <td><a href="{{route('patients.show',$patient->id)}}"><i class="fa fa-eye"></i></a></td>
+          @if (Auth::user()->hasRole("admin"))
+            <td><a href="{{route('adminPatients.edit',$patient->id)}}"><i class="fa fa-edit"></i></a></td>
+            <td>
+              <form action="{{route('adminPatients.destroy',$patient->id)}}" method="post">
+                @csrf
+                @method('delete')
+                <button type="submit" class="btn">
+                  <i class="fa fa-trash-o"></i>
+                </button>
+              </form>
+            </td>
+          @endif
+        </tr>
+      @endforeach
+    </tbody>
   </table>
 @endsection
