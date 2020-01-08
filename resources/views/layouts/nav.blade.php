@@ -68,8 +68,12 @@
 	</div>
 	<!-- FIN Hamburguesa -->
 
-	<div class="col-1">
+	<div class="col-8"></div>
 
+	<div class="col-3 d-flex flex-row">
+		<div class="">
+			<a href="{{route('homeNurse')}}"><i class="patienticon fa fa-home"></i></a>
+		</div>
 		<!-- Idiomas -->
 		<div class="btn-group btn-group-inline">
 			<button class="btn" data-toggle="dropdown">
