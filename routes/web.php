@@ -1,8 +1,8 @@
 <?php
 
 Route::get('/', function () {
-  return view('welcome');
-})->name('welcome');
+    return view('home');
+})->name('welcome')->middleware('auth','verified');
 
 Route::get('/registerform', function (){
 	return view('auth.register');
