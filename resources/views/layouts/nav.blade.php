@@ -24,6 +24,7 @@
 						<ul class="dropdown-menu">
 							@if (Auth::user()->hasRole("nurse"))
 
+
 							@endif
 							<li>
 								<a tabindex="-1" class="dropdown-item" href="{{ route('homeAdmin')}}">
@@ -64,6 +65,13 @@
 			<hr>
 			<li class="text-center"><a tabindex="-1" class="landingpage nav-link py-0 px-0 px-lg-0 rounded js-scroll-trigger text-dark" href="{{route('landingpage')}}">Landing Page</a></li>
 		</ul>
+	</div>
+	<div class="col-2 d-flex justify-content-center align-items-center">
+		<img src="/img/logo.png">
+	</div>
+
+	<div class="col-6 d-flex justify-content-center align-items-center">
+		<h2 style="width:auto">@yield("titulua")</h2>
 	</div>
 
 	<div class="col-1">

@@ -1,8 +1,7 @@
 @extends('layouts.app')
-
+@section('titulua', 'Asistencias')
 @section('content')
 <h2 class="row">
-	<span class="col-11">Asistencias</span>
 	@if (Auth::user()->hasRole("admin"))
 	<a href="{{route('adminAssistances.create')}}" class="col-1"><i class="fa fa-plus"></i></a>
 	@endif

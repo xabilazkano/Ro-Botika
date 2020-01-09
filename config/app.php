@@ -161,7 +161,6 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Felixkiss\UniqueWithValidator\ServiceProvider::class,
 
         /*
          * Package Service Providers...
