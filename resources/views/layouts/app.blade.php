@@ -30,7 +30,7 @@
   });
 
   // Temporizador de bloqueo de pantalla
-  var idleSeconds = 120;
+  var idleSeconds = 5;
 
   $(function(){
     var idleTimer;
@@ -39,12 +39,17 @@
       idleTimer = setTimeout(whenUserIdle,idleSeconds*1000);
     }
     $(document.body).bind('mousemove keydown click',resetTimer); //space separated events list that we want to monitor
+
     resetTimer(); // Start the timer when the page loads
   });
 
   function whenUserIdle(){
-    console.log('idle');
+    $("#bloqueo").css("visibility", "visible");
   }
+
+  $("#bloqueo").click(function() {
+    $("#bloqueo").css("visibility", "hidden");
+  })
   </script>
 
 </body>
