@@ -18,7 +18,13 @@
 		</div>
 		<!-- FIN Hamburguesa -->
 
-		<div class="col-8">@yield("titulua")</div>
+		<div class="col-2 d-flex justify-content-center align-items-center">
+			<img src="/img/logo.png">
+		</div>
+
+		<div class="col-6 d-flex justify-content-center align-items-center">
+			<h2 style="width:auto">@yield("titulua")</h2>
+		</div>
 
 		<div class="col-3 d-flex flex-row">
 			<div class="menueskubi d-flex align-items-center">

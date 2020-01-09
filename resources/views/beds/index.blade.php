@@ -2,7 +2,6 @@
 @section('titulua', 'Camas')
 @section('content')
 <h2 class="row">
-	<span class="col-11">Camas</span>
 	@if (Auth::user()->hasRole("admin"))
 	<a href="{{route('adminBeds.create')}}" class="col-1"><i class="fa fa-plus"></i></a>
 	@endif
