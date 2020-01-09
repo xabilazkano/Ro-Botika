@@ -14,8 +14,12 @@ class RoomController extends Controller
      */
     public function index()
     {
-        $rooms = Room::all();
-        return view('rooms.index',['rooms'=>$rooms]);
+      $beds = Bed::all();
+      if (auth()->getUser()->hasRole("admin")) {
+        return view ('admin.beds.index',['beds' => $beds]);
+      }else{
+        return view ('beds.index',['beds' => $beds]);
+      }
     }
 
     /**

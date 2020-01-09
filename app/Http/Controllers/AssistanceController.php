@@ -16,8 +16,12 @@ class AssistanceController extends Controller
     */
     public function index()
     {
-        $assistances = Assistance::all();
+      $assistances = Assistance::all();
+      if (auth()->getUser()->hasRole("admin")) {
+        return view ('admin.assistances.index',['assistances' => $assistances]);
+      }else{
         return view ('assistances.index',['assistances' => $assistances]);
+      }
     }
     /**
     * Show the form for creating a new resource.
