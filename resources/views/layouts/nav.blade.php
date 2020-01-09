@@ -24,47 +24,13 @@
 						<ul class="dropdown-menu">
 							@if (Auth::user()->hasRole("nurse"))
 
-							@endif
-							<li>
-								<a tabindex="-1" class="dropdown-item" href="{{ route('homeAdmin')}}">
-									@if(Auth::user()->hasRole('admin'))
-									{{__('messages.Panel de administrador')}}
-									@else
-									{{__('messages.Panel estándar')}}
-									@endif
-								</a>
-							</li>
-							<li>
-								<a tabindex="-1" class="dropdown-item" href="{{ route('usuarios.edit',Auth::user()->id) }}">
-									{{ __('messages.Modificar usuario') }}
-								</a>
-							</li>
-							<li>
-								<a tabindex="-1" class="dropdown-item" href="{{ route('usuarios.delete',Auth::user()->id) }}">
-									{{ __('messages.Eliminar usuario') }}
-								</a>
-							</li>
-							<li>
-								<a tabindex="-1" class="dropdown-item" href="{{ route('logout') }}"
-								onclick="event.preventDefault();
-								document.getElementById('logout-form').submit();">
-								{{ __('messages.Cerrar sesión') }}
-							</a>
-							<form id="logout-form" action="{{ route('logout') }}" method="POST" >
-								@csrf
-							</form>
-						</li>
-					</ul>
-				</a>
-			</li>
-			@endif
-			@endguest
-			<br>
-			<li class="text-center"><a href="{{route('rooms.index')}}"><i class="fa fa-question-circle fa-3x text-dark"></i></a></li>
-			<hr>
-			<li class="text-center"><a tabindex="-1" class="landingpage nav-link py-0 px-0 px-lg-0 rounded js-scroll-trigger text-dark" href="{{route('landingpage')}}">Landing Page</a></li>
-		</ul>
-	</div>
+		<div class="col-2 d-flex justify-content-center align-items-center">
+			<img src="/img/logo.png">
+		</div>
+
+		<div class="col-6 d-flex justify-content-center align-items-center">
+			<h2 style="width:auto">@yield("titulua")</h2>
+		</div>
 
 	<div class="col-1">
 		<div class="btn-group btn-group-inline">

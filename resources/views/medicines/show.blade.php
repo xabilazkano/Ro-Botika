@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('titulua', 'Medicinas')
 @section('content')
 <table class="table">
   <thead class="thead">
