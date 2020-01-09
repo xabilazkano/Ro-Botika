@@ -28,7 +28,7 @@ Route::get('/landingPage', function(){
   return view('landingpage');
 })->name('landingpage');
 
-Route::get('/admin', 'AdminContdroller@index')->name('homeAdmin');
+Route::get('/admin', 'AdminController@index')->name('homeAdmin');
 
 Route::get('/home', 'HomeController@index')->name('homeNurse');
 

@@ -9,7 +9,7 @@
 
 				<br>
 				<li class="d-flex justify-content-center align-items-center">
-					<a href="{{route('beds.index')}}" style="text-align:center"><i class="fa fa-question-circle fa-3x text-dark"></i></a>
+					<a href="" style="text-align:center"><i class="fa fa-question-circle fa-3x text-dark"></i></a>
 					<i class="fa fa-lock fa-3x text-dark" onclick="whenUserIdle()" style="text-align:center"></i>
 				</li>
 				<hr>
