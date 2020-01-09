@@ -30,7 +30,7 @@
   });
 
   // Temporizador de bloqueo de pantalla
-  var idleSeconds = 5;
+  var idleSeconds = 240;
 
   $(function(){
     var idleTimer;

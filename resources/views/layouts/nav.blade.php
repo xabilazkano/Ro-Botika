@@ -61,7 +61,10 @@
 			@endif
 			@endguest
 			<br>
-			<li class="text-center"><a href="{{route('beds.index')}}"><i class="fa fa-question-circle fa-3x text-dark"></i></a></li>
+			<li class="d-flex justify-content-center align-items-center">
+				<a href="{{route('beds.index')}}" style="text-align:center"><i class="fa fa-question-circle fa-3x text-dark"></i></a>
+				<i class="fa fa-lock fa-3x text-dark" onclick="whenUserIdle()" style="text-align:center"></i>
+			</li>
 			<hr>
 			<li class="text-center"><a tabindex="-1" class="landingpage nav-link py-0 px-0 px-lg-0 rounded js-scroll-trigger text-dark" href="{{route('landingpage')}}">Landing Page</a></li>
 		</ul>
