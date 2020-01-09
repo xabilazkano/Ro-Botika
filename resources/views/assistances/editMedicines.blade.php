@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('titulua', 'Asistencias')
 @section('content')
 <h2>Editar medicinas de asistencia {{$assistance->id}}</h2>
 @if (!is_null($assistance->medicines))

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('titulua', 'Pacientes')
 @section('content')
     <h2>Paciente {{$patient->id}}</h2>
     <ul>

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('titulua', 'Camas')
 @section('content')
 <h2 class="row">
 	<span class="col-11">Camas</span>

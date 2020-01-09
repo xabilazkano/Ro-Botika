@@ -18,7 +18,7 @@
 		</div>
 		<!-- FIN Hamburguesa -->
 
-		<div class="col-8"></div>
+		<div class="col-8">@yield("titulua")</div>
 
 		<div class="col-3 d-flex flex-row">
 			<div class="menueskubi d-flex align-items-center">

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('titulua', 'Medicinas')
 @section('content')
   <h2>Añadir medicina</h2>
   <form class="" action="{{route('adminMedicines.store')}}" method="post">

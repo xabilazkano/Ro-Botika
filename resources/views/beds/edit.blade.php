@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('titulua', 'Camas')
 @section('content')
 <div class="col-md-14 text-center">
 	<form action="{{route('adminBeds.update',$id)}}" method="post">

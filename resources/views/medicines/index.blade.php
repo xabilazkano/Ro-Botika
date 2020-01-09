@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('titulua', 'Medicinas')
 @section('content')
 <h2 class="row">
   <span class="col-11">Medicinas</span>
