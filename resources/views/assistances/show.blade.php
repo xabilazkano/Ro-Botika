@@ -1,20 +1,22 @@
 @extends('layouts.app')
-
+@section('titulua', 'Asistencias')
 @section('content')
 <h2>Asistencia</h2>
-<table>
-	<tr>
-		<th>Id</th>
-		<th>Nombre del paciente</th>
-		<th>Nombre de la enfermera</th>
-		<th>Fecha</th>
-		<th>Medicinas</th>
-		<th>Confirmado</th>
-	</tr>
+<table class="table">
+	<thead class="thead">
+		<tr>
+			<th>Id</th>
+			<th>Nombre del paciente</th>
+			<th>Nombre de la enfermera</th>
+			<th>Fecha</th>
+			<th>Medicinas</th>
+			<th>Confirmado</th>
+		</tr>
+	</thead>
 	<tr>
 		<td>{{$assist->id}}</td>
 		<td>{{$assist->patient->name}}</td>
-		<td>{{$assist->nurse_id}}</td>
+		<td>{{$assist->user->name}} {{$assist->user->lastname}}</td>
 		<td>{{$assist->estimated_date}}</td>
 		<td>
 			@foreach ($assist->medicines as $medicine)
@@ -32,10 +34,15 @@
 </table><br><br>
 
 @if (is_null($assist->confirmed))
-¿Quieres confirmar la asistencia?
+
 <form action="{{route('confirmAssist',$assist->id)}}" method="post">
 	@csrf
-	<input type="submit" value="Confirmar">
+	<div class="form-group row mb-0">
+		<div class="col-md-6 offset-md-4">
+			<input type="submit" class="btn btn-primary"
+			value="Confirmar asistencia">
+		</div>
+	</div>
 </form>
 @endif
 

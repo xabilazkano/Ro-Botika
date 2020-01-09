@@ -1,8 +1,7 @@
 @extends('layouts.app')
-
+@section('titulua', 'Asistencias')
 @section('content')
 <h2 class="row">
-	<span class="col-11">Asistencias</span>
 	@if (Auth::user()->hasRole("admin"))
 	<a href="{{route('adminAssistances.create')}}" class="col-1"><i class="fa fa-plus"></i></a>
 	@endif
@@ -27,7 +26,7 @@
 	<tr>
 		<td>{{$assist->id}}</td>
 		<td>{{$assist->patient->name}}</td>
-		<td>{{$assist->user->name}}</td>
+		<td>{{$assist->user->name}} {{$assist->user->lastname}}</td>
 		<td>{{$assist->estimated_date}}</td>
 		<td>
 			@foreach ($assist->medicines as $medicine)

@@ -1,12 +1,11 @@
 @extends('layouts.app')
-@section('titulua', 'Asistencias')
 @section('content')
-<h2>Editar asistencia {{$assistance->id}}</h2>
-<form id="editAssist" method="POST" action="{{route('adminAssistances.update',$assistance->id)}}">
+<h2>Añadir asistencia</h2>
+<form id="addAssist" method="POST" action="{{route('adminAssistances.store')}}">
   @csrf
-  @method ('put')
   <div class="form-group row">
     <label for="patient" class="col-md-4 col-form-label text-md-right">Nombre del paciente</label>
+
     <div class="col-md-6">
       <select class="form-control @error('patient') is-invalid @enderror" name="patient">
         @foreach ($patients as $patient)
@@ -49,15 +48,26 @@
       @enderror
     </div>
   </div>
-  <div class="form-group row mb-0">
-    <div class="col-md-6 offset-md-4 text-center">
-      <a href="{{route('assistMedicines.edit',$assistance->id)}}">Editar medicinas</a><br><br>
+  <div class="form-group row">
+    <label for="medicine" class="col-md-4 col-form-label text-md-right">Medicinas</label>
+    <div class="col-md-6">
+      <select multiple class="form-control @error('medicines') is-invalid @enderror" name="medicines[]">
+        @foreach ($medicines as $medicine)
+        <option value="{{$medicine->id}}">{{$medicine->name}}{{$medicine->surname}}</option>
+        @endforeach
+      </select>
+
+      @error('medicines')
+      <span class="invalid-feedback" role="alert">
+        <strong>{{ $message }}</strong>
+      </span>
+      @enderror
     </div>
   </div>
   <div class="form-group row mb-0">
     <div class="col-md-6 offset-md-4">
       <input type="submit" class="btn btn-primary"
-      value="Editar">
+      value="Añadir">
     </div>
   </div>
 
