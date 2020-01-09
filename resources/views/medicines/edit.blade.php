@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('titulua', 'Medicinas')
 @section('content')
 <div class="col-md-14 text-center">
 	<form class="" action="{{route('adminMedicines.update',$medicine->id)}}" method="post">

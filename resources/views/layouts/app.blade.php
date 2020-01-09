@@ -8,7 +8,7 @@
     <p class="blockparrafo">Ro-Botika &copy;	2019-2020	<br> help@robotika.eus . +34 654 234 673</p>
   </div>
 
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-12 content">
         @include('layouts.nav')
