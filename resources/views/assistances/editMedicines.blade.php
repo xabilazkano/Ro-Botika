@@ -2,17 +2,20 @@
 @section('content')
 <h2>Editar medicinas de asistencia {{$assistance->id}}</h2>
 @if (!is_null($assistance->medicines))
-<table>
-	<tr>
-		<th>Id</th>
-	</tr>
+<table class="table">
+	<thead class="thead">
+		<tr>
+			<th>Id</th>
+			<th></th>
+		</tr>
+	</thead>
 	@foreach($assistance->medicines as $medicine)
 	<tr>
 		<td>{{$medicine->name}}</td>
 		<td>
 			<form method="post" action="{{route('medicineDestroy',[$assistance->id,$medicine->id])}}">
 				@csrf
-				<button type="submit" id="deleteIcon">
+				<button type="submit" class="deleteIcon">
 					<i class="fa fa-trash-o"></i>
 				</button>
 			</form>
@@ -24,15 +27,15 @@
 <form id="editAssist" method="POST" action="{{route('medicineAdd',$assistance->id)}}">
 	@csrf
 	<div class="form-group row">
-		<label for="medicine" class="col-md-4 col-form-label text-md-right">Nombre del medicamento</label>
+		<label for="medicine" class="col-md-4 col-form-label text-md-right">Medicinas</label>
 		<div class="col-md-6">
-			<select class="form-control @error('medicine') is-invalid @enderror" name="medicine">
+			<select multiple class="form-control @error('medicines') is-invalid @enderror" name="medicines[]">
 				@foreach ($medicines as $medicine)
 				<option value="{{$medicine->id}}">{{$medicine->name}}{{$medicine->surname}}</option>
 				@endforeach
 			</select>
 
-			@error('medicine')
+			@error('medicines')
 			<span class="invalid-feedback" role="alert">
 				<strong>{{ $message }}</strong>
 			</span>
@@ -40,10 +43,10 @@
 		</div>
 	</div>
 	<div class="form-group row mb-0">
-    <div class="col-md-6 offset-md-4">
-      <input type="submit" class="btn btn-primary"
-      value="Añadir medicina">
-    </div>
-  </div>
+		<div class="col-md-6 offset-md-4">
+			<input type="submit" class="btn btn-primary"
+			value="Añadir medicina">
+		</div>
+	</div>
 </form>
 @endsection

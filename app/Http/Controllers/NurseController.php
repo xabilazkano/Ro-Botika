@@ -37,6 +37,13 @@ class NurseController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'lastname' => 'required',
+            'email' => 'required|email',
+            'phone_number' => 'required|integer|digits:9'
+        ]);
+
         $nurse = new User;
 
         $nurse->name = $request->input('name');
@@ -61,7 +68,7 @@ class NurseController extends Controller
     {
         $nurse = User::find($id);
 
-        return view('nurses.edit',['nurse' => $nurse]);
+        return view('nurses.show',['nurse' => $nurse]);
     }
 
     /**
@@ -75,7 +82,7 @@ class NurseController extends Controller
       $nurse = User::find($id);
 
       return view('nurses.edit',['nurse' => $nurse]);
-    }
+  }
 
     /**
      * Update the specified resource in storage.
@@ -86,6 +93,13 @@ class NurseController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'lastname' => 'required',
+            'email' => 'required|email',
+            'phone_number' => 'required|integer|digits:9'
+        ]);
+        
         $nurse = User::find($id);
 
         $nurse->name = $request->input('name');

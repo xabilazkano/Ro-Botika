@@ -37,6 +37,12 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'ss_number' => 'required|integer|digits:11',
+            'name' => 'required',
+            'lastname' => 'required',
+            'disease' => 'required'
+        ]);
         $patient = new Patient;
 
         $patient->ss_number = $request->input('ss_number');
@@ -86,6 +92,12 @@ class PatientController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validatedData = $request->validate([
+            'ss_number' => 'required|integer|digits:11',
+            'name' => 'required',
+            'lastname' => 'required',
+            'disease' => 'required'
+        ]);
         $patient = Patient::find($id);
 
         $patient->ss_number = $request->input('ss_number');
