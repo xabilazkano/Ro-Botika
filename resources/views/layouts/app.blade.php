@@ -15,13 +15,30 @@
   </div>
 
   <script>
-    $(document).ready(function(){
-      $('.dropdown-submenu a.test').on("click", function(e){
-        $(this).next('ul').toggle();
-        e.stopPropagation();
-        e.preventDefault();
-      });
+  $(document).ready(function(){
+    $('.dropdown-submenu a.test').on("click", function(e){
+      $(this).next('ul').toggle();
+      e.stopPropagation();
+      e.preventDefault();
     });
+  });
+
+  // Temporizador de bloqueo de pantalla
+  var idleSeconds = 120;
+
+  $(function(){
+    var idleTimer;
+    function resetTimer(){
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(whenUserIdle,idleSeconds*1000);
+    }
+    $(document.body).bind('mousemove keydown click',resetTimer); //space separated events list that we want to monitor
+    resetTimer(); // Start the timer when the page loads
+  });
+
+  function whenUserIdle(){
+    console.log('idle');
+  }
   </script>
 
 </body>
