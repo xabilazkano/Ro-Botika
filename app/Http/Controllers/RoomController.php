@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Bed;
+use App\Room;
 
-class BedController extends Controller
+class RoomController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class BedController extends Controller
      */
     public function index()
     {
-        $beds = Bed::all();
-        return view('beds.index',['beds'=>$beds]);
+        $rooms = Room::all();
+        return view('rooms.index',['rooms'=>$rooms]);
     }
 
     /**
@@ -25,7 +25,7 @@ class BedController extends Controller
      */
     public function create()
     {
-        return view('beds.create');
+        return view('rooms.create');
     }
 
     /**
@@ -36,13 +36,20 @@ class BedController extends Controller
      */
     public function store(Request $request)
     {
+
+        $validatedData = $request->validate([
+            'floor' => 'required|integer',
+            'room' => 'required|integer',
+            'beds' => 'required|integer'
+        ]);
+
         $floor = $request->input('floor');
         $room = $request->input('room');
-        $bed = $request->input('bed');
+        $beds = $request->input('beds');
 
-        Bed::insert(['floor'=>$floor,'room'=>$room,'bed'=>$bed]);
-        $beds = Bed::all();
-        return view('beds.index',['beds'=>$beds]);
+        room::insert(['floor'=>$floor,'room_number'=>$room,'beds'=>$beds]);
+        $rooms = Room::all();
+        return view('rooms.index',['rooms'=>$rooms]);
     }
 
     /**
@@ -53,8 +60,8 @@ class BedController extends Controller
      */
     public function show($id)
     {
-        $bed = Bed::find($id);
-        return view('beds.show',['bed'=>$bed]);
+        $room = Room::find($id);
+        return view('rooms.show',['room'=>$room]);
     }
 
     /**
@@ -65,7 +72,8 @@ class BedController extends Controller
      */
     public function edit($id)
     {
-        return view('beds.edit',['id'=>$id]);
+        $room = Room::find($id);
+        return view('rooms.edit',['id'=>$id,'room'=>$room]);
     }
 
     /**
@@ -77,13 +85,18 @@ class BedController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validatedData = $request->validate([
+            'floor' => 'required|integer',
+            'room' => 'required|integer',
+            'beds' => 'required|integer'
+        ]);
         $floor = $request->input('floor');
         $room = $request->input('room');
-        $bed = $request->input('bed');
+        $beds = $request->input('beds');
 
-        Bed::where('id',$id)->update(['floor'=>$floor,'room'=>$room,'bed'=>$bed]);
-        $beds = Bed::all();
-        return view('beds.index',['beds'=>$beds]);
+        Room::where('id',$id)->update(['floor'=>$floor,'room_number'=>$room,'beds'=>$beds]);
+        $rooms = Room::all();
+        return view('rooms.index',['rooms'=>$rooms]);
     }
 
     /**
@@ -94,8 +107,8 @@ class BedController extends Controller
      */
     public function destroy($id)
     {
-        Bed::where('id',$id)->delete();
-        $beds = Bed::all();
-        return view('beds.index',['beds'=>$beds]);
+        Room::where('id',$id)->delete();
+        $rooms = room::all();
+        return view('rooms.index',['rooms'=>$rooms]);
     }
 }

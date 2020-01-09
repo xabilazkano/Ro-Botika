@@ -34,20 +34,21 @@ Route::get('/home', 'HomeController@index')->name('homeNurse');
 
 Route::group(['middleware' => ['auth','verified']], function(){
   Route::resource('patients','PatientController')->only(['index','show']);
-  Route::resource('beds','BedController')->only(['index','show']);
+  Route::resource('rooms','RoomController')->only(['index','show']);
   Route::resource('assistances','AssistanceController')->only(['index','show']);
   Route::resource('medicines','MedicineController')->only(['index','show']);
 });
 
 Route::group(['middleware' => ['role']], function () {
   Route::resource('adminPatients','PatientController')->only(['create','store','edit','update','destroy']);
-  Route::resource('adminBeds','BedController')->only(['create','store','edit','update','destroy']);
+  Route::resource('adminRooms','RoomController')->only(['create','store','edit','update','destroy']);
   Route::resource('adminAssistances','AssistanceController')->only(['create','store','edit','update','destroy']);
   Route::resource('adminMedicines','MedicineController')->only(['create','store','edit','update','destroy']);
   Route::resource('adminNurses','NurseController');
   Route::resource('assistMedicines', 'AssistanceMedicineController')->only(['edit']);
   Route::post('/medicineDestroy/{id}/{medicine}', 'AssistanceMedicineController@destroy')->name('medicineDestroy');
-  Route::post('/medicineAdd/{id}', 'AssistanceMedicineController@store')->name('medicineAdd');
+  Route::post('/medicineAdd/{id}', 'AssistanceMedicineController@add')->name('medicineAdd');
+
 });
 
 Route::post('confirm/{id}','AssistanceController@confirmAssist')->name('confirmAssist');

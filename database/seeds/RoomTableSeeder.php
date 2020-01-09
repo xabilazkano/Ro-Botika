@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Bed;
+use App\Room;
 
-class BedsTableSeeder extends Seeder
+class RoomTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,8 +12,8 @@ class BedsTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0;$i<20;$i++){
-          factory(Bed::class)->create();
-        }
+    	for ($i=0;$i<20;$i++){
+    		factory(Room::class)->create();
+    	}
     }
 }
