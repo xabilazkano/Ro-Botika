@@ -15,8 +15,11 @@ class MedicineController extends Controller
     public function index()
     {
         $medicines = Medicine::all();
-
-        return view('medicines.index',['medicines'=>$medicines]);
+        if (auth()->getUser()->hasRole("admin")) {
+          return view ('admin.medicines.index',['medicines' => $medicines]);
+        }else{
+          return view ('medicines.index',['medicines' => $medicines]);
+        }
     }
 
     /**

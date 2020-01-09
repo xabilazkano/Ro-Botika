@@ -41,7 +41,7 @@ class ContactController extends Controller
         $message = $request->message;
 
         Message::insert(['name'=>$name,'email'=>$email,'message'=>$message]);
-        return view('welcome');
+        return view('admin');
     }
 
     /**

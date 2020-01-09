@@ -17,9 +17,12 @@ class AssistanceController extends Controller
      */
     public function index()
     {
-        $assistances = Assistance::all();
-
+      $assistances = Assistance::all();
+      if (auth()->getUser()->hasRole("admin")) {
+        return view ('admin.assistances.index',['assistances' => $assistances]);
+      }else{
         return view ('assistances.index',['assistances' => $assistances]);
+      }
     }
 
     /**
@@ -67,7 +70,7 @@ class AssistanceController extends Controller
         $assistance = Assistance::find($id);
         $patients = Patient::all();
         $nurses = User::where('type_of_user','standar')->get();
-        
+
         return view('assistances.edit',['assistance'=>$assistance,'patients'=>$patients,'nurses'=>$nurses]);
     }
 
@@ -114,5 +117,5 @@ class AssistanceController extends Controller
         return view ('assistances.index',['assistances' => $assistances]);
     }
 
-   
+
 }

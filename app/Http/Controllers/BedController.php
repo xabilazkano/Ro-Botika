@@ -14,8 +14,12 @@ class BedController extends Controller
      */
     public function index()
     {
-        $beds = Bed::all();
-        return view('beds.index',['beds'=>$beds]);
+      $beds = Bed::all();
+      if (auth()->getUser()->hasRole("admin")) {
+        return view ('admin.beds.index',['beds' => $beds]);
+      }else{
+        return view ('beds.index',['beds' => $beds]);
+      }
     }
 
     /**

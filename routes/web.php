@@ -1,8 +1,8 @@
 <?php
 
-Route::get('/', function () {
-    return view('home');
-})->name('welcome')->middleware('auth','verified');
+Route::get('/', 'AdminController@index')->name('homeAdmin');
+
+Route::get('/home', 'HomeController@index')->name('homeNurse');
 
 Route::get('/registerform', function (){
 	return view('auth.register');
@@ -27,10 +27,6 @@ Route::get('/verify', 'Auth\RegisterController@index')->name('verify');
 Route::get('/landingPage', function(){
   return view('landingpage');
 })->name('landingpage');
-
-Route::get('/admin', 'AdminController@index')->name('homeAdmin');
-
-Route::get('/home', 'HomeController@index')->name('homeNurse');
 
 Route::group(['middleware' => ['auth','verified']], function(){
   Route::resource('patients','PatientController')->only(['index','show']);

@@ -16,7 +16,7 @@ class NurseController extends Controller
     {
         $nurses = User::all()->where('type_of_user','nurse');
 
-        return view('nurses.index',['nurses' => $nurses]);
+        return view('admin.nurses.index',['nurses' => $nurses]);
     }
 
     /**
@@ -26,7 +26,7 @@ class NurseController extends Controller
      */
     public function create()
     {
-        return view('nurses.create');
+        return view('admin.nurses.create');
     }
 
     /**
@@ -48,7 +48,7 @@ class NurseController extends Controller
 
         $nurses = User::all()->where('type_of_user','nurse');
 
-        return view('nurses.index',['nurses' => $nurses]);
+        return view('admin.nurses.index',['nurses' => $nurses]);
     }
 
     /**
@@ -61,7 +61,7 @@ class NurseController extends Controller
     {
         $nurse = User::find($id);
 
-        return view('nurses.edit',['nurse' => $nurse]);
+        return view('admin.nurses.edit',['nurse' => $nurse]);
     }
 
     /**
@@ -74,7 +74,7 @@ class NurseController extends Controller
     {
       $nurse = User::find($id);
 
-      return view('nurses.edit',['nurse' => $nurse]);
+      return view('admin.nurses.edit',['nurse' => $nurse]);
     }
 
     /**
@@ -97,7 +97,7 @@ class NurseController extends Controller
 
         $nurses = User::all()->where('type_of_user','nurse');
 
-        return view('nurses.index',['nurses' => $nurses]);
+        return view('admin.nurses.index',['nurses' => $nurses]);
     }
 
     /**
@@ -112,6 +112,6 @@ class NurseController extends Controller
 
         $nurses = User::all()->where('type_of_user','nurse');
 
-        return view('nurses.index',['nurses' => $nurses]);
+        return view('admin.nurses.index',['nurses' => $nurses]);
     }
 }
