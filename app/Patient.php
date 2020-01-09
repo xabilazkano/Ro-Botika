@@ -10,7 +10,7 @@ class Patient extends Model
     return $this->hasMany('App\Assistance');
   }
 
-  public function beds(){
-    return $this->hasMany('App\Bed');
+  public function rooms(){
+    return $this->hasMany('App\Room');
   }
 }

@@ -1,15 +1,22 @@
 @extends('layouts.app')
 @section('content')
-    <h2>Paciente {{$patient->id}}</h2>
-    <ul>
-      <li>Id: {{$patient->id}}</li>
-      <li>Número de la seguridad social: {{$patient->ss_number}}</li>
-      <li>Nombre: {{$patient->name}}</li>
-      <li>Apellidos: {{$patient->lastname}}</li>
-      <li>Enfermedad: {{$patient->disease}}</li>
-      @if (Auth::user()->hasRole("admin"))
-        <li><a href="{{route('adminPatients.edit',$patient->id)}}">Edit</a></li>
-        <li><a href="{{route('adminPatients.destroy',$patient->id)}}">Destroy</a></li>
-      @endif
-    </ul>
+<h2>Paciente {{$patient->id}}</h2>
+<table class="table">
+  <thead class="thead">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Número S.S.</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">Enfermedad</th>
+    </tr>
+  </thead>
+  <tr>
+    <td scope="row">{{$patient->id}}</td>
+    <td>{{$patient->ss_number}}</td>
+    <td>{{$patient->name}}</td>
+    <td>{{$patient->lastname}}</td>
+    <td>{{$patient->disease}}</td>
+  </th>
+</table><br><br>
 @endsection

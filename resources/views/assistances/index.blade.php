@@ -27,7 +27,7 @@
 	<tr>
 		<td>{{$assist->id}}</td>
 		<td>{{$assist->patient->name}}</td>
-		<td>{{$assist->user->name}}</td>
+		<td>{{$assist->user->name}} {{$assist->user->lastname}}</td>
 		<td>{{$assist->estimated_date}}</td>
 		<td>
 			@foreach ($assist->medicines as $medicine)

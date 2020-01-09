@@ -1,11 +1,8 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Message;
 use App\Http\Requests\Validation;
-
 class ContactController extends Controller
 {
     /**
@@ -17,7 +14,6 @@ class ContactController extends Controller
     {
         //
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -27,7 +23,6 @@ class ContactController extends Controller
     {
         //
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -39,11 +34,9 @@ class ContactController extends Controller
         $name = $request->input('name');
         $email = $request->input('email');
         $message = $request->message;
-
         Message::insert(['name'=>$name,'email'=>$email,'message'=>$message]);
         return view('welcome');
     }
-
     /**
      * Display the specified resource.
      *
@@ -54,7 +47,6 @@ class ContactController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -65,7 +57,6 @@ class ContactController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -77,7 +68,6 @@ class ContactController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *

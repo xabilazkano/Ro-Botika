@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBedsPatientsTable extends Migration
+class CreatePatientsRoomsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateBedsPatientsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bed_patient', function (Blueprint $table) {
-            $table->unsignedBigInteger('bed_id');
-            $table->foreign('bed_id')->references('id')->on('beds')->onDelete('cascade');
+        Schema::create('patient_room', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('room_id');
+            $table->foreign('room_id')->references('id')->on('rooms')->onDelete('cascade');
             $table->unsignedBigInteger('patient_id');
             $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
             $table->date('up_date');
@@ -31,6 +32,6 @@ class CreateBedsPatientsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('beds_patients');
+        Schema::dropIfExists('patients_rooms');
     }
 }
