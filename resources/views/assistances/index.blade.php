@@ -10,11 +10,11 @@
 	<thead class="thead">
 		<tr>
 			<th>Id</th>
-			<th>Nombre del paciente</th>
-			<th>Nombre de la enfermera</th>
-			<th>Fecha</th>
-			<th>Medicinas</th>
-			<th>Confirmado</th>
+			<th>{{__('messages.Paciente')}}</th>
+			<th>{{__('messages.Enfermera')}}</th>
+			<th>{{__('messages.Fecha')}}</th>
+			<th>{{__('messages.Medicinas')}}</th>
+			<th>{{__('messages.Confirmado')}}</th>
 			<th></th>
 			@if (Auth::user()->hasRole("admin"))
 			<th></th>
@@ -25,8 +25,8 @@
 	@foreach ($assistances as $assist)
 	<tr>
 		<td>{{$assist->id}}</td>
-		<td>{{$assist->patient->name}}  {{$assist->patient->lastname}}</td>
-		<td>{{$assist->user->name}} {{$assist->user->lastname}}</td>
+		<td>{{$assist->patient->name}} {{$assist->patient->lastname}}</td>
+		<td>{{$assist->user->name}}</td>
 		<td>{{$assist->estimated_date}}</td>
 		<td>
 			@foreach ($assist->medicines as $medicine)

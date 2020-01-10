@@ -5,24 +5,22 @@
 	<div class="col-1">
 		<a href="{{route('assistances.index')}}"><i class="fa fa-arrow-left fa-2x text-dark"></i></a>
 	</div>
-	<div class="col-11">
-		<h2>Asistencia</h2>
-	</div>
+
 </div>
 <table class="table">
 	<thead class="thead">
 		<tr>
 			<th>Id</th>
-			<th>Nombre del paciente</th>
-			<th>Nombre de la enfermera</th>
-			<th>Fecha</th>
-			<th>Medicinas</th>
-			<th>Confirmado</th>
+			<th>{{__('messages.Paciente')}}</th>
+			<th>{{__('messages.Enfermera')}}</th>
+			<th>{{__('messages.Fecha')}}</th>
+			<th>{{__('messages.Medicinas')}}</th>
+			<th>{{__('messages.Confirmado')}}</th>
 		</tr>
 	</thead>
 	<tr>
 		<td>{{$assist->id}}</td>
-		<td>{{$assist->patient->name}}  {{$assist->patient->lastname}}</td>
+		<td>{{$assist->patient->name}} {{$assist->patient->lastname}}</td>
 		<td>{{$assist->user->name}} {{$assist->user->lastname}}</td>
 		<td>{{$assist->estimated_date}}</td>
 		<td>
@@ -41,14 +39,12 @@
 </table><br><br>
 
 @if (is_null($assist->confirmed))
-
 <form action="{{route('confirmAssist',$assist->id)}}" method="post">
 	@csrf
-	<div class="form-group row mb-0">
-		<div class="col-md-6 offset-md-4">
-			<input type="submit" class="btn btn-primary"
-			value="Confirmar asistencia">
-		</div>
+
+	<div class="col-md-6 offset-md-5">
+		<input type="submit" class="btn btn-primary"
+		value="{{__('messages.Confirmar asistencia')}}">
 	</div>
 </form>
 @endif

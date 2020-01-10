@@ -5,8 +5,8 @@
   <thead class="thead">
     <tr>
       <th>Id</th>
-      <th>Nombre</th>
-      <th>Cantidad</th>
+      <th>{{__('messages.Nombre')}}</th>
+      <th>{{__('messages.Cantidad')}}</th>
       <th></th>
       @if (Auth::user()->hasRole("admin"))
       <th></th>
