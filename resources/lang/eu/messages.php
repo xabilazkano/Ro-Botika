@@ -43,9 +43,13 @@
       'Panel de administrador' => 'Administradore panela',
       'Panel estándar' => 'Panel estandarra',
       'pacientes' => 'GAIXOAK',
+      'pacientesm' => 'Gaixoak',
       'numeross' => 'S.S. Zenbakia',
       'enfermedad' => 'Gaixotasuna',
       'paciente' => 'Gaixoa',
-      'habitaciones' => 'GELAK'
+      'habitaciones' => 'GELAK',
+      'planta' => 'Solairua',
+      'numerohabitacion' => 'Gela zenbakia',
+      'camas' => 'Oheak'
   ];
 ?>

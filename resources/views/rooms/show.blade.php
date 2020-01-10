@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('titulua', 'Habitaciones')
+@section('titulua', __('messages.habitaciones'))
 @section('content')
 <div class="row">
 	<div class="col-1">
@@ -14,9 +14,9 @@
 		<thead class="thead">
 			<tr>
 				<th>Id</th>
-				<th>Planta</th>
-				<th>Habitación</th>
-				<th>Camas</th>
+				<th>{{__('messages.planta')}}</th>
+				<th>{{__('messages.numerohabitacion')}}</th>
+				<th>{{__('messages.camas')}}</th>
 				<th></th>
 			</tr>
 		</thead>

@@ -43,9 +43,13 @@
       'Panel de administrador' => 'Panel de administrador',
       'Panel estándar' => 'Panel estándar',
       'pacientes' => 'PACIENTES',
+      'pacientesm' => 'Pacientes',
       'numeross' => 'Numero S.S.',
       'enfermedad' => 'Enfermedad',
       'paciente' => 'Paciente',
-      'habitaciones' => 'HABITACIONES'
+      'habitaciones' => 'HABITACIONES',
+      'planta' => 'Planta',
+      'numerohabitacion' => 'Numero de habitacion',
+      'camas' => 'Camas'
   ];
 ?>

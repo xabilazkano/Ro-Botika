@@ -1,14 +1,14 @@
 @extends('layouts.app')
-@section('titulua', 'Habitaciones')
+@section('titulua', __('messages.habitaciones'))
 @section('content')
 <table class="table">
 	<thead class="thead">
 		<tr>
 			<th>ID</th>
-			<th>Floor</th>
-			<th>Room Number</th>
-			<th>Beds</th>
-			<th>Patients</th>
+			<th>{{__('messages.planta')}}</th>
+			<th>{{__('messages.numerohabitacion')}}</th>
+			<th>{{__('messages.camas')}}</th>
+			<th>{{__('messages.pacientesm')}}</th>
 			<th></th>
 			@if (Auth::user()->hasRole("admin"))
 			<th></th>
