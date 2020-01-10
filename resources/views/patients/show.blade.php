@@ -19,5 +19,5 @@
     <td>{{$patient->lastname}}</td>
     <td>{{$patient->disease}}</td>
   </th>
-</table><br><br>
+</table>
 @endsection

@@ -54,4 +54,5 @@
 			value="Editar">
 		</div>
 	</div>
-	@endsection
+</form>
+@endsection
