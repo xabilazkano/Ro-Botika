@@ -34,7 +34,7 @@ class AssistanceController extends Controller
         $patients = Patient::all();
         $medicines = Medicine::all();
         $nurses = User::where('type_of_user','nurse')->get();
-        return view('assistances.create',['patients'=>$patients,'nurses'=>$nurses,'medicines'=>$medicines]);
+        return view('admin.assistances.create',['patients'=>$patients,'nurses'=>$nurses,'medicines'=>$medicines]);
     }
     /**
     * Store a newly created resource in storage.
@@ -76,8 +76,14 @@ class AssistanceController extends Controller
     public function show($id)
     {
         $assist = Assistance::find($id);
-        return view ('assistances.show',['assist'=>$assist]);
-    }
+        if (auth()->getUser()->hasRole("admin")) {
+          return view ('admin.assistances.show',['assist'=>$assist]);
+        }else{
+          return view ('assistances.show',['assist'=>$assist]);
+        }
+      }
+
+
     /**
     * Show the form for editing the specified resource.
     *
@@ -90,8 +96,9 @@ class AssistanceController extends Controller
         $assistance = Assistance::find($id);
         $patients = Patient::all();
         $nurses = User::where('type_of_user','nurse')->get();
+        return view('admin.assistances.edit',['assistance'=>$assistance,'patients'=>$patients,'nurses'=>$nurses]);
 
-        return view('assistances.edit',['assistance'=>$assistance,'patients'=>$patients,'nurses'=>$nurses]);
+
     }
     /**
     * Update the specified resource in storage.
@@ -114,7 +121,7 @@ class AssistanceController extends Controller
         $assistance->id = $id;
         $assistance->save();
         $assistances = Assistance::all();
-        return view ('assistances.index',['assistances' => $assistances]);
+        return redirect()->route('assistances.index');
     }
     /**
     * Remove the specified resource from storage.
@@ -126,12 +133,13 @@ class AssistanceController extends Controller
     {
         Assistance::where('id',$id)->delete();
         $assistances = Assistance::all();
-        return view ('assistances.index',['assistances' => $assistances]);
+        return redirect()->route('assistances.index');
     }
     public function confirmAssist($id)
     {
         Assistance::where('id',$id)->update(['confirmed'=>1]);
         $assistances = Assistance::all();
-        return view ('assistances.index',['assistances' => $assistances]);
+        return redirect()->route('assistances.index');
+
     }
 }

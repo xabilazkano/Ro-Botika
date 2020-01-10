@@ -20,3 +20,33 @@
 .height-max{
   height:100%;
 }
+
+.blackIcon{
+  color:black;
+  font-size: 2em;
+}
+
+.confirm{
+  color: green;
+  font-size: 2em;
+}
+
+.deleteIcon{
+  background: none;
+  padding: 0px;
+  border: none;
+  color: red;
+  font-size: 2em;
+}
+
+table {
+  text-align: center;
+}
+
+tr{
+  height: 100%;
+}
+
+td{
+  vertical-align: middle;
+}

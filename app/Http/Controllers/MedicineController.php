@@ -25,7 +25,7 @@ class MedicineController extends Controller
     */
     public function create()
     {
-        return view('medicines.create');
+        return view('admin.medicines.create');
     }
     /**
     * Store a newly created resource in storage.
@@ -45,7 +45,7 @@ class MedicineController extends Controller
         $medicine->amount = intval($request->input('amount'));
         $medicine->save();
         $medicines = Medicine::all();
-        return view('medicines.index',['medicines'=>$medicines]);
+        return redirect()->route('medicines.index');
     }
     /**
     * Display the specified resource.
@@ -56,7 +56,12 @@ class MedicineController extends Controller
     public function show($id)
     {
         $medicine = Medicine::find($id);
-        return view('medicines.show',['medicine'=>$medicine]);
+        if (auth()->getUser()->hasRole("admin")) {
+          return view('admin.medicines.show',['medicine'=>$medicine]);
+        }else{
+          return view('medicines.show',['medicine'=>$medicine]);
+        }
+
     }
     /**
     * Show the form for editing the specified resource.
@@ -67,7 +72,7 @@ class MedicineController extends Controller
     public function edit($id)
     {
         $medicine = Medicine::find($id);
-        return view('medicines.edit',['medicine'=>$medicine]);
+        return view('admin.medicines.edit',['medicine'=>$medicine]);
     }
     /**
     * Update the specified resource in storage.
@@ -87,8 +92,7 @@ class MedicineController extends Controller
         $medicine->name = $request->input('name');
         $medicine->amount = intval($request->input('amount'));
         $medicine->save();
-        $medicines = Medicine::all();
-        return view('medicines.index',['medicines' => $medicines]);
+        return redirect()->route('medicines.index');
     }
     /**
     * Remove the specified resource from storage.
@@ -99,7 +103,6 @@ class MedicineController extends Controller
     public function destroy($id)
     {
         Medicine::find($id)->delete();
-        $medicines = Medicine::all();
-        return view('medicines.index',['medicines'=>$medicines]);
+        return redirect()->route('medicines.index');
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class NurseController extends Controller
 {
@@ -41,6 +42,7 @@ class NurseController extends Controller
             'name' => 'required',
             'lastname' => 'required',
             'email' => 'required|email',
+            'password' => 'required|string|min:8',
             'phone_number' => 'required|integer|digits:9'
         ]);
 
@@ -49,6 +51,7 @@ class NurseController extends Controller
         $nurse->name = $request->input('name');
         $nurse->lastname = $request->input('lastname');
         $nurse->email = $request->input('email');
+        $nurse->password = Hash::make($request->input('password'));
         $nurse->phone_number = $request->input('phone_number');
 
         $nurse->save();
@@ -68,7 +71,7 @@ class NurseController extends Controller
     {
         $nurse = User::find($id);
 
-        return view('admin.nurses.edit',['nurse' => $nurse]);
+        return view('admin.nurses.show',['nurse' => $nurse]);
     }
 
     /**
