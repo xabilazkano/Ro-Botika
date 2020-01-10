@@ -4,7 +4,7 @@
 
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pb-5">
 	<div class="table-responsive">
-		<h2>Asistencia</h2>
+		<h2>{{__('messages.Asistencia')}}</h2>
 		<table class="table">
 			<thead class="thead">
 				<tr>

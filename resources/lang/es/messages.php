@@ -12,6 +12,7 @@
       'Enviar' => 'Enviar',
       'Redes sociales' => 'Redes sociales',
       'Apellido' => 'Apellido',
+      'Apellidos' => 'Apellidos',
       'Número de teléfono' => 'Número de teléfono',
       'Tipo de usuario' => 'Tipo de usuario',
       'Eliminar usuario' => 'Eliminar usuario',
@@ -43,6 +44,7 @@
       'Panel de administrador' => 'Panel de administrador',
       'Panel estándar' => 'Panel estándar',
       'Asistencias' => 'Asistencias',
+      'Asistencia' => 'Asistencia',
       'Paciente' => 'Nombre del paciente',
       'Enfermera' => 'Enfermera',
       'Fecha' => 'Fecha',
@@ -56,5 +58,8 @@
       'Añadir medicina' => 'Añadir medicina',
       'Añadir asistencia' => 'Añadir asistencia',
       'Añadir' => 'Añadir',
+      'Enfermeros' => 'Enfermeros',
+      'Editar enfermera' => 'Editar enfermera',
+      'Añadir enfermera' => 'Añadir enfermera',
   ];
 ?>

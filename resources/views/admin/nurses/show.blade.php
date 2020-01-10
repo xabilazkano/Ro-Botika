@@ -1,15 +1,15 @@
 @extends('layoutsAdmin.app')
 @section('content')
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pb-5">
-  <h2>Enfermero {{$nurse->id}}</h2>
+  <h2>{{__('messages.Enfermera')}}</h2>
   <table class="table">
     <thead class="thead">
       <tr>
         <th>Id</th>
-        <th>Nombre</th>
-        <th>Apellidos</th>
-        <th>Email</th>
-        <th>Número de teléfono</th>
+        <th>{{__('messages.Nombre')}}</th>
+        <th>{{__('messages.Apellidos')}}</th>
+        <th>{{__('messages.Email')}}</th>
+        <th>{{__('messages.Número de teléfono')}}</th>
       </tr>
     </thead>
     <tr>

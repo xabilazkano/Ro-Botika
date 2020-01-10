@@ -11,7 +11,8 @@
       'Mensaje' => 'Message',
       'Enviar' => 'Send',
       'Redes sociales' => 'Social media',
-      'Apellido' => 'Surname',
+      'Apellido' => 'Lastname',
+      'Apellidos' => 'Lastnames',
       'Número de teléfono' => 'Telephone number',
       'Tipo de usuario' => 'Type of user',
       'Eliminar usuario' => 'Delete user',
@@ -43,6 +44,7 @@
       'Panel de administrador' => 'Administrator panel',
       'Panel estándar' => 'Standar panel',
       'Asistencias' => 'Assists',
+      'Asistencia' => 'Assist',
       'Paciente' => 'Name of the patient',
       'Enfermera' => 'Nurse',
       'Fecha' => 'Date',
@@ -56,6 +58,9 @@
       'Añadir medicina' => 'Add medicine',
       'Añadir asistencia' => 'Add a new assist',
       'Añadir' => 'Add',
+      'Enfermeros' => 'Nurses',
+      'Editar enfermera' => 'Edit nurse',
+      'Añadir enfermera' => 'Add nurse',
 
 
   ];

@@ -12,6 +12,7 @@
       'Enviar' => 'Bidali',
       'Redes sociales' => 'Sare sozialak',
       'Apellido' => 'Abizena',
+      'Apellidos' => 'Abizenak',
       'Número de teléfono' => 'Telefono zenbakia',
       'Tipo de usuario' => 'Erabiltzaile mota',
       'Eliminar usuario' => 'Erabiltzailea ezabatu',
@@ -43,6 +44,7 @@
       'Panel de administrador' => 'Administradore panela',
       'Panel estándar' => 'Panel estandarra',
       'Asistencias' => 'Asistentziak',
+      'Asistencia' => 'Asistentzia',
       'Paciente' => 'Gaixoaren izena',
       'Enfermera' => 'Erizaina',
       'Fecha' => 'Data',
@@ -56,5 +58,8 @@
       'Añadir medicina' => 'Botika gehitu',
       'Añadir asistencia' => 'Gehitu asistentzia',
       'Añadir' => 'Gehitu',
+      'Enfermeros' => 'Erizainak',
+      'Editar enfermera' => 'Erizaina editatu',
+      'Añadir enfermera' => 'Erizaina gehitu',
   ];
 ?>
