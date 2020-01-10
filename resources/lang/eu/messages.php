@@ -48,6 +48,7 @@
       'Paciente' => 'Gaixoaren izena',
       'Enfermera' => 'Erizaina',
       'Fecha' => 'Data',
+      'Medicina' => 'Botika',
       'Medicinas' => 'Botikak',
       'Confirmado' => 'Baieztatua',
       'Confirmar asistencia' => 'Asistentzia baieztatu',
@@ -61,5 +62,7 @@
       'Enfermeros' => 'Erizainak',
       'Editar enfermera' => 'Erizaina editatu',
       'Añadir enfermera' => 'Erizaina gehitu',
+      'Cantidad' => 'Kopurua',
+      'Editar medicina' => 'Botika aldatu',
   ];
 ?>

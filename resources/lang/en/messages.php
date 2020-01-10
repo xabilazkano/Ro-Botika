@@ -48,6 +48,7 @@
       'Paciente' => 'Name of the patient',
       'Enfermera' => 'Nurse',
       'Fecha' => 'Date',
+      'Medicina' => 'Medicine',
       'Medicinas' => 'Medicines',
       'Confirmado' => 'Confirmed',
       'Confirmadar asistencia' => 'Confirm assist',
@@ -61,6 +62,8 @@
       'Enfermeros' => 'Nurses',
       'Editar enfermera' => 'Edit nurse',
       'Añadir enfermera' => 'Add nurse',
+      'Cantidad' => 'Amount',
+      'Editar medicina' => 'Edit medicine',
 
 
   ];

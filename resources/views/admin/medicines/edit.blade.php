@@ -1,12 +1,12 @@
 @extends('layoutsAdmin.app')
 @section('content')
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pb-5">
-  <h2>Editar medicina {{$medicine->id}}</h2>
+  <h2>{{__('messages.Editar medicina')}}</h2>
   <form class="" action="{{route('adminMedicines.update',$medicine->id)}}" method="post">
     @csrf
     @method('put')
     <div class="form-group row">
-      <label for="name" class="col-md-4 col-form-label text-md-right">Nombre</label>
+      <label for="name" class="col-md-4 col-form-label text-md-right">{{__('messages.Nombre')}}</label>
       <div class="col-md-6">
         <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$medicine->name}}">
 
@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="form-group row">
-      <label for="amount" class="col-md-4 col-form-label text-md-right">Cantidad</label>
+      <label for="amount" class="col-md-4 col-form-label text-md-right">{{__('messages.Cantidad')}}</label>
       <div class="col-md-6">
         <input type="text" class="form-control @error('amount') is-invalid @enderror" name="amount" value="{{$medicine->amount}}">
 
@@ -32,7 +32,7 @@
     <div class="form-group row mb-0">
       <div class="col-md-6 offset-md-6">
         <input type="submit" class="btn btn-primary"
-        value="Editar">
+        value="{{__('messages.Editar')}}">
       </div>
     </div>
   </form>

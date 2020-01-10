@@ -48,6 +48,7 @@
       'Paciente' => 'Nombre del paciente',
       'Enfermera' => 'Enfermera',
       'Fecha' => 'Fecha',
+      'Medicina' => 'Medicina',
       'Medicinas' => 'Medicinas',
       'Confirmado' => 'Confirmado',
       'Confirmadar asistencia' => 'Confirmar asistencia',
@@ -61,5 +62,7 @@
       'Enfermeros' => 'Enfermeros',
       'Editar enfermera' => 'Editar enfermera',
       'Añadir enfermera' => 'Añadir enfermera',
+      'Cantidad' => 'Cantidad',
+      'Editar medicina' => 'Edit medicine',
   ];
 ?>
