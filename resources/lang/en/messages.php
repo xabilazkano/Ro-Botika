@@ -41,6 +41,12 @@
       'Inserte un número de teléfono válido' => 'Enter a valid phone number',
       'La contraseña debe contener como mínimo 8 caractéres' => 'The password must contain at least 8 characters',
       'Panel de administrador' => 'Administrator panel',
-      'Panel estándar' => 'Standar panel'
+      'Panel estándar' => 'Standar panel',
+      'pacientes' => 'PATIENTS',
+      'numeross' => 'S.S. Number',
+      'enfermedad' => 'Disease',
+      'paciente' => 'Patient',
+      'habitaciones' => 'ROOMS'
   ];
+
 ?>

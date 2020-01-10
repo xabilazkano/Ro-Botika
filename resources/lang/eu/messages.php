@@ -41,6 +41,11 @@
       'Inserte un número de teléfono válido' => 'Idatzi baliozko telefono zenbakia',
       'La contraseña debe contener como mínimo 8 caractéres' => 'Pasahitzak gutxienez 8 karaktere izan behar ditu.',
       'Panel de administrador' => 'Administradore panela',
-      'Panel estándar' => 'Panel estandarra'
+      'Panel estándar' => 'Panel estandarra',
+      'pacientes' => 'GAIXOAK',
+      'numeross' => 'S.S. Zenbakia',
+      'enfermedad' => 'Gaixotasuna',
+      'paciente' => 'Gaixoa',
+      'habitaciones' => 'GELAK'
   ];
 ?>

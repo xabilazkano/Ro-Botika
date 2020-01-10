@@ -41,6 +41,11 @@
       'Inserte un número de teléfono válido' => 'Inserte un número de teléfono válido',
       'La contraseña debe contener como mínimo 8 caractéres' => 'La contraseña debe contener como mínimo 8 caractéres',
       'Panel de administrador' => 'Panel de administrador',
-      'Panel estándar' => 'Panel estándar'
+      'Panel estándar' => 'Panel estándar',
+      'pacientes' => 'PACIENTES',
+      'numeross' => 'Numero S.S.',
+      'enfermedad' => 'Enfermedad',
+      'paciente' => 'Paciente',
+      'habitaciones' => 'HABITACIONES'
   ];
 ?>

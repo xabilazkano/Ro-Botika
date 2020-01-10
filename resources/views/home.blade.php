@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <section class="text-center">
   <div class="container d-flex align-content-around flex-wrap">
@@ -17,7 +16,7 @@
       <a href="{{route('patients.index')}}">
         <button type="button" class="botonhome btn btn-secondary d-flex flex-row justify-content-around align-items-center">
           <i class="patienticon fa fa-user"></i>
-          <h2>PACIENTES</h2>
+          <h2>{{ __('messages.pacientes')}}</h2>
         </button>
       </a>
     </div>
@@ -25,7 +24,7 @@
       <a href="{{route('rooms.index')}}">
         <button type="button" class="botonhome btn btn-secondary d-flex flex-row justify-content-around align-items-center">
           <i class="patienticon fa fa-home"></i>
-          <h2>HABITACIONES</h2>
+          <h2>{{ __('messages.habitaciones')}}</h2>
         </button>
       </a>
     </div>

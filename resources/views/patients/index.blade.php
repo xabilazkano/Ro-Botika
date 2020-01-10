@@ -1,14 +1,14 @@
 @extends('layouts.app')
-@section('titulua', 'Pacientes')
+@section('titulua', __('messages.pacientes'))
 @section('content')
 <table class="table">
   <thead class="thead">
     <tr>
       <th scope="col">Id</th>
-      <th scope="col">Número S.S.</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Apellidos</th>
-      <th scope="col">Enfermedad</th>
+      <th scope="col">{{ __('messages.numeross') }}</th>
+      <th scope="col">{{ __('messages.Nombre') }}</th>
+      <th scope="col">{{ __('messages.Apellido') }}</th>
+      <th scope="col">{{ __('messages.enfermedad') }}</th>
       <th></th>
       @if (Auth::user()->hasRole("admin"))
       <th></th>
