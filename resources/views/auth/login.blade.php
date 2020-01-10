@@ -8,14 +8,14 @@
       <div class="card-header">{{ __('messages.Iniciar sesión') }}</div>
 
       <div class="card-body">
-        <form method="POST" action="{{ route('login') }}">
+        <form id="formulariologin" method="POST" action="{{ route('login') }}">
           @csrf
 
           <div class="form-group row">
             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('messages.Email') }}</label>
 
             <div class="col-md-6">
-              <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+              <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autofocus>
 
               @error('email')
               <span class="invalid-feedback" role="alert">
@@ -29,7 +29,7 @@
             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('messages.Contraseña') }}</label>
 
             <div class="col-md-6">
-              <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+              <input id="contraseña" type="password" class="form-control @error('password') is-invalid @enderror" name="password">
 
               @error('password')
               <span class="invalid-feedback" role="alert">
@@ -52,18 +52,32 @@
 
           <div class="form-group row mb-0 col-10">
             <div class="col-md-8 offset-md-4">
-              <button type="submit" class="btn btn-primary">
-                {{ __('messages.Iniciar sesión') }}
-              </button>
-
+              <input type="submit" class="btn btn-primary" value="{{ __('messages.Iniciar sesión') }}">
               @if (Route::has('password.request'))
               <a class="btn btn-link" href="{{ route('password.request') }}">
                 {{ __('messages.¿Olvidaste tu contraseña?') }}
               </a>
               @endif
+              <input type="text" class="form-control" id="texto" style="display:none" readonly>
             </div>
           </div>
         </form>
+        <script type="text/javascript">
+          $(document).ready(function(){
+            $("#formulariologin").submit(function(){
+              var email = $('#email').val();
+              var contraseña = $('#contraseña').val();
+              console.log(email + " " + contraseña);
+              if (email === "" || contraseña === ""){
+                $("#texto").show();
+                $('#texto').val("{{__('messages.Inserte todos los campos')}}");
+                return false;
+              }else{
+                return true;
+              }
+            });
+          });
+        </script>
     </div>
     </div>
   </div>
