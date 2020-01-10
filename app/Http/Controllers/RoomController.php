@@ -14,11 +14,11 @@ class RoomController extends Controller
      */
     public function index()
     {
-      $beds = Bed::all();
+      $rooms = Room::all();
       if (auth()->getUser()->hasRole("admin")) {
-        return view ('admin.beds.index',['beds' => $beds]);
+        return view ('admin.rooms.index',['rooms' => $rooms]);
       }else{
-        return view ('beds.index',['beds' => $beds]);
+        return view ('rooms.index',['rooms' => $rooms]);
       }
     }
 
@@ -29,7 +29,7 @@ class RoomController extends Controller
      */
     public function create()
     {
-        return view('rooms.create');
+        return view('admin.rooms.create');
     }
 
     /**
@@ -51,9 +51,8 @@ class RoomController extends Controller
         $room = $request->input('room');
         $beds = $request->input('beds');
 
-        room::insert(['floor'=>$floor,'room_number'=>$room,'beds'=>$beds]);
-        $rooms = Room::all();
-        return view('rooms.index',['rooms'=>$rooms]);
+        Room::insert(['floor'=>$floor,'room_number'=>$room,'beds'=>$beds]);
+        return redirect()->route('rooms.index');
     }
 
     /**
@@ -65,7 +64,12 @@ class RoomController extends Controller
     public function show($id)
     {
         $room = Room::find($id);
-        return view('rooms.show',['room'=>$room]);
+        if (auth()->getUser()->hasRole("admin")) {
+          return view('admin.rooms.show',['room'=>$room]);
+        }else{
+          return view('rooms.show',['room'=>$room]);
+        }
+
     }
 
     /**
@@ -77,7 +81,7 @@ class RoomController extends Controller
     public function edit($id)
     {
         $room = Room::find($id);
-        return view('rooms.edit',['id'=>$id,'room'=>$room]);
+        return view('admin.rooms.edit',['id'=>$id,'room'=>$room]);
     }
 
     /**
@@ -99,8 +103,7 @@ class RoomController extends Controller
         $beds = $request->input('beds');
 
         Room::where('id',$id)->update(['floor'=>$floor,'room_number'=>$room,'beds'=>$beds]);
-        $rooms = Room::all();
-        return view('rooms.index',['rooms'=>$rooms]);
+        return redirect()->route('rooms.index');
     }
 
     /**
@@ -112,7 +115,7 @@ class RoomController extends Controller
     public function destroy($id)
     {
         Room::where('id',$id)->delete();
-        $rooms = room::all();
-        return view('rooms.index',['rooms'=>$rooms]);
+        $rooms = Room::all();
+        return redirect()->route('rooms.index');
     }
 }

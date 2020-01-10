@@ -45,7 +45,7 @@
 			<div class="menueskubi d-flex align-items-center">
 				<ul>
 					<a tabindex="-1" class="dropdown-item" href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-						<span class="caret"><i class="fa fa-arrow-right fa-2x text-dark"></i></span>
+						<span class="caret"><img src="/img/logout.png" class="logout"> </span>
 					</a>
 				<form id="logout-form" action="{{route('logout')}}" method="POST" >
 					@csrf

@@ -1,7 +1,14 @@
 @extends('layouts.app')
 @section('titulua', 'Asistencias')
 @section('content')
-<h2>Editar medicinas de asistencia {{$assistance->id}}</h2>
+<div class="row">
+	<div class="col-1">
+		<a href="{{route('assistances.index')}}"><i class="fa fa-arrow-left fa-2x text-dark"></i></a>
+	</div>
+	<div class="col-11">
+		<h2>Editar medicinas de asistencia {{$assistance->id}}</h2>
+	</div>
+</div>
 @if (!is_null($assistance->medicines))
 <table class="table">
 	<thead class="thead">

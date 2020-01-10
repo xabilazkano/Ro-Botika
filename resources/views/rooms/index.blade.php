@@ -1,11 +1,6 @@
 @extends('layouts.app')
+@section('titulua', 'Habitaciones')
 @section('content')
-<h2 class="row">
-	<span class="col-11">Habitaciones</span>
-	@if (Auth::user()->hasRole("admin"))
-	<a href="{{route('adminRooms.create')}}" class="col-1"><i class="fa fa-plus"></i></a>
-	@endif
-</h2>
 <table class="table">
 	<thead class="thead">
 		<tr>

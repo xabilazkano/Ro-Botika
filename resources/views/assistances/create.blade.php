@@ -1,6 +1,13 @@
 @extends('layouts.app')
 @section('content')
-<h2>Añadir asistencia</h2>
+<div class="row">
+	<div class="col-1">
+		<a href="{{route('assistances.index')}}"><i class="fa fa-arrow-left fa-2x text-dark"></i></a>
+	</div>
+	<div class="col-11">
+		<h2>Añadir Asistencia</h2>
+	</div>
+</div>
 <form id="addAssist" method="POST" action="{{route('adminAssistances.store')}}">
   @csrf
   <div class="form-group row">

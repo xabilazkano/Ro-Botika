@@ -13,7 +13,7 @@ class AssistanceMedicineController extends Controller
 	{
 		$medicines = Medicine::all();
 		$assistance = Assistance::find($id);
-		return view ('assistances.editMedicines',['assistance'=>$assistance,'medicines'=>$medicines]);
+		return view ('admin.assistances.editMedicines',['assistance'=>$assistance,'medicines'=>$medicines]);
 	}
 
 	public function destroy($id,$medicine)

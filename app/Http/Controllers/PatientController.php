@@ -29,7 +29,7 @@ class PatientController extends Controller
      */
     public function create()
     {
-        return view('patients.create');
+        return view('admin.patients.create');
     }
 
     /**
@@ -57,7 +57,7 @@ class PatientController extends Controller
 
         $patients = Patient::all();
 
-        return view('patients.index',['patients' => $patients]);
+        return view('admin.patients.index',['patients' => $patients]);
     }
 
     /**
@@ -69,8 +69,12 @@ class PatientController extends Controller
     public function show($id)
     {
         $patient = Patient::find($id);
+        if (auth()->getUser()->hasRole("admin")) {
+          return view('admin.patients.show',['patient'=>$patient]);
+        }else{
+          return view('patients.show',['patient'=>$patient]);
+        }
 
-        return view('patients.show',['patient'=>$patient]);
     }
 
     /**
@@ -83,7 +87,7 @@ class PatientController extends Controller
     {
         $patient = Patient::find($id);
 
-        return view('patients.edit',['patient'=>$patient]);
+        return view('admin.patients.edit',['patient'=>$patient]);
     }
 
     /**
@@ -112,7 +116,7 @@ class PatientController extends Controller
 
         $patients = Patient::all();
 
-        return view('patients.index',['patients' => $patients]);
+        return view('admin.patients.index',['patients' => $patients]);
     }
 
     /**
@@ -127,6 +131,6 @@ class PatientController extends Controller
 
         $patients = Patient::all();
 
-        return view('patients.index',['patients'=>$patients]);
+        return view('admin.patients.index',['patients'=>$patients]);
     }
 }
