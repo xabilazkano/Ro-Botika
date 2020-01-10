@@ -31,7 +31,7 @@
 		<div class="form-group row">
 			<label for="medicine" class="col-md-4 col-form-label text-md-right">Medicinas</label>
 			<div class="col-md-6">
-				<select id="medicines" multiple class="form-control @error('medicines') is-invalid @enderror" name="medicines[]">
+				<select id="medicinas" multiple class="form-control @error('medicines') is-invalid @enderror" name="medicines[]">
 					@foreach ($medicines as $medicine)
 					<option value="{{$medicine->id}}">{{$medicine->name}}{{$medicine->surname}}</option>
 					@endforeach
@@ -58,16 +58,17 @@
 </main>
 <script type="text/javascript">
 	$(document).ready(function(){
-		console.log("kaixo")
+		console.log("kaixo");
 		$("#editarAsistencia").submit(function(){
 			let medicinas = $('#medicines').val();
-			console.log("medicinas");
-			/*if (medicinas.length === 1 && medicinas[0] === ""){
+			console.log(medicinas);
+			if (medicinas === ){
 				$("#texto").show();
 				$('#texto').val("Seleccione una medicina");
 				return false;
-			}*/
-			return false;
+			}else{
+				return false;
+			}
 		});
 	});
 </script>
