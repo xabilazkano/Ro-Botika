@@ -13,7 +13,7 @@
       <div class="col-12 content">
         @include('layouts.nav')
         @include('layouts.modals')
-        <main class="py-4">
+        <main class="">
           @yield('content')
         </main>
       </div>
