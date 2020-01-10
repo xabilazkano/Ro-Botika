@@ -51,8 +51,8 @@
 			</div>
 		</div>
 		<br>
-		<div class="col-md-12 d-flex justify-content-center">
-			<p id="texto" style="display:none"></p>
+		<div class="col-md-10 d-flex justify-content-center">
+			<p class="red" id="texto" style="display:none"></p>
 		</div>
 	</form>
 </main>
@@ -62,12 +62,12 @@
 		$("#editarAsistencia").submit(function(){
 			let medicinas = $('#medicines').val();
 			console.log(medicinas);
-			if (medicinas === ){
+			if (typeof(medicinas) === "undefined"){
 				$("#texto").show();
-				$('#texto').val("Seleccione una medicina");
+				$('#texto').text("Seleccione una medicina");
 				return false;
 			}else{
-				return false;
+				return true;
 			}
 		});
 	});

@@ -71,7 +71,7 @@
         </div>
         <br>
         <div class="col-md-12 d-flex justify-content-center">
-          <p id="texto" style="display:none"></p>
+          <p class="red" id="texto" style="display:none"></p>
         </div>
       </div>
 
