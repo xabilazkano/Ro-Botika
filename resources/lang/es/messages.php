@@ -41,6 +41,20 @@
       'Inserte un número de teléfono válido' => 'Inserte un número de teléfono válido',
       'La contraseña debe contener como mínimo 8 caractéres' => 'La contraseña debe contener como mínimo 8 caractéres',
       'Panel de administrador' => 'Panel de administrador',
-      'Panel estándar' => 'Panel estándar'
+      'Panel estándar' => 'Panel estándar',
+      'Asistencias' => 'Asistencias',
+      'Paciente' => 'Nombre del paciente',
+      'Enfermera' => 'Enfermera',
+      'Fecha' => 'Fecha',
+      'Medicinas' => 'Medicinas',
+      'Confirmado' => 'Confirmado',
+      'Confirmadar asistencia' => 'Confirmar asistencia',
+      'Editar asistencia' => 'Editar asistencia',
+      'Editar medicinas' => 'Editar medicinas',
+      'Editar' => 'Editar',
+      'Editar medicinas de asistencia' => 'Editar medicinas de asistencia',
+      'Añadir medicina' => 'Añadir medicina',
+      'Añadir asistencia' => 'Añadir asistencia',
+      'Añadir' => 'Añadir',
   ];
 ?>

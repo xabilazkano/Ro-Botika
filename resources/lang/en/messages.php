@@ -41,6 +41,22 @@
       'Inserte un número de teléfono válido' => 'Enter a valid phone number',
       'La contraseña debe contener como mínimo 8 caractéres' => 'The password must contain at least 8 characters',
       'Panel de administrador' => 'Administrator panel',
-      'Panel estándar' => 'Standar panel'
+      'Panel estándar' => 'Standar panel',
+      'Asistencias' => 'Assists',
+      'Paciente' => 'Name of the patient',
+      'Enfermera' => 'Nurse',
+      'Fecha' => 'Date',
+      'Medicinas' => 'Medicines',
+      'Confirmado' => 'Confirmed',
+      'Confirmadar asistencia' => 'Confirm assist',
+      'Editar asistencia' => 'Edit assist',
+      'Editar medicinas' => 'Edit medicines',
+      'Editar' => 'Edit',
+      'Editar medicinas de asistencia' => 'Edid medicines of an assist',
+      'Añadir medicina' => 'Add medicine',
+      'Añadir asistencia' => 'Add a new assist',
+      'Añadir' => 'Add',
+
+
   ];
 ?>

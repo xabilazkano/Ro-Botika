@@ -3,7 +3,7 @@
 @section('content')
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pb-5">
       <h2 class="row">
-      	<span class="col-11">Asistencias</span>
+      	<span class="col-11">{{__('messages.Asistencias')}}</span>
       	@if (Auth::user()->hasRole("admin"))
       	<a href="{{route('adminAssistances.create')}}" class="col-1"><i class="fa fa-plus"></i></a>
       	@endif
@@ -13,11 +13,11 @@
         	<thead class="thead">
         		<tr>
         			<th>Id</th>
-        			<th>Nombre del paciente</th>
-        			<th>Nombre de la enfermera</th>
-        			<th>Fecha</th>
-        			<th>Medicinas</th>
-        			<th>Confirmado</th>
+        			<th>{{__('messages.Paciente')}}</th>
+        			<th>{{__('messages.Enfermera')}}</th>
+        			<th>{{__('messages.Fecha')}}</th>
+        			<th>{{__('messages.Medicinas')}}</th>
+        			<th>{{__('messages.Confirmado')}}</th>
         			<th></th>
         			@if (Auth::user()->hasRole("admin"))
         			<th></th>

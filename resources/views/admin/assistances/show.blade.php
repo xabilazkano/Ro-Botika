@@ -9,11 +9,11 @@
 			<thead class="thead">
 				<tr>
 					<th>Id</th>
-					<th>Nombre del paciente</th>
-					<th>Nombre de la enfermera</th>
-					<th>Fecha</th>
-					<th>Medicinas</th>
-					<th>Confirmado</th>
+					<th>{{__('messages.Paciente')}}</th>
+					<th>{{__('messages.Enfermera')}}</th>
+					<th>{{__('messages.Fecha')}}</th>
+					<th>{{__('messages.Medicinas')}}</th>
+					<th>{{__('messages.Confirmado')}}</th>
 				</tr>
 			</thead>
 			<tr>
@@ -42,7 +42,7 @@
 
 			<div class="col-md-6 offset-md-5">
 				<input type="submit" class="btn btn-primary"
-				value="Confirmar asistencia">
+				value="{{__('messages.Confirmar asistencia')}}">
 			</div>
 		</form>
 		@endif

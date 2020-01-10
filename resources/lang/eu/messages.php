@@ -41,6 +41,20 @@
       'Inserte un número de teléfono válido' => 'Idatzi baliozko telefono zenbakia',
       'La contraseña debe contener como mínimo 8 caractéres' => 'Pasahitzak gutxienez 8 karaktere izan behar ditu.',
       'Panel de administrador' => 'Administradore panela',
-      'Panel estándar' => 'Panel estandarra'
+      'Panel estándar' => 'Panel estandarra',
+      'Asistencias' => 'Asistentziak',
+      'Paciente' => 'Gaixoaren izena',
+      'Enfermera' => 'Erizaina',
+      'Fecha' => 'Data',
+      'Medicinas' => 'Botikak',
+      'Confirmado' => 'Baieztatua',
+      'Confirmar asistencia' => 'Asistentzia baieztatu',
+      'Editar asistencia' => 'Asistentzia editatu',
+      'Editar medicinas' => 'Botikak aldatu',
+      'Editar' => 'Editatu',
+      'Editar medicinas de asistencia' => 'Asistentziaren botikak aldatu',
+      'Añadir medicina' => 'Botika gehitu',
+      'Añadir asistencia' => 'Gehitu asistentzia',
+      'Añadir' => 'Gehitu',
   ];
 ?>

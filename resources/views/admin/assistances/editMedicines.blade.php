@@ -2,7 +2,7 @@
 
 @section('content')
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pb-5">
-	<h2>Editar medicinas de asistencia {{$assistance->id}}</h2>
+	<h2>{{__('messages.Editar medicinas de asistencia')}}</h2>
 	@if (!is_null($assistance->medicines))
 	<table class="table">
 		<thead class="thead">
@@ -29,7 +29,7 @@
 	<form id="editarAsistencia" method="POST" action="{{route('medicineAdd',$assistance->id)}}">
 		@csrf
 		<div class="form-group row">
-			<label for="medicine" class="col-md-4 col-form-label text-md-right">Medicinas</label>
+			<label for="medicine" class="col-md-4 col-form-label text-md-right">{{__('messages.Medicinas')}}</label>
 			<div class="col-md-6">
 				<select id="medicinas" multiple class="form-control @error('medicines') is-invalid @enderror" name="medicines[]">
 					@foreach ($medicines as $medicine)
@@ -45,9 +45,9 @@
 			</div>
 		</div>
 		<div class="form-group row mb-0">
-			<div class="col-md-6 offset-md-4">
+			<div class="col-md-6 offset-md-6">
 				<input type="submit" class="btn btn-primary"
-				value="Añadir medicina">
+				value="{{__('messages.Añadir medicina')}}">
 			</div>
 		</div>
 		<br>
