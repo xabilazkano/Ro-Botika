@@ -150,3 +150,8 @@ table {
 .menueskubi {
   padding: 0;
 }
+
+.logout {
+  width: 2em;
+  padding-top: 16px;
+}
