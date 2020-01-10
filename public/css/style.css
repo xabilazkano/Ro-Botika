@@ -4,11 +4,6 @@
   width:100%;
 }
 
-footer{
-  position: absolute;
-  background: #343A40;
-}
-
 #lab_social_icon_footer {
   padding: 40px 0;
 }
@@ -89,7 +84,6 @@ body{
 }
 
 .botonhome {
-  font-size: 10em;
   height: 10em;
   margin-top: 2em;
 }

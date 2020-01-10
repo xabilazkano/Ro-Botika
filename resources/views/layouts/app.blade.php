@@ -51,6 +51,5 @@
     $("#bloqueo").css("visibility", "hidden");
   })
   </script>
-
 </body>
 </html>

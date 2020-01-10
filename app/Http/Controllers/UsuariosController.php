@@ -44,7 +44,7 @@ class UsuariosController extends Controller
     {
         $name = $request->input('name');
         $lastname = $request->input('lastname');
-        
+
     }
 
     /**
@@ -99,6 +99,6 @@ class UsuariosController extends Controller
     public function destroy($id)
     {
         User::find($id)->delete();
-        return view('welcome');
+        return view('admin');
     }
 }
