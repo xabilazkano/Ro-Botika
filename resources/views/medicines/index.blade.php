@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('titulua', 'Medicinas')
+@section('titulua', __('messages.MEDICINAS'))
 @section('content')
 <table class="table">
   <thead class="thead">

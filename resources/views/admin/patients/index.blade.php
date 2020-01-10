@@ -2,7 +2,7 @@
 @section('content')
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pb-5">
   <h2 class="row">
-    <span class="col-11">Pacientes</span>
+    <span class="col-11">{{__('messages.Pacientes')}}</span>
     @if (Auth::user()->hasRole("admin"))
     <a href="{{route('adminPatients.create')}}" class="col-1"><i class="fa fa-plus"></i></a>
     @endif
@@ -11,10 +11,10 @@
     <thead class="thead">
       <tr>
         <th scope="col">Id</th>
-        <th scope="col">Número S.S.</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Apellidos</th>
-        <th scope="col">Enfermedad</th>
+        <th scope="col">{{ __('messages.numeross') }}</th>
+        <th scope="col">{{ __('messages.Nombre') }}</th>
+        <th scope="col">{{ __('messages.Apellido') }}</th>
+        <th scope="col">{{ __('messages.enfermedad') }}</th>
         <th></th>
         @if (Auth::user()->hasRole("admin"))
         <th></th>

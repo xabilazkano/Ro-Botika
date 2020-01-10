@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <section class="text-center">
   <div class="container d-flex align-content-around flex-wrap">
@@ -8,7 +7,7 @@
       <a href="{{route('assistances.index')}}">
         <button type="button" class="botonhome btn btn-secondary d-flex flex-row justify-content-around align-items-center">
           <i class="patienticon fa fa-stethoscope"></i>
-          <h2>ASISTENCIAS</h2>
+          <h2>{{__('messages.ASISTENCIAS')}}</h2>
         </button>
       </a>
     </div>
@@ -17,7 +16,7 @@
       <a href="{{route('patients.index')}}">
         <button type="button" class="botonhome btn btn-secondary d-flex flex-row justify-content-around align-items-center">
           <i class="patienticon fa fa-user"></i>
-          <h2>PACIENTES</h2>
+          <h2>{{ __('messages.PACIENTES')}}</h2>
         </button>
       </a>
     </div>
@@ -25,7 +24,7 @@
       <a href="{{route('rooms.index')}}">
         <button type="button" class="botonhome btn btn-secondary d-flex flex-row justify-content-around align-items-center">
           <i class="patienticon fa fa-home"></i>
-          <h2>HABITACIONES</h2>
+          <h2>{{ __('messages.HABITACIONES')}}</h2>
         </button>
       </a>
     </div>
@@ -33,7 +32,7 @@
       <a href="{{route('medicines.index')}}">
         <button type="button" class="botonhome btn btn-secondary d-flex flex-row justify-content-around align-items-center">
           <i class="patienticon fa fa-list-alt"></i>
-          <h2>STOCK</h2>
+          <h2>{{__('messages.MEDICINAS')}}</h2>
         </button>
       </a>
     </div>

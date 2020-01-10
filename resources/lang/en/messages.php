@@ -65,7 +65,23 @@
       'Añadir enfermera' => 'Add nurse',
       'Cantidad' => 'Amount',
       'Editar medicina' => 'Edit medicine',
+      'numeross' => 'S.S. Number',
+      'enfermedad' => 'Disease',
+      'planta' => 'Floor',
+      'numerohabitacion' => 'Room Number',
+      'camas' => 'Beds',
+      'HABITACIONES' => 'ROOMS',
+      'Habitación' => 'Room',
+      'Habitaciones' => 'Rooms',
+      'ASISTENCIAS' => 'ASSISTS',
+      'PACIENTES' => 'PATIENTS',
+      'MEDICINAS' => 'MEDICINES',
+      'Editar paciente' => 'Edit patient',
+      'Añadir paciente' => 'Add patient',
+      'Editar habitación' => 'Edit room',
+      'Añadir habitación' => 'Add room',
 
 
   ];
+
 ?>

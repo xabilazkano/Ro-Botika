@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('titulua', 'Asistencias')
+@section('titulua', __('messages.ASISTENCIAS'))
 @section('content')
 <h2 class="row">
 	@if (Auth::user()->hasRole("admin"))
