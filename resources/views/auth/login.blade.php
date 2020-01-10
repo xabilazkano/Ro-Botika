@@ -65,8 +65,8 @@
         <script type="text/javascript">
           $(document).ready(function(){
             $("#formulariologin").submit(function(){
-              var email = $('#email').val();
-              var contraseña = $('#contraseña').val();
+              let email = $('#email').val();
+              let contraseña = $('#contraseña').val();
               console.log(email + " " + contraseña);
               if (email === "" || contraseña === ""){
                 $("#texto").show();

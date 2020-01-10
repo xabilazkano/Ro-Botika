@@ -40,7 +40,7 @@
     <div class="form-group row">
       <label for="date" class="col-md-4 col-form-label text-md-right">Fecha estimada</label>
       <div class="col-md-6">
-        <input type="date" name="date" class="form-control @error('date') is-invalid @enderror">
+        <input type="date" id="fecha" name="date" class="form-control @error('date') is-invalid @enderror">
 
         @error('date')
         <span class="invalid-feedback" role="alert">
@@ -70,7 +70,25 @@
         <input type="submit" class="btn btn-primary"
         value="Añadir">
       </div>
+    </div><br>
+    <div class="col-md-12 d-flex justify-content-center">
+      <p id="texto" style="display:none"></p>
     </div>
   </form>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#addAssist").submit(function(){
+        let fecha = $('#fecha').val();
+        console.log(fecha);
+        if (fecha === ""){
+          $("#texto").show();
+          $('#texto').text("Inserta una fecha estimada");
+          return false;
+        }else{
+          return true;
+        }
+      });
+    });
+  </script>
 </main>
 @endsection
