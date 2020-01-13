@@ -13,18 +13,18 @@
 		</tr>
 	</thead>
 	@foreach ($rooms as $room)
-	<tr>
-		<td>{{$room->id}}</td>
-		<td>{{$room->floor}}</td>
-		<td>{{$room->room_number}}</td>
-		<td>{{$room->beds}}</td>
-		<td>
-			@foreach ($room->patients as $patient)
-			{{$patient->name}} {{$patient->surname}}
-			@endforeach
-		</td>
-		<td><a href="{{route('rooms.show',$room->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
-	</tr>
+		@foreach ($room->patients as $patient)
+			@if ($patient->pivot->up_date <= date('Y-m-d') && $patient->pivot->down_date >= date('Y-m-d'))
+				<tr>
+					<td>{{$room->id}}</td>
+					<td>{{$room->floor}}</td>
+					<td>{{$room->room_number}}</td>
+					<td>{{$room->beds}}</td>
+					<td><a href="{{route('patients.show',$patient->id)}}">{{$patient->name}} {{$patient->lastname}}</a></td>
+					<td><a href="{{route('rooms.show',$room->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
+				</tr>
+			@endif
+		@endforeach
 	@endforeach
 </table>
 @endsection

@@ -17,7 +17,7 @@
 		@if ($assist->estimated_date === date('Y-m-d'))
 			<tr>
 				<td>{{$assist->id}}</td>
-				<td>{{$assist->patient->name}} {{$assist->patient->lastname}}</td>
+				<td><a href="{{route('patients.show',$assist->patient->id)}}">{{$assist->patient->name}} {{$assist->patient->lastname}}</a></td>
 				<td>{{$assist->user->name}}</td>
 				<td>{{$assist->estimated_date}}</td>
 				<td>

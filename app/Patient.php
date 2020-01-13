@@ -11,6 +11,6 @@ class Patient extends Model
   }
 
   public function rooms(){
-    return $this->hasMany('App\Room');
+    return $this->hasMany('App\Room')->withPivot('up_date', 'down_date');;
   }
 }

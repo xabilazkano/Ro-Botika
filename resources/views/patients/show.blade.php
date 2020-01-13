@@ -21,7 +21,7 @@
     <td>{{$patient->ss_number}}</td>
     <td>{{$patient->name}}</td>
     <td>{{$patient->lastname}}</td>
-    <td>{{$patient->enfermedad}}</td>
+    <td>{{$patient->disease}}</td>
   </th>
 </table>
 @endsection

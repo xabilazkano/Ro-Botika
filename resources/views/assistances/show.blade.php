@@ -20,7 +20,7 @@
 	</thead>
 	<tr>
 		<td>{{$assist->id}}</td>
-		<td>{{$assist->patient->name}} {{$assist->patient->lastname}}</td>
+		<td><a href="{{route('patients.show',$assist->patient->id)}}">{{$assist->patient->name}} {{$assist->patient->lastname}}</a></td>
 		<td>{{$assist->user->name}} {{$assist->user->lastname}}</td>
 		<td>{{$assist->estimated_date}}</td>
 		<td>
