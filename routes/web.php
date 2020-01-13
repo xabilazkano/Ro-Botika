@@ -44,7 +44,7 @@ Route::group(['middleware' => ['role']], function () {
   Route::resource('assistMedicines', 'AssistanceMedicineController')->only(['edit']);
   Route::post('/medicineDestroy/{id}/{medicine}', 'AssistanceMedicineController@destroy')->name('medicineDestroy');
   Route::post('/medicineAdd/{id}', 'AssistanceMedicineController@add')->name('medicineAdd');
-
+	Route::resource('adminPatientsRooms', 'PatientsRoomsController');
 });
 
 Route::post('confirm/{id}','AssistanceController@confirmAssist')->name('confirmAssist');
