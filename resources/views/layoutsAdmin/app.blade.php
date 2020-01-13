@@ -7,8 +7,10 @@
     <div class="row">
         @include('layoutsAdmin.sideNav')
         @yield('content')
-        @include('layoutsAdmin.footer')
+
       </div>
+
   </div>
+  @include('layoutsAdmin.footer')
 </body>
 </html>
