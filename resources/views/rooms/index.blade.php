@@ -10,10 +10,6 @@
 			<th>{{__('messages.camas')}}</th>
 			<th>{{__('messages.Pacientes')}}</th>
 			<th></th>
-			@if (Auth::user()->hasRole("admin"))
-			<th></th>
-			<th></th>
-			@endif
 		</tr>
 	</thead>
 	@foreach ($rooms as $room)
@@ -28,20 +24,7 @@
 			@endforeach
 		</td>
 		<td><a href="{{route('rooms.show',$room->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
-		@if (Auth::user()->hasRole("admin"))
-		<td><a href="{{route('adminRooms.edit',$room->id)}}"><i class="blackIcon fa fa-edit"></i></a></td>
-		<td>
-			<form method="post" action="{{route('adminRooms.destroy',$room->id)}}">
-				@csrf
-				@method('DELETE')
-				<button type="submit" class="deleteIcon">
-					<i class="fa fa-trash-o"></i>
-				</button>
-			</form>
-		</td>
-		@endif
 	</tr>
 	@endforeach
 </table>
-
 @endsection
