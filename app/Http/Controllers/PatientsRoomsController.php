@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Room;
 use App\PatientRoom;
+use App\Patient;
 
 class PatientsRoomsController extends Controller
 {
@@ -14,10 +16,8 @@ class PatientsRoomsController extends Controller
   */
   public function index()
   {
-    $patientsrooms = PatientRoom::all();
-    if (auth()->getUser()->hasRole("admin")) {
-      return view ('admin.patientsrooms.index',['patientsrooms' => $patientsrooms]);
-    }
+    $rooms = Room::all();
+    return view ('admin.patientsrooms.index',['rooms' => $rooms]);
   }
 
   /**
@@ -49,12 +49,9 @@ class PatientsRoomsController extends Controller
   */
   public function show($id)
   {
-    $patientsrooms = PatientsRooms::find($id);
-    if (auth()->getUser()->hasRole("admin")) {
-      return view('admin.$patientsrooms.show',['patientsrooms' => $patientsrooms]);
-    }else{
-      return view('patients.show',['patient'=>$patient]);
-    }
+    $patientroom = PatientRoom::find($id);
+    $room = Room::find($patientroom->room_id);
+    return view('admin.patientsrooms.show',['patientroom' => $patientroom,'room'=>$room]);
   }
 
   /**
@@ -65,7 +62,11 @@ class PatientsRoomsController extends Controller
   */
   public function edit($id)
   {
-    //
+    $rooms = Room::all();
+    $patients = Patient::all();
+    $patientroom = PatientRoom::find($id);
+
+    return view('admin.patientsrooms.edit',['rooms' => $rooms,'patients' => $patients,'patientroom' => $patientroom]);
   }
 
   /**
@@ -77,7 +78,25 @@ class PatientsRoomsController extends Controller
   */
   public function update(Request $request, $id)
   {
-    //
+    $validatedData = $request->validate([
+        'patient' => 'required',
+        'room' => 'required',
+        'bed' => 'required',
+        'desde' => 'required',
+        'hasta' => 'requiered'
+    ]);
+    $patient = Patient::find($id);
+
+    $patient->ss_number = $request->input('ss_number');
+    $patient->name = $request->input('name');
+    $patient->lastname = $request->input('lastname');
+    $patient->disease = $request->input('disease');
+
+    $patient->save();
+
+    $patients = Patient::all();
+
+    return view('admin.patients.index',['patients' => $patients]);
   }
 
   /**

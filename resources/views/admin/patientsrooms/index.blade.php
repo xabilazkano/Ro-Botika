@@ -2,7 +2,7 @@
 @section('content')
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pb-5">
   <h2 class="row">
-    <span class="col-11">{{__('messages.Pacientes')}} - {{__('messages.Pacientes')}}</span>
+    <span class="col-11">{{__('messages.Pacientes')}} - {{__('messages.Habitación')}}</span>
     @if (Auth::user()->hasRole("admin"))
     <a href="{{route('adminPatients.create')}}" class="col-1"><i class="fa fa-plus"></i></a>
     @endif
@@ -24,19 +24,22 @@
       </tr>
     </thead>
     <tbody>
-      @foreach ($patientsrooms as $patientroom)
+
+      @foreach ($rooms as $room)
+      @if (!$room->patients == null)
+      @foreach ($room->patients as $patient)
       <tr>
-        <td>{{$patientroom->id}}</td>
-        <td>{{$patientroom->patient_id}}</td>
-        <td>{{$patientroom->room_id}}</td>
-        <td>{{$patientroom->bed}}</td>
-        <td>{{$patientroom->up_date}}</td>
-        <td>{{$patientroom->down_date}}</td>
-        <td><a href="{{route('patients.show',$patientroom->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
+        <td>{{$patient->pivot->id}}</td>
+        <td>{{$patient->name}} {{$patient->lastname}}</td>
+        <td>{{$room->room_number}}</td>
+        <td>{{$patient->pivot->bed}}</td>
+        <td>{{$patient->pivot->up_date}}</td>
+        <td>{{$patient->pivot->down_date}}</td>
+        <td><a href="{{route('adminPatientsRooms.show',$patient->pivot->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
         @if (Auth::user()->hasRole("admin"))
-        <td><a href="{{route('adminPatients.edit',$patientroom->id)}}"><i class="blackIcon fa fa-edit"></i></a></td>
+        <td><a href="{{route('adminPatientsRooms.edit',$patient->pivot->id)}}"><i class="blackIcon fa fa-edit"></i></a></td>
         <td>
-          <form action="{{route('adminPatients.destroy',$patientroom->id)}}" method="post">
+          <form action="{{route('adminPatientsRooms.destroy',$patient->pivot->id)}}" method="post">
             @csrf
             @method('delete')
             <button type="submit" class="deleteIcon">
@@ -47,6 +50,10 @@
         @endif
       </tr>
       @endforeach
+      @endif
+      @endforeach
+
+
     </tbody>
   </table>
 </main>
