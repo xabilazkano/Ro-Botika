@@ -26,28 +26,28 @@
     <tbody>
       @foreach ($patientsrooms as $patientroom)
       <tr>
-        <th scope="row">{{$patientroom->id}}</td>
-          <td>{{$patientroom->patient_id}}</td>
-          <td>{{$patientroom->room_id}}</td>
-          <td>{{$patientroom->bed}}</td>
-          <td>{{$patientroom->up_date}}</td>
-          <td>{{$patientroom->down_date}}</td>
-          <td><a href="{{route('patients.show',$patientroom->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
-          @if (Auth::user()->hasRole("admin"))
-          <td><a href="{{route('adminPatients.edit',$patientroom->id)}}"><i class="blackIcon fa fa-edit"></i></a></td>
-          <td>
-            <form action="{{route('adminPatients.destroy',$patientroom->id)}}" method="post">
-              @csrf
-              @method('delete')
-              <button type="submit" class="deleteIcon">
-                <i class="fa fa-trash-o"></i>
-              </button>
-            </form>
-          </td>
-          @endif
-        </tr>
-        @endforeach
-      </tbody>
-    </table>
-  </main>
-  @endsection
+        <td>{{$patientroom->id}}</td>
+        <td>{{$patientroom->patient_id}}</td>
+        <td>{{$patientroom->room_id}}</td>
+        <td>{{$patientroom->bed}}</td>
+        <td>{{$patientroom->up_date}}</td>
+        <td>{{$patientroom->down_date}}</td>
+        <td><a href="{{route('patients.show',$patientroom->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
+        @if (Auth::user()->hasRole("admin"))
+        <td><a href="{{route('adminPatients.edit',$patientroom->id)}}"><i class="blackIcon fa fa-edit"></i></a></td>
+        <td>
+          <form action="{{route('adminPatients.destroy',$patientroom->id)}}" method="post">
+            @csrf
+            @method('delete')
+            <button type="submit" class="deleteIcon">
+              <i class="fa fa-trash-o"></i>
+            </button>
+          </form>
+        </td>
+        @endif
+      </tr>
+      @endforeach
+    </tbody>
+  </table>
+</main>
+@endsection
