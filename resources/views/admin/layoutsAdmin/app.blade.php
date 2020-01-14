@@ -9,6 +9,8 @@
         @yield('content')
         @include('admin.layoutsAdmin.footer')
       </div>
+
   </div>
+  @include('layoutsAdmin.footer')
 </body>
 </html>
