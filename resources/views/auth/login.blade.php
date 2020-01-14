@@ -39,17 +39,6 @@
             </div>
           </div>
 
-          <div class="form-group row">
-            <div class="col-md-4 offset-md-4">
-              <div class="form-check">
-                <label class="form-check-label" for="remember">
-                  {{ __('messages.Acuérdate de mi') }}
-                </label>
-                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}></input>
-              </div>
-            </div>
-          </div>
-
           <div class="form-group row mb-0 col-10">
             <div class="col-md-8 offset-md-4">
               <input type="submit" class="btn btn-primary" value="{{ __('messages.Iniciar sesión') }}">
