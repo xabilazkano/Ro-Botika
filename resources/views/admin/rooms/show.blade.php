@@ -17,11 +17,6 @@
 			<td>{{$room->floor}}</td>
 			<td>{{$room->room_number}}</td>
 			<td>{{$room->beds}}</td>
-			<td>
-				@foreach ($room->patients as $patient)
-				{{$patient->name}} {{$patient->surname}}
-				@endforeach
-			</td>
 		</tr>
 	</table>
 </main>

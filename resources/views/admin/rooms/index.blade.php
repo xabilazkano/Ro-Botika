@@ -14,7 +14,6 @@
 				<th>{{__('messages.planta')}}</th>
 				<th>{{__('messages.numerohabitacion')}}</th>
 				<th>{{__('messages.camas')}}</th>
-				<th>{{__('messages.Pacientes')}}</th>
 				<th></th>
 				@if (Auth::user()->hasRole("admin"))
 				<th></th>
@@ -28,11 +27,6 @@
 			<td>{{$room->floor}}</td>
 			<td>{{$room->room_number}}</td>
 			<td>{{$room->beds}}</td>
-			<td>
-				@foreach ($room->patients as $patient)
-				{{$patient->name}} {{$patient->surname}}
-				@endforeach
-			</td>
 			<td><a href="{{route('rooms.show',$room->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
 			@if (Auth::user()->hasRole("admin"))
 			<td><a href="{{route('adminRooms.edit',$room->id)}}"><i class="blackIcon fa fa-edit"></i></a></td>

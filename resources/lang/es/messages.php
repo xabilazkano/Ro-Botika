@@ -52,7 +52,7 @@
       'Medicina' => 'Medicina',
       'Medicinas' => 'Medicinas',
       'Confirmado' => 'Confirmado',
-      'Confirmadar asistencia' => 'Confirmar asistencia',
+      'Confirmar asistencia' => 'Confirmar asistencia',
       'Editar asistencia' => 'Editar asistencia',
       'Editar medicinas' => 'Editar medicinas',
       'Editar' => 'Editar',

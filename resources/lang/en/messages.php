@@ -52,7 +52,7 @@
       'Medicina' => 'Medicine',
       'Medicinas' => 'Medicines',
       'Confirmado' => 'Confirmed',
-      'Confirmadar asistencia' => 'Confirm assist',
+      'Confirmar asistencia' => 'Confirm assist',
       'Editar asistencia' => 'Edit assist',
       'Editar medicinas' => 'Edit medicines',
       'Editar' => 'Edit',
