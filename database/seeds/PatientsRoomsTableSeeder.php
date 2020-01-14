@@ -28,7 +28,10 @@ class PatientsRoomsTableSeeder extends Seeder
         'room_id' => rand(1,20),
         'bed' => $bed,
         'patient_id' => rand(1,20),
-        'up_date' => $up_date,
+
+        //'up_date' => $up_date,
+        // denak gaurkoak izateko
+        'up_date' => date("Y/m/d"),
         'down_date' => $down_date
       ]);
     }
