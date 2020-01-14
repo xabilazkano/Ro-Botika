@@ -25,7 +25,7 @@ Auth::routes(['verify' => true]);
 Route::get('/verify', 'Auth\RegisterController@index')->name('verify');
 
 Route::get('/landingPage', function(){
-  return view('landingpage');
+  return view('landingpage.index');
 })->name('landingpage');
 
 Route::group(['middleware' => ['auth','verified']], function(){
