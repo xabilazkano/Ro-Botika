@@ -11,6 +11,6 @@
       </div>
 
   </div>
-  @include('layoutsAdmin.footer')
+  @include('admin.layoutsAdmin.footer')
 </body>
 </html>

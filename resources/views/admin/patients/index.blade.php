@@ -26,27 +26,27 @@ Session::set('page','patients')
     <tbody>
       @foreach ($patients as $patient)
       <tr>
-        <th scope="row">{{$patient->id}}</td>
-          <td>{{$patient->ss_number}}</td>
-          <td>{{$patient->name}}</td>
-          <td>{{$patient->lastname}}</td>
-          <td>{{$patient->disease}}</td>
-          <td><a href="{{route('patients.show',$patient->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
-          @if (Auth::user()->hasRole("admin"))
-          <td><a href="{{route('adminPatients.edit',$patient->id)}}"><i class="blackIcon fa fa-edit"></i></a></td>
-          <td>
-            <form action="{{route('adminPatients.destroy',$patient->id)}}" method="post">
-              @csrf
-              @method('delete')
-              <button type="submit" class="deleteIcon">
-                <i class="fa fa-trash-o"></i>
-              </button>
-            </form>
-          </td>
-          @endif
-        </tr>
-        @endforeach
-      </tbody>
-    </table>
-  </main>
-  @endsection
+        <td>{{$patient->id}}</td>
+        <td>{{$patient->ss_number}}</td>
+        <td>{{$patient->name}}</td>
+        <td>{{$patient->lastname}}</td>
+        <td>{{$patient->disease}}</td>
+        <td><a href="{{route('patients.show',$patient->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
+        @if (Auth::user()->hasRole("admin"))
+        <td><a href="{{route('adminPatients.edit',$patient->id)}}"><i class="blackIcon fa fa-edit"></i></a></td>
+        <td>
+          <form action="{{route('adminPatients.destroy',$patient->id)}}" method="post">
+            @csrf
+            @method('delete')
+            <button type="submit" class="deleteIcon">
+              <i class="fa fa-trash-o"></i>
+            </button>
+          </form>
+        </td>
+        @endif
+      </tr>
+      @endforeach
+    </tbody>
+  </table>
+</main>
+@endsection
