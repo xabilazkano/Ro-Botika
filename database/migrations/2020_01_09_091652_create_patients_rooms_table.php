@@ -17,6 +17,7 @@ class CreatePatientsRoomsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('room_id');
             $table->foreign('room_id')->references('id')->on('rooms')->onDelete('cascade');
+            $table->char('bed', 1);
             $table->unsignedBigInteger('patient_id');
             $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
             $table->date('up_date');

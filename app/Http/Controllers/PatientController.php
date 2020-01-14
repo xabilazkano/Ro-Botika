@@ -17,7 +17,7 @@ class PatientController extends Controller
       $patients = Patient::all();
       if (auth()->getUser()->hasRole("admin")) {
         return view ('admin.patients.index',['patients' => $patients]);
-      }else{
+      } else {
         return view ('patients.index',['patients' => $patients]);
       }
     }

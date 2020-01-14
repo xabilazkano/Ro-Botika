@@ -4,7 +4,7 @@
 <body>
   <div id="bloqueo" class="d-flex flex-column justify-content-center">
     <i class="blockicon fa fa-lock" style="text-align: center"></i>
-    <img src="img/logo.png"/>
+    <img src="/img/logo.png"/>
     <p class="blockparrafo">Ro-Botika &copy;	2019-2020	<br> help@robotika.eus . +34 654 234 673</p>
   </div>
 
