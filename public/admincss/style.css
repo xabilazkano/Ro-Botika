@@ -48,7 +48,7 @@ tr{
 }
 
 td{
-  vertical-align: middle;
+  vertical-align: middle !important;
 }
 
 .red{
@@ -70,4 +70,13 @@ td{
 
 .navHeight{
   z-index: auto;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
 }
