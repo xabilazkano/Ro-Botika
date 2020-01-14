@@ -80,5 +80,9 @@
       'Añadir paciente' => 'Añadir paciente',
       'Editar habitación' => 'Editar habitación',
       'Añadir habitación' => 'Añadir habitación',
+      'Cama' => 'Cama',
+      'Desde' => 'Baja',
+      'Hasta' => 'Alta',
+
   ];
 ?>

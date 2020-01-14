@@ -80,6 +80,9 @@
       'Añadir paciente' => 'Add patient',
       'Editar habitación' => 'Edit room',
       'Añadir habitación' => 'Add room',
+      'Cama' => 'Bed',
+      'Desde' => 'Up date',
+      'Hasta' => 'Down date',
 
 
   ];
