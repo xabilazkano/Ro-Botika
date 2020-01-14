@@ -10,38 +10,21 @@
 			<th>{{__('messages.camas')}}</th>
 			<th>{{__('messages.Pacientes')}}</th>
 			<th></th>
-			@if (Auth::user()->hasRole("admin"))
-			<th></th>
-			<th></th>
-			@endif
 		</tr>
 	</thead>
 	@foreach ($rooms as $room)
-	<tr>
-		<td>{{$room->id}}</td>
-		<td>{{$room->floor}}</td>
-		<td>{{$room->room_number}}</td>
-		<td>{{$room->beds}}</td>
-		<td>
-			@foreach ($room->patients as $patient)
-			{{$patient->name}} {{$patient->surname}}
-			@endforeach
-		</td>
-		<td><a href="{{route('rooms.show',$room->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
-		@if (Auth::user()->hasRole("admin"))
-		<td><a href="{{route('adminRooms.edit',$room->id)}}"><i class="blackIcon fa fa-edit"></i></a></td>
-		<td>
-			<form method="post" action="{{route('adminRooms.destroy',$room->id)}}">
-				@csrf
-				@method('DELETE')
-				<button type="submit" class="deleteIcon">
-					<i class="fa fa-trash-o"></i>
-				</button>
-			</form>
-		</td>
-		@endif
-	</tr>
+		@foreach ($room->patients as $patient)
+			@if ($patient->pivot->up_date <= date('Y-m-d') && $patient->pivot->down_date >= date('Y-m-d'))
+				<tr>
+					<td>{{$room->id}}</td>
+					<td>{{$room->floor}}</td>
+					<td>{{$room->room_number}}</td>
+					<td>{{$room->beds}}</td>
+					<td><a href="{{route('patients.show',$patient->id)}}">{{$patient->name}} {{$patient->lastname}}</a></td>
+					<td><a href="{{route('rooms.show',$room->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
+				</tr>
+			@endif
+		@endforeach
 	@endforeach
 </table>
-
 @endsection

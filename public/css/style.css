@@ -155,3 +155,7 @@ table {
   width: 2em;
   padding-top: 16px;
 }
+
+.navHeight{
+  z-index: auto;
+}
