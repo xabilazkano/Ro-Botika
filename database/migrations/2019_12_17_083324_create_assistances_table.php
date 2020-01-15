@@ -20,7 +20,6 @@ class CreateAssistancesTable extends Migration
           $table->unsignedBigInteger('user_id');
           $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
           $table->date('estimated_date');
-          $table->date('firm_date')->nullable();
           $table->boolean('confirmed')->nullable();
           $table->timestamps();
         });
