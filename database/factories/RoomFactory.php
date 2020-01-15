@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Room::class, function (Faker $faker) {
     return [
-      'floor' => $faker->numberBetween($min = 0, $max = 4),
+      'floor' => 1,
       'room_number' => $faker->numberBetween($min = 1, $max = 30),
       'beds' => 2,
     ];

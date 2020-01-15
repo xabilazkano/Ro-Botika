@@ -22,7 +22,7 @@
 				<td>{{$assist->estimated_date}}</td>
 				<td>
 					@foreach ($assist->medicines as $medicine)
-					<a href="{{route('medicines.show',$medicine->id)}}">{{$medicine->name}}</a>&nbsp;&nbsp;
+					<a href="{{route('medicines.show',$medicine->id)}}">{{$medicine->name}}</a><br>
 					@endforeach
 				</td>
 				<td>
