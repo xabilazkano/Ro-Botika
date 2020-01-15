@@ -25,7 +25,7 @@
 		<td>{{$assist->estimated_date}}</td>
 		<td>
 			@foreach ($assist->medicines as $medicine)
-			{{$medicine->name}}
+			<a href="{{route('medicines.show',$medicine->id)}}">{{$medicine->name}}</a><br>
 			@endforeach
 		</td>
 		<td>
