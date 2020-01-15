@@ -30,9 +30,9 @@
 		</td>
 		<td>
 			@if (is_null($assist->confirmed))
-			<a href="{{route('assistances.index')}}"><i class="blackIcon fa fa-question"></i></a>
+			<i class="blackIcon fa fa-question"></i>
 			@else
-			<a href="{{route('assistances.index')}}"><i class="confirm blackIcon fa fa-check"></i></a>
+			<i class="confirm blackIcon fa fa-check"></i>
 			@endif
 		</td>
 	</tr>
@@ -42,7 +42,7 @@
 <form action="{{route('confirmAssist',$assist->id)}}" method="post">
 	@csrf
 
-	<div class="col-md-6 offset-md-5">
+	<div class="col-md-6 offset-md-3">
 		<input type="submit" class="btn btn-primary"
 		value="{{__('messages.Confirmar asistencia')}}">
 	</div>
