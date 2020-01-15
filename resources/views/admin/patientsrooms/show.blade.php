@@ -7,7 +7,7 @@
       <tr>
         <th scope="col">Id</th>
         <th scope="col">{{ __('messages.Paciente') }}</th>
-        <th scope="col">{{ __('messages.Habitacion') }}</th>
+        <th scope="col">{{ __('messages.Habitación') }}</th>
         <th scope="col">{{ __('messages.Cama') }}</th>
         <th scope="col">{{ __('messages.Desde') }}</th>
         <th scope="col">{{ __('messages.Hasta') }}</th>

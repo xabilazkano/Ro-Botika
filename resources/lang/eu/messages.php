@@ -80,5 +80,9 @@
       'Añadir paciente' =>'Gaixoa gehitu',
       'Editar habitación' => 'Gela editatu',
       'Añadir habitación' => 'Gela gehitu',
+      'Cama' => 'Ohea',
+      'Desde' => 'Noiztik',
+      'Hasta' => 'Nora',
+
   ];
 ?>

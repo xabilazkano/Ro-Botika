@@ -27,7 +27,9 @@ class PatientsRoomsController extends Controller
   */
   public function create()
   {
-    //
+    $rooms = Room::all();
+    $patients = Patient::all();
+    return view ('admin.patientsrooms.create',['patients' => $patients,'rooms'=>$rooms]);
   }
 
   /**
@@ -38,7 +40,24 @@ class PatientsRoomsController extends Controller
   */
   public function store(Request $request)
   {
-    //
+    $validatedData = $request->validate([
+      'patient' => 'required',
+      'room' => 'required',
+      'bed' => 'required',
+      'desde' => 'required',
+      'hasta' => 'required|after:desde'
+    ]);
+    $patientroom = new PatientRoom;
+
+    $patientroom->patient_id = $request->input('patient');
+    $patientroom->room_id = $request->input('room');
+    $patientroom->bed = $request->input('bed');
+    $patientroom->up_date = $request->input('desde');
+    $patientroom->down_date = $request->input('hasta');
+
+    $patientroom->save();
+
+    return redirect()->route('adminPatientsRooms.index');
   }
 
   /**
@@ -79,24 +98,23 @@ class PatientsRoomsController extends Controller
   public function update(Request $request, $id)
   {
     $validatedData = $request->validate([
-        'patient' => 'required',
-        'room' => 'required',
-        'bed' => 'required',
-        'desde' => 'required',
-        'hasta' => 'requiered'
+      'patient' => 'required',
+      'room' => 'required',
+      'bed' => 'required',
+      'desde' => 'required',
+      'hasta' => 'required|after:desde'
     ]);
-    $patient = Patient::find($id);
+    $patientroom = PatientRoom::find($id);
 
-    $patient->ss_number = $request->input('ss_number');
-    $patient->name = $request->input('name');
-    $patient->lastname = $request->input('lastname');
-    $patient->disease = $request->input('disease');
+    $patientroom->patient_id = $request->input('patient');
+    $patientroom->room_id = $request->input('room');
+    $patientroom->bed = $request->input('bed');
+    $patientroom->up_date = $request->input('desde');
+    $patientroom->down_date = $request->input('hasta');
 
-    $patient->save();
+    $patientroom->save();
 
-    $patients = Patient::all();
-
-    return view('admin.patients.index',['patients' => $patients]);
+    return redirect()->route('adminPatientsRooms.index');
   }
 
   /**
@@ -107,6 +125,8 @@ class PatientsRoomsController extends Controller
   */
   public function destroy($id)
   {
-    //
+    PatientRoom::find($id)->delete();
+    return redirect()->route('adminPatientsRooms.index');
+
   }
 }

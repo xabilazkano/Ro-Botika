@@ -1,84 +1,97 @@
 @extends('admin.layoutsAdmin.app')
 @section('content')
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pb-5">
-  <h2>{{__('messages.Añadir paciente')}}</h2>
-  <form id="addPatient" action="{{route('adminPatients.store')}}" method="post">
-    @csrf
-    <div class="form-group row">
-      <label for="ss_number" class="col-md-4 col-form-label text-md-right">{{ __('messages.numeross') }}</label>
-      <div class="col-md-6">
-        <input type="text" value="{{Request::old('ss_number')}}" class="form-control @error('ss_number') is-invalid @enderror" name="ss_number" id="ss_number">
-        @error('ss_number')
-        <span class="invalid-feedback" role="alert">
-          <strong>{{ $message }}</strong>
-        </span>
-        @enderror
+  <h2>{{__('messages.Añadir')}}{{__('messages.Paciente')}} {{__('messages.Habitación')}}</h2>
+
+    <form  method="POST" action="{{route('adminPatientsRooms.store')}}">
+      @csrf
+      <div class="form-group row">
+        <label for="patient" class="col-md-4 col-form-label text-md-right">{{__('messages.Paciente')}}</label>
+
+        <div class="col-md-6">
+          <select class="form-control @error('patient') is-invalid @enderror" name="patient">
+            @foreach ($patients as $patient)
+
+            <option value="{{$patient->id}}">{{$patient->name}}&nbsp;{{$patient->lastname}}</option>
+
+            @endforeach
+          </select>
+
+          @error('patient')
+          <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
+          @enderror
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('messages.Nombre') }}</label>
-      <div class="col-md-6">
-        <input type="text" value="{{Request::old('name')}}" class="form-control @error('name') is-invalid @enderror" name="name" id="name">
-        @error('name')
-        <span class="invalid-feedback" role="alert">
-          <strong>{{ $message }}</strong>
-        </span>
-        @enderror
+      <div class="form-group row">
+        <label for="Room" class="col-md-4 col-form-label text-md-right">{{__('messages.Habitación')}}</label>
+        <div class="col-md-6">
+          <select class="form-control @error('room') is-invalid @enderror" name="room">
+            @foreach ($rooms as $room)
+
+            <option value="{{$room->id}}">{{$room->room_number}}</option>
+
+            @endforeach
+          </select>
+
+          @error('room')
+          <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
+          @enderror
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <label for="lastname" class="col-md-4 col-form-label text-md-right">{{ __('messages.Apellido') }}</label>
-      <div class="col-md-6">
-        <input type="text" value="{{Request::old('lastname')}}" class="form-control @error('lastname') is-invalid @enderror" name="lastname" id="lastname">
-        @error('lastname')
-        <span class="invalid-feedback" role="alert">
-          <strong>{{ $message }}</strong>
-        </span>
-        @enderror
+      <div class="form-group row">
+        <label for="bed" class="col-md-4 col-form-label text-md-right">{{__('messages.Cama')}}</label>
+        <div class="col-md-6">
+          <select class="form-control @error('bed') is-invalid @enderror" name="bed">
+            <option value="A">A</option>
+            <option value="B">B</option>
+          </select>
+          @error('bed')
+          <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
+          @enderror
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <label for="disease" class="col-md-4 col-form-label text-md-right">{{ __('messages.enfermedad') }}</label>
-      <div class="col-md-6">
-        <input type="text" value="{{Request::old('disease')}}" class="form-control @error('disease') is-invalid @enderror" name="disease" id="disease">
-        @error('disease')
-        <span class="invalid-feedback" role="alert">
-          <strong>{{ $message }}</strong>
-        </span>
-        @enderror
+      <div class="form-group row">
+        <label for="desde" class="col-md-4 col-form-label text-md-right">{{__('messages.Desde')}}</label>
+        <div class="col-md-6">
+          <input type="date" class="form-control @error('desde') is-invalid @enderror" name="desde" id="desde" value="{{Request::old('desde')}}">
+          @error('desde')
+          <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
+          @enderror
+        </div>
       </div>
-    </div>
-    <div class="form-group row mb-0">
-      <div class="col-md-6 offset-md-6">
+      <div class="form-group row">
+        <label for="hasta" class="col-md-4 col-form-label text-md-right">{{__('messages.Hasta')}}</label>
+        <div class="col-md-6">
+          <input type="date" class="form-control @error('hasta') is-invalid @enderror" name="hasta" id="hasta" value="{{Request::old('hasta')}}">
+          @error('hasta')
+          <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
+          @enderror
+        </div>
+      </div>
+
+
+
+
+      <div class="col-md-6 offset-md-4 text-center">
         <input type="submit" class="btn btn-primary"
         value="{{__('messages.Añadir')}}">
       </div>
+      <br>
+      <div class="col-md-12 d-flex justify-content-center">
+        <p class="red" id="texto" style="display:none"></p>
+      </div>
     </div>
-    <br>
-    <div class="col-md-12 d-flex justify-content-center">
-      <p class="red" id="texto" style="display:none"></p>
-    </div>
+
   </form>
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $("#addPatient").submit(function(){
-        let name = $('#name').val();
-        let lastname = $('#lastname').val();
-        let ss_number = $('#ss_number').val();
-        let disease = $('#disease').val();
-        if (name === "" || lastname === ""|| ss_number === ""|| disease === ""){
-          $("#texto").show();
-          $('#texto').text("{{__('messages.Inserte todos los campos')}}");
-          return false;
-        }else if(!ss_number.match("^[0-9]{11}")){
-          $("#texto").show();
-          $('#texto').text("Inserte un número de la seguridad social válido");
-          return false;
-        }else{
-          return true
-        }
-      });
-    });
-  </script>
 </main>
 @endsection
