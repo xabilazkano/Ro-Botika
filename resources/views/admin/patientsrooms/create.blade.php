@@ -5,22 +5,18 @@
 ?>
 @section('content')
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pb-5">
-  <h2>{{__('messages.Añadir')}}{{__('messages.Paciente')}} {{__('messages.Habitación')}}</h2>
-
-    <form  method="POST" action="{{route('adminPatientsRooms.store')}}">
+  <h2>{{__('messages.Añadir')}} {{__('messages.Paciente')}}-{{__('messages.Habitación')}}</h2>
+    <form id="addPatientRoom" method="POST" action="{{route('adminPatientsRooms.store')}}">
       @csrf
       <div class="form-group row">
         <label for="patient" class="col-md-4 col-form-label text-md-right">{{__('messages.Paciente')}}</label>
-
         <div class="col-md-6">
           <select class="form-control @error('patient') is-invalid @enderror" name="patient">
             @foreach ($patients as $patient)
-
             <option value="{{$patient->id}}">{{$patient->name}}&nbsp;{{$patient->lastname}}</option>
 
             @endforeach
           </select>
-
           @error('patient')
           <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -38,7 +34,6 @@
 
             @endforeach
           </select>
-
           @error('room')
           <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -82,10 +77,6 @@
           @enderror
         </div>
       </div>
-
-
-
-
       <div class="col-md-6 offset-md-4 text-center">
         <input type="submit" class="btn btn-primary"
         value="{{__('messages.Añadir')}}">
@@ -95,7 +86,21 @@
         <p class="red" id="texto" style="display:none"></p>
       </div>
     </div>
-
   </form>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#addPatientRoom").submit(function(){
+        let desde = $('#desde').val();
+        let hasta = $('#hasta').val();
+        if (desde === "" || hasta === ""){
+          $("#texto").show();
+          $('#texto').text("{{__('messages.Inserta las dos fechas')}}");
+          return false;
+        }else{
+          return true;
+        }
+      });
+    });
+  </script>
 </main>
 @endsection
