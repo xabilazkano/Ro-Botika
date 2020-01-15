@@ -80,3 +80,6 @@ td{
   color: white;
   text-align: center;
 }
+.sidebarBoton{
+  border-radius:0 !important;
+}

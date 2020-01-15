@@ -1,6 +1,6 @@
 
 <nav class="navbar navbar-dark fixed-top bg-dark p-0 shadow">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Ro-botika</a>
+  <a class="navbar-brand bg-dark col-sm-3 col-md-2 mr-0" href="{{route('homeAdmin')}}">Ro-botika</a>
   <div class="col-2 d-flex flex-row justify-content-end">
     <div class="menueskubi btn-group btn-group-inline">
       <button class="btn" data-toggle="dropdown">
