@@ -1,5 +1,5 @@
 <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-
+  <div class="sidebar-sticky">
     <ul class="nav d-flex flex-column">
       @if ($_SESSION["section"] === "assistances")
         <li class="nav-item">
@@ -92,5 +92,5 @@
         </li>
       @endif
     </ul>
-
+  </div>
 </nav>
