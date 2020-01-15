@@ -64,14 +64,14 @@
       @if ($_SESSION["section"] === "medicines")
         <li class="nav-item">
           <a class="nav-link active" href="{{route('medicines.index')}}">
-          <i class="fas fa-prescription-bottle"></i>
+          <i class="fas fa-pills"></i>
             {{__('messages.Medicinas')}}
           </a>
         </li>
       @else
         <li class="nav-item">
           <a class="nav-link" href="{{route('medicines.index')}}">
-          <i class="fas fa-prescription-bottle"></i>
+          <i class="fas fa-pills"></i>
             {{__('messages.Medicinas')}}
           </a>
         </li>
