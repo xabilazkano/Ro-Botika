@@ -83,6 +83,11 @@
       'Cama' => 'Bed',
       'Desde' => 'Up date',
       'Hasta' => 'Down date',
+      'Volver a la aplicación' => 'Return to the app',
+      'Inserta una fecha' => 'Enter a date',
+      'Seleccione una medicina' => 'Choose a medicine',
+      'Inserte un correo electrónico válido' => 'Enter a valid email',
+      'Inserte un número de la seguridad social válido' => 'Enter a valid social security number',
 
 
   ];

@@ -9,7 +9,7 @@
 		<div class="form-group row">
 			<label for="floor" class="col-md-4 col-form-label text-md-right">{{__('messages.planta')}}</label>
 			<div class="col-md-6">
-				<input type="text" class="form-control @error('floor') is-invalid @enderror" name="floor" value="{{$room->floor}}" id="floor">
+				<input type="number" class="form-control @error('floor') is-invalid @enderror" name="floor" value="{{$room->floor}}" id="floor">
 
 				@error('floor')
 				<span class="invalid-feedback" role="alert">
@@ -21,7 +21,7 @@
 		<div class="form-group row">
 			<label for="room" class="col-md-4 col-form-label text-md-right">{{__('messages.numerohabitacion')}}</label>
 			<div class="col-md-6">
-				<input type="text" class="form-control @error('room') is-invalid @enderror" name="room" value="{{$room->room_number}}" id="room">
+				<input type="number" class="form-control @error('room') is-invalid @enderror" name="room" value="{{$room->room_number}}" id="room">
 
 				@error('room')
 				<span class="invalid-feedback" role="alert">
@@ -33,7 +33,7 @@
 		<div class="form-group row">
 			<label for="beds" class="col-md-4 col-form-label text-md-right">{{__('messages.camas')}}</label>
 			<div class="col-md-6">
-				<input type="text" class="form-control @error('beds') is-invalid @enderror" name="beds" value="{{$room->beds}}" id="bed">
+				<input type="number" class="form-control @error('beds') is-invalid @enderror" name="beds" value="{{$room->beds}}" id="bed">
 
 				@error('beds')
 				<span class="invalid-feedback" role="alert">

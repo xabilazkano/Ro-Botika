@@ -20,7 +20,7 @@
     <div class="form-group row">
       <label for="amount" class="col-md-4 col-form-label text-md-right">{{__('messages.Cantidad')}}</label>
       <div class="col-md-6">
-        <input type="text" class="form-control @error('amount') is-invalid @enderror" name="amount" id="amount" value="{{$medicine->amount}}">
+        <input type="number" class="form-control @error('amount') is-invalid @enderror" name="amount" id="amount" value="{{$medicine->amount}}">
 
         @error('amount')
         <span class="invalid-feedback" role="alert">

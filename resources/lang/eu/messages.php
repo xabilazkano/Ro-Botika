@@ -83,6 +83,12 @@
       'Cama' => 'Ohea',
       'Desde' => 'Noiztik',
       'Hasta' => 'Nora',
+      'Volver a la aplicación' => 'Aplikaziora itzuli',
+      'Inserta una fecha' => 'Sartu data bat',
+      'Seleccione una medicina' => 'Aukeratu botika bat',
+      'Inserte un correo electrónico válido' => 'Sartu baliozko email bat',
+      'Inserte un número de la seguridad social válido' => 'Sartu baliozko seguritate sozialaren zenbaki bat',
+      
 
   ];
 ?>

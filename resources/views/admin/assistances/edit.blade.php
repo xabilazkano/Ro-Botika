@@ -83,7 +83,7 @@
           console.log(fecha);
           if (fecha === ""){
             $("#texto").show();
-            $('#texto').text("Inserta una fecha estimada");
+            $('#texto').text("{{__('messages.Inserta una fecha')}}");
             return false;
           }else{
             return true;

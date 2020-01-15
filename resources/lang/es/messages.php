@@ -83,6 +83,12 @@
       'Cama' => 'Cama',
       'Desde' => 'Baja',
       'Hasta' => 'Alta',
+      'Volver a la aplicación' => 'Volver a la aplicación',
+      'Inserta una fecha' => 'Inserta una fecha',
+      'Seleccione una medicina' => 'Seleccione una medicina',
+      'Inserte un correo electrónico válido' => 'Inserte un correo electrónico válido',
+      'Inserte un número de la seguridad social válido' => 'Inserte un número de la seguridad social válido',
+      
 
   ];
 ?>

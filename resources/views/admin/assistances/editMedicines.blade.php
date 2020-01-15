@@ -64,7 +64,7 @@
 			console.log(medicinas);
 			if (typeof(medicinas) === "undefined"){
 				$("#texto").show();
-				$('#texto').text("Seleccione una medicina");
+				$('#texto').text("{{__('messages.Seleccione una medicina')}}");
 				return false;
 			}else{
 				return true;

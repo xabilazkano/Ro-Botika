@@ -89,7 +89,7 @@
           return false;
         }else if(!email.match("^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$")){
           $("#texto").show();
-          $('#texto').text("Inserte un correo electrónico válido");
+          $('#texto').text("{{__('messages.Inserte un correo electrónico válido')}}");
           return false;
         }else if(password.length < 8){
           $("#texto").show();

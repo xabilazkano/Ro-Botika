@@ -73,7 +73,7 @@
           return false;
         }else if(!ss_number.match("^[0-9]{11}")){
           $("#texto").show();
-          $('#texto').text("Inserte un número de la seguridad social válido");
+          $('#texto').text("{{__('messages.Inserte un número de la seguridad social válido')}}");
           return false;
         }else{
           return true
