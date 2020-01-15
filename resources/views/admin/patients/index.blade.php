@@ -1,6 +1,8 @@
 @extends('admin.layoutsAdmin.app')
+<?php
+  $_SESSION['section']="patients";
+?>
 @section('content')
-Session::set('page','patients')
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pb-5">
   <h2 class="row">
     <span class="col-11">{{__('messages.Pacientes')}}</span>
