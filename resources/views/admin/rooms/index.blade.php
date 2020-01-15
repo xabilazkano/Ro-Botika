@@ -1,4 +1,7 @@
 @extends('admin.layoutsAdmin.app')
+<?php
+  $_SESSION['section']="rooms";
+?>
 @section('content')
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pb-5">
 	<h2 class="row">
