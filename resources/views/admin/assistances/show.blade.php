@@ -31,9 +31,9 @@
 				</td>
 				<td>
 					@if (is_null($assist->confirmed))
-					<a href="{{route('assistances.index')}}"><i class="blackIcon fa fa-question"></i></a>
+					<i class="blackIcon fa fa-question"></i>
 					@else
-					<a href="{{route('assistances.index')}}"><i class="confirm blackIcon fa fa-check"></i></a>
+					<i class="confirm blackIcon fa fa-check"></i>
 					@endif
 				</td>
 			</tr>
