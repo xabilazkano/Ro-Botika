@@ -34,7 +34,7 @@
       <tr>
         <td>{{$patient->pivot->id}}</td>
         <td>{{$patient->name}} {{$patient->lastname}}</td>
-        <td>{{$room->room_number}}</td>
+        <td>{{$patient->pivot->room_id}}</td>
         <td>{{$patient->pivot->bed}}</td>
         <td>{{$patient->pivot->up_date}}</td>
         <td>{{$patient->pivot->down_date}}</td>
