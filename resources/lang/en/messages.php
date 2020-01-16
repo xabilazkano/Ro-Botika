@@ -89,6 +89,7 @@
       'Inserte un correo electrónico válido' => 'Enter a valid email',
       'Inserte un número de la seguridad social válido' => 'Enter a valid social security number',
       'Inserta las dos fechas' => 'Insert both dates',
+      'Seleccionar cama' => 'Select bed',
   ];
 
 ?>
