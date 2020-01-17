@@ -14,8 +14,6 @@
   </thead>
   <tbody>
     @foreach ($patients as $patient)
-      @foreach ($patient->rooms as $room)
-			  @if ($room->pivot->up_date <= date('Y-m-d') && $room->pivot->down_date >= date('Y-m-d'))
           <tr>
             <th scope="row">{{$patient->id}}</td>
               <td>{{$patient->ss_number}}</td>
@@ -24,8 +22,6 @@
               <td>{{$patient->disease}}</td>
               <td><a href="{{route('patients.show',$patient->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
             </tr>
-          @endif
-        @endforeach
       @endforeach
     </tbody>
   </table>
