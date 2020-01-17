@@ -33,28 +33,22 @@
       <div class="col-md-6">
         <select class="form-control @error('room') is-invalid @enderror" name="room">
           @foreach ($rooms as $room)
-          @if ($room->id === $patientroom->room_id)
-          <option value="{{$room->id}}" selected="selected">{{$room->room_number}}</option>
-          @else
-          <option value="{{$room->id}}">{{$room->room_number}}</option>
-          @endif
+            <?php
+              $camasOcupadas = 0;
+              foreach ($patientsRooms as $patientRoom){
+                if ($patientRoom->room_id == $room->room_number  && $patientRoom->up_date<=date('Y-m-d') && $patientRoom->down_date>=date('Y-m-d')){
+                  $camasOcupadas++;
+                }
+              }
+            ?>
+            @if ($room->room_number == $patientroom->room_id)
+              <option value="{{$room->room_number}}" selected>{{$room->room_number}}</option>
+            @else if ($camasOcupadas < 2)
+              <option value="{{$room->room_number}}">{{$room->room_number}}</option>
+            @endif
           @endforeach
         </select>
         @error('room')
-        <span class="invalid-feedback" role="alert">
-          <strong>{{ $message }}</strong>
-        </span>
-        @enderror
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="bed" class="col-md-4 col-form-label text-md-right">{{__('messages.Cama')}}</label>
-      <div class="col-md-6">
-        <select class="form-control @error('bed') is-invalid @enderror" name="bed">
-          <option value="A">A</option>
-          <option value="B">B</option>
-        </select>
-        @error('bed')
         <span class="invalid-feedback" role="alert">
           <strong>{{ $message }}</strong>
         </span>
@@ -85,7 +79,7 @@
     </div>
     <div class="col-md-6 offset-md-4 text-center">
       <input type="submit" class="btn btn-primary"
-      value="{{__('messages.Editar')}}">
+      value="{{__('messages.Seleccionar cama')}}">
     </div>
     <br>
     <div class="col-md-12 d-flex justify-content-center">

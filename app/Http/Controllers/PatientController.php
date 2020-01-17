@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Patient;
+use App\Room;
+use App\PatientRoom;
 
 class PatientController extends Controller
 {
@@ -29,7 +31,9 @@ class PatientController extends Controller
      */
     public function create()
     {
-        return view('admin.patients.create');
+      $patientsRooms = PatientRoom::all();
+      $rooms = Room::all();
+      return view('admin.patients.create',['rooms'=>$rooms, 'patientsRooms' => $patientsRooms]);
     }
 
     /**
