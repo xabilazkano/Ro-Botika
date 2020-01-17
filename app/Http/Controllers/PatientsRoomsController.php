@@ -16,8 +16,8 @@ class PatientsRoomsController extends Controller
   */
   public function index()
   {
-    $rooms = Room::all();
-    return view ('admin.patientsrooms.index',['rooms' => $rooms]);
+    $patientroom = PatientRoom::all();
+    return view ('admin.patientsrooms.index',['patientrooms' => $patientroom]);
   }
 
   /**
