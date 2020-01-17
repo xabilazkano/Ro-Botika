@@ -23,6 +23,7 @@ class AssistanceController extends Controller
         return view ('assistances.index',['assistances' => $assistances]);
       }
     }
+
     /**
     * Show the form for creating a new resource.
     *
@@ -141,5 +142,10 @@ class AssistanceController extends Controller
         $assistances = Assistance::all();
         return redirect()->route('assistances.index');
 
+    }
+    public function siguienteHabitacion($id)
+    {
+      $assist = Assistance::find($id);
+      return view ('admin.assistances.show',['assist'=>$assist]);
     }
 }

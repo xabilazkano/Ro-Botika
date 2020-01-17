@@ -14,6 +14,6 @@ class Assistance extends JsonResource
      */
     public function toArray($request)
     {
-        return ['SiguienteHabitacion' => $this->]
+        return ['SiguienteHabitacion' => $this->patient->patient_room->room_id];
     }
 }
