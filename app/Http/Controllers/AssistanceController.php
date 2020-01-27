@@ -149,7 +149,8 @@ class AssistanceController extends Controller
       return view ('admin.assistances.show',['assist'=>$assist]);
     }
 
-    public function indexapi() {
-      return Assistance::all();
+    public function estadocarro() {
+      $estado = Assistance::where('chart_state', 1)->get();
+      return $estado;
     }
 }
