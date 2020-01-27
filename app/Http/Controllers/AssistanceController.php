@@ -7,6 +7,8 @@ use App\User;
 use App\Medicine;
 use App\AssistanceMedicine;
 use App\Http\Requests\addAssistance;
+use App\PatientRoom;
+
 class AssistanceController extends Controller
 {
     /**
@@ -150,7 +152,11 @@ class AssistanceController extends Controller
     }
 
     public function estadocarro() {
-      $estado = Assistance::where('chart_state', 1)->get();
-      return $estado;
+
+      $asistencia = Assistance::select('patient_id','chart_state')->where('chart_state', 1)->get();
+      return $asistencia;
+      //$habitacion = PatientRoom::select('room_id')->where('patient_id', $asistencia->patient_id);
+      //$estado = $asistencia . $habitacion;
+      //return $estado;
     }
 }
