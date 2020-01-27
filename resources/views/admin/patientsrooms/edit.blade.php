@@ -36,15 +36,15 @@
             <?php
               $camasOcupadas = 0;
               foreach ($patientsRooms as $patientRoom){
-                if ($patientRoom->room_id == $room->room_number  && $patientRoom->up_date<=date('Y-m-d') && $patientRoom->down_date>=date('Y-m-d')){
+                if ($patientRoom->room_id == $room->id  && $patientRoom->up_date<=date('Y-m-d') && $patientRoom->down_date>=date('Y-m-d')){
                   $camasOcupadas++;
                 }
               }
             ?>
-            @if ($room->room_number == $patientroom->room_id)
-              <option value="{{$room->room_number}}" selected>{{$room->room_number}}</option>
+            @if ($room->id == $patientroom->room_id)
+              <option value="{{$room->id}}" selected>{{$room->id}}</option>
             @else if ($camasOcupadas < 2)
-              <option value="{{$room->room_number}}">{{$room->room_number}}</option>
+              <option value="{{$room->id}}">{{$room->id}}</option>
             @endif
           @endforeach
         </select>

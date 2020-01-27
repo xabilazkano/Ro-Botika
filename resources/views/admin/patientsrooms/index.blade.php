@@ -28,21 +28,21 @@
     </thead>
     <tbody>
 
-      @foreach ($rooms as $room)
-      @if (!$room->patients == null)
-      @foreach ($room->patients as $patient)
+      @foreach ($patients as $patient)
+
+      @foreach ($patient->rooms as $room)
       <tr>
-        <td>{{$patient->pivot->id}}</td>
+        <td>{{$room->pivot->id}}</td>
         <td>{{$patient->name}} {{$patient->lastname}}</td>
-        <td>{{$patient->pivot->room_id}}</td>
-        <td>{{$patient->pivot->bed}}</td>
-        <td>{{$patient->pivot->up_date}}</td>
-        <td>{{$patient->pivot->down_date}}</td>
-        <td><a href="{{route('adminPatientsRooms.show',$patient->pivot->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
+        <td>{{$room->id}}</td>
+        <td>{{$room->pivot->bed}}</td>
+        <td>{{$room->pivot->up_date}}</td>
+        <td>{{$room->pivot->down_date}}</td>
+        <td><a href="{{route('adminPatientsRooms.show',$room->pivot->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
         @if (Auth::user()->hasRole("admin"))
-        <td><a href="{{route('adminPatientsRooms.edit',$patient->pivot->id)}}"><i class="blackIcon fa fa-edit"></i></a></td>
+        <td><a href="{{route('adminPatientsRooms.edit',$room->pivot->id)}}"><i class="blackIcon fa fa-edit"></i></a></td>
         <td>
-          <form action="{{route('adminPatientsRooms.destroy',$patient->pivot->id)}}" method="post">
+          <form action="{{route('adminPatientsRooms.destroy',$room->pivot->id)}}" method="post">
             @csrf
             @method('delete')
             <button type="submit" class="deleteIcon">
@@ -53,7 +53,7 @@
         @endif
       </tr>
       @endforeach
-      @endif
+
       @endforeach
 
 

@@ -6,7 +6,8 @@
 @section('content')
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pb-5">
 	<h2>{{__('messages.Editar habitación')}}</h2>
-	<form id="editRoom" action="{{route('adminRooms.update',$id)}}" method="post">
+
+	<form id="editRoom" action="{{route('adminRooms.update',$room->id)}}" method="post">
 		@csrf
 		@method('put')
 
@@ -25,7 +26,7 @@
 		<div class="form-group row">
 			<label for="room" class="col-md-4 col-form-label text-md-right">{{__('messages.numerohabitacion')}}</label>
 			<div class="col-md-6">
-				<input type="number" class="form-control @error('room') is-invalid @enderror" name="room" value="{{$room->room_number}}" id="room">
+				<input type="number" class="form-control @error('room') is-invalid @enderror" name="room" value="{{$room->id}}" id="room">
 
 				@error('room')
 				<span class="invalid-feedback" role="alert">
