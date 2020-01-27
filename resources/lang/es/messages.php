@@ -89,6 +89,7 @@
       'Inserte un correo electrónico válido' => 'Inserte un correo electrónico válido',
       'Inserte un número de la seguridad social válido' => 'Inserte un número de la seguridad social válido',
       'Inserta la fecha' => 'Inserta la fecha de ingreso',
-      'Seleccionar cama' => 'Seleccionar cama'
+      'Seleccionar cama' => 'Seleccionar cama',
+      'observations' => 'Observaciones',
   ];
 ?>

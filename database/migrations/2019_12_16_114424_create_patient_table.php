@@ -19,6 +19,7 @@ class CreatePatientTable extends Migration
             $table->string('name');
             $table->string('lastname');
             $table->string('disease');
+            $table->text('observations')->nullable();
             $table->timestamps();
         });
     }

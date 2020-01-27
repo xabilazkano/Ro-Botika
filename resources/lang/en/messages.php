@@ -90,6 +90,7 @@
       'Inserte un número de la seguridad social válido' => 'Enter a valid social security number',
       'Inserta la fecha' => 'Insert the up date',
       'Seleccionar cama' => 'Select bed',
+      'observations' => 'Observations',
   ];
 
 ?>
