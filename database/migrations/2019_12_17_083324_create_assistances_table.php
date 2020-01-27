@@ -21,6 +21,7 @@ class CreateAssistancesTable extends Migration
           $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
           $table->date('estimated_date');
           $table->boolean('confirmed')->nullable();
+          $table->boolean('chart_state')->nullable();
           $table->timestamps();
         });
     }

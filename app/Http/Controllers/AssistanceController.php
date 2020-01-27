@@ -148,4 +148,8 @@ class AssistanceController extends Controller
       $assist = Assistance::find($id);
       return view ('admin.assistances.show',['assist'=>$assist]);
     }
+
+    public function indexapi() {
+      return Assistance::all();
+    }
 }
