@@ -20,11 +20,11 @@
 		</thead>
 		<tr>
 			<td>{{$room->floor}}</td>
-			<td>{{$room->room_number}}</td>
+			<td>{{$room->id}}</td>
 			<td>{{$room->beds}}</td>
 			<td>
 				@foreach ($room->patients as $patient)
-					@if ($patient->pivot->up_date <= date('Y-m-d') && $patient->pivot->down_date >= date('Y-m-d'))
+					@if ($patient->pivot->up_date <= date('Y-m-d') && ($patient->pivot->down_date >= date('Y-m-d') || $patient->pivot->down_date === null))
 						<a href="{{route('patients.show',$patient->id)}}">{{$patient->name}} {{$patient->lastname}}</a>&nbsp;&nbsp;
 					@endif
 				@endforeach

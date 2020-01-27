@@ -21,7 +21,7 @@
               <td>{{$patient->name}}</td>
               <td>{{$patient->lastname}}</td>
               <td>{{$patient->disease}}</td>
-              <td>{{$room->id}}</td>
+              <td><a href="{{route('rooms.show',$room->id)}}">{{$room->id}}</td>
               <td><a href="{{route('patients.show',$patient->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
             </tr>
           @endif

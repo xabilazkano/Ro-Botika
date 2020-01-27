@@ -67,7 +67,6 @@ class RoomController extends Controller
         if (auth()->getUser()->hasRole("admin")) {
           return view('admin.rooms.show',['room'=>$room]);
         }else{
-          dd($room);
           return view('rooms.show',['room'=>$room]);
         }
     }
