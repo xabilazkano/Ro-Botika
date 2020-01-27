@@ -7,7 +7,6 @@
 			<th>{{__('messages.planta')}}</th>
 			<th>{{__('messages.numerohabitacion')}}</th>
 			<th>{{__('messages.camas')}}</th>
-			<th>{{__('messages.Pacientes')}}</th>
 			<th></th>
 		</tr>
 	</thead>
