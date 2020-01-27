@@ -46,7 +46,6 @@ class PatientsRoomsController extends Controller
       'patient' => 'required',
       'room' => 'required',
       'desde' => 'required',
-      'hasta' => 'required|after:desde'
     ]);
 
     $patient_room = new PatientRoom;
@@ -54,7 +53,6 @@ class PatientsRoomsController extends Controller
     $patient_room->patient_id = $request->input('patient');
     $patient_room->room_id = $request->input('room');
     $patient_room->up_date = $request->input('desde');
-    $patient_room->down_date = $request->input('hasta');
 
     $patient_room->save();
 
@@ -114,8 +112,7 @@ class PatientsRoomsController extends Controller
     $validatedData = $request->validate([
       'patient' => 'required',
       'room' => 'required',
-      'desde' => 'required',
-      'hasta' => 'required|after:desde'
+      'desde' => 'required'
     ]);
     $patient_room = PatientRoom::find($id);
 

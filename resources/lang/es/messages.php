@@ -88,7 +88,8 @@
       'Seleccione una medicina' => 'Seleccione una medicina',
       'Inserte un correo electrónico válido' => 'Inserte un correo electrónico válido',
       'Inserte un número de la seguridad social válido' => 'Inserte un número de la seguridad social válido',
-      'Inserta las dos fechas' => 'Inserta las dos fechas',
-      'Seleccionar cama' => 'Seleccionar cama'
+      'Inserta la fecha' => 'Inserta la fecha de ingreso',
+      'Seleccionar cama' => 'Seleccionar cama',
+      'observations' => 'Observaciones',
   ];
 ?>

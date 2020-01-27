@@ -21,8 +21,14 @@
       <td>{{$patient->ss_number}}</td>
       <td>{{$patient->name}}</td>
       <td>{{$patient->lastname}}</td>
-      <td>{{$patient->enfermedad}}</td>
+      <td>{{$patient->disease}}</td>
     </th>
-  </table>
+  </table><br><br>
+  <div class="row justify-content-center">
+  	<div class="observaciones col-8">
+  		<h2>{{ __('messages.observations') }}</h2>
+  		<p>{{$patient->observations}}</p>
+  	</div>
+  </div>
 </main>
 @endsection

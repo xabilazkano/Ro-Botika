@@ -60,17 +60,6 @@
           @enderror
         </div>
       </div>
-      <div class="form-group row">
-        <label for="hasta" class="col-md-4 col-form-label text-md-right">{{__('messages.Hasta')}}</label>
-        <div class="col-md-6">
-          <input type="date" class="form-control @error('hasta') is-invalid @enderror" name="hasta" id="hasta" value="{{Request::old('hasta')}}">
-          @error('hasta')
-          <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-          </span>
-          @enderror
-        </div>
-      </div>
       <div class="col-md-6 offset-md-4 text-center">
         <input type="submit" class="btn btn-primary"
         value="{{__('messages.Seleccionar cama')}}">
@@ -85,17 +74,12 @@
     $(document).ready(function(){
       $("#selectBed").submit(function(){
         let desde = $('#desde').val();
-        let hasta = $('#hasta').val();
-        if (desde === "" || hasta === ""){
+        if (desde === "" ){
           $("#texto").show();
-          $('#texto').text("{{__('messages.Inserta las dos fechas')}}");
+          $('#texto').text("{{__('messages.Inserta las fecha')}}");
           return false;
         }
-        if (desde > hasta){
-          $("#texto").show();
-          $('#texto').text("{{__('messages.Inserta dos fechas verdaderas')}}");
-          return false;
-        }else{
+        else{
           return true;
         }
       });

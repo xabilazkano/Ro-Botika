@@ -84,3 +84,6 @@ td{
   border-radius:0 !important;
   text-align:left !important;
 }
+.observaciones{
+  text-align: justify;
+}

@@ -56,6 +56,7 @@ class PatientController extends Controller
         $patient->name = $request->input('name');
         $patient->lastname = $request->input('lastname');
         $patient->disease = $request->input('disease');
+        $patient->observations = $request->input('observations');
 
         $patient->save();
 
@@ -115,6 +116,7 @@ class PatientController extends Controller
         $patient->name = $request->input('name');
         $patient->lastname = $request->input('lastname');
         $patient->disease = $request->input('disease');
+        $patient->observations = $request->input('observations');
 
         $patient->save();
 

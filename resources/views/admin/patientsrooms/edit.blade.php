@@ -91,10 +91,9 @@
   $(document).ready(function(){
     $("#editPatientRoom").submit(function(){
       let desde = $('#desde').val();
-      let hasta = $('#hasta').val();
-      if (desde === "" || hasta === ""){
+      if (desde === ""){
         $("#texto").show();
-        $('#texto').text("{{__('messages.Inserta las dos fechas')}}");
+        $('#texto').text("{{__('messages.Inserta la fecha')}}");
         return false;
       }else{
         return true;
