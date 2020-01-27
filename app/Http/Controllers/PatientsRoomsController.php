@@ -16,8 +16,8 @@ class PatientsRoomsController extends Controller
   */
   public function index()
   {
-    $rooms = Room::all();
-    return view ('admin.patientsrooms.index',['rooms' => $rooms]);
+    $patientroom = PatientRoom::all();
+    return view ('admin.patientsrooms.index',['patientrooms' => $patientroom]);
   }
 
   /**
@@ -27,9 +27,10 @@ class PatientsRoomsController extends Controller
   */
   public function create()
   {
+    $patientsRooms = PatientRoom::all();
     $rooms = Room::all();
     $patients = Patient::all();
-    return view ('admin.patientsrooms.create',['patients' => $patients,'rooms'=>$rooms]);
+    return view ('admin.patientsrooms.create',['patients' => $patients,'rooms'=>$rooms, 'patientsRooms' => $patientsRooms]);
   }
 
   /**
@@ -43,19 +44,30 @@ class PatientsRoomsController extends Controller
     $validatedData = $request->validate([
       'patient' => 'required',
       'room' => 'required',
-      'bed' => 'required',
       'desde' => 'required',
       'hasta' => 'required|after:desde'
     ]);
-    $patientroom = new PatientRoom;
 
-    $patientroom->patient_id = $request->input('patient');
-    $patientroom->room_id = $request->input('room');
-    $patientroom->bed = $request->input('bed');
-    $patientroom->up_date = $request->input('desde');
-    $patientroom->down_date = $request->input('hasta');
+    $patient_room = new PatientRoom;
 
-    $patientroom->save();
+    $patient_room->patient_id = $request->input('patient');
+    $patient_room->room_id = $request->input('room');
+    $patient_room->up_date = $request->input('desde');
+    $patient_room->down_date = $request->input('hasta');
+
+    $patient_room->save();
+
+    $patientsRooms = PatientRoom::all();
+
+    return view ('admin.patientsrooms.selectBed',['patient_room' => $patient_room, 'patientsRooms' => $patientsRooms]);
+  }
+
+  public function bedAdd(Request $request, $patient_room_id){
+    $patient_room = PatientRoom::find($patient_room_id);
+
+    $patient_room->bed = $request->input('bed');
+
+    $patient_room->save();
 
     return redirect()->route('adminPatientsRooms.index');
   }
@@ -84,8 +96,9 @@ class PatientsRoomsController extends Controller
     $rooms = Room::all();
     $patients = Patient::all();
     $patientroom = PatientRoom::find($id);
+    $patientsRooms = PatientRoom::all();
 
-    return view('admin.patientsrooms.edit',['rooms' => $rooms,'patients' => $patients,'patientroom' => $patientroom]);
+    return view('admin.patientsrooms.edit',['rooms' => $rooms,'patients' => $patients,'patientroom' => $patientroom,'patientsRooms' => $patientsRooms]);
   }
 
   /**
@@ -100,21 +113,21 @@ class PatientsRoomsController extends Controller
     $validatedData = $request->validate([
       'patient' => 'required',
       'room' => 'required',
-      'bed' => 'required',
       'desde' => 'required',
       'hasta' => 'required|after:desde'
     ]);
-    $patientroom = PatientRoom::find($id);
+    $patient_room = PatientRoom::find($id);
 
-    $patientroom->patient_id = $request->input('patient');
-    $patientroom->room_id = $request->input('room');
-    $patientroom->bed = $request->input('bed');
-    $patientroom->up_date = $request->input('desde');
-    $patientroom->down_date = $request->input('hasta');
+    $patient_room->patient_id = $request->input('patient');
+    $patient_room->room_id = $request->input('room');
+    $patient_room->up_date = $request->input('desde');
+    $patient_room->down_date = $request->input('hasta');
 
-    $patientroom->save();
+    $patient_room->save();
 
-    return redirect()->route('adminPatientsRooms.index');
+    $patientsRooms = PatientRoom::all();
+
+    return view ('admin.patientsrooms.selectBed',['patient_room' => $patient_room, 'patientsRooms' => $patientsRooms]);
   }
 
   /**

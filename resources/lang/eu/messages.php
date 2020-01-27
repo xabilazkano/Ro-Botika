@@ -89,5 +89,6 @@
       'Inserte un correo electrónico válido' => 'Sartu baliozko email bat',
       'Inserte un número de la seguridad social válido' => 'Sartu baliozko seguritate sozialaren zenbaki bat',
       'Inserta las dos fechas' => 'Bi datak sartu',
+      'Seleccionar cama' => 'Ohea aukeratu'
   ];
 ?>
