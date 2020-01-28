@@ -22,10 +22,10 @@
     </thead>
     <tr>
       <td>{{$patientroom->id}}</td>
-      @foreach ($room->patients as $patient)
-      @if ($patient->pivot->id === $patientroom->id)
+      @foreach ($patient->rooms as $room)
+      @if ($room->pivot->id === $patientroom->id)
       <td>{{$patient->id}}</td>
-      <td>{{$patientroom->room_id}}</td>
+      <td>{{$room->id}}</td>
       <td>{{$patient->pivot->bed}}</td>
       <td>{{$patient->pivot->up_date}}</td>
       <td>{{$patient->pivot->down_date}}</td>

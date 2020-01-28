@@ -48,10 +48,10 @@ class RoomController extends Controller
         ]);
 
         $floor = $request->input('floor');
-        $room = $request->input('room');
+        $id = $request->input('room');
         $beds = $request->input('beds');
 
-        Room::insert(['floor'=>$floor,'room_number'=>$room,'beds'=>$beds]);
+        Room::insert(['floor'=>$floor,'id'=>$id,'beds'=>$beds]);
         return redirect()->route('rooms.index');
     }
 
@@ -69,7 +69,6 @@ class RoomController extends Controller
         }else{
           return view('rooms.show',['room'=>$room]);
         }
-
     }
 
     /**
@@ -81,7 +80,7 @@ class RoomController extends Controller
     public function edit($id)
     {
         $room = Room::find($id);
-        return view('admin.rooms.edit',['id'=>$id,'room'=>$room]);
+        return view('admin.rooms.edit',['room'=>$room]);
     }
 
     /**
@@ -99,10 +98,10 @@ class RoomController extends Controller
             'beds' => 'required|integer'
         ]);
         $floor = $request->input('floor');
-        $room = $request->input('room');
+        $newId = $request->input('room');
         $beds = $request->input('beds');
 
-        Room::where('id',$id)->update(['floor'=>$floor,'room_number'=>$room,'beds'=>$beds]);
+        Room::find($id)->update(['id'=>$newId,'beds'=>$beds]);
         return redirect()->route('rooms.index');
     }
 
@@ -114,7 +113,7 @@ class RoomController extends Controller
      */
     public function destroy($id)
     {
-        Room::where('id',$id)->delete();
+        Room::find($id)->delete();
         $rooms = Room::all();
         return redirect()->route('rooms.index');
     }
