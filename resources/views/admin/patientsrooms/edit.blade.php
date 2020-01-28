@@ -77,6 +77,17 @@
         @enderror
       </div>
     </div>
+    <div class="form-group row">
+      <label for="disease" class="col-md-4 col-form-label text-md-right">{{ __('messages.enfermedad') }}</label>
+      <div class="col-md-6">
+        <input type="text" value="{{$patientroom->disease}}" class="form-control @error('disease') is-invalid @enderror" name="disease" id="disease">
+        @error('disease')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+      </div>
+    </div>
     <div class="col-md-6 offset-md-4 text-center">
       <input type="submit" class="btn btn-primary"
       value="{{__('messages.Seleccionar cama')}}">

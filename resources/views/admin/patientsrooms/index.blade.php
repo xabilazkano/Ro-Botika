@@ -19,6 +19,7 @@
         <th scope="col">{{ __('messages.Cama') }}</th>
         <th scope="col">{{ __('messages.Desde') }}</th>
         <th scope="col">{{ __('messages.Hasta') }}</th>
+        <th scope="col">{{ __('messages.enfermedad') }}</th>
         <th></th>
         @if (Auth::user()->hasRole("admin"))
         <th></th>
@@ -36,6 +37,7 @@
         <td>{{$patientroom->bed}}</td>
         <td>{{$patientroom->up_date}}</td>
         <td>{{$patientroom->down_date}}</td>
+        <td>{{$patientroom->disease}}</td>
         <td><a href="{{route('adminPatientsRooms.show',$patientroom->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
         @if (Auth::user()->hasRole("admin"))
         <td><a href="{{route('adminPatientsRooms.edit',$patientroom->id)}}"><i class="blackIcon fa fa-edit"></i></a></td>

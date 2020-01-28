@@ -32,7 +32,8 @@ class PatientsRoomsTableSeeder extends Seeder
         //'up_date' => $up_date,
         // denak gaurkoak izateko
         'up_date' => date("Y/m/d"),
-        'down_date' => $down_date
+        'down_date' => $down_date,
+        'disease' => 'Coronavirus'
       ]);
     }
   }

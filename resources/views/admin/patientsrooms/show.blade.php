@@ -17,6 +17,7 @@
         <th scope="col">{{ __('messages.Cama') }}</th>
         <th scope="col">{{ __('messages.Desde') }}</th>
         <th scope="col">{{ __('messages.Hasta') }}</th>
+        <th scope="col">{{ __('messages.enfermedad') }}</th>
       </tr>
     </thead>
     <tr>
@@ -28,6 +29,7 @@
       <td>{{$patient->pivot->bed}}</td>
       <td>{{$patient->pivot->up_date}}</td>
       <td>{{$patient->pivot->down_date}}</td>
+      <td>{{$patient->pivot->disease}}</td>
       @endif
       @endforeach
 

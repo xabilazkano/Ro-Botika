@@ -13,7 +13,6 @@
         <th scope="col">{{__('messages.numeross')}}</th>
         <th scope="col">{{__('messages.Nombre')}}</th>
         <th scope="col">{{__('messages.Apellido')}}</th>
-        <th scope="col">{{__('messages.enfermedad')}}</th>
       </tr>
     </thead>
     <tr>
@@ -21,7 +20,6 @@
       <td>{{$patient->ss_number}}</td>
       <td>{{$patient->name}}</td>
       <td>{{$patient->lastname}}</td>
-      <td>{{$patient->disease}}</td>
     </th>
   </table><br><br>
   <div class="row justify-content-center">
