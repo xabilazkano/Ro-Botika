@@ -16,10 +16,10 @@ class DatabaseSeeder extends Seeder
       // Los usuarios necesitarán los roles previamente generados
       $this->call(UserTableSeeder::class);
       $this->call(PatientsTableSeeder::class);
-      //$this->call(RoomsTableSeeder::class);
+      $this->call(RoomsTableSeeder::class);
       $this->call(AssistancesTableSeeder::class);
       $this->call(MedicinesTableSeeder::class);
       $this->call(AssistancesMedicinesTableSeeder::class);
-      //$this->call(PatientsRoomsTableSeeder::class);
+      $this->call(PatientsRoomsTableSeeder::class);
     }
 }
