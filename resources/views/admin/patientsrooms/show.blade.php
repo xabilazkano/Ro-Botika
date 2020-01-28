@@ -23,14 +23,14 @@
     <tr>
       <td>{{$patientroom->id}}</td>
       @foreach ($patient->rooms as $room)
-      @if ($room->pivot->id === $patientroom->id)
-      <td>{{$patient->id}}</td>
-      <td>{{$room->id}}</td>
-      <td>{{$patient->pivot->bed}}</td>
-      <td>{{$patient->pivot->up_date}}</td>
-      <td>{{$patient->pivot->down_date}}</td>
-      <td>{{$patient->pivot->disease}}</td>
-      @endif
+        @if ($room->pivot->id === $patientroom->id)
+          <td>{{$patient->id}}</td>
+          <td>{{$room->id}}</td>
+          <td>{{$room->pivot->bed}}</td>
+          <td>{{$room->pivot->up_date}}</td>
+          <td>{{$room->pivot->down_date}}</td>
+          <td>{{$room->pivot->disease}}</td>
+        @endif
       @endforeach
 
     </th>

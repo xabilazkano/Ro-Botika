@@ -82,7 +82,7 @@ class PatientsRoomsController extends Controller
   public function show($id)
   {
     $patientroom = PatientRoom::find($id);
-    $patient = Patient::find($patientroom->room_id);
+    $patient = Patient::find($patientroom->patient_id);
     return view('admin.patientsrooms.show',['patientroom' => $patientroom,'patient'=>$patient]);
   }
 
