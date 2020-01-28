@@ -48,14 +48,13 @@ class PatientController extends Controller
             'ss_number' => 'required|integer|digits:11',
             'name' => 'required',
             'lastname' => 'required',
-            'disease' => 'required'
         ]);
         $patient = new Patient;
 
         $patient->ss_number = $request->input('ss_number');
         $patient->name = $request->input('name');
         $patient->lastname = $request->input('lastname');
-        $patient->disease = $request->input('disease');
+        $patient->observations = $request->input('observations');
 
         $patient->save();
 
@@ -107,14 +106,13 @@ class PatientController extends Controller
             'ss_number' => 'required|integer|digits:11',
             'name' => 'required',
             'lastname' => 'required',
-            'disease' => 'required'
         ]);
         $patient = Patient::find($id);
 
         $patient->ss_number = $request->input('ss_number');
         $patient->name = $request->input('name');
         $patient->lastname = $request->input('lastname');
-        $patient->disease = $request->input('disease');
+        $patient->observations = $request->input('observations');
 
         $patient->save();
 

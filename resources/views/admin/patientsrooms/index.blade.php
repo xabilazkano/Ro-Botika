@@ -19,6 +19,7 @@
         <th scope="col">{{ __('messages.Cama') }}</th>
         <th scope="col">{{ __('messages.Desde') }}</th>
         <th scope="col">{{ __('messages.Hasta') }}</th>
+        <th scope="col">{{ __('messages.enfermedad') }}</th>
         <th></th>
         @if (Auth::user()->hasRole("admin"))
         <th></th>
@@ -28,7 +29,9 @@
     </thead>
     <tbody>
 
-      @foreach ($patientrooms as $patientroom)
+      @foreach ($patients as $patient)
+
+      @foreach ($patient->rooms as $room)
       <tr>
         <td>{{$patientroom->id}}</td>
         <td>{{$patientroom->patient_id}}</td>
@@ -36,11 +39,12 @@
         <td>{{$patientroom->bed}}</td>
         <td>{{$patientroom->up_date}}</td>
         <td>{{$patientroom->down_date}}</td>
+        <td>{{$patientroom->disease}}</td>
         <td><a href="{{route('adminPatientsRooms.show',$patientroom->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
         @if (Auth::user()->hasRole("admin"))
-        <td><a href="{{route('adminPatientsRooms.edit',$patientroom->id)}}"><i class="blackIcon fa fa-edit"></i></a></td>
+        <td><a href="{{route('adminPatientsRooms.edit',$room->pivot->id)}}"><i class="blackIcon fa fa-edit"></i></a></td>
         <td>
-          <form action="{{route('adminPatientsRooms.destroy',$patientroom->id)}}" method="post">
+          <form action="{{route('adminPatientsRooms.destroy',$room->pivot->id)}}" method="post">
             @csrf
             @method('delete')
             <button type="submit" class="deleteIcon">
@@ -50,6 +54,8 @@
         </td>
         @endif
       </tr>
+      @endforeach
+
       @endforeach
 
 

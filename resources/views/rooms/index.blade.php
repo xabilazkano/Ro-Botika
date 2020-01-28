@@ -4,7 +4,6 @@
 <table class="table">
 	<thead class="thead">
 		<tr>
-			<th>ID</th>
 			<th>{{__('messages.planta')}}</th>
 			<th>{{__('messages.numerohabitacion')}}</th>
 			<th>{{__('messages.camas')}}</th>
@@ -14,13 +13,12 @@
 	</thead>
 	@foreach ($rooms as $room)
 				<tr>
-					<td>{{$room->id}}</td>
 					<td>{{$room->floor}}</td>
-					<td>{{$room->room_number}}</td>
+					<td>{{$room->id}}</td>
 					<td>{{$room->beds}}</td>
 					<td>
 					@foreach ($room->patients as $patient)
-						@if ($patient->pivot->up_date <= date('Y-m-d') && $patient->pivot->down_date >= date('Y-m-d'))
+						@if ($patient->pivot->up_date <= date('Y-m-d') && ($patient->pivot->down_date >= date('Y-m-d') || $patient->pivot->down_date === null))
 							<a href="{{route('patients.show',$patient->id)}}">{{$patient->name}} {{$patient->lastname}}</a><br>
 						@endif
 					@endforeach

@@ -14,7 +14,11 @@
       <div class="col-md-6">
         <select class="form-control @error('patient') is-invalid @enderror" name="patient">
           @foreach ($patients as $patient)
-          <option value="{{$patient->id}}">{{$patient->name}}{{$patient->surname}}</option>
+            @foreach ($patient->rooms as $room)
+              @if ($room->pivot->up_date <= date('Y-m-d') && ($room->pivot->down_date >= date('Y-m-d') || $room->pivot->down_date === null))
+                <option value="{{$patient->id}}">{{$patient->name}}{{$patient->surname}}</option>
+              @endif
+            @endforeach
           @endforeach
         </select>
 
