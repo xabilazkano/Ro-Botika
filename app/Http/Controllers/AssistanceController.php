@@ -154,9 +154,8 @@ class AssistanceController extends Controller
     public function estadocarro() {
 
       $asistencia = Assistance::select('patient_id','chart_state')->where('chart_state', 1)->get();
-      return $asistencia;
-      //$habitacion = PatientRoom::select('room_id')->where('patient_id', $asistencia->patient_id);
-      //$estado = $asistencia . $habitacion;
-      //return $estado;
+
+      $habitacion = PatientRoom::select('room_id')->where('patient_id', $asistencia[0]->patient_id)->get();
+      return $habitacion . $asistencia[0]->chart_state;
     }
 }
