@@ -7,6 +7,8 @@ use App\User;
 use App\Medicine;
 use App\AssistanceMedicine;
 use App\Http\Requests\addAssistance;
+use App\PatientRoom;
+
 class AssistanceController extends Controller
 {
     /**
@@ -23,6 +25,7 @@ class AssistanceController extends Controller
         return view ('assistances.index',['assistances' => $assistances]);
       }
     }
+
     /**
     * Show the form for creating a new resource.
     *
@@ -141,5 +144,18 @@ class AssistanceController extends Controller
         $assistances = Assistance::all();
         return redirect()->route('assistances.index');
 
+    }
+    public function siguienteHabitacion($id)
+    {
+      $assist = Assistance::find($id);
+      return view ('admin.assistances.show',['assist'=>$assist]);
+    }
+
+    public function estadocarro() {
+
+      $asistencia = Assistance::select('patient_id','chart_state')->where('chart_state', 1)->get();
+
+      $habitacion = PatientRoom::select('room_id')->where('patient_id', $asistencia[0]->patient_id)->get();
+      return $habitacion . $asistencia[0]->chart_state;
     }
 }
