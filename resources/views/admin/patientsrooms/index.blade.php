@@ -19,6 +19,7 @@
         <th scope="col">{{ __('messages.Cama') }}</th>
         <th scope="col">{{ __('messages.Desde') }}</th>
         <th scope="col">{{ __('messages.Hasta') }}</th>
+        <th scope="col">{{ __('messages.enfermedad') }}</th>
         <th></th>
         @if (Auth::user()->hasRole("admin"))
         <th></th>
@@ -32,13 +33,14 @@
 
       @foreach ($patient->rooms as $room)
       <tr>
-        <td>{{$room->pivot->id}}</td>
-        <td>{{$patient->name}} {{$patient->lastname}}</td>
-        <td>{{$room->id}}</td>
-        <td>{{$room->pivot->bed}}</td>
-        <td>{{$room->pivot->up_date}}</td>
-        <td>{{$room->pivot->down_date}}</td>
-        <td><a href="{{route('adminPatientsRooms.show',$room->pivot->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
+        <td>{{$patientroom->id}}</td>
+        <td>{{$patientroom->patient_id}}</td>
+        <td>{{$patientroom->room_id}}</td>
+        <td>{{$patientroom->bed}}</td>
+        <td>{{$patientroom->up_date}}</td>
+        <td>{{$patientroom->down_date}}</td>
+        <td>{{$patientroom->disease}}</td>
+        <td><a href="{{route('adminPatientsRooms.show',$patientroom->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
         @if (Auth::user()->hasRole("admin"))
         <td><a href="{{route('adminPatientsRooms.edit',$room->pivot->id)}}"><i class="blackIcon fa fa-edit"></i></a></td>
         <td>
