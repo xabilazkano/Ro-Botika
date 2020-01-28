@@ -9,7 +9,6 @@
 	<table class="table">
 		<thead class="thead">
 			<tr>
-				<th>Id</th>
 				<th>{{__('messages.planta')}}</th>
 				<th>{{__('messages.numerohabitacion')}}</th>
 				<th>{{__('messages.camas')}}</th>
@@ -17,9 +16,8 @@
 			</tr>
 		</thead>
 		<tr>
-			<td>{{$room->id}}</td>
 			<td>{{$room->floor}}</td>
-			<td>{{$room->room_number}}</td>
+			<td>{{$room->id}}</td>
 			<td>{{$room->beds}}</td>
 		</tr>
 	</table>

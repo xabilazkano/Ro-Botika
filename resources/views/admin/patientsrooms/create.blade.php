@@ -32,13 +32,13 @@
               <?php
                 $camasOcupadas = 0;
                 foreach ($patientsRooms as $patientRoom){
-                  if ($patientRoom->room_id == $room->room_number  && $patientRoom->up_date<=date('Y-m-d') && $patientRoom->down_date>=date('Y-m-d')){
+                  if ($patientRoom->room_id == $room->id  && $patientRoom->up_date<=date('Y-m-d') && $patientRoom->down_date>=date('Y-m-d')){
                     $camasOcupadas++;
                   }
                 }
               ?>
               @if ($camasOcupadas < 2)
-                <option value="{{$room->room_number}}">{{$room->room_number}}</option>
+                <option value="{{$room->id}}">{{$room->id}}</option>
               @endif
             @endforeach
           </select>
@@ -61,10 +61,10 @@
         </div>
       </div>
       <div class="form-group row">
-        <label for="hasta" class="col-md-4 col-form-label text-md-right">{{__('messages.Hasta')}}</label>
+        <label for="disease" class="col-md-4 col-form-label text-md-right">{{ __('messages.enfermedad') }}</label>
         <div class="col-md-6">
-          <input type="date" class="form-control @error('hasta') is-invalid @enderror" name="hasta" id="hasta" value="{{Request::old('hasta')}}">
-          @error('hasta')
+          <input type="text" value="{{Request::old('disease')}}" class="form-control @error('disease') is-invalid @enderror" name="disease" id="disease">
+          @error('disease')
           <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
           </span>
@@ -85,17 +85,12 @@
     $(document).ready(function(){
       $("#selectBed").submit(function(){
         let desde = $('#desde').val();
-        let hasta = $('#hasta').val();
-        if (desde === "" || hasta === ""){
+        if (desde === "" ){
           $("#texto").show();
-          $('#texto').text("{{__('messages.Inserta las dos fechas')}}");
+          $('#texto').text("{{__('messages.Inserta las fecha')}}");
           return false;
         }
-        if (desde > hasta){
-          $("#texto").show();
-          $('#texto').text("{{__('messages.Inserta dos fechas verdaderas')}}");
-          return false;
-        }else{
+        else{
           return true;
         }
       });

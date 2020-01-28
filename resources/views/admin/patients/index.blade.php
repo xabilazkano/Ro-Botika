@@ -17,7 +17,6 @@
         <th scope="col">{{ __('messages.numeross') }}</th>
         <th scope="col">{{ __('messages.Nombre') }}</th>
         <th scope="col">{{ __('messages.Apellido') }}</th>
-        <th scope="col">{{ __('messages.enfermedad') }}</th>
         <th></th>
         @if (Auth::user()->hasRole("admin"))
         <th></th>
@@ -32,7 +31,6 @@
         <td>{{$patient->ss_number}}</td>
         <td>{{$patient->name}}</td>
         <td>{{$patient->lastname}}</td>
-        <td>{{$patient->disease}}</td>
         <td><a href="{{route('patients.show',$patient->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
         @if (Auth::user()->hasRole("admin"))
         <td><a href="{{route('adminPatients.edit',$patient->id)}}"><i class="blackIcon fa fa-edit"></i></a></td>
