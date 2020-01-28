@@ -18,7 +18,6 @@ class CreatePatientTable extends Migration
             $table->bigInteger('ss_number');
             $table->string('name');
             $table->string('lastname');
-            $table->string('disease');
             $table->text('observations')->nullable();
             $table->timestamps();
         });

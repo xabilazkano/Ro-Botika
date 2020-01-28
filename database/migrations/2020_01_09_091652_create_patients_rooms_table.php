@@ -22,6 +22,7 @@ class CreatePatientsRoomsTable extends Migration
             $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
             $table->date('up_date');
             $table->date('down_date')->nullable();
+            $table->string('disease');
             $table->timestamps();
         });
     }

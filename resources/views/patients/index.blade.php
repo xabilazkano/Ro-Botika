@@ -7,8 +7,6 @@
       <th scope="col">{{ __('messages.numeross') }}</th>
       <th scope="col">{{ __('messages.Nombre') }}</th>
       <th scope="col">{{ __('messages.Apellido') }}</th>
-      <th scope="col">{{ __('messages.enfermedad') }}</th>
-      <th scope="col">{{__('messages.Habitación')}}</th>
       <th></th>
     </tr>
   </thead>
@@ -20,8 +18,6 @@
               <td>{{$patient->ss_number}}</td>
               <td>{{$patient->name}}</td>
               <td>{{$patient->lastname}}</td>
-              <td>{{$patient->disease}}</td>
-              <td><a href="{{route('rooms.show',$room->id)}}">{{$room->id}}</td>
               <td><a href="{{route('patients.show',$patient->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
             </tr>
           @endif

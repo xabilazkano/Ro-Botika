@@ -10,6 +10,5 @@ $factory->define(Patient::class, function (Faker $faker) {
       'ss_number' => $faker->numerify('###########'),
       'name' => $faker->firstname,
       'lastname' => $faker->lastname,
-      'disease' =>$faker->word,
     ];
 });
