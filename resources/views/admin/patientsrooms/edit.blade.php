@@ -14,13 +14,11 @@
       <div class="col-md-6">
         <select class="form-control @error('patient') is-invalid @enderror" name="patient">
           @foreach ($patients as $patient)
-            @if ($patient->rooms->isEmpty())
+            @if ($patient->rooms->isEmpty() || $patient->id === $patientroom->patient_id)
               <option value="{{$patient->id}}">{{$patient->name}}&nbsp;{{$patient->lastname}}</option>
             @else
               @foreach ($patient->rooms as $room)
-                @if ($patient->id === $patientroom->patient_id)
-                  <option value="{{$patient->id}}" selected="selected">{{$patient->name}}&nbsp;{{$patient->lastname}}</option>
-                @else if ($room->pivot->down_date < date('Y-m-d') && isset($room->pivot->down_date))
+                @if ($room->pivot->down_date < date('Y-m-d') && isset($room->pivot->down_date))
                   <option value="{{$patient->id}}">{{$patient->name}}&nbsp;{{$patient->lastname}}</option>
                 @endif
               @endforeach
