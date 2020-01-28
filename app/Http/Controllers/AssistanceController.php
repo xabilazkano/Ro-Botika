@@ -152,10 +152,27 @@ class AssistanceController extends Controller
     }
 
     public function estadocarro() {
-
       $asistencia = Assistance::select('patient_id','chart_state')->where('chart_state', 1)->get();
-
-      $habitacion = PatientRoom::select('room_id')->where('patient_id', $asistencia[0]->patient_id)->get();
-      return $habitacion . $asistencia[0]->chart_state;
+      if (isset($asistencia[0])) {
+        $habitacion = PatientRoom::select('room_id')->where('patient_id', $asistencia[0]->patient_id)->get();
+        return $habitacion[0]["room_id"];
+      } else {
+        return null;
+      }
     }
+
+    public function llegada($habitacion) {
+      $asistencia = Assistance::select('patient_id','chart_state')->where('chart_state', 1)->get();
+      if (isset($asistencia[0])) {
+        $habitacionLlegada = PatientRoom::select('room_id')->where('patient_id', $asistencia[0]->patient_id)->get();
+        if ($habitacion == $habitacionLlegada[0]["room_id"]){
+          $assistance = Assistance::all();
+          foreach ($assistance as $a) {
+            $a->chart_state = 0;
+            $a->save();
+          }
+        }
+      }
+    }
+
 }
