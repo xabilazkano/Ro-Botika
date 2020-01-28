@@ -56,16 +56,18 @@ class PatientsRoomsController extends Controller
     $patient_room->up_date = $request->input('desde');
     $patient_room->disease = $request->input('disease');
 
-    $patient_room->save();
-
     $patientsRooms = PatientRoom::all();
 
     return view ('admin.patientsrooms.selectBed',['patient_room' => $patient_room, 'patientsRooms' => $patientsRooms]);
   }
 
-  public function bedAdd(Request $request, $patient_room_id){
-    $patient_room = PatientRoom::find($patient_room_id);
+  public function bedAdd(Request $request){
+    $patient_room = new PatientRoom;
 
+    $patient_room->patient_id = $request->input('patient_id');
+    $patient_room->room_id = $request->input('room_id');
+    $patient_room->up_date = $request->input('up_date');
+    $patient_room->disease = $request->input('disease');
     $patient_room->bed = $request->input('bed');
 
     $patient_room->save();

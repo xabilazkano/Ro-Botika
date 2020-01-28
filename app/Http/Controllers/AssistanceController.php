@@ -157,7 +157,7 @@ class AssistanceController extends Controller
         $habitacion = PatientRoom::select('room_id')->where('patient_id', $asistencia[0]->patient_id)->get();
         return $habitacion[0]["room_id"];
       } else {
-        return null;
+        return 0;
       }
     }
 

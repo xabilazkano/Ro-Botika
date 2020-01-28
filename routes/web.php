@@ -45,7 +45,7 @@ Route::group(['middleware' => ['role']], function () {
   Route::post('/medicineDestroy/{id}/{medicine}', 'AssistanceMedicineController@destroy')->name('medicineDestroy');
   Route::post('/medicineAdd/{id}', 'AssistanceMedicineController@add')->name('medicineAdd');
 	Route::resource('adminPatientsRooms', 'PatientsRoomsController');
-	Route::post('/bedAdd/{id}','PatientsRoomsController@bedAdd')->name('bedAdd');
+	Route::post('/bedAdd','PatientsRoomsController@bedAdd')->name('bedAdd');
 });
 
 Route::post('confirm/{id}','AssistanceController@confirmAssist')->name('confirmAssist');
