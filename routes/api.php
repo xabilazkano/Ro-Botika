@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+use App\Http\Resources\Assistance as AssistanceResource;
+Route::get('carro', 'AssistanceController@estadocarro')->name('carro');

@@ -19,6 +19,7 @@ class AssistancesTableSeeder extends Seeder
         DB::table('assistances')->insert([
           'patient_id' => rand(1,20),
           'user_id' => rand(1,22),
+          'chart_state' => false,
 
           //'estimated_date' => $estimated_date
           // denak gaurkoak izateko
