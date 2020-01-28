@@ -19,7 +19,8 @@ class PatientsRoomsTableSeeder extends Seeder
       'bed' => 'A',
       'patient_id' => 1,
 
-      'up_date' => date("Y/m/d")
+      'up_date' => date("Y/m/d"),
+      'disease' => 'Coronavirus'
     ]);
 
     //2
@@ -28,7 +29,8 @@ class PatientsRoomsTableSeeder extends Seeder
       'bed' => 'B',
       'patient_id' => 2,
 
-      'up_date' => date("Y/m/d")
+      'up_date' => date("Y/m/d"),
+      'disease' => 'Coronavirus'
     ]);
 
     //3
@@ -37,7 +39,8 @@ class PatientsRoomsTableSeeder extends Seeder
       'bed' => 'A',
       'patient_id' => 3,
 
-      'up_date' => date("Y/m/d")
+      'up_date' => date("Y/m/d"),
+      'disease' => 'Coronavirus'
     ]);
 
     //4
@@ -46,7 +49,8 @@ class PatientsRoomsTableSeeder extends Seeder
       'bed' => 'B',
       'patient_id' => 4,
 
-      'up_date' => date("Y/m/d")
+      'up_date' => date("Y/m/d"),
+      'disease' => 'Coronavirus'
     ]);
 
     //5
@@ -55,7 +59,8 @@ class PatientsRoomsTableSeeder extends Seeder
       'bed' => 'A',
       'patient_id' => 5,
 
-      'up_date' => date("Y/m/d")
+      'up_date' => date("Y/m/d"),
+      'disease' => 'Coronavirus'
     ]);
 
     //6
@@ -64,7 +69,8 @@ class PatientsRoomsTableSeeder extends Seeder
       'bed' => 'B',
       'patient_id' => 6,
 
-      'up_date' => date("Y/m/d")
+      'up_date' => date("Y/m/d"),
+      'disease' => 'Coronavirus'
     ]);
 
     //7
@@ -73,7 +79,8 @@ class PatientsRoomsTableSeeder extends Seeder
       'bed' => 'A',
       'patient_id' => 7,
 
-      'up_date' => date("Y/m/d")
+      'up_date' => date("Y/m/d"),
+      'disease' => 'Coronavirus'
     ]);
 
     //8
@@ -82,7 +89,8 @@ class PatientsRoomsTableSeeder extends Seeder
       'bed' => 'B',
       'patient_id' => 8,
 
-      'up_date' => date("Y/m/d")
+      'up_date' => date("Y/m/d"),
+      'disease' => 'Coronavirus'
     ]);
 
     //9
@@ -91,7 +99,8 @@ class PatientsRoomsTableSeeder extends Seeder
       'bed' => 'A',
       'patient_id' => 9,
 
-      'up_date' => date("Y/m/d")
+      'up_date' => date("Y/m/d"),
+      'disease' => 'Coronavirus'
     ]);
 
     //10
@@ -100,7 +109,8 @@ class PatientsRoomsTableSeeder extends Seeder
       'bed' => 'B',
       'patient_id' => 10,
 
-      'up_date' => date("Y/m/d")
+      'up_date' => date("Y/m/d"),
+      'disease' => 'Coronavirus'
     ]);
 
     //11
@@ -109,7 +119,8 @@ class PatientsRoomsTableSeeder extends Seeder
       'bed' => 'A',
       'patient_id' => 11,
 
-      'up_date' => date("Y/m/d")
+      'up_date' => date("Y/m/d"),
+      'disease' => 'Coronavirus'
     ]);
 
     //12
@@ -118,7 +129,8 @@ class PatientsRoomsTableSeeder extends Seeder
       'bed' => 'B',
       'patient_id' => 12,
 
-      'up_date' => date("Y/m/d")
+      'up_date' => date("Y/m/d"),
+      'disease' => 'Coronavirus'
     ]);
 
     //13
@@ -127,7 +139,8 @@ class PatientsRoomsTableSeeder extends Seeder
       'bed' => 'A',
       'patient_id' => 13,
 
-      'up_date' => date("Y/m/d")
+      'up_date' => date("Y/m/d"),
+      'disease' => 'Coronavirus'
     ]);
 
     //14
@@ -136,7 +149,8 @@ class PatientsRoomsTableSeeder extends Seeder
       'bed' => 'B',
       'patient_id' => 14,
 
-      'up_date' => date("Y/m/d")
+      'up_date' => date("Y/m/d"),
+      'disease' => 'Coronavirus'
     ]);
 
     //15
@@ -145,7 +159,8 @@ class PatientsRoomsTableSeeder extends Seeder
       'bed' => 'A',
       'patient_id' => 15,
 
-      'up_date' => date("Y/m/d")
+      'up_date' => date("Y/m/d"),
+      'disease' => 'Coronavirus'
     ]);
 
     //16
@@ -154,7 +169,8 @@ class PatientsRoomsTableSeeder extends Seeder
       'bed' => 'A',
       'patient_id' => 16,
 
-      'up_date' => date("Y/m/d")
+      'up_date' => date("Y/m/d"),
+      'disease' => 'Coronavirus'
     ]);
 
     //17
@@ -163,7 +179,8 @@ class PatientsRoomsTableSeeder extends Seeder
       'bed' => 'A',
       'patient_id' => 17,
 
-      'up_date' => date("Y/m/d")
+      'up_date' => date("Y/m/d"),
+      'disease' => 'Coronavirus'
     ]);
 
     //18
@@ -172,7 +189,8 @@ class PatientsRoomsTableSeeder extends Seeder
       'bed' => 'A',
       'patient_id' => 18,
 
-      'up_date' => date("Y/m/d")
+      'up_date' => date("Y/m/d"),
+      'disease' => 'Coronavirus'
     ]);
 
     //19
@@ -181,7 +199,8 @@ class PatientsRoomsTableSeeder extends Seeder
       'bed' => 'A',
       'patient_id' => 19,
 
-      'up_date' => date("Y/m/d")
+      'up_date' => date("Y/m/d"),
+      'disease' => 'Coronavirus'
     ]);
 
     //20
@@ -190,7 +209,8 @@ class PatientsRoomsTableSeeder extends Seeder
       'bed' => 'A',
       'patient_id' => 20,
 
-      'up_date' => date("Y/m/d")
+      'up_date' => date("Y/m/d"),
+      'disease' => 'Coronavirus'
     ]);
 
 
