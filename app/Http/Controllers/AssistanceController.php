@@ -12,7 +12,7 @@ use App\PatientRoom;
 /**
 * @OA\Info(title="API Carro Automatizado", version="1.0")
 *
-* @OA\Server(url="http://localhost:8000")
+* @OA\Server(url="http://robotika.ddns.net/")
 */
 
 class AssistanceController extends Controller
