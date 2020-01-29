@@ -146,4 +146,8 @@ class PatientsRoomsController extends Controller
     return redirect()->route('adminPatientsRooms.index');
 
   }
+  public function countBeds()
+  {
+    PatientRoom::all();
+  }
 }

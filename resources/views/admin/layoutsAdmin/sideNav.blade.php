@@ -91,6 +91,21 @@
           </a>
         </li>
       @endif
+      @if ($_SESSION["section"] === "statistics")
+        <li class="nav-item">
+          <a class="btn btn-outline-dark active w-100 sidebarBoton" href="{{route('statistics')}}">
+            <i class="fas fa-chart-pie"></i>
+            {{__('messages.Estadísticas')}}
+          </a>
+        </li>
+      @else
+        <li class="nav-item">
+          <a class="btn btn-outline-dark w-100 border-0 sidebarBoton" href="{{route('statistics')}}">
+            <i class="fas fa-chart-pie"></i>
+            {{__('messages.Estadísticas')}}
+          </a>
+        </li>
+      @endif
     </ul>
   </div>
 </nav>
