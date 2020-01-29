@@ -175,18 +175,20 @@ class AssistanceController extends Controller
       $asistencia = Assistance::select('patient_id','chart_state')->where('chart_state', 1)->get();
       if (isset($asistencia[0])) {
         $habitacion = PatientRoom::select('room_id')->where('patient_id', $asistencia[0]->patient_id)->get();
-        return $habitacion[0]["room_id"];
+        return $habitacion[0];
       } else {
-        return 0;
+        $habitacionNula = new PatientRoom;
+        $habitacionNula->room_id = 0;
+        return $habitacionNula;
       }
     }
 
     /**
     * @OA\Get(
     *     path="/api/llegada/{habitacion}",
-    *     summary="Notificar que el carro ha llegado a la habitación indicada",
+    *     summary="Notificar que el carro ha llegado a la habitación indicada.",
     *     @OA\Parameter(
-    *       name="id",
+    *       name="habitacion",
     *       required=true,
     *       description="El ID de la habitación.",
     *       in="path",
@@ -214,6 +216,8 @@ class AssistanceController extends Controller
             $a->chart_state = 0;
             $a->save();
           }
+          $respuesta = (object) array('estado' => 'ok');
+          return json_encode($respuesta);;
         }
       }
     }
