@@ -91,6 +91,7 @@
       'Inserta la fecha' => 'Insert the up date',
       'Seleccionar cama' => 'Select bed',
       'observations' => 'Observations',
+      'Estadísticas' => 'Statistics',
   ];
 
 ?>

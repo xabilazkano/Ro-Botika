@@ -46,7 +46,7 @@ Route::group(['middleware' => ['role']], function () {
   Route::post('/medicineAdd/{id}', 'AssistanceMedicineController@add')->name('medicineAdd');
 	Route::resource('adminPatientsRooms', 'PatientsRoomsController');
 	Route::post('/bedAdd','PatientsRoomsController@bedAdd')->name('bedAdd');
-	Route::get('/statistics', 'PatientsRoomsController@index')->name('statistics');
+	Route::get('/statistics', 'GraphicController@graficas')->name('statistics');
 });
 
 Route::post('confirm/{id}','AssistanceController@confirmAssist')->name('confirmAssist');

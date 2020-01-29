@@ -91,5 +91,6 @@
       'Inserta la fecha' => 'Sartu ospitalaratze data',
       'Seleccionar cama' => 'Ohea aukeratu',
       'observations' => 'Obserbazioak',
+      'Estadísticas' => 'Estatistiikak',
   ];
 ?>
