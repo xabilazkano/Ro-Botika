@@ -10,6 +10,7 @@
 			<th>{{__('messages.Medicinas')}}</th>
 			<th>{{__('messages.Confirmado')}}</th>
 			<th></th>
+			<th>{{__('messages.Movercarro')}}</th>
 		</tr>
 	</thead>
 	@foreach ($assistances as $assist)
@@ -32,6 +33,11 @@
 				</td>
 				<td>
 					<a href="{{route('assistances.show',$assist->id)}}"><i class="blackIcon fa fa-eye"></i></a>
+				</td>
+				<td>
+					<a href="{{route('assistances.ir',$assist->id)}}">
+						<button type="button" name="button" class="btn btn-secondary botonir">{{__('messages.Asistir')}}</button>
+					</a>
 				</td>
 			</tr>
 		@endif

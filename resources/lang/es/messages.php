@@ -91,5 +91,7 @@
       'Inserta la fecha' => 'Inserta la fecha de ingreso',
       'Seleccionar cama' => 'Seleccionar cama',
       'observations' => 'Observaciones',
+      'Movercarro' => 'Mover carro',
+      'Asistir' => 'Asistir'
   ];
 ?>

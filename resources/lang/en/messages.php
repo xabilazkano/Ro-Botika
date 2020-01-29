@@ -91,6 +91,8 @@
       'Inserta la fecha' => 'Insert the up date',
       'Seleccionar cama' => 'Select bed',
       'observations' => 'Observations',
+      'Movercarro' => 'Move chart',
+      'Asistir' => 'Assist'
   ];
 
 ?>
