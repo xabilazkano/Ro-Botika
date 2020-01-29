@@ -1,0 +1,53 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Carro Automatizado",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000"
+        }
+    ],
+    "paths": {
+        "/api/siguienteHabitacion": {
+            "get": {
+                "summary": "Mostrar el ńumero de la siguiente habitación. Si no hay ninguna habitación seleccionada, devolverá 0.",
+                "operationId": "App\\Http\\Controllers\\AssistanceController::estadocarro",
+                "responses": {
+                    "200": {
+                        "description": "Mostrado correctamente el ńumero de la siguiente habitación. Si no había ninguna habitación seleccionada, habrá devuelto 0."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/llegada/{habitacion}": {
+            "get": {
+                "summary": "Notificar que el carro ha llegado a la habitación indicada",
+                "operationId": "App\\Http\\Controllers\\AssistanceController::llegada",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "El ID de la habitación.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Notificado correctamente que el carro ha llegado a la habitación indicada."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        }
+    }
+}

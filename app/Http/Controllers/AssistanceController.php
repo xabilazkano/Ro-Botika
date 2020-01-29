@@ -9,6 +9,12 @@ use App\AssistanceMedicine;
 use App\Http\Requests\addAssistance;
 use App\PatientRoom;
 
+/**
+* @OA\Info(title="API Carro Automatizado", version="1.0")
+*
+* @OA\Server(url="http://localhost:8000")
+*/
+
 class AssistanceController extends Controller
 {
     /**
@@ -151,6 +157,20 @@ class AssistanceController extends Controller
       return view ('admin.assistances.show',['assist'=>$assist]);
     }
 
+    /**
+    * @OA\Get(
+    *     path="/api/siguienteHabitacion",
+    *     summary="Mostrar el ńumero de la siguiente habitación. Si no hay ninguna habitación seleccionada, devolverá 0.",
+    *     @OA\Response(
+    *         response=200,
+    *         description="Mostrado correctamente el ńumero de la siguiente habitación. Si no había ninguna habitación seleccionada, habrá devuelto 0."
+    *     ),
+    *     @OA\Response(
+    *         response="default",
+    *         description="Ha ocurrido un error."
+    *     )
+    * )
+    */
     public function estadocarro() {
       $asistencia = Assistance::select('patient_id','chart_state')->where('chart_state', 1)->get();
       if (isset($asistencia[0])) {
@@ -161,11 +181,34 @@ class AssistanceController extends Controller
       }
     }
 
+    /**
+    * @OA\Get(
+    *     path="/api/llegada/{habitacion}",
+    *     summary="Notificar que el carro ha llegado a la habitación indicada",
+    *     @OA\Parameter(
+    *       name="id",
+    *       required=true,
+    *       description="El ID de la habitación.",
+    *       in="path",
+    *       @OA\Schema(
+    *         type="integer"
+    *       )
+    *     ),
+    *     @OA\Response(
+    *         response=200,
+    *         description="Notificado correctamente que el carro ha llegado a la habitación indicada."
+    *     ),
+    *     @OA\Response(
+    *         response="default",
+    *         description="Ha ocurrido un error."
+    *     )
+    * )
+    */
     public function llegada($habitacion) {
       $asistencia = Assistance::select('patient_id','chart_state')->where('chart_state', 1)->get();
       if (isset($asistencia[0])) {
-        $habitacionLlegada = PatientRoom::select('room_id')->where('patient_id', $asistencia[0]->patient_id)->get();
-        if ($habitacion == $habitacionLlegada[0]["room_id"]){
+        $patientRoom = PatientRoom::select('room_id')->where('patient_id', $asistencia[0]->patient_id)->get();
+        if ($habitacion == $patientRoom[0]["room_id"]){
           $assistance = Assistance::all();
           foreach ($assistance as $a) {
             $a->chart_state = 0;
