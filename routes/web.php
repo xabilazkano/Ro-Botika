@@ -33,6 +33,8 @@ Route::group(['middleware' => ['auth','verified']], function(){
   Route::resource('rooms','RoomController')->only(['index','show']);
   Route::resource('assistances','AssistanceController')->only(['index','show']);
   Route::resource('medicines','MedicineController')->only(['index','show']);
+
+	Route::get('ir/{id}','AssistanceController@ir')->name('assistances.ir');
 });
 
 Route::group(['middleware' => ['role']], function () {

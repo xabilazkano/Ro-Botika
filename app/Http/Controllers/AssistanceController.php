@@ -151,10 +151,21 @@ class AssistanceController extends Controller
         return redirect()->route('assistances.index');
 
     }
-    public function siguienteHabitacion($id)
-    {
-      $assist = Assistance::find($id);
-      return view ('admin.assistances.show',['assist'=>$assist]);
+    public function ir($id) {
+      $asistencias = Assistance::all();
+      $ocupado = false;
+      foreach ($asistencias as $a) {
+        if ($a->chart_state === 1) {
+          $ocupado = true;
+        }
+      }
+      if (!$ocupado) {
+        $assist = Assistance::find($id);
+        $assist->chart_state = 1;
+        $assist->save();
+        echo "save";
+      }
+      return redirect()->route('assistances.index');
     }
 
     /**

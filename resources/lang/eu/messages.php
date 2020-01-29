@@ -91,5 +91,7 @@
       'Inserta la fecha' => 'Sartu ospitalaratze data',
       'Seleccionar cama' => 'Ohea aukeratu',
       'observations' => 'Obserbazioak',
+      'Movercarro' => 'Mugitu karroa',
+      'Asistir' => 'Asistitu'
   ];
 ?>
