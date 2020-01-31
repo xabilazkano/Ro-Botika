@@ -24,15 +24,22 @@ class GraphicController extends Controller
     return view ('admin.statistics',['occupied' => $occupied,'free' => $free,'medicines' => $medicines]);
   }
 
-  public function confirmedAssistances($date)
-  {
+  public function confirmedAssistances($date) {
+    $total = Assistance::where('estimated_date','=',$date)->count();
+    $confirmed = Assistance::where([
+      ['estimated_date','=',$date],
+      ['confirmed','=',1]
+    ])->count();
 
-    $total = Assistance::all()->where('estimated_date','=',$date);
-    $confirmed = Assistance::all()->where([['estimated_date','=',$date],['confirmed','=',1]]);
-
-    $percentage = $confirmed*100/$total;
-    return $percentage;
-
-
+    if ($total !== 0) {
+      if ($confirmed === 0) {
+        return 0;
+      } else {
+        $percentage = $confirmed*100/$total;
+        return $percentage;
+      }
+    } else {
+      return 'noregistros';
+    }
   }
 }

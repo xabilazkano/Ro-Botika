@@ -23,6 +23,7 @@
 
 
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	
 
 	<link href="{{asset('admincss/style.css')}}" rel="stylesheet" type="text/css">
   <style type="text/css">
