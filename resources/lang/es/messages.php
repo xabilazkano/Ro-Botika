@@ -107,6 +107,7 @@
       'Not confirmed' => 'No confirmado',
       'Assistances status' => 'Estado de asistencias',
       'Stock of medicines' => 'Stock de medicinas',
+      'No hay registros de este día' => 'No hay registros de este día',
 
   ];
 ?>

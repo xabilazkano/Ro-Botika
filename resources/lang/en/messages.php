@@ -107,6 +107,7 @@
       'Not confirmed'=> 'Not confirmed',
       'Assistances status' => 'Assistances status',
       'Stock of medicines' => 'Stock of medicines',
+      'No hay registros de este día' => 'No register for the selected date',
   ];
 
 ?>

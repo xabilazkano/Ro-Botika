@@ -63,7 +63,7 @@ $_SESSION['section']="statistics";
 
 
 
-var ehuneko = "";
+
 var besteak = "";
   $(document).ready(function(){
   $("#calcular").click(function(){
@@ -73,7 +73,7 @@ var besteak = "";
       if (status === "success"){
 
         if (data==="noregistros"){
-          document.getElementById('pintatu').innerHTML = "<br><br><br><h4>No hay registros de este día</h4>";
+          document.getElementById('pintatu').innerHTML = "<br><br><br><h4>{{__('messages.No hay registros de este día')}}</h4>";
         }else{
         besteak = 100-data;
         var datuak = google.visualization.arrayToDataTable([
