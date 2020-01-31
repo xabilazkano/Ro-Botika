@@ -24,8 +24,6 @@ class AdminController extends Controller
    */
   public function index()
   {
-    $assistances = Assistance::all();
-
-    return view('admin.assistances.index',['assistances' => $assistances]);
+    return redirect()->route('statistics');
   }
 }
