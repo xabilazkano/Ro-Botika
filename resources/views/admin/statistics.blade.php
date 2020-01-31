@@ -13,13 +13,13 @@ $_SESSION['section']="statistics";
 
     var data = google.visualization.arrayToDataTable([
       ['', 'Occupied beds'],
-      ['Occupied',    {{$occupied}}],
-      ['Free',     {{$free}}],
+      ['{{__("messages.Occupied")}}',    {{$occupied}}],
+      ['{{__("messages.Free")}}',     {{$free}}],
 
     ]);
 
     var options = {
-      title: 'Occupation'
+      title: '{{__("messages.Occupation")}}'
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -32,7 +32,7 @@ $_SESSION['section']="statistics";
   google.charts.setOnLoadCallback(drawColumnChart);
   function drawColumnChart() {
     var data = google.visualization.arrayToDataTable([
-      ["Medicine", "Amount", { role: "style" } ],
+      ["Medicine", "{{__('messages.Cantidad')}}", { role: "style" } ],
 
       @foreach ($medicines as $medicine)
       ["{{$medicine->name}}", {{$medicine->amount}}, "color: #76A7FA"],
@@ -49,7 +49,7 @@ $_SESSION['section']="statistics";
       2]);
 
       var options = {
-        title: "Amount",
+        title: "{{__('messages.Cantidad')}}",
         width: 1500,
         height: 600,
         bar: {groupWidth: "95%"},
@@ -79,13 +79,13 @@ var besteak = "";
         var datuak = google.visualization.arrayToDataTable([
 
           ['', 'Confirmed assistances'],
-          ['Confirmed',    parseInt(data)],
-          ['Not confirmed',     besteak],
+          ['{{__("messages.Confirmado")}}',    parseInt(data)],
+          ['{{__("messages.Not confirmed")}}',     besteak],
 
         ]);
 
         var aukerak = {
-          title: 'Assistances status'
+          title: '{{__("messages.Assistances status")}}'
         };
 
         var grafika = new google.visualization.PieChart(document.getElementById('pintatu'));
@@ -105,19 +105,19 @@ var besteak = "";
     </script>
     <div class="row">
       <div class="col-6">
-        <h1>Percentage of occupation</h1>
+        <h1>{{__("messages.Percentage of occupation")}}</h1>
         <div id="piechart" style="width: 100%; height: 500px;"></div><br><br>
       </div>
       <div class="col-6">
-        <h1>Percentage of completed assistances</h1>
+        <h1>{{__("messages.Percentage of completed assistances")}}</h1>
 
-        Fecha: <input type="date" id="fecha" name="date">
-        <input type="submit" name="calcular" id="calcular" value="Calcular">
+        {{__("messages.Fecha")}}: <input type="date" id="fecha" name="date">
+        <input type="submit" name="calcular" id="calcular" value="{{__("messages.Calcular")}}">
         <div id="pintatu" style="width: 100%; height: 500px;"></div>
 
       </div>
     </div>
-    <h1>Stock of medicines</h1>
+    <h1>{{__("messages.Stock of medicines")}}</h1>
     <div  id="columnchart_values" style="width: 900px; height: 500px;"></div><br><br>
   </main>
 

@@ -98,6 +98,15 @@
       'AsistenciasActuales' => 'Actual assists',
       'AsistenciasHistoricas' => 'Historic Asists',
       'En camino' => 'On the way',
+      'Percentage of occupation' => 'Percentage of occupation',
+      'Occupation' => 'Occupation',
+      'Occupied' => 'Occupied',
+      'Free' => 'Free',
+      'Percentage of completed assistances' => 'Percentage of completed assistances',
+      'Calcular' => 'Calculate',
+      'Not confirmed'=> 'Not confirmed',
+      'Assistances status' => 'Assistances status',
+      'Stock of medicines' => 'Stock of medicines',
   ];
 
 ?>

@@ -97,5 +97,14 @@
       'AsistenciasPasadas' => 'Iraungitako asistentziak',
       'AsistenciasHistoricas' => 'Asistentzia historikoak',
       'En camino' => 'Bidean',
+      'Percentage of occupation' => 'Okupazio ehunekoa',
+      'Occupation' => 'Okupazioa',
+      'Occupied' => 'Okupatua',
+      'Free' => 'Libre',
+      'Percentage of completed assistances' => 'Baieztatutako asistentzien ehunekoa',
+      'Calcular' => 'Kalkulatu',
+      'Not confirmed' => 'Baieztatu gabea',
+      'Assistances status' => 'Asistentzien egoera',
+      'Stock of medicines' => 'Botiken stocka',
   ];
 ?>
