@@ -93,6 +93,8 @@
       'observations' => 'Obserbazioak',
       'Estadísticas' => 'Estatistiikak',
       'Movercarro' => 'Mugitu karroa',
-      'Asistir' => 'Asistitu'
+      'Asistir' => 'Asistitu',
+      'AsistenciasPasadas' => 'Iraungitako asistentziak',
+      'AsistenciasHistoricas' => 'Asistentzia historikoak'
   ];
 ?>

@@ -93,6 +93,9 @@
       'observations' => 'Observaciones',
       'Estadísticas' => 'Estadísticas',
       'Movercarro' => 'Mover carro',
-      'Asistir' => 'Asistir'
+      'Asistir' => 'Asistir',
+      'AsistenciasPasadas' => 'Asistencias pasadas',
+      'AsistenciasActuales' => 'Asistencias actuales',
+      'AsistenciasHistoricas' => 'Asistencias historicas'
   ];
 ?>
