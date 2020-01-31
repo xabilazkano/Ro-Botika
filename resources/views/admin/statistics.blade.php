@@ -72,7 +72,9 @@ var besteak = "";
     $.get(url,function(data,status){
       if (status === "success"){
 
-
+        if (data==="noregistros"){
+          document.getElementById('pintatu').innerHTML = "<br><br><br><h4>No hay registros de este día</h4>";
+        }else{
         besteak = 100-data;
         var datuak = google.visualization.arrayToDataTable([
 
@@ -89,6 +91,7 @@ var besteak = "";
         var grafika = new google.visualization.PieChart(document.getElementById('pintatu'));
 
         grafika.draw(datuak, aukerak);
+      }
 
       }
       else{
