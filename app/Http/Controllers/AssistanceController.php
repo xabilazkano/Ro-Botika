@@ -12,7 +12,7 @@ use App\PatientRoom;
 /**
 * @OA\Info(title="API Carro Automatizado", version="1.0")
 *
-* @OA\Server(url="http://localhost:8000")
+* @OA\Server(url="http://robotika.ddns.net/")
 */
 
 class AssistanceController extends Controller
@@ -151,10 +151,21 @@ class AssistanceController extends Controller
         return redirect()->route('assistances.index');
 
     }
-    public function siguienteHabitacion($id)
-    {
-      $assist = Assistance::find($id);
-      return view ('admin.assistances.show',['assist'=>$assist]);
+    public function ir($id) {
+      $asistencias = Assistance::all();
+      $ocupado = false;
+      foreach ($asistencias as $a) {
+        if ($a->chart_state === 1) {
+          $ocupado = true;
+        }
+      }
+      if (!$ocupado) {
+        $assist = Assistance::find($id);
+        $assist->chart_state = 1;
+        $assist->save();
+        echo "save";
+      }
+      return redirect()->route('assistances.index');
     }
 
     /**
@@ -175,18 +186,20 @@ class AssistanceController extends Controller
       $asistencia = Assistance::select('patient_id','chart_state')->where('chart_state', 1)->get();
       if (isset($asistencia[0])) {
         $habitacion = PatientRoom::select('room_id')->where('patient_id', $asistencia[0]->patient_id)->get();
-        return $habitacion[0]["room_id"];
+        return $habitacion[0];
       } else {
-        return 0;
+        $habitacionNula = new PatientRoom;
+        $habitacionNula->room_id = 0;
+        return $habitacionNula;
       }
     }
 
     /**
     * @OA\Get(
     *     path="/api/llegada/{habitacion}",
-    *     summary="Notificar que el carro ha llegado a la habitación indicada",
+    *     summary="Notificar que el carro ha llegado a la habitación indicada.",
     *     @OA\Parameter(
-    *       name="id",
+    *       name="habitacion",
     *       required=true,
     *       description="El ID de la habitación.",
     *       in="path",
@@ -214,6 +227,8 @@ class AssistanceController extends Controller
             $a->chart_state = 0;
             $a->save();
           }
+          $respuesta = (object) array('estado' => 'ok');
+          return json_encode($respuesta);;
         }
       }
     }

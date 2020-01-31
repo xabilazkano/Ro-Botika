@@ -26,11 +26,11 @@
         },
         "/api/llegada/{habitacion}": {
             "get": {
-                "summary": "Notificar que el carro ha llegado a la habitación indicada",
+                "summary": "Notificar que el carro ha llegado a la habitación indicada.",
                 "operationId": "App\\Http\\Controllers\\AssistanceController::llegada",
                 "parameters": [
                     {
-                        "name": "id",
+                        "name": "habitacion",
                         "in": "path",
                         "description": "El ID de la habitación.",
                         "required": true,

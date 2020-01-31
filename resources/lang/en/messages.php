@@ -92,6 +92,8 @@
       'Seleccionar cama' => 'Select bed',
       'observations' => 'Observations',
       'Estadísticas' => 'Statistics',
+      'Movercarro' => 'Move chart',
+      'Asistir' => 'Assist'
   ];
 
 ?>

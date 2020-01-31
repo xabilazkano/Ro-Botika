@@ -163,3 +163,7 @@ table {
 .observaciones{
   text-align: justify;
 }
+
+.botonir {
+  width: auto;
+}
