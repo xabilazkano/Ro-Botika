@@ -87,3 +87,6 @@ td{
 .observaciones{
   text-align: justify;
 }
+.paginate_button{
+  z-index: 0;
+}
