@@ -24,10 +24,21 @@ class AssistanceController extends Controller
     */
     public function index()
     {
-      $assistances = Assistance::all();
       if (auth()->getUser()->hasRole("admin")) {
         return view ('admin.assistances.index',['assistances' => $assistances]);
       }else{
+        $assistances = Assistance::all();
+        foreach ($assistances as $a) {
+          $habitacion = PatientRoom::where([
+            ['patient_id', '=', $a->patient_id],
+            ['up_date', '<=', date('Y-m-d')]
+          ])
+          ->where(function ($query) {
+            $query->where('down_date', '>=', date('Y-m-d'))
+                  ->orWhere('down_date', '=', null);
+          })->get();
+          $a->room_id = $habitacion[0]->room_id;
+        }
         return view ('assistances.index',['assistances' => $assistances]);
       }
     }
@@ -89,10 +100,21 @@ class AssistanceController extends Controller
     */
     public function show($id)
     {
-        $assist = Assistance::find($id);
         if (auth()->getUser()->hasRole("admin")) {
           return view ('admin.assistances.show',['assist'=>$assist]);
         }else{
+          $assist = Assistance::find($id);
+
+          $habitacion = PatientRoom::where([
+            ['patient_id', '=', $assist->patient_id],
+            ['up_date', '<=', date('Y-m-d')]
+          ])
+          ->where(function ($query) {
+            $query->where('down_date', '>=', date('Y-m-d'))
+                  ->orWhere('down_date', '=', null);
+          })->get();
+          $assist->room_id = $habitacion[0]->room_id;
+
           return view ('assistances.show',['assist'=>$assist]);
         }
       }
