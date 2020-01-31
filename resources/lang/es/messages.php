@@ -96,6 +96,7 @@
       'Asistir' => 'Asistir',
       'AsistenciasPasadas' => 'Asistencias pasadas',
       'AsistenciasActuales' => 'Asistencias actuales',
-      'AsistenciasHistoricas' => 'Asistencias historicas'
+      'AsistenciasHistoricas' => 'Asistencias historicas',
+      'En camino' => 'En camino',
   ];
 ?>

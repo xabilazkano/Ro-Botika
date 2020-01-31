@@ -96,7 +96,8 @@
       'Asistir' => 'Assist',
       'AsistenciasPasadas' => 'Past assists',
       'AsistenciasActuales' => 'Actual assists',
-      'AsistenciasHistoricas' => 'Historic Asists'
+      'AsistenciasHistoricas' => 'Historic Asists',
+      'En camino' => 'On the way',
   ];
 
 ?>
