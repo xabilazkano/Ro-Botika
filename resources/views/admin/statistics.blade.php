@@ -59,9 +59,21 @@ $_SESSION['section']="statistics";
       chart.draw(view, options);
     }
 
+
     </script>
-    <h1>Percentage of occupation</h1>
-    <div id="piechart" style="width: 900px; height: 500px;"></div><br><br>
+    <div class="row">
+      <div class="col-6">
+        <h1>Percentage of occupation</h1>
+        <div id="piechart" style="width: 900px; height: 500px;"></div><br><br>
+      </div>
+      <div class="col-6">
+        <h1>Percentage of completed assistances</h1>
+
+        Fecha: <input type="date" id="date" name="date">
+        <input type="submit" onclick="postJs()" name="calcular" id="calcular" value="Calcular">
+
+      </div>
+    </div>
     <h1>Stock of medicines</h1>
     <div  id="columnchart_values" style="width: 900px; height: 500px;"></div><br><br>
   </main>

@@ -21,3 +21,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 use App\Http\Resources\Assistance as AssistanceResource;
 Route::get('siguienteHabitacion', 'AssistanceController@estadocarro')->name('carro');
 Route::get('llegada/{habitacion}', 'AssistanceController@llegada')->name('llegada');
+Route::get('grafica', 'GraphicController@confirmedAssistances')->name('confirmedAssistances');
