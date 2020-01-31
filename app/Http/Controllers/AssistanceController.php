@@ -190,9 +190,8 @@ class AssistanceController extends Controller
         $assist = Assistance::find($id);
         $assist->chart_state = 1;
         $assist->save();
-        echo "save";
       }
-      return redirect()->route('assistances.index');
+      return redirect()->route('assistances.show', $assist->id);
     }
 
     /**

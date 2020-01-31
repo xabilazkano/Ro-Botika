@@ -72,7 +72,6 @@
 										$.each(lista, function(index, item){
 											htmlCode = `${item.chart_state}`;
 											assistanceId = `${item.id}`;
-											console.log(htmlCode + " " + assistanceId);
 											if (htmlCode == 1){
 												$('#' + assistanceId).html('<button type="button" name="button" class="btn btn-primary botonir">{{__("messages.En camino")}}</button>');
 											}else{
