@@ -35,6 +35,8 @@ Route::group(['middleware' => ['auth','verified']], function(){
   Route::resource('medicines','MedicineController')->only(['index','show']);
 
 	Route::get('ir/{id}','AssistanceController@ir')->name('assistances.ir');
+
+	Route::get('assistancesActualizandose', 'AssistanceController@indexActualizandose')->name('assistances.indexActualizandose');
 });
 
 Route::group(['middleware' => ['role']], function () {

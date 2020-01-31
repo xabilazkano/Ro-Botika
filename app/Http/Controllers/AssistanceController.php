@@ -31,6 +31,11 @@ class AssistanceController extends Controller
         return view ('assistances.index',['assistances' => $assistances]);
       }
     }
+    public function indexActualizandose()
+    {
+      $assistances = Assistance::all();
+      return response()->json($assistances, 200);
+    }
 
     /**
     * Show the form for creating a new resource.
@@ -228,7 +233,7 @@ class AssistanceController extends Controller
             $a->save();
           }
           $respuesta = (object) array('estado' => 'ok');
-          return json_encode($respuesta);;
+          return json_encode($respuesta);
         }
       }
     }

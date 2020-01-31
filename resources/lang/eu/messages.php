@@ -92,6 +92,7 @@
       'Seleccionar cama' => 'Ohea aukeratu',
       'observations' => 'Obserbazioak',
       'Movercarro' => 'Mugitu karroa',
-      'Asistir' => 'Asistitu'
+      'Asistir' => 'Asistitu',
+      'En camino' => 'Bidean',
   ];
 ?>

@@ -92,6 +92,7 @@
       'Seleccionar cama' => 'Seleccionar cama',
       'observations' => 'Observaciones',
       'Movercarro' => 'Mover carro',
-      'Asistir' => 'Asistir'
+      'Asistir' => 'Asistir',
+      'En camino' => 'En camino',
   ];
 ?>
