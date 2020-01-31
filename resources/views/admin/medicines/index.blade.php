@@ -1,6 +1,6 @@
 @extends('admin.layoutsAdmin.app')
 <?php
-  $_SESSION['section']="medicines";
+$_SESSION['section']="medicines";
 ?>
 @section('content')
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pb-5">
@@ -23,29 +23,38 @@
         @endif
       </tr>
     </thead>
-    @foreach ($medicines as $medicine)
-    <tr>
-      <td>{{$medicine->id}}</td>
-      <td>{{$medicine->name}}</td>
-      <td>{{$medicine->amount}}</td>
-      <td>
-        <a href="{{route('medicines.show',$medicine->id)}}"><i class="blackIcon fa fa-eye"></i></a>
-      </td>
-      @if (Auth::user()->hasRole("admin"))
-      <td><a href="{{route('adminMedicines.edit',$medicine->id)}}"><i class="blackIcon fa fa-edit"></i></a>
-      </td>
-      <td>
-        <form method="post" action="{{route('adminMedicines.destroy',$medicine->id)}}">
-          @csrf
-          @method('DELETE')
-          <button type="submit" class="deleteIcon">
-            <i class="fa fa-trash-o"></i>
-          </button>
-        </form>
-      </td>
-      @endif
-    </tr>
-    @endforeach
+    <tbody>
+      @foreach ($medicines as $medicine)
+      <tr>
+        <td>{{$medicine->id}}</td>
+        <td>{{$medicine->name}}</td>
+        <td>{{$medicine->amount}}</td>
+        <td>
+          <a href="{{route('medicines.show',$medicine->id)}}"><i class="blackIcon fa fa-eye"></i></a>
+        </td>
+        @if (Auth::user()->hasRole("admin"))
+        <td><a href="{{route('adminMedicines.edit',$medicine->id)}}"><i class="blackIcon fa fa-edit"></i></a>
+        </td>
+        <td>
+          <form method="post" action="{{route('adminMedicines.destroy',$medicine->id)}}">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="deleteIcon">
+              <i class="fa fa-trash-o"></i>
+            </button>
+          </form>
+        </td>
+        @endif
+      </tr>
+      @endforeach
+    </tbody>
   </table>
 </main>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('table').DataTable();
+} );
+
+</script>
 @endsection

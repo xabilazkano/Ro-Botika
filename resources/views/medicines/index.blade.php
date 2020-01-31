@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('titulua', __('messages.MEDICINAS'))
 @section('content')
-<table class="table">
+
+<table class="table table-striped table-bordered">
   <thead class="thead">
     <tr>
       <th>{{__('messages.Nombre')}}</th>
@@ -9,14 +10,23 @@
       <th></th>
     </tr>
   </thead>
-  @foreach ($medicines as $medicine)
-  <tr>
-    <td>{{$medicine->name}}</td>
-    <td>{{$medicine->amount}}</td>
-    <td>
-      <a href="{{route('medicines.show',$medicine->id)}}"><i class="blackIcon fa fa-eye"></i></a>
-    </td>
-  </tr>
-  @endforeach
+  <tbody>
+    @foreach ($medicines as $medicine)
+    <tr>
+      <td>{{$medicine->name}}</td>
+      <td>{{$medicine->amount}}</td>
+      <td>
+        <a href="{{route('medicines.show',$medicine->id)}}"><i class="blackIcon fa fa-eye"></i></a>
+      </td>
+    </tr>
+    @endforeach
+  </tbody>
 </table>
+
+<script type="text/javascript">
+$(document).ready( function () {
+    $("table").DataTable();
+} );
+
+</script>
 @endsection
