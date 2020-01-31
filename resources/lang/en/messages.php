@@ -92,7 +92,10 @@
       'Seleccionar cama' => 'Select bed',
       'observations' => 'Observations',
       'Movercarro' => 'Move chart',
-      'Asistir' => 'Assist'
+      'Asistir' => 'Assist',
+      'AsistenciasPasadas' => 'Past assists',
+      'AsistenciasActuales' => 'Actual assists',
+      'AsistenciasHistoricas' => 'Historic Asists'
   ];
 
 ?>
