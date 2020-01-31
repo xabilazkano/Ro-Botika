@@ -13,7 +13,6 @@ $_SESSION['section']="medicines";
   <table class="table">
     <thead class="thead">
       <tr>
-        <th>Id</th>
         <th>{{__('messages.Nombre')}}</th>
         <th>{{__('messages.Cantidad')}}</th>
         <th></th>
@@ -26,7 +25,6 @@ $_SESSION['section']="medicines";
     <tbody>
       @foreach ($medicines as $medicine)
       <tr>
-        <td>{{$medicine->id}}</td>
         <td>{{$medicine->name}}</td>
         <td>{{$medicine->amount}}</td>
         <td>
