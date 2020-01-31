@@ -25,16 +25,21 @@ class GraphicController extends Controller
   }
 
   public function confirmedAssistances($date) {
-
     $total = Assistance::where('estimated_date','=',$date)->count();
     $confirmed = Assistance::where([
       ['estimated_date','=',$date],
       ['confirmed','=',1]
     ])->count();
 
-    $percentage = $confirmed*100/$total;
-    return $percentage;
-
-
+    if ($total !== 0) {
+      if ($confirmed === 0) {
+        return 0;
+      } else {
+        $percentage = $confirmed*100/$total;
+        return $percentage;
+      }
+    } else {
+      return 'noregistros';
+    }
   }
 }
