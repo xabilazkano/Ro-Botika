@@ -24,6 +24,7 @@ class AssistanceController extends Controller
     */
     public function index()
     {
+      $assistances = Assistance::all();
       if (auth()->getUser()->hasRole("admin")) {
         return view ('admin.assistances.index',['assistances' => $assistances]);
       }else{
