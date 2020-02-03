@@ -1,4 +1,4 @@
-<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+
   <div class="sidebar-sticky pt-0">
     <ul class="nav d-flex flex-column">
       @if ($_SESSION["section"] === "assistances")
@@ -108,4 +108,3 @@
       @endif
     </ul>
   </div>
-</nav>

@@ -90,3 +90,9 @@ td{
 .paginate_button{
   z-index: 0;
 }
+
+@media only screen and (max-width: 1050px) {
+  .sidebar {
+    
+  }
+}
