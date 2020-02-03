@@ -46,7 +46,7 @@ $_SESSION['section']="patientsRooms";
             @csrf
             @method('delete')
             <button type="submit" class="deleteIcon">
-              <i class="fas fa-trash-o"></i>
+              <i class="fas fa-trash-alt"></i>
             </button>
           </form>
         </td>

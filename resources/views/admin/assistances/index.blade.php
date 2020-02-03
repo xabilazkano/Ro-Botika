@@ -58,7 +58,7 @@
             @csrf
             @method('DELETE')
             <button type="submit" class="deleteIcon">
-              <i class="fas fa-trash-o"></i>
+              <i class="fas fa-trash-alt"></i>
             </button>
           </form>
         </td>
@@ -115,7 +115,7 @@
             @csrf
             @method('DELETE')
             <button type="submit" class="deleteIcon">
-              <i class="fas fa-trash-o"></i>
+              <i class="fas fa-trash-alt"></i>
             </button>
           </form>
         </td>
@@ -154,7 +154,7 @@
             @csrf
             @method('DELETE')
             <button type="submit" class="deleteIcon">
-              <i class="fas fa-trash-o"></i>
+              <i class="fas fa-trash-alt"></i>
             </button>
           </form>
         </td>
@@ -210,7 +210,7 @@
             @csrf
             @method('DELETE')
             <button type="submit" class="deleteIcon">
-              <i class="fas fa-trash-o"></i>
+              <i class="fas fa-trash-alt"></i>
             </button>
           </form>
         </td>

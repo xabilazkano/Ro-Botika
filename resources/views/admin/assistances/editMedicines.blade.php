@@ -21,7 +21,7 @@
 				<form method="post" action="{{route('medicineDestroy',[$assistance->id,$medicine->id])}}">
 					@csrf
 					<button type="submit" class="deleteIcon">
-						<i class="fas fa-trash-o"></i>
+						<i class="fas fa-trash-alt"></i>
 					</button>
 				</form>
 			</td>
