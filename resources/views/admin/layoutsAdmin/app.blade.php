@@ -8,7 +8,7 @@
       <nav class="col-md-2 col-sm-12 d-none d-md-block bg-light sidebar">
         @include('admin.layoutsAdmin.sideNav')
       </nav>
-      <main role="main" class="col-12 d-flex flex-wrap justify-content-center">
+      <main role="main" class="col-12 d-md-none d-flex flex-wrap justify-content-center">
           @include('admin.layoutsAdmin.responsiveNav')
       </main>
       @yield('content')
