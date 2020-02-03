@@ -18,7 +18,7 @@
 		</div>
 		<!-- FIN Hamburguesa -->
 
-		<div class="col-2 d-flex justify-content-center align-items-center">
+		<div class="d-none d-md-block col-md-2 ">
 			<img src="/img/logo.png" id="logo">
 		</div>
 
