@@ -17,7 +17,6 @@
     <table class="table">
       <thead class="thead">
         <tr>
-          <th>Id</th>
           <th>{{__('messages.Paciente')}}</th>
           <th>{{__('messages.Enfermera')}}</th>
           <th>{{__('messages.Fecha')}}</th>
@@ -33,7 +32,6 @@
       @foreach ($assistances as $assist)
       @if ($assist->estimated_date < date("Y-m-d") && $assist->confirmed != 1)
       <tr style="background-color:#ff6666">
-        <td>{{$assist->id}}</td>
         <td>{{$assist->patient->name}} {{$assist->patient->lastname}}</td>
         <td>{{$assist->user->name}}</td>
         <td>{{$assist->estimated_date}}</td>
@@ -75,7 +73,6 @@
     <table class="table">
       <thead class="thead">
         <tr>
-          <th>Id</th>
           <th>{{__('messages.Paciente')}}</th>
           <th>{{__('messages.Enfermera')}}</th>
           <th>{{__('messages.Fecha')}}</th>
@@ -92,7 +89,6 @@
       <!-- Pendientes hoy -->
       @if ($assist->estimated_date == date("Y-m-d") && $assist->confirmed != '1')
       <tr>
-        <td>{{$assist->id}}</td>
         <td>{{$assist->patient->name}} {{$assist->patient->lastname}}</td>
         <td>{{$assist->user->name}}</td>
         <td>{{$assist->estimated_date}}</td>
@@ -132,7 +128,6 @@
       @foreach ($assistances as $assist)
       @if ($assist->estimated_date == date("Y-m-d") && $assist->confirmed == '1')
       <tr>
-        <td>{{$assist->id}}</td>
         <td>{{$assist->patient->name}} {{$assist->patient->lastname}}</td>
         <td>{{$assist->user->name}}</td>
         <td>{{$assist->estimated_date}}</td>
@@ -174,7 +169,6 @@
     <table class="table">
       <thead class="thead">
         <tr>
-          <th>Id</th>
           <th>{{__('messages.Paciente')}}</th>
           <th>{{__('messages.Enfermera')}}</th>
           <th>{{__('messages.Fecha')}}</th>
@@ -190,7 +184,6 @@
       @foreach ($assistances as $assist)
       @if ($assist->estimated_date < date("Y-m-d") && $assist->confirmed == 1)
       <tr>
-        <td>{{$assist->id}}</td>
         <td>{{$assist->patient->name}} {{$assist->patient->lastname}}</td>
         <td>{{$assist->user->name}}</td>
         <td>{{$assist->estimated_date}}</td>

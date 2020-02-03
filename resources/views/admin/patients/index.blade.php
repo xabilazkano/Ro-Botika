@@ -13,7 +13,6 @@
   <table class="table">
     <thead class="thead">
       <tr>
-        <th scope="col">Id</th>
         <th scope="col">{{ __('messages.numeross') }}</th>
         <th scope="col">{{ __('messages.Nombre') }}</th>
         <th scope="col">{{ __('messages.Apellido') }}</th>
@@ -27,7 +26,6 @@
     <tbody>
       @foreach ($patients as $patient)
       <tr>
-        <td>{{$patient->id}}</td>
         <td>{{$patient->ss_number}}</td>
         <td>{{$patient->name}}</td>
         <td>{{$patient->lastname}}</td>

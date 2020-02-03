@@ -13,7 +13,6 @@
   <table class="table">
     <thead class="thead">
       <tr>
-        <th>Id</th>
         <th>{{__('messages.Nombre')}}</th>
         <th>{{__('messages.Apellidos')}}</th>
         <th>{{__('messages.Email')}}</th>
@@ -27,7 +26,6 @@
     </thead>
     @foreach ($nurses as $nurse)
     <tr>
-      <td>{{$nurse->id}}</td>
       <td>{{$nurse->name}}</td>
       <td>{{$nurse->lastname}}</td>
       <td>{{$nurse->email}}</td>

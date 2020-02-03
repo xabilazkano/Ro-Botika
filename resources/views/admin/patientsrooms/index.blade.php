@@ -13,7 +13,6 @@ $_SESSION['section']="patientsRooms";
   <table class="table">
     <thead class="thead">
       <tr>
-        <th scope="col">Id</th>
         <th scope="col">{{ __('messages.Paciente') }}</th>
         <th scope="col">{{ __('messages.Habitación') }}</th>
         <th scope="col">{{ __('messages.Cama') }}</th>
@@ -33,7 +32,6 @@ $_SESSION['section']="patientsRooms";
 
       @foreach ($patient->rooms as $room)
       <tr>
-        <td>{{$room->pivot->id}}</td>
         <td>{{$patient->id}}</td>
         <td>{{$room->id}}</td>
         <td>{{$room->pivot->bed}}</td>
