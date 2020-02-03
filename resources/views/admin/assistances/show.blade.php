@@ -31,9 +31,9 @@
 				</td>
 				<td>
 					@if (is_null($assist->confirmed))
-					<i class="blackIcon fa fa-question"></i>
+					<i class="blackIcon fas fa-question"></i>
 					@else
-					<i class="confirm blackIcon fa fa-check"></i>
+					<i class="confirm blackIcon fas fa-check"></i>
 					@endif
 				</td>
 			</tr>

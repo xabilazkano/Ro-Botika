@@ -7,7 +7,7 @@ $_SESSION['section']="patientsRooms";
   <h2 class="row">
     <span class="col-11">{{__('messages.Pacientes')}} - {{__('messages.Habitaciones')}}</span>
     @if (Auth::user()->hasRole("admin"))
-    <a href="{{route('adminPatientsRooms.create')}}" class="col-1"><i class="fa fa-plus"></i></a>
+    <a href="{{route('adminPatientsRooms.create')}}" class="col-1"><i class="fas fa-plus"></i></a>
     @endif
   </h2>
   <table class="table">
@@ -38,15 +38,15 @@ $_SESSION['section']="patientsRooms";
         <td>{{$room->pivot->up_date}}</td>
         <td>{{$room->pivot->down_date}}</td>
         <td>{{$room->pivot->disease}}</td>
-        <td><a href="{{route('adminPatientsRooms.show',$room->pivot->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
+        <td><a href="{{route('adminPatientsRooms.show',$room->pivot->id)}}"><i class="blackIcon fas fa-eye"></i></a></td>
         @if (Auth::user()->hasRole("admin"))
-        <td><a href="{{route('adminPatientsRooms.edit',$room->pivot->id)}}"><i class="blackIcon fa fa-edit"></i></a></td>
+        <td><a href="{{route('adminPatientsRooms.edit',$room->pivot->id)}}"><i class="blackIcon fas fa-edit"></i></a></td>
         <td>
           <form action="{{route('adminPatientsRooms.destroy',$room->pivot->id)}}" method="post">
             @csrf
             @method('delete')
             <button type="submit" class="deleteIcon">
-              <i class="fa fa-trash-o"></i>
+              <i class="fas fa-trash-o"></i>
             </button>
           </form>
         </td>

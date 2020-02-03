@@ -3,7 +3,7 @@
   <div class="col-10 d-flex flex-row justify-content-end">
     <div class="menueskubi btn-group btn-group-inline">
       <button class="btn" data-toggle="dropdown">
-        <span class="caret"><i class="adminIcon fa fa-language fa-2x"></i> </span>
+        <span class="caret"><i class="adminIcon fas fa-language fa-2x"></i> </span>
       </button>
       <ul class="dropdown-menu">
         <li><a tabindex="-1" class="dropdown-item" href="{{ url('locale/en') }}">EN</a></li>

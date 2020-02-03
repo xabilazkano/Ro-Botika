@@ -7,7 +7,7 @@ $_SESSION['section']="medicines";
   <h2 class="row">
     <span class="col-11">{{__('messages.Medicinas')}}</span>
     @if (Auth::user()->hasRole("admin"))
-    <a href="{{route('adminMedicines.create')}}" class="col-1"><i class="fa fa-plus"></i></a>
+    <a href="{{route('adminMedicines.create')}}" class="col-1"><i class="fas fa-plus"></i></a>
     @endif
   </h2>
   <table class="table">
@@ -28,17 +28,17 @@ $_SESSION['section']="medicines";
         <td>{{$medicine->name}}</td>
         <td>{{$medicine->amount}}</td>
         <td>
-          <a href="{{route('medicines.show',$medicine->id)}}"><i class="blackIcon fa fa-eye"></i></a>
+          <a href="{{route('medicines.show',$medicine->id)}}"><i class="blackIcon fas fa-eye"></i></a>
         </td>
         @if (Auth::user()->hasRole("admin"))
-        <td><a href="{{route('adminMedicines.edit',$medicine->id)}}"><i class="blackIcon fa fa-edit"></i></a>
+        <td><a href="{{route('adminMedicines.edit',$medicine->id)}}"><i class="blackIcon fas fa-edit"></i></a>
         </td>
         <td>
           <form method="post" action="{{route('adminMedicines.destroy',$medicine->id)}}">
             @csrf
             @method('DELETE')
             <button type="submit" class="deleteIcon">
-              <i class="fa fa-trash-o"></i>
+              <i class="fas fa-trash-o"></i>
             </button>
           </form>
         </td>
