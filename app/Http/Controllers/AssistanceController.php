@@ -178,7 +178,19 @@ class AssistanceController extends Controller
           $medicine->amount = $medicine->amount - $assistanceMedicine->amount;
           $medicine->save();
         }
+
         $assistances = Assistance::all();
+        foreach ($assistances as $a) {
+          $habitacion = PatientRoom::where([
+            ['patient_id', '=', $a->patient_id],
+            ['up_date', '<=', date('Y-m-d')]
+          ])
+          ->where(function ($query) {
+            $query->where('down_date', '>=', date('Y-m-d'))
+                  ->orWhere('down_date', '=', null);
+          })->get();
+          $a->room_id = $habitacion[0]->room_id;
+        }
         return view ('assistances.index',['assistances' => $assistances]);
     }
     public function ir($id) {
