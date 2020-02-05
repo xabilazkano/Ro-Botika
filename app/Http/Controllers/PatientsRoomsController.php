@@ -62,6 +62,10 @@ class PatientsRoomsController extends Controller
   }
 
   public function bedAdd(Request $request){
+    $validatedData = $request->validate([
+      'bed' => 'required'
+    ]);
+
     $patient_room = new PatientRoom;
 
     $patient_room->patient_id = $request->input('patient_id');
@@ -146,5 +150,5 @@ class PatientsRoomsController extends Controller
     return redirect()->route('adminPatientsRooms.index');
 
   }
-  
+
 }

@@ -19,10 +19,10 @@
     		</thead>
     		@foreach($medicines as $medicine)
           <?php
-          $cantidadLibre = $medicine->amount;
-            foreach ($assistances as $assistance) {
-              if ($assistance->confirmed == 0 && $assistance->estimated_date >= date('Y-m-d') && !$assistance->medicines->isEmpty()){
-                foreach ($assistance->medicines as $assistanceMedicine) {
+            $cantidadLibre = $medicine->amount;
+            foreach ($assistances as $assist) {
+              if ($assist->confirmed == 0 && $assist->estimated_date >= date('Y-m-d') && !$assist->medicines->isEmpty()){
+                foreach ($assist->medicines as $assistanceMedicine) {
                   if ($medicine->id == $assistanceMedicine->id){
                     $cantidadLibre = $cantidadLibre - $assistanceMedicine->pivot->amount;
                   }
@@ -33,7 +33,7 @@
       		<tr>
       			<td>{{$medicine->name}} ({{$cantidadLibre}})</td>
       			<td>
-              <input type="number" name="{{$medicine->id}}" id="amount" value="" min="1" max="{{$cantidadLibre}}">
+              <input type="number" name="{{$medicine->id}}" id="{{$medicine->id}}" value="1" min="1" max="{{$cantidadLibre}}">
       			</td>
       		</tr>
     		@endforeach
@@ -44,8 +44,7 @@
         <input type="hidden" name="date" value="{{$assistance->estimated_date}}">
         <input type="hidden" name="hour" value="{{$assistance->hour}}">
     		<input type="submit" class="btn btn-primary" value="{{__('messages.Añadir asistencia')}}">
-    	</div>
-    </form><br><br>
+    	</div><br><br>
 	@endif
 	<div class="col-md-10 d-flex justify-content-center">
 		<p class="red" id="texto" style="display:none"></p>
@@ -54,11 +53,17 @@
 </main>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$("#editarAsistencia").submit(function(){
-			let medicinas = $('#medicines').val();
-			if (typeof(medicinas) === "undefined"){
+		$("#selectAmount").submit(function(){
+      let medicinas = $('form#selectAmount input[type=number]');
+      let vacioEncontrado = false;
+      for (i=0; i<medicinas.length; i++){
+        if (medicinas[i].value < 1){
+          vacioEncontrado = true;
+        }
+      }
+      if (vacioEncontrado){
 				$("#texto").show();
-				$('#texto').text("{{__('messages.Seleccione una medicina')}}");
+				$('#texto').text("{{__('messages.La cantidad de cada medicina debe ser como mínimo de')}} 1");
 				return false;
 			}else{
 				return true;

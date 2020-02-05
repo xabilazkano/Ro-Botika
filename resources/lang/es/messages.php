@@ -56,7 +56,7 @@
       'Editar asistencia' => 'Editar asistencia',
       'Editar medicinas' => 'Editar medicinas',
       'Editar' => 'Editar',
-      'Editar medicinas de asistencia' => 'Editar medicinas de asistencia',
+      'Editar medicinas de la asistencia' => 'Editar medicinas de asistencia',
       'Añadir medicina' => 'Añadir medicina',
       'Añadir asistencia' => 'Añadir asistencia',
       'Añadir' => 'Añadir',
@@ -113,5 +113,9 @@
       'Seleccionar cantidad de medicinas de asistencia' => 'Seleccionar cantidad de medicinas de asistencia',
       'Estancias' => 'Estancias',
       'Añadir un paciente a una habitación' => 'Añadir un paciente a una habitación',
+      'Inserta una fecha y una hora para la asistencia' => 'Inserta una fecha y una hora para la asistencia',
+      'Selecciona como mínimo un medicamento' => 'Selecciona como mínimo un medicamento',
+      'La cantidad de cada medicina debe ser como mínimo de' => 'La cantidad de cada medicina debe ser como mínimo de',
+      'Asistencias confirmadas' => 'Asistencias confirmadas',
   ];
 ?>

@@ -60,7 +60,7 @@
     <div class="form-group row">
       <label for="hour" class="col-md-4 col-form-label text-md-right">{{__('messages.Hora')}}</label>
       <div class="col-md-6">
-        <input id="hour" type="time" name="hour" value="{{Request::old('hour')}}" class="form-control @error('hour') is-invalid @enderror">
+        <input id="hora" type="time" name="hour" value="{{Request::old('hour')}}" class="form-control @error('hour') is-invalid @enderror">
 
         @error('hour')
         <span class="invalid-feedback" role="alert">
@@ -72,13 +72,13 @@
     <div class="form-group row">
       <label for="medicine" class="col-md-4 col-form-label text-md-right">{{__('messages.Medicinas')}}</label>
       <div class="col-md-6">
-        <select multiple class="form-control @error('medicines') is-invalid @enderror" name="medicines[]">
+        <select multiple class="form-control @error('medicines') is-invalid @enderror" name="medicines[]" id="medicinas">
           @foreach ($medicines as $medicine)
             <?php
               $cantidadLibre = $medicine->amount;
-              foreach ($assistances as $assistance) {
-                if ($assistance->confirmed == 0 && $assistance->estimated_date >= date('Y-m-d') && !$assistance->medicines->isEmpty()){
-                  foreach ($assistance->medicines as $assistanceMedicine) {
+              foreach ($assistances as $assist) {
+                if ($assist->confirmed == 0 && $assist->estimated_date >= date('Y-m-d') && !$assist->medicines->isEmpty()){
+                  foreach ($assist->medicines as $assistanceMedicine) {
                     if ($medicine->id == $assistanceMedicine->id){
                       $cantidadLibre = $cantidadLibre - $assistanceMedicine->pivot->amount;
                     }
@@ -102,7 +102,7 @@
       <div class="col-md-6 offset-md-6">
         <input type="submit" class="btn btn-primary" value="{{__('messages.Añadir')}}">
       </div>
-    </div><br>
+    </div><br><br>
     <div class="col-md-12 d-flex justify-content-center">
       <p class="red" id="texto" style="display:none"></p>
     </div>
@@ -111,9 +111,15 @@
     $(document).ready(function(){
       $("#addAssist").submit(function(){
         let fecha = $('#fecha').val();
-        if (fecha === ""){
+        let hora = $('#hora').val();
+        let medicinas = $('#medicinas').val();
+        if (fecha === "" || hora === ""){
           $("#texto").show();
-          $('#texto').text("{{__('messages.Inserta una fecha')}}");
+          $('#texto').text("{{__('messages.Inserta una fecha y una hora para la asistencia')}}");
+          return false;
+        }else if (medicinas.length === 0){
+          $("#texto").show();
+          $('#texto').text("{{__('messages.Selecciona como mínimo un medicamento')}}");
           return false;
         }else{
           return true;

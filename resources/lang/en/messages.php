@@ -56,7 +56,7 @@
       'Editar asistencia' => 'Edit assist',
       'Editar medicinas' => 'Edit medicines',
       'Editar' => 'Edit',
-      'Editar medicinas de asistencia' => 'Edid medicines of an assist',
+      'Editar medicinas de la asistencia' => 'Edit medicines of the assist',
       'Añadir medicina' => 'Add medicine',
       'Añadir asistencia' => 'Add a new assist',
       'Añadir' => 'Add',
@@ -110,9 +110,13 @@
       'No hay registros de este día' => 'No register for the selected date',
       'Guardar cambios' => 'Save changes',
       'Hora' => 'Hour',
-      'Seleccionar cantidad de medicinas de asistencia' => 'Select quantity of assistance medicines',
+      'Seleccionar cantidad de medicinas de asistencia' => "Select quantity of the assistance's medicines",
       'Estancias' => 'Stays',
       'Añadir un paciente a una habitación' => 'Add a patient to a room',
+      'Inserta una fecha y una hora para la asistencia' => 'Insert a date and time for the assistance',
+      'Selecciona como mínimo un medicamento' => 'Select at least one medication',
+      'La cantidad de cada medicina debe ser como mínimo de' => 'The quantity of each medicine must be at least',
+      'Asistencias confirmadas' => 'Assists confirmed',
   ];
 
 ?>

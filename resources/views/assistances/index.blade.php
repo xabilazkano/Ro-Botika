@@ -52,7 +52,7 @@
 	</table>
 </div>
 <hr><br>
-<h3>{{__('messages.AsistenciasConfirmadas')}}</h3>
+<h3>{{__('messages.Asistencias confirmadas')}}</h3>
 <table class="table">
 	<thead class="thead">
 		<tr>
