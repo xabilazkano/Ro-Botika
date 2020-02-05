@@ -14,7 +14,7 @@
 				<th>{{__('messages.Paciente')}}</th>
 				<th>{{__('messages.Habitación')}}</th>
 				<th>{{__('messages.Enfermera')}}</th>
-				<th>{{__('messages.Fecha')}}</th>
+				<th>{{__('messages.Hora')}}</th>
 				<th>{{__('messages.Medicinas')}}</th>
 				<th>{{__('messages.Confirmado')}}</th>
 				<th>{{__('messages.Movercarro')}}</th>
@@ -24,7 +24,7 @@
 		<td><a href="{{route('patients.show',$assist->patient->id)}}">{{$assist->patient->name}} {{$assist->patient->lastname}}</a></td>
 		<td><a href="{{route('rooms.show', $assist->room_id)}}">{{$assist->room_id}}</a></td>
 		<td>{{$assist->user->name}} {{$assist->user->lastname}}</td>
-		<td>{{$assist->estimated_date}}</td>
+		<td>{{$assist->hour}}</td>
 		<td>
 			@foreach ($assist->medicines as $medicine)
 			<a href="{{route('medicines.show',$medicine->id)}}">{{$medicine->name}} x{{$medicine->pivot->amount}}</a><br>

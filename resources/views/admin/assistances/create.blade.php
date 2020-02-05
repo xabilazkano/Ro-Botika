@@ -58,6 +58,18 @@
       </div>
     </div>
     <div class="form-group row">
+      <label for="hour" class="col-md-4 col-form-label text-md-right">{{__('messages.Hora')}}</label>
+      <div class="col-md-6">
+        <input id="hour" type="time" name="hour" value="{{Request::old('hour')}}" class="form-control @error('hour') is-invalid @enderror">
+
+        @error('hour')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+      </div>
+    </div>
+    <div class="form-group row">
       <label for="medicine" class="col-md-4 col-form-label text-md-right">{{__('messages.Medicinas')}}</label>
       <div class="col-md-6">
         <select multiple class="form-control @error('medicines') is-invalid @enderror" name="medicines[]">

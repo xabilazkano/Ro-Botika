@@ -74,12 +74,14 @@ class AssistanceController extends Controller
             'patient' => 'required',
             'nurse' => 'required',
             'date' => 'required',
-            'medicines' => 'required'
+            'medicines' => 'required',
+            'hour' => 'required'
         ]);
         $assist = new Assistance;
         $assist->patient_id = $request->input('patient');
         $assist->user_id = $request->input('nurse');
         $assist->estimated_date = $request->input('date');
+        $assist->hour = $request->input('hour');
         $medicinesIds = $request->input('medicines');
         $medicines = array();
         foreach ($medicinesIds as $medicineId) {
@@ -140,12 +142,14 @@ class AssistanceController extends Controller
         $validatedData = $request->validate([
             'patient' => 'required',
             'nurse' => 'required',
-            'date' => 'required'
+            'date' => 'required',
+            'hour' => 'required'
         ]);
         $assistance = Assistance::find($id);
         $assistance->patient_id = $request->input('patient');
         $assistance->user_id = $request->input('nurse');
         $assistance->estimated_date = $request->input('date');
+        $assistance->hour = $request->input('hour');
         $assistance->id = $id;
         $assistance->save();
         $assistances = Assistance::all();

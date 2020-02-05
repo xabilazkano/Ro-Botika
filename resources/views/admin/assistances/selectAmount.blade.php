@@ -30,6 +30,7 @@
         <input type="hidden" name="patient" value="{{$assistance->patient_id}}">
         <input type="hidden" name="nurse" value="{{$assistance->user_id}}">
         <input type="hidden" name="date" value="{{$assistance->estimated_date}}">
+        <input type="hidden" name="hour" value="{{$assistance->hour}}">
     		<input type="submit" name="" value="{{__('messages.Añadir asistencia')}}">
     	</div>
     </form><br><br>

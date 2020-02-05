@@ -20,6 +20,7 @@ class CreateAssistancesTable extends Migration
           $table->unsignedBigInteger('user_id');
           $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
           $table->date('estimated_date');
+          $table->string('hour');
           $table->boolean('confirmed')->nullable();
           $table->boolean('chart_state')->nullable();
           $table->timestamps();

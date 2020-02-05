@@ -16,6 +16,7 @@
 					<th>{{__('messages.Paciente')}}</th>
 					<th>{{__('messages.Enfermera')}}</th>
 					<th>{{__('messages.Fecha')}}</th>
+          <th>{{__('messages.Hora')}}</th>
 					<th>{{__('messages.Medicinas')}}</th>
 					<th>{{__('messages.Confirmado')}}</th>
 				</tr>
@@ -25,6 +26,7 @@
 				<td>{{$assist->patient->name}} {{$assist->patient->lastname}}</td>
 				<td>{{$assist->user->name}} {{$assist->user->lastname}}</td>
 				<td>{{$assist->estimated_date}}</td>
+        <td>{{$assist->hour}}</td>
 				<td>
 					@foreach ($assist->medicines as $medicine)
 					{{$medicine->name}} x{{$medicine->pivot->amount}}<br>

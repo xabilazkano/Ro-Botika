@@ -54,10 +54,11 @@ class AssistanceMedicineController extends Controller
 		$assistance->patient_id = $input["patient"];
 		$assistance->user_id = $input["nurse"];
 		$assistance->estimated_date = $input["date"];
+		$assistance->hour = $input["hour"];
 		$assistance->save();
 
 		foreach ($input as $medicineId => $medicineAmount) {
-			if ($medicineId !== "_token" && $medicineId !== "patient" && $medicineId !== "nurse" && $medicineId !== "date"){
+			if ($medicineId !== "_token" && $medicineId !== "patient" && $medicineId !== "nurse" && $medicineId !== 'hour' && $medicineId !== "date"){
 				$assistanceMedicine = new AssistanceMedicine;
 				$assistanceMedicine->assistance_id = $assistance->id;
 				$assistanceMedicine->medicine_id = $medicineId;

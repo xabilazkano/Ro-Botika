@@ -20,7 +20,8 @@ class AssistancesTableSeeder extends Seeder
           'patient_id' => rand(1,20),
           'user_id' => rand(1,22),
           'chart_state' => false,
-          'estimated_date' => date("Y/m/d")
+          'estimated_date' => date("Y/m/d"),
+          'hour' => '08:00'
         ]);
       }
       for ($i=0;$i<20;$i++) {
@@ -32,7 +33,8 @@ class AssistancesTableSeeder extends Seeder
           'user_id' => rand(1,22),
           'chart_state' => false,
           'confirmed' => true,
-          'estimated_date' => date('Y-m-d', strtotime(' - 1 days'))
+          'estimated_date' => date('Y-m-d', strtotime(' - 1 days')),
+          'hour' => '08:00'
         ]);
       }
       for ($i=0;$i<3;$i++) {
@@ -44,7 +46,8 @@ class AssistancesTableSeeder extends Seeder
           'user_id' => rand(1,22),
           'chart_state' => false,
           'confirmed' => false,
-          'estimated_date' => date('Y-m-d', strtotime(' - 1 days'))
+          'estimated_date' => date('Y-m-d', strtotime(' - 1 days')),
+          'hour' => '08:00'
         ]);
       }
     }
