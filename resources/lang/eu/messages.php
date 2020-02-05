@@ -95,6 +95,7 @@
       'Movercarro' => 'Mugitu karroa',
       'Asistir' => 'Asistitu',
       'AsistenciasPasadas' => 'Iraungitako asistentziak',
+      'AsistenciasActuales' => 'Momentuko asistentziak',
       'AsistenciasHistoricas' => 'Asistentzia historikoak',
       'En camino' => 'Bidean',
       'Percentage of occupation' => 'Okupazio ehunekoa',

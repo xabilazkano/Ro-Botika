@@ -6,7 +6,7 @@
 @section('content')
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pb-5">
   <h2>{{__('messages.Seleccionar cama')}}</h2>
-    <form id="selectBed" method="POST" action="{{route('bedAdd')}}">
+    <form id="selectBed" method="POST" action="{{route('bedAddEdit', $patient_room->id)}}">
       @csrf
       <div class="form-group row">
         <label for="bed" class="col-md-4 col-form-label text-md-right">{{__('messages.Cama')}}</label>
@@ -30,7 +30,6 @@
                 }
               }
             ?>
-
             @if($camaA)
               <option value="A">A</option>
             @endif
@@ -45,10 +44,6 @@
           @enderror
         </div>
       </div>
-      <input type="hidden" name="patient_id" value="{{$patient_room->patient_id}}">
-      <input type="hidden" name="room_id" value="{{$patient_room->room_id}}">
-      <input type="hidden" name="up_date" value="{{$patient_room->up_date}}">
-      <input type="hidden" name="disease" value="{{$patient_room->disease}}">
       <div class="col-md-6 offset-md-4 text-center">
         <input type="submit" class="btn btn-primary"
         value="{{__('messages.Añadir')}}">
