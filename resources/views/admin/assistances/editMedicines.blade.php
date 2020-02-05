@@ -20,10 +20,22 @@
           </tr>
         </thead>
     		@foreach($assistance->medicines as $medicine)
-    		<tr>
-    			<td>{{$medicine->name}}</td>
-          <td><input type="number" name="{{$medicine->id}}" id="amount" value="{{$medicine->pivot->amount}}"></td>
-    		</tr>
+          <?php
+            $cantidadLibre = $medicine->amount;
+            foreach ($assistances as $assistance) {
+              if ($assistance->confirmed == 0 && $assistance->estimated_date >= date('Y-m-d') && !$assistance->medicines->isEmpty()){
+                foreach ($assistance->medicines as $assistanceMedicine) {
+                  if ($medicine->id == $assistanceMedicine->id){
+                    $cantidadLibre = $cantidadLibre - $assistanceMedicine->pivot->amount;
+                  }
+                }
+              }
+            }
+          ?>
+        	<tr>
+        		<td>{{$medicine->name}} ({{$medicine->amount}})</td>
+            <td><input type="number" name="{{$medicine->id}}" id="amount" value="{{$medicine->pivot->amount}}" min="0" max="{{$cantidadLibre}}"></td>
+        	</tr>
     		@endforeach
     	</table>
       @endif
@@ -41,7 +53,21 @@
 			<div class="col-md-6">
 				<select id="medicinas" multiple class="form-control @error('medicines') is-invalid @enderror" name="medicines[]">
 					@foreach ($medicines as $medicine)
-            <option value="{{$medicine->id}}">{{$medicine->name}}{{$medicine->surname}}</option>
+            <?php
+              $cantidadLibre = $medicine->amount;
+              foreach ($assistances as $assistance) {
+                if ($assistance->confirmed == 0 && $assistance->estimated_date >= date('Y-m-d') && !$assistance->medicines->isEmpty()){
+                  foreach ($assistance->medicines as $assistanceMedicine) {
+                    if ($medicine->id == $assistanceMedicine->id){
+                      $cantidadLibre = $cantidadLibre - $assistanceMedicine->pivot->amount;
+                    }
+                  }
+                }
+              }
+            ?>
+            @if ($cantidadLibre > 0)
+              <option value="{{$medicine->id}}">{{$medicine->name}} ({{$cantidadLibre}})</option>
+            @endif
           @endforeach
 				</select>
 
@@ -68,7 +94,6 @@
 </main>
 <script type="text/javascript">
 	$(document).ready(function(){
-		console.log("kaixo");
 		$("#editarAsistencia").submit(function(){
 			let medicinas = $('#medicinas').val();
 			if (typeof(medicinas) === "undefined"){

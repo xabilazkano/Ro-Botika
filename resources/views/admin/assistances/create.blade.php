@@ -74,10 +74,23 @@
       <div class="col-md-6">
         <select multiple class="form-control @error('medicines') is-invalid @enderror" name="medicines[]">
           @foreach ($medicines as $medicine)
-          <option value="{{$medicine->id}}">{{$medicine->name}}{{$medicine->surname}}</option>
+            <?php
+              $cantidadLibre = $medicine->amount;
+              foreach ($assistances as $assistance) {
+                if ($assistance->confirmed == 0 && $assistance->estimated_date >= date('Y-m-d') && !$assistance->medicines->isEmpty()){
+                  foreach ($assistance->medicines as $assistanceMedicine) {
+                    if ($medicine->id == $assistanceMedicine->id){
+                      $cantidadLibre = $cantidadLibre - $assistanceMedicine->pivot->amount;
+                    }
+                  }
+                }
+              }
+            ?>
+            @if ($cantidadLibre > 0)
+              <option value="{{$medicine->id}}">{{$medicine->name}} ({{$cantidadLibre}})</option>
+            @endif
           @endforeach
         </select>
-
         @error('medicines')
         <span class="invalid-feedback" role="alert">
           <strong>{{ $message }}</strong>
@@ -87,8 +100,7 @@
     </div>
     <div class="form-group row mb-0">
       <div class="col-md-6 offset-md-6">
-        <input type="submit" class="btn btn-primary"
-        value="{{__('messages.Añadir')}}">
+        <input type="submit" class="btn btn-primary" value="{{__('messages.Añadir')}}">
       </div>
     </div><br>
     <div class="col-md-12 d-flex justify-content-center">
@@ -99,7 +111,6 @@
     $(document).ready(function(){
       $("#addAssist").submit(function(){
         let fecha = $('#fecha').val();
-        console.log(fecha);
         if (fecha === ""){
           $("#texto").show();
           $('#texto').text("{{__('messages.Inserta una fecha')}}");

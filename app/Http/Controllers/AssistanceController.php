@@ -60,7 +60,8 @@ class AssistanceController extends Controller
         $patients = Patient::all();
         $medicines = Medicine::all();
         $nurses = User::where('type_of_user','nurse')->get();
-        return view('admin.assistances.create',['patients'=>$patients,'nurses'=>$nurses,'medicines'=>$medicines]);
+        $assistances = Assistance::all();
+        return view('admin.assistances.create',['assistances' => $assistances,'patients'=>$patients,'nurses'=>$nurses,'medicines'=>$medicines]);
     }
     /**
     * Store a newly created resource in storage.
@@ -88,7 +89,8 @@ class AssistanceController extends Controller
             $medicine = Medicine::find($medicineId);
             array_push($medicines,$medicine);
         }
-        return view('admin.assistances.selectAmount', ['medicines' => $medicines, 'assistance' => $assist]);
+        $assistances = Assistance::all();
+        return view('admin.assistances.selectAmount', ['assistances' => $assistances, 'medicines' => $medicines, 'assistance' => $assist]);
     }
     /**
     * Display the specified resource.
@@ -170,9 +172,14 @@ class AssistanceController extends Controller
     public function confirmAssist($id)
     {
         Assistance::where('id',$id)->update(['confirmed'=>1]);
+        $assistanceMedicines = AssistanceMedicine::where('assistance_id', $id)->get();
+        foreach ($assistanceMedicines as $assistanceMedicine) {
+          $medicine = Medicine::find($assistanceMedicine->medicine_id);
+          $medicine->amount = $medicine->amount - $assistanceMedicine->amount;
+          $medicine->save();
+        }
         $assistances = Assistance::all();
         return redirect()->route('assistances.index');
-
     }
     public function ir($id) {
       $asistencias = Assistance::all();

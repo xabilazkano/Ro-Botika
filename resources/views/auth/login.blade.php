@@ -56,7 +56,6 @@
             $("#formulariologin").submit(function(){
               let email = $('#email').val();
               let contraseña = $('#contraseña').val();
-              console.log(email + " " + contraseña);
               if (email === "" || contraseña === ""){
                 $("#texto").show();
                 $('#texto').val("{{__('messages.Inserte todos los campos')}}");

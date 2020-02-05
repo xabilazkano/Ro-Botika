@@ -18,10 +18,22 @@
     			</tr>
     		</thead>
     		@foreach($medicines as $medicine)
+          <?php
+          $cantidadLibre = $medicine->amount;
+            foreach ($assistances as $assistance) {
+              if ($assistance->confirmed == 0 && $assistance->estimated_date >= date('Y-m-d') && !$assistance->medicines->isEmpty()){
+                foreach ($assistance->medicines as $assistanceMedicine) {
+                  if ($medicine->id == $assistanceMedicine->id){
+                    $cantidadLibre = $cantidadLibre - $assistanceMedicine->pivot->amount;
+                  }
+                }
+              }
+            }
+          ?>
       		<tr>
-      			<td>{{$medicine->name}}</td>
+      			<td>{{$medicine->name}} ({{$cantidadLibre}})</td>
       			<td>
-              <input type="number" name="{{$medicine->id}}" id="amount" value="">
+              <input type="number" name="{{$medicine->id}}" id="amount" value="" min="1" max="{{$cantidadLibre}}">
       			</td>
       		</tr>
     		@endforeach
@@ -31,7 +43,7 @@
         <input type="hidden" name="nurse" value="{{$assistance->user_id}}">
         <input type="hidden" name="date" value="{{$assistance->estimated_date}}">
         <input type="hidden" name="hour" value="{{$assistance->hour}}">
-    		<input type="submit" name="" value="{{__('messages.Añadir asistencia')}}">
+    		<input type="submit" class="btn btn-primary" value="{{__('messages.Añadir asistencia')}}">
     	</div>
     </form><br><br>
 	@endif
@@ -42,10 +54,8 @@
 </main>
 <script type="text/javascript">
 	$(document).ready(function(){
-		console.log("kaixo");
 		$("#editarAsistencia").submit(function(){
 			let medicinas = $('#medicines').val();
-			console.log(medicinas);
 			if (typeof(medicinas) === "undefined"){
 				$("#texto").show();
 				$('#texto').text("{{__('messages.Seleccione una medicina')}}");

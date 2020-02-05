@@ -13,6 +13,7 @@ class AssistanceMedicineController extends Controller
 	{
 		$medicines = Medicine::all();
 		$assist = Assistance::find($id);
+		$assistances = Assistance::all();
 
 		$medicinesAvailable = array();
 		foreach ($medicines as $medicine){
@@ -26,7 +27,7 @@ class AssistanceMedicineController extends Controller
 				array_push($medicinesAvailable, $medicine);
 			}
 		}
-		return view ('admin.assistances.editMedicines',['assistance'=>$assist,'medicines'=>$medicinesAvailable]);
+		return view ('admin.assistances.editMedicines',['assistances' => $assistances, 'assistance'=>$assist,'medicines'=>$medicinesAvailable]);
 	}
 
 	public function add($id,Request $request)
