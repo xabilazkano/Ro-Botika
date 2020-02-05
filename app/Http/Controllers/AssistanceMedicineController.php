@@ -30,24 +30,6 @@ class AssistanceMedicineController extends Controller
 		return view ('admin.assistances.editMedicines',['assistances' => $assistances, 'assistance'=>$assist,'medicines'=>$medicinesAvailable]);
 	}
 
-	public function add($id,Request $request)
-	{
-		$validatedData = $request->validate([
-			'medicines' => 'required'
-		]);
-
-		$medicines = $request->input('medicines');
-		$i=0;
-		while ($i<count($medicines)) {
-			$assist = new AssistanceMedicine;
-			$assist->assistance_id = $id;
-			$assist->medicine_id = $medicines[$i];
-			$assist->save();
-			$i++;
-		}
-		return redirect()->route('assistMedicines.edit',$id);
-	}
-
 	public function selectAmount(Request $request){
 		$input = $request->all();
 

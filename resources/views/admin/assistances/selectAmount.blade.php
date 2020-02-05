@@ -19,10 +19,10 @@
     		</thead>
     		@foreach($medicines as $medicine)
           <?php
-          $cantidadLibre = $medicine->amount;
-            foreach ($assistances as $assistance) {
-              if ($assistance->confirmed == 0 && $assistance->estimated_date >= date('Y-m-d') && !$assistance->medicines->isEmpty()){
-                foreach ($assistance->medicines as $assistanceMedicine) {
+            $cantidadLibre = $medicine->amount;
+            foreach ($assistances as $assist) {
+              if ($assist->confirmed == 0 && $assist->estimated_date >= date('Y-m-d') && !$assist->medicines->isEmpty()){
+                foreach ($assist->medicines as $assistanceMedicine) {
                   if ($medicine->id == $assistanceMedicine->id){
                     $cantidadLibre = $cantidadLibre - $assistanceMedicine->pivot->amount;
                   }
@@ -45,7 +45,6 @@
         <input type="hidden" name="hour" value="{{$assistance->hour}}">
     		<input type="submit" class="btn btn-primary" value="{{__('messages.Añadir asistencia')}}">
     	</div>
-    </form><br><br>
 	@endif
 	<div class="col-md-10 d-flex justify-content-center">
 		<p class="red" id="texto" style="display:none"></p>
