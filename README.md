@@ -38,5 +38,5 @@ A continuacion se muestran los usuarios con sus respectivos roles:
 
 | Rol | Usuario | Contraseña |
 | ------------ | ------------ | ------------ |
-| Administrador | admin@robotika.com | secret |
-| Enfermero| nurse@robotika.com | secret |
+| Administrador(a) | admin@robotika.com | secret |
+| Enfermer@| nurse@robotika.com | secret |
