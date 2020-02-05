@@ -10,6 +10,7 @@
     <a href="{{route('adminNurses.create')}}" class="col-1"><i class="fas fa-plus"></i></a>
     @endif
   </h2>
+  <div class="table-responsive">
   <table class="table">
     <thead class="thead">
       <tr>
@@ -49,6 +50,7 @@
     </tr>
     @endforeach
   </table>
+</div>
 </main>
 
 <script type="text/javascript">

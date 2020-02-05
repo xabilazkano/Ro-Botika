@@ -15,6 +15,6 @@ class Assistance extends Model
   }
 
   public function medicines(){
-    return $this->belongsToMany('App\Medicine');
+    return $this->belongsToMany('App\Medicine')->withPivot('amount');
   }
 }

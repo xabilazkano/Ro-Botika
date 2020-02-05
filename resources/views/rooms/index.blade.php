@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('titulua', __('messages.HABITACIONES'))
 @section('content')
+<div class="table-responsive">
 <table class="table">
 	<thead class="thead">
 		<tr>
@@ -27,6 +28,7 @@
 				</tr>
 	@endforeach
 </table>
+</div>
 <script type="text/javascript">
 $(document).ready( function () {
     $("table").DataTable();
