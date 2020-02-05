@@ -33,7 +33,7 @@ $_SESSION['section']="patientsRooms";
 
         @foreach ($patient->rooms as $room)
         <tr>
-          <td>{{$patient->id}}</td>
+          <td>{{$patient->name}} {{$patient->lastname}}</td>
           <td>{{$room->id}}</td>
           <td>{{$room->pivot->bed}}</td>
           <td>{{$room->pivot->up_date}}</td>
