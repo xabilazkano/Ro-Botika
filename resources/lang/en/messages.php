@@ -111,6 +111,8 @@
       'Guardar cambios' => 'Save changes',
       'Hora' => 'Hour',
       'Seleccionar cantidad de medicinas de asistencia' => 'Select quantity of assistance medicines',
+      'Estancias' => 'Stays',
+      'Añadir un paciente a una habitación' => 'Add a patient to a room',
   ];
 
 ?>

@@ -110,5 +110,7 @@
       'Guardar cambios' => 'Aldaketak gorde',
       'Hora' => 'Ordua',
       'Seleccionar cantidad de medicinas de asistencia' => 'Aukeratu laguntza-sendagai kopurua',
+      'Estancias' => 'Egonaldiak',
+      'Añadir un paciente a una habitación' => 'Gehitu gaixo bat gela batera',
   ];
 ?>

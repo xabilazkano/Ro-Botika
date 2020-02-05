@@ -5,7 +5,7 @@
 ?>
 @section('content')
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pb-5">
-  <h2>{{__('messages.Añadir')}} {{__('messages.Paciente')}}-{{__('messages.Habitación')}}</h2>
+  <h2>{{__('messages.Añadir un paciente a una habitación')}}</h2>
     <form id="selectBed" method="POST" action="{{route('adminPatientsRooms.store')}}">
       @csrf
       <div class="form-group row">

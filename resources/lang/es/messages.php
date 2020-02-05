@@ -111,5 +111,7 @@
       'Guardar cambios' => 'Guardar cambios',
       'Hora' => 'Hora',
       'Seleccionar cantidad de medicinas de asistencia' => 'Seleccionar cantidad de medicinas de asistencia',
+      'Estancias' => 'Estancias',
+      'Añadir un paciente a una habitación' => 'Añadir un paciente a una habitación',
   ];
 ?>
