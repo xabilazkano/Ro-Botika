@@ -18,20 +18,34 @@
     			</tr>
     		</thead>
     		@foreach($medicines as $medicine)
+          <?php
+          $cantidadLibre = $medicine->amount;
+            foreach ($assistances as $assistance) {
+              if ($assistance->confirmed == 0 && $assistance->estimated_date >= date('Y-m-d') && !$assistance->medicines->isEmpty()){
+                foreach ($assistance->medicines as $assistanceMedicine) {
+                  if ($medicine->id == $assistanceMedicine->id){
+                    $cantidadLibre = $cantidadLibre - $assistanceMedicine->pivot->amount;
+                  }
+                }
+              }
+            }
+          ?>
       		<tr>
-      			<td>{{$medicine->name}}</td>
+      			<td>{{$medicine->name}} ({{$cantidadLibre}})</td>
       			<td>
-              <input type="number" name="{{$medicine->id}}" id="amount" value="">
+              <input type="number" name="{{$medicine->id}}" id="amount" value="" min="1" max="{{$cantidadLibre}}">
       			</td>
       		</tr>
     		@endforeach
     	</table>
-      <div class="col-md-10 d-flex justify-content-center">
-        <input type="hidden" name="patient" value="{{$assistance->patient_id}}">
-        <input type="hidden" name="nurse" value="{{$assistance->user_id}}">
-        <input type="hidden" name="date" value="{{$assistance->estimated_date}}">
-    		<input type="submit" name="" value="{{__('messages.Añadir asistencia')}}">
-    	</div>
+      <div class="form-group row mb-0">
+        <div class="col-md-6 offset-md-6">
+          <input type="hidden" name="patient" value="{{$assistance->patient_id}}">
+          <input type="hidden" name="nurse" value="{{$assistance->user_id}}">
+          <input type="hidden" name="date" value="{{$assistance->estimated_date}}">
+          <input type="submit" class="btn btn-primary" value="{{__('messages.Añadir asistencia')}}">
+        </div>
+      </div>
     </form><br><br>
 	@endif
 	<div class="col-md-10 d-flex justify-content-center">

@@ -20,9 +20,21 @@
           </tr>
         </thead>
     		@foreach($assistance->medicines as $medicine)
+        <?php
+        $cantidadLibre = $medicine->amount;
+          foreach ($assistances as $assistance) {
+            if ($assistance->confirmed == 0 && $assistance->estimated_date >= date('Y-m-d') && !$assistance->medicines->isEmpty()){
+              foreach ($assistance->medicines as $assistanceMedicine) {
+                if ($medicine->id == $assistanceMedicine->id){
+                  $cantidadLibre = $cantidadLibre - $assistanceMedicine->pivot->amount;
+                }
+              }
+            }
+          }
+        ?>
     		<tr>
-    			<td>{{$medicine->name}}</td>
-          <td><input type="number" name="{{$medicine->id}}" id="amount" value="{{$medicine->pivot->amount}}"></td>
+    			<td>{{$medicine->name}} ({{$medicine->amount}})</td>
+          <td><input type="number" name="{{$medicine->id}}" id="amount" value="{{$medicine->pivot->amount}}" min="0" max="{{$cantidadLibre}}"></td>
     		</tr>
     		@endforeach
     	</table>
@@ -41,7 +53,19 @@
 			<div class="col-md-6">
 				<select id="medicinas" multiple class="form-control @error('medicines') is-invalid @enderror" name="medicines[]">
 					@foreach ($medicines as $medicine)
-            <option value="{{$medicine->id}}">{{$medicine->name}}{{$medicine->surname}}</option>
+            <?php
+            $cantidadLibre = $medicine->amount;
+              foreach ($assistances as $assistance) {
+                if ($assistance->confirmed == 0 && $assistance->estimated_date >= date('Y-m-d') && !$assistance->medicines->isEmpty()){
+                  foreach ($assistance->medicines as $assistanceMedicine) {
+                    if ($medicine->id == $assistanceMedicine->id){
+                      $cantidadLibre = $cantidadLibre - $assistanceMedicine->pivot->amount;
+                    }
+                  }
+                }
+              }
+            ?>
+            <option value="{{$medicine->id}}">{{$medicine->name}} ({{$cantidadLibre}})</option>
           @endforeach
 				</select>
 
