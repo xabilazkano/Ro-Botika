@@ -31,6 +31,13 @@ class AssistanceMedicineController extends Controller
 	}
 
 	public function selectAmount(Request $request){
+		$validatedData = $request->validate([
+				'patient' => 'required',
+				'nurse' => 'required',
+				'date' => 'required',
+				'hour' => 'required',
+		]);
+
 		$input = $request->all();
 
 		$assistance = new Assistance;
@@ -59,14 +66,16 @@ class AssistanceMedicineController extends Controller
 				'patient' => 'required',
 				'nurse' => 'required',
 				'date' => 'required',
-				'medicines' => 'required'
+				'hour' => 'required'
 		]);
+
 		$assist = Assistance::find($id);
 		$assist->patient_id = $request->input('patient');
 		$assist->user_id = $request->input('nurse');
 		$assist->estimated_date = $request->input('date');
 		$assist->save();
 		$medicinesIds = $request->input('medicines');
+
 		foreach ($medicinesIds as $medicineId) {
 				$medicine = Medicine::find($medicineId);
 				$assistanceMedicine = new AssistanceMedicine;
@@ -102,9 +111,13 @@ class AssistanceMedicineController extends Controller
 				if ($medicineAmount == 0){
 					AssistanceMedicine::find($assistanceMedicine->id)->delete();
 				}else{
+					$assistanceMedicine->amount = $medicineAmount;
+				}
+				if (Assistance::find($assistanceId)->medicines->isEmpty()){
+					Assistance::find($assistanceId)->delete();
+				}else{
 					$assistanceMedicine->assistance_id = $assistanceId;
 					$assistanceMedicine->medicine_id = $medicineId;
-					$assistanceMedicine->amount = $medicineAmount;
 					$assistanceMedicine->save();
 				}
 			}
