@@ -70,7 +70,7 @@
       <div class="form-group row">
         <label for="disease" class="col-md-4 col-form-label text-md-right">{{ __('messages.enfermedad') }}</label>
         <div class="col-md-6">
-          <input type="text" value="{{Request::old('disease')}}" class="form-control @error('disease') is-invalid @enderror" name="disease" id="disease">
+          <input type="text" value="{{Request::old('disease')}}" class="form-control @error('disease') is-invalid @enderror" name="disease" id="enfermedad">
           @error('disease')
           <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -92,9 +92,10 @@
     $(document).ready(function(){
       $("#selectBed").submit(function(){
         let desde = $('#desde').val();
-        if (desde === "" ){
+        let enfermedad = $('#enfermedad').val();
+        if (desde === "" || enfermedad === ""){
           $("#texto").show();
-          $('#texto').text("{{__('messages.Inserta las fecha')}}");
+          $('#texto').text("{{__('messages.Inserte todos los campos')}}");
           return false;
         }
         else{
