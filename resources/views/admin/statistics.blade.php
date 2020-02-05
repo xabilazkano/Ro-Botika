@@ -68,7 +68,7 @@ var besteak = "";
   $(document).ready(function(){
   $("#calcular").click(function(){
     var fecha = $("#fecha").val();
-    var url = 'http://robotika.ddns.net/api/grafica/'+fecha;
+    var url = 'https://robotika.ddns.net/api/grafica/'+fecha;
     $.get(url,function(data,status){
       if (status === "success"){
 
