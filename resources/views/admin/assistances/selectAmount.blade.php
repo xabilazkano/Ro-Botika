@@ -55,7 +55,6 @@
 </main>
 <script type="text/javascript">
 	$(document).ready(function(){
-		console.log("kaixo");
 		$("#editarAsistencia").submit(function(){
 			let medicinas = $('#medicines').val();
 			console.log(medicinas);

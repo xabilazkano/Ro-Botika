@@ -63,7 +63,7 @@
         <select multiple class="form-control @error('medicines') is-invalid @enderror" name="medicines[]">
           @foreach ($medicines as $medicine)
             <?php
-            $cantidadLibre = $medicine->amount;
+              $cantidadLibre = $medicine->amount;
               foreach ($assistances as $assistance) {
                 if ($assistance->confirmed == 0 && $assistance->estimated_date >= date('Y-m-d') && !$assistance->medicines->isEmpty()){
                   foreach ($assistance->medicines as $assistanceMedicine) {
@@ -74,10 +74,11 @@
                 }
               }
             ?>
-            <option value="{{$medicine->id}}">{{$medicine->name}} ({{$cantidadLibre}})</option>
+            @if ($cantidadLibre > 0)
+              <option value="{{$medicine->id}}">{{$medicine->name}} ({{$cantidadLibre}})</option>
+            @endif
           @endforeach
         </select>
-
         @error('medicines')
         <span class="invalid-feedback" role="alert">
           <strong>{{ $message }}</strong>

@@ -20,22 +20,22 @@
           </tr>
         </thead>
     		@foreach($assistance->medicines as $medicine)
-        <?php
-        $cantidadLibre = $medicine->amount;
-          foreach ($assistances as $assistance) {
-            if ($assistance->confirmed == 0 && $assistance->estimated_date >= date('Y-m-d') && !$assistance->medicines->isEmpty()){
-              foreach ($assistance->medicines as $assistanceMedicine) {
-                if ($medicine->id == $assistanceMedicine->id){
-                  $cantidadLibre = $cantidadLibre - $assistanceMedicine->pivot->amount;
+          <?php
+            $cantidadLibre = $medicine->amount;
+            foreach ($assistances as $assistance) {
+              if ($assistance->confirmed == 0 && $assistance->estimated_date >= date('Y-m-d') && !$assistance->medicines->isEmpty()){
+                foreach ($assistance->medicines as $assistanceMedicine) {
+                  if ($medicine->id == $assistanceMedicine->id){
+                    $cantidadLibre = $cantidadLibre - $assistanceMedicine->pivot->amount;
+                  }
                 }
               }
             }
-          }
-        ?>
-    		<tr>
-    			<td>{{$medicine->name}} ({{$medicine->amount}})</td>
-          <td><input type="number" name="{{$medicine->id}}" id="amount" value="{{$medicine->pivot->amount}}" min="0" max="{{$cantidadLibre}}"></td>
-    		</tr>
+          ?>
+        	<tr>
+        		<td>{{$medicine->name}} ({{$medicine->amount}})</td>
+            <td><input type="number" name="{{$medicine->id}}" id="amount" value="{{$medicine->pivot->amount}}" min="0" max="{{$cantidadLibre}}"></td>
+        	</tr>
     		@endforeach
     	</table>
       @endif
@@ -54,7 +54,7 @@
 				<select id="medicinas" multiple class="form-control @error('medicines') is-invalid @enderror" name="medicines[]">
 					@foreach ($medicines as $medicine)
             <?php
-            $cantidadLibre = $medicine->amount;
+              $cantidadLibre = $medicine->amount;
               foreach ($assistances as $assistance) {
                 if ($assistance->confirmed == 0 && $assistance->estimated_date >= date('Y-m-d') && !$assistance->medicines->isEmpty()){
                   foreach ($assistance->medicines as $assistanceMedicine) {
@@ -65,7 +65,9 @@
                 }
               }
             ?>
-            <option value="{{$medicine->id}}">{{$medicine->name}} ({{$cantidadLibre}})</option>
+            @if ($cantidadLibre > 0)
+              <option value="{{$medicine->id}}">{{$medicine->name}} ({{$cantidadLibre}})</option>
+            @endif
           @endforeach
 				</select>
 
