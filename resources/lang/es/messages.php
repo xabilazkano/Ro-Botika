@@ -116,5 +116,6 @@
       'Inserta una fecha y una hora para la asistencia' => 'Inserta una fecha y una hora para la asistencia',
       'Selecciona como mínimo un medicamento' => 'Selecciona como mínimo un medicamento',
       'La cantidad de cada medicina debe ser como mínimo de' => 'La cantidad de cada medicina debe ser como mínimo de',
+      'Asistencias confirmadas' => 'Asistencias confirmadas',
   ];
 ?>

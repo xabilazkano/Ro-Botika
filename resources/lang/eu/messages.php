@@ -115,5 +115,6 @@
       'Inserta una fecha y una hora para la asistencia' => 'Sartu asistentziarentzat data eta ordua',
       'Selecciona como mínimo un medicamento' => 'Hautatu gutxienez botika bat',
       'La cantidad de cada medicina debe ser como mínimo de' => 'Sendagai bakoitzaren kantitatea gutxienez izan behar da',
+      'Asistencias confirmadas' => 'Baieztatutako asistentziak',
   ];
 ?>

@@ -116,6 +116,7 @@
       'Inserta una fecha y una hora para la asistencia' => 'Insert a date and time for the assistance',
       'Selecciona como mínimo un medicamento' => 'Select at least one medication',
       'La cantidad de cada medicina debe ser como mínimo de' => 'The quantity of each medicine must be at least',
+      'Asistencias confirmadas' => 'Assists confirmed',
   ];
 
 ?>
