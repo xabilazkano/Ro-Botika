@@ -21,7 +21,7 @@
         <td>{{$patient->ss_number}}</td>
         <td>{{$patient->name}}</td>
         <td>{{$patient->lastname}}</td>
-        <td>{{$room->id}}</td>
+        <td><a href="{{route('rooms.show',$room->id)}}">{{$room->id}}</a></td>
         <td>{{$room->pivot->bed}}</td>
         <td><a href="{{route('patients.show',$patient->id)}}"><i class="blackIcon fa fa-eye"></i></a></td>
       </tr>

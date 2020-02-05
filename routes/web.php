@@ -51,5 +51,6 @@ Route::group(['middleware' => ['role']], function () {
 	Route::post('/assistMedicines/selectAmountEdit,{id}', 'AssistanceMedicineController@selectAmountEdit')->name('selectAmountEdit');
 	Route::resource('adminPatientsRooms', 'PatientsRoomsController');
 	Route::post('/bedAdd','PatientsRoomsController@bedAdd')->name('bedAdd');
+	Route::post('/bedAddEdit/{id}','PatientsRoomsController@bedAddEdit')->name('bedAddEdit');
 	Route::get('/statistics', 'GraphicController@graficas')->name('statistics');
 });
