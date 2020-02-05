@@ -101,10 +101,11 @@ class AssistanceController extends Controller
     */
     public function show($id)
     {
+        $assist = Assistance::find($id);
         if (auth()->getUser()->hasRole("admin")) {
           return view ('admin.assistances.show',['assist'=>$assist]);
         }else{
-          $assist = Assistance::find($id);
+
 
           $habitacion = PatientRoom::where([
             ['patient_id', '=', $assist->patient_id],

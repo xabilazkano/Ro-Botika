@@ -8,6 +8,7 @@
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pb-5">
 	<div class="table-responsive">
 		<h2>{{__('messages.Asistencia')}}</h2>
+    <div class="table-responsive">
 		<table class="table">
 			<thead class="thead">
 				<tr>
@@ -37,7 +38,8 @@
 					@endif
 				</td>
 			</tr>
-		</table><br><br>
+		</table>
+  </div><br><br>
 
 		@if (is_null($assist->confirmed))
 		<form action="{{route('confirmAssist',$assist->id)}}" method="post">

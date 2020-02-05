@@ -6,16 +6,18 @@
 		<a href="{{route('medicines.index')}}"><i class="fa fa-arrow-left fa-3x text-dark"></i></a>
 	</div>
 </div>
-<table class="table">
-	<thead class="thead">
+<div class="table-responsive">
+	<table class="table">
+		<thead class="thead">
+			<tr>
+				<th>{{__('messages.Nombre')}}</th>
+				<th>{{__('messages.Cantidad')}}</th>
+			</tr>
+		</thead>
 		<tr>
-			<th>{{__('messages.Nombre')}}</th>
-			<th>{{__('messages.Cantidad')}}</th>
+			<td>{{$medicine->name}}</td>
+			<td>{{$medicine->amount}}</td>
 		</tr>
-	</thead>
-	<tr>
-		<td>{{$medicine->name}}</td>
-		<td>{{$medicine->amount}}</td>
-	</tr>
-</table>
+	</table>
+</div>
 @endsection

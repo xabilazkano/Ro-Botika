@@ -10,6 +10,7 @@ $_SESSION['section']="medicines";
     <a href="{{route('adminMedicines.create')}}" class="col-1"><i class="fas fa-plus"></i></a>
     @endif
   </h2>
+<div class="table-responsive">
   <table class="table">
     <thead class="thead">
       <tr>
@@ -47,6 +48,7 @@ $_SESSION['section']="medicines";
       @endforeach
     </tbody>
   </table>
+</div>
 </main>
 
 <script type="text/javascript">
