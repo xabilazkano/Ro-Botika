@@ -57,7 +57,6 @@
 	$(document).ready(function(){
 		$("#editarAsistencia").submit(function(){
 			let medicinas = $('#medicines').val();
-			console.log(medicinas);
 			if (typeof(medicinas) === "undefined"){
 				$("#texto").show();
 				$('#texto').text("{{__('messages.Seleccione una medicina')}}");

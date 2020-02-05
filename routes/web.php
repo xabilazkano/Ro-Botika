@@ -32,11 +32,10 @@ Route::group(['middleware' => ['auth','verified']], function(){
   Route::resource('patients','PatientController')->only(['index','show']);
   Route::resource('rooms','RoomController')->only(['index','show']);
   Route::resource('assistances','AssistanceController')->only(['index','show']);
-  Route::resource('medicines','MedicineController')->only(['index','show']);
-
-	Route::get('ir/{id}','AssistanceController@ir')->name('assistances.ir');
-
 	Route::get('assistancesActualizandose', 'AssistanceController@indexActualizandose')->name('assistances.indexActualizandose');
+	Route::get('ir/{id}','AssistanceController@ir')->name('assistances.ir');
+	Route::post('confirm/{id}','AssistanceController@confirmAssist')->name('confirmAssist');
+  Route::resource('medicines','MedicineController')->only(['index','show']);
 });
 
 Route::group(['middleware' => ['role']], function () {
@@ -54,5 +53,3 @@ Route::group(['middleware' => ['role']], function () {
 	Route::post('/bedAdd','PatientsRoomsController@bedAdd')->name('bedAdd');
 	Route::get('/statistics', 'GraphicController@graficas')->name('statistics');
 });
-
-Route::post('confirm/{id}','AssistanceController@confirmAssist')->name('confirmAssist');

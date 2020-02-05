@@ -99,7 +99,6 @@
     $(document).ready(function(){
       $("#addAssist").submit(function(){
         let fecha = $('#fecha').val();
-        console.log(fecha);
         if (fecha === ""){
           $("#texto").show();
           $('#texto').text("{{__('messages.Inserta una fecha')}}");

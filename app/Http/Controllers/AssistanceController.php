@@ -168,9 +168,14 @@ class AssistanceController extends Controller
     public function confirmAssist($id)
     {
         Assistance::where('id',$id)->update(['confirmed'=>1]);
+        $assistanceMedicines = AssistanceMedicine::where('assistance_id', $id)->get();
+        foreach ($assistanceMedicines as $assistanceMedicine) {
+          $medicine = Medicine::find($assistanceMedicine->medicine_id);
+          $medicine->amount = $medicine->amount - $assistanceMedicine->amount;
+          $medicine->save();
+        }
         $assistances = Assistance::all();
         return redirect()->route('assistances.index');
-
     }
     public function ir($id) {
       $asistencias = Assistance::all();
