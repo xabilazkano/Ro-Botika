@@ -16,38 +16,38 @@
 			</tr>
 		</thead>
 		@foreach ($assistances as $assist)
-		@if ($assist->confirmed != 1)
-		@if ($assist->estimated_date === date('Y-m-d'))
-		<tr>
-			<td><a href="{{route('patients.show', $assist->patient->id)}}">{{$assist->patient->name}} {{$assist->patient->lastname}}</a></td>
-			<td><a href="{{route('rooms.show', $assist->room_id)}}">{{$assist->room_id}}</a></td>
-			<td>{{$assist->user->name}}</td>
-			<td>{{$assist->estimated_date}}</td>
-			<td>
-				@foreach ($assist->medicines as $medicine)
-				<a href="{{route('medicines.show', $medicine->id)}}">{{$medicine->name}}</a><br>
-				@endforeach
-			</td>
-			<td>
-				@if (is_null($assist->confirmed))
-				<i class=" blackIcon fa fa-question"></i>
-				@else
-				<i class=" confirm fa fa-check"></i>
+			@if ($assist->confirmed != 1)
+				@if ($assist->estimated_date === date('Y-m-d'))
+				<tr>
+				<td><a href="{{route('patients.show', $assist->patient->id)}}">{{$assist->patient->name}} {{$assist->patient->lastname}}</a></td>
+				<td><a href="{{route('rooms.show', $assist->room_id)}}">{{$assist->room_id}}</a></td>
+				<td>{{$assist->user->name}}</td>
+				<td>{{$assist->estimated_date}}</td>
+				<td>
+					@foreach ($assist->medicines as $medicine)
+					<a href="{{route('medicines.show', $medicine->id)}}">{{$medicine->name}} x{{$medicine->pivot->amount}}</a><br>
+					@endforeach
+				</td>
+				<td>
+					@if (is_null($assist->confirmed))
+					<i class=" blackIcon fa fa-question"></i>
+					@else
+					<i class=" confirm fa fa-check"></i>
+					@endif
+				</td>
+				<td>
+					<a href="{{route('assistances.show', $assist->id)}}"><i class="blackIcon fa fa-eye"></i></a>
+				</td>
+				<td>
+					<div id="{{$assist->id}}">
+						<a href="{{route('assistances.ir', $assist->id)}}">
+								<button type="button" name="button" class="btn btn-secondary botonir">{{__('messages.Asistir')}}</button>
+						</a>
+					</div>
+				</td>
+				</tr>
 				@endif
-			</td>
-			<td>
-				<a href="{{route('assistances.show', $assist->id)}}"><i class="blackIcon fa fa-eye"></i></a>
-			</td>
-			<td>
-				<div id="{{$assist->id}}">
-					<a href="{{route('assistances.ir', $assist->id)}}">
-						<button type="button" name="button" class="btn btn-secondary botonir">{{__('messages.Asistir')}}</button>
-					</a>
-				</div>
-			</td>
-		</tr>
-		@endif
-		@endif
+			@endif
 		@endforeach
 	</table>
 </div>
@@ -65,30 +65,30 @@
 		</tr>
 	</thead>
 	@foreach ($assistances as $assist)
-	@if ($assist->confirmed == 1)
-	@if ($assist->estimated_date === date('Y-m-d'))
-	<tr>
-		<td><a href="{{route('patients.show',$assist->patient->id)}}">{{$assist->patient->name}} {{$assist->patient->lastname}}</a></td>
-		<td>{{$assist->user->name}}</td>
-		<td>{{$assist->estimated_date}}</td>
-		<td>
-			@foreach ($assist->medicines as $medicine)
-			<a href="{{route('medicines.show',$medicine->id)}}">{{$medicine->name}}</a><br>
-			@endforeach
-		</td>
-		<td>
-			@if (is_null($assist->confirmed))
-			<i class=" blackIcon fa fa-question"></i>
-			@else
-			<i class=" confirm fa fa-check"></i>
-			@endif
-		</td>
-		<td>
-			<a href="{{route('assistances.show',$assist->id)}}"><i class="blackIcon fa fa-eye"></i></a>
-		</td>
-	</tr>
-	@endif
-	@endif
+		@if ($assist->confirmed == 1)
+		@if ($assist->estimated_date === date('Y-m-d'))
+			<tr>
+				<td><a href="{{route('patients.show',$assist->patient->id)}}">{{$assist->patient->name}} {{$assist->patient->lastname}}</a></td>
+				<td>{{$assist->user->name}}</td>
+				<td>{{$assist->estimated_date}}</td>
+				<td>
+					@foreach ($assist->medicines as $medicine)
+					<a href="{{route('medicines.show',$medicine->id)}}">{{$medicine->name}} x{{$medicine->pivot->amount}}</a><br>
+					@endforeach
+				</td>
+				<td>
+					@if (is_null($assist->confirmed))
+					<i class=" blackIcon fa fa-question"></i>
+					@else
+					<i class=" confirm fa fa-check"></i>
+					@endif
+				</td>
+				<td>
+					<a href="{{route('assistances.show',$assist->id)}}"><i class="blackIcon fa fa-eye"></i></a>
+				</td>
+			</tr>
+		@endif
+		@endif
 	@endforeach
 </table>
 <script type="text/javascript">

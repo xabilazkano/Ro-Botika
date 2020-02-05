@@ -21,25 +21,25 @@
 			</tr>
 		</thead>
 		<tr>
-			<td><a href="{{route('patients.show',$assist->patient->id)}}">{{$assist->patient->name}} {{$assist->patient->lastname}}</a></td>
-			<td><a href="{{route('rooms.show', $assist->room_id)}}">{{$assist->room_id}}</a></td>
-			<td>{{$assist->user->name}} {{$assist->user->lastname}}</td>
-			<td>{{$assist->estimated_date}}</td>
-			<td>
-				@foreach ($assist->medicines as $medicine)
-				<a href="{{route('medicines.show',$medicine->id)}}">{{$medicine->name}}</a><br>
-				@endforeach
-			</td>
-			<td>
-				@if (is_null($assist->confirmed))
-				<i class="blackIcon fa fa-question"></i>
-				@else
-				<i class="confirm blackIcon fa fa-check"></i>
-				@endif
-			</td>
-			<td>
-				<div id="{{$assist->id}}">
-					<a href="{{route('assistances.ir', $assist->id)}}">
+		<td><a href="{{route('patients.show',$assist->patient->id)}}">{{$assist->patient->name}} {{$assist->patient->lastname}}</a></td>
+		<td><a href="{{route('rooms.show', $assist->room_id)}}">{{$assist->room_id}}</a></td>
+		<td>{{$assist->user->name}} {{$assist->user->lastname}}</td>
+		<td>{{$assist->estimated_date}}</td>
+		<td>
+			@foreach ($assist->medicines as $medicine)
+			<a href="{{route('medicines.show',$medicine->id)}}">{{$medicine->name}} x{{$medicine->pivot->amount}}</a><br>
+			@endforeach
+		</td>
+		<td>
+			@if (is_null($assist->confirmed))
+			<i class="blackIcon fa fa-question"></i>
+			@else
+			<i class="confirm blackIcon fa fa-check"></i>
+			@endif
+		</td>
+		<td>
+			<div id="{{$assist->id}}">
+				<a href="{{route('assistances.ir', $assist->id)}}">
 						<button type="button" name="button" class="btn btn-secondary botonir">{{__('messages.Asistir')}}</button>
 					</a>
 				</div>

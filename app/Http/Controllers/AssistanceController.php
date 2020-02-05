@@ -80,18 +80,13 @@ class AssistanceController extends Controller
         $assist->patient_id = $request->input('patient');
         $assist->user_id = $request->input('nurse');
         $assist->estimated_date = $request->input('date');
-        $assist->save();
-        $id = $assist->id;
-        $medicines = $request->input('medicines');
-        $i=0;
-        while ($i<count($medicines)) {
-            $assist = new AssistanceMedicine;
-            $assist->assistance_id = $id;
-            $assist->medicine_id = $medicines[$i];
-            $assist->save();
-            $i++;
+        $medicinesIds = $request->input('medicines');
+        $medicines = array();
+        foreach ($medicinesIds as $medicineId) {
+            $medicine = Medicine::find($medicineId);
+            array_push($medicines,$medicine);
         }
-        return redirect()->route('assistances.index');
+        return view('admin.assistances.selectAmount', ['medicines' => $medicines, 'assistance' => $assist]);
     }
     /**
     * Display the specified resource.
@@ -101,12 +96,10 @@ class AssistanceController extends Controller
     */
     public function show($id)
     {
-        $assist = Assistance::find($id);
+      $assist = Assistance::find($id);
         if (auth()->getUser()->hasRole("admin")) {
           return view ('admin.assistances.show',['assist'=>$assist]);
         }else{
-
-
           $habitacion = PatientRoom::where([
             ['patient_id', '=', $assist->patient_id],
             ['up_date', '<=', date('Y-m-d')]
@@ -130,13 +123,10 @@ class AssistanceController extends Controller
     */
     public function edit($id)
     {
-
         $assistance = Assistance::find($id);
         $patients = Patient::all();
         $nurses = User::where('type_of_user','nurse')->get();
         return view('admin.assistances.edit',['assistance'=>$assistance,'patients'=>$patients,'nurses'=>$nurses]);
-
-
     }
     /**
     * Update the specified resource in storage.
@@ -214,11 +204,11 @@ class AssistanceController extends Controller
       $asistencia = Assistance::select('patient_id','chart_state')->where('chart_state', 1)->get();
       if (isset($asistencia[0])) {
         $habitacion = PatientRoom::select('room_id')->where('patient_id', $asistencia[0]->patient_id)->get();
-        return $habitacion[0];
+        return response()->json($habitacion[0],200);
       } else {
         $habitacionNula = new PatientRoom;
         $habitacionNula->room_id = 0;
-        return $habitacionNula;
+        return response()->json($habitacionNula,203);
       }
     }
 
@@ -256,8 +246,10 @@ class AssistanceController extends Controller
             $a->save();
           }
           $respuesta = (object) array('estado' => 'ok');
-          return json_encode($respuesta);
+          return response()->json($respuesta,200);
         }
+      }else{
+        return response()->json("No es la habitación del destino",203);
       }
     }
 

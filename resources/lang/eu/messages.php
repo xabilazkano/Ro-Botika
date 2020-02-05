@@ -107,5 +107,6 @@
       'Assistances status' => 'Asistentzien egoera',
       'Stock of medicines' => 'Botiken stocka',
       'No hay registros de este día' => 'Ez dago egun horretako erregistrorik',
+      'Guardar cambios' => 'Aldaketak gorde',
   ];
 ?>

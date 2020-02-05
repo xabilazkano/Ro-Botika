@@ -19,6 +19,7 @@ class CreateAssistancesMedicinesTable extends Migration
           $table->foreign('assistance_id')->references('id')->on('assistances')->onDelete('cascade');
           $table->unsignedBigInteger('medicine_id');
           $table->foreign('medicine_id')->references('id')->on('medicines')->onDelete('cascade');
+          $table->integer('amount');
           $table->timestamps();
         });
     }

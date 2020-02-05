@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Medicine extends Model
 {
     public function assistances(){
-      return $this->hasMany('App\Assistance');
+      return $this->belongsToMany('App\Assistance')->withPivot('amount');
     }
 }
