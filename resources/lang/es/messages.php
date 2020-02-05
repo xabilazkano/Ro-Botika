@@ -110,6 +110,6 @@
       'No hay registros de este día' => 'No hay registros de este día',
       'Guardar cambios' => 'Guardar cambios',
       'Hora' => 'Hora',
-
+      'Seleccionar cantidad de medicinas de asistencia' => 'Seleccionar cantidad de medicinas de asistencia',
   ];
 ?>

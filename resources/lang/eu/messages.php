@@ -109,5 +109,6 @@
       'No hay registros de este día' => 'Ez dago egun horretako erregistrorik',
       'Guardar cambios' => 'Aldaketak gorde',
       'Hora' => 'Ordua',
+      'Seleccionar cantidad de medicinas de asistencia' => 'Aukeratu laguntza-sendagai kopurua',
   ];
 ?>

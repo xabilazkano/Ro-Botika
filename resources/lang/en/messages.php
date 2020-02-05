@@ -110,6 +110,7 @@
       'No hay registros de este día' => 'No register for the selected date',
       'Guardar cambios' => 'Save changes',
       'Hora' => 'Hour',
+      'Seleccionar cantidad de medicinas de asistencia' => 'Select quantity of assistance medicines',
   ];
 
 ?>
