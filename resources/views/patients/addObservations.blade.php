@@ -21,7 +21,7 @@
 	<div class="form-group row mb-0">
 		<div class="col-md-6 offset-md-4">
 			<input type="submit" class="btn btn-primary"
-			value="Editar">
+			value="{{__('messages.Editar')}}">
 		</div>
 	</div>
 </form>
