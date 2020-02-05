@@ -42,11 +42,6 @@
           <div class="form-group row mb-0 col-10">
             <div class="col-md-8 offset-md-4">
               <input type="submit" class="btn btn-primary" value="{{ __('messages.Iniciar sesión') }}">
-              @if (Route::has('password.request'))
-              <a class="btn btn-link" href="{{ route('password.request') }}">
-                {{ __('messages.¿Olvidaste tu contraseña?') }}
-              </a>
-              @endif
               <input type="text" class="form-control" id="texto" style="display:none" readonly>
             </div>
           </div>
