@@ -7,37 +7,42 @@
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pb-5">
 	<h2>{{__('messages.Editar medicinas de asistencia')}}</h2>
 	@if (!is_null($assistance->medicines))
-	<table class="table">
-		<thead class="thead">
-			<tr>
-				<th>Id</th>
-				<th></th>
-			</tr>
-		</thead>
-		@foreach($assistance->medicines as $medicine)
-		<tr>
-			<td>{{$medicine->name}}</td>
-			<td>
-				<form method="post" action="{{route('medicineDestroy',[$assistance->id,$medicine->id])}}">
-					@csrf
-					<button type="submit" class="deleteIcon">
-						<i class="fa fa-trash-o"></i>
-					</button>
-				</form>
-			</td>
-		</tr>
-		@endforeach
-	</table><br><br>
+    <form id="modificarAsistencia" action="{{route('assistMedicines.update', $assistance->id)}}" method="post">
+      @csrf
+      @method('put')
+      @if (!$assistance->medicines->isEmpty())
+    	<table class="table">
+        <thead class="thead">
+          <tr>
+            <th>{{__('messages.Nombre')}}</th>
+            <th>{{__('messages.Cantidad')}}</th>
+            <th></th>
+          </tr>
+        </thead>
+    		@foreach($assistance->medicines as $medicine)
+    		<tr>
+    			<td>{{$medicine->name}}</td>
+          <td><input type="number" name="{{$medicine->id}}" id="amount" value="{{$medicine->pivot->amount}}"></td>
+    		</tr>
+    		@endforeach
+    	</table>
+      @endif
+  		<div class="form-group row mb-0">
+  			<div class="col-md-6 offset-md-6">
+  				<input type="submit" class="btn btn-primary" value="{{__('messages.Guardar cambios')}}">
+  			</div>
+  		</div><br><br>
+    </form>
 	@endif
-	<form id="editarAsistencia" method="POST" action="{{route('medicineAdd',$assistance->id)}}">
+	<form id="editarAsistencia" method="POST" action="{{route('selectAmountEdit',$assistance->id)}}">
 		@csrf
 		<div class="form-group row">
 			<label for="medicine" class="col-md-4 col-form-label text-md-right">{{__('messages.Medicinas')}}</label>
 			<div class="col-md-6">
 				<select id="medicinas" multiple class="form-control @error('medicines') is-invalid @enderror" name="medicines[]">
 					@foreach ($medicines as $medicine)
-					<option value="{{$medicine->id}}">{{$medicine->name}}{{$medicine->surname}}</option>
-					@endforeach
+            <option value="{{$medicine->id}}">{{$medicine->name}}{{$medicine->surname}}</option>
+          @endforeach
 				</select>
 
 				@error('medicines')
@@ -49,8 +54,10 @@
 		</div>
 		<div class="form-group row mb-0">
 			<div class="col-md-6 offset-md-6">
-				<input type="submit" class="btn btn-primary"
-				value="{{__('messages.Añadir medicina')}}">
+        <input type="hidden" name="patient" value="{{$assistance->patient_id}}">
+        <input type="hidden" name="nurse" value="{{$assistance->user_id}}">
+        <input type="hidden" name="date" value="{{$assistance->estimated_date}}">
+				<input type="submit" class="btn btn-primary" value="{{__('messages.Añadir medicina')}}">
 			</div>
 		</div>
 		<br>
@@ -63,8 +70,7 @@
 	$(document).ready(function(){
 		console.log("kaixo");
 		$("#editarAsistencia").submit(function(){
-			let medicinas = $('#medicines').val();
-			console.log(medicinas);
+			let medicinas = $('#medicinas').val();
 			if (typeof(medicinas) === "undefined"){
 				$("#texto").show();
 				$('#texto').text("{{__('messages.Seleccione una medicina')}}");

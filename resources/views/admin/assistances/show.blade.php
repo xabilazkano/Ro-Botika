@@ -26,7 +26,7 @@
 				<td>{{$assist->estimated_date}}</td>
 				<td>
 					@foreach ($assist->medicines as $medicine)
-					{{$medicine->name}}
+					{{$medicine->name}} x{{$medicine->pivot->amount}}
 					@endforeach
 				</td>
 				<td>

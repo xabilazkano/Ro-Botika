@@ -45,9 +45,11 @@ Route::group(['middleware' => ['role']], function () {
   Route::resource('adminAssistances','AssistanceController')->only(['create','store','edit','update','destroy']);
   Route::resource('adminMedicines','MedicineController')->only(['create','store','edit','update','destroy']);
   Route::resource('adminNurses','NurseController');
-  Route::resource('assistMedicines', 'AssistanceMedicineController')->only(['edit']);
+  Route::resource('assistMedicines', 'AssistanceMedicineController')->only(['edit','update']);
   Route::post('/medicineDestroy/{id}/{medicine}', 'AssistanceMedicineController@destroy')->name('medicineDestroy');
   Route::post('/medicineAdd/{id}', 'AssistanceMedicineController@add')->name('medicineAdd');
+	Route::post('/assistMedicines/selectAmount', 'AssistanceMedicineController@selectAmount')->name('selectAmount');
+	Route::post('/assistMedicines/selectAmountEdit,{id}', 'AssistanceMedicineController@selectAmountEdit')->name('selectAmountEdit');
 	Route::resource('adminPatientsRooms', 'PatientsRoomsController');
 	Route::post('/bedAdd','PatientsRoomsController@bedAdd')->name('bedAdd');
 	Route::get('/statistics', 'GraphicController@graficas')->name('statistics');

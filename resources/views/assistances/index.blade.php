@@ -24,7 +24,7 @@
 				<td>{{$assist->estimated_date}}</td>
 				<td>
 					@foreach ($assist->medicines as $medicine)
-					<a href="{{route('medicines.show', $medicine->id)}}">{{$medicine->name}}</a><br>
+					<a href="{{route('medicines.show', $medicine->id)}}">{{$medicine->name}} x{{$medicine->pivot->amount}}</a><br>
 					@endforeach
 				</td>
 				<td>
@@ -50,7 +50,7 @@
 		@endforeach
 </table>
 <hr><br>
-<h3>{{__('messages.AsistenciasConfirmadas')}}</h3>
+<h3>{{__('messages.AsistenciasConfirmadas')}}kaixo</h3>
 <table class="table">
 	<thead class="thead">
 		<tr>
@@ -71,7 +71,7 @@
 				<td>{{$assist->estimated_date}}</td>
 				<td>
 					@foreach ($assist->medicines as $medicine)
-					<a href="{{route('medicines.show',$medicine->id)}}">{{$medicine->name}}</a><br>
+					<a href="{{route('medicines.show',$medicine->id)}}">{{$medicine->name}} x{{$medicine->pivot->amount}}</a><br>
 					@endforeach
 				</td>
 				<td>

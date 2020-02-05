@@ -39,7 +39,7 @@
         <td>{{$assist->estimated_date}}</td>
         <td>
           @foreach ($assist->medicines as $medicine)
-          {{$medicine->name}}<br>
+          {{$medicine->name}} x{{$medicine->pivot->amount}}<br>
           @endforeach
         </td>
         <td>
@@ -98,7 +98,7 @@
         <td>{{$assist->estimated_date}}</td>
         <td>
           @foreach ($assist->medicines as $medicine)
-          {{$medicine->name}}<br>
+          {{$medicine->name}} x{{$medicine->pivot->amount}}<br>
           @endforeach
         </td>
         <td>
@@ -138,7 +138,7 @@
         <td>{{$assist->estimated_date}}</td>
         <td>
           @foreach ($assist->medicines as $medicine)
-          {{$medicine->name}}<br>
+          {{$medicine->name}} x{{$medicine->pivot->amount}}<br>
           @endforeach
         </td>
         <td>
@@ -196,7 +196,7 @@
         <td>{{$assist->estimated_date}}</td>
         <td>
           @foreach ($assist->medicines as $medicine)
-          {{$medicine->name}}<br>
+          {{$medicine->name}} x{{$medicine->pivot->amount}}<br>
           @endforeach
         </td>
         <td>

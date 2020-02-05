@@ -98,5 +98,6 @@
       'AsistenciasActuales' => 'Asistencias actuales',
       'AsistenciasHistoricas' => 'Asistencias historicas',
       'En camino' => 'En camino',
+      'Guardar cambios' => 'Guardar cambios',
   ];
 ?>

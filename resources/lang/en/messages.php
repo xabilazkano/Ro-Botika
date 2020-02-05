@@ -98,6 +98,7 @@
       'AsistenciasActuales' => 'Actual assists',
       'AsistenciasHistoricas' => 'Historic Asists',
       'En camino' => 'On the way',
+      'Guardar cambios' => 'Save changes',
   ];
 
 ?>

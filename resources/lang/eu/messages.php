@@ -97,5 +97,6 @@
       'AsistenciasPasadas' => 'Iraungitako asistentziak',
       'AsistenciasHistoricas' => 'Asistentzia historikoak',
       'En camino' => 'Bidean',
+      'Guardar cambios' => 'Aldaketak gorde',
   ];
 ?>
