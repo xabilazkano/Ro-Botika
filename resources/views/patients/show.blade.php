@@ -24,7 +24,12 @@
 </div><br><br>
 <div class="row justify-content-center">
 	<div class="observaciones col-8">
-		<h2>{{ __('messages.observations') }}</h2>
+		<h2 class="row">
+	    <span class="col-3">{{__('messages.observations')}}</span>
+
+	    <a href="{{route('addObservations',$patient->id)}}" class="col-1"><i class="fas fa-plus"></i></a>
+
+	  </h2>
 		<p>{{$patient->observations}}</p>
 	</div>
 </div>

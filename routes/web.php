@@ -37,6 +37,8 @@ Route::group(['middleware' => ['auth','verified']], function(){
 	Route::get('ir/{id}','AssistanceController@ir')->name('assistances.ir');
 
 	Route::get('assistancesActualizandose', 'AssistanceController@indexActualizandose')->name('assistances.indexActualizandose');
+	Route::get('addObservations/{id}', 'PatientController@addObservations')->name('addObservations');
+	Route::post('storeObservations/{id}', 'PatientController@storeObservations')->name('storeObservations');
 });
 
 Route::group(['middleware' => ['role']], function () {

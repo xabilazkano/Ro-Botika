@@ -135,4 +135,19 @@ class PatientController extends Controller
 
         return view('admin.patients.index',['patients'=>$patients]);
     }
+
+    public function addObservations($id)
+    {
+      $patient = Patient::find($id);
+      return view('patients.addObservations',['patient'=>$patient]);
+    }
+
+    public function storeObservations(Request $request,$id)
+    {
+      $patient = Patient::find($id);
+      $patient->observations = $request->input('observations');
+      $patient->save();
+
+      return view('patients.show',['patient'=>$patient]);
+    }
 }

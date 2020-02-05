@@ -171,3 +171,7 @@ table {
 .paginate_button{
   width: auto;
 }
+
+#observations{
+  display: inline;
+}
