@@ -41,7 +41,7 @@
           @endforeach
         </td>
         <td>
-          @if (is_null($assist->confirmed))
+          @if ($assist->confirmed != 1)
           <i class=" blackIcon fas fa-question"></i>
           @else
           <i class=" confirm fas fa-check"></i>
