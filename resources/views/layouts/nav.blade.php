@@ -42,6 +42,7 @@
 				</ul>
 			</div>
 			<!-- FIN Idiomas -->
+			@if (Auth::check())
 			<div class="menueskubi d-flex align-items-center">
 				<ul>
 					<a tabindex="-1" class="dropdown-item" href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -52,6 +53,7 @@
 				</form>
 			</ul>
 		</div>
+		@endif
 	</div>
 </div>
 </nav>
