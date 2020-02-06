@@ -118,7 +118,7 @@ var besteak = "";
       </div>
     </div>
     <h1>{{__("messages.Stock of medicines")}}</h1>
-    <div  id="columnchart_values" style="width: 900px; height: 500px;"></div><br><br>
+    <div  id="columnchart_values" style="width: 600px; height: 500px;"></div><br><br>
   </main>
 
 
