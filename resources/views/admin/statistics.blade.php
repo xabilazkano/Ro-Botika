@@ -52,7 +52,7 @@ $_SESSION['section']="statistics";
         title: "{{__('messages.Cantidad')}}",
         width: 800,
         height: 600,
-        bar: {groupWidth: "80%"},
+        bar: {groupWidth: "95%"},
         legend: { position: "none" },
       };
       var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
