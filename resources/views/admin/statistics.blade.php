@@ -50,9 +50,9 @@ $_SESSION['section']="statistics";
 
       var options = {
         title: "{{__('messages.Cantidad')}}",
-        width: 1000,
+        width: 800,
         height: 600,
-        bar: {groupWidth: "95%"},
+        bar: {groupWidth: "80%"},
         legend: { position: "none" },
       };
       var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
