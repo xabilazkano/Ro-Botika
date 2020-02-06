@@ -10,10 +10,11 @@
     <a href="{{route('adminAssistances.create')}}" class="col-1"><i class="fas fa-plus"></i></a>
     @endif
   </h2>
-  <div class="table-responsive">
+
 
     <!-- Tabla asistencias pasadas -->
     <h1>{{__('messages.AsistenciasPasadas')}}</h1>
+    <div class="table-responsive">
     <table class="table">
       <thead class="thead">
         <tr>
@@ -69,9 +70,11 @@
       @endif
       @endforeach
     </table>
+  </div>
 
     <!-- Tabla asistencias actuales -->
     <h1>{{__('messages.AsistenciasActuales')}}</h1>
+    <div class="table-responsive">
     <table class="table">
       <thead class="thead">
         <tr>
@@ -168,9 +171,10 @@
       @endif
       @endforeach
     </table>
-
+  </div>
     <!-- Tabla asistencias Historicas -->
     <h1>{{__('messages.AsistenciasHistoricas')}}</h1>
+    <div class="table-responsive">
     <table class="table">
       <thead class="thead">
         <tr>

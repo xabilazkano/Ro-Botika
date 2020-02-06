@@ -45,7 +45,7 @@ class PatientController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'ss_number' => 'required|integer|digits:11',
+            'ss_number' => 'required|digits:11',
             'name' => 'required',
             'lastname' => 'required',
         ]);

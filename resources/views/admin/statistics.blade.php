@@ -50,7 +50,7 @@ $_SESSION['section']="statistics";
 
       var options = {
         title: "{{__('messages.Cantidad')}}",
-        width: 1500,
+        width: 800,
         height: 600,
         bar: {groupWidth: "95%"},
         legend: { position: "none" },
@@ -118,7 +118,7 @@ var besteak = "";
       </div>
     </div>
     <h1>{{__("messages.Stock of medicines")}}</h1>
-    <div  id="columnchart_values" style="width: 900px; height: 500px;"></div><br><br>
+    <div  id="columnchart_values" style="width: 600px; height: 500px;"></div><br><br>
   </main>
 
 
