@@ -99,7 +99,9 @@ class AssistanceMedicineController extends Controller
 			}
 		}
 
-		return view('admin.assistances.editMedicines', ['medicines' => $medicinesAvailable, 'assistance' => $assist]);
+		$assistances = Assistance::all();
+
+		return view('admin.assistances.editMedicines', ['assistances' => $assistances, 'medicines' => $medicinesAvailable, 'assistance' => $assist]);
 	}
 
 	public function update(Request $request, $assistanceId){

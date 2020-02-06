@@ -22,9 +22,9 @@
     		@foreach($assistance->medicines as $medicine)
           <?php
             $cantidadLibre = $medicine->amount;
-            foreach ($assistances as $assistance) {
-              if ($assistance->confirmed == 0 && $assistance->estimated_date >= date('Y-m-d') && !$assistance->medicines->isEmpty()){
-                foreach ($assistance->medicines as $assistanceMedicine) {
+            foreach ($assistances as $assist) {
+              if ($assist->confirmed == 0 && $assist->estimated_date >= date('Y-m-d') && !$assist->medicines->isEmpty()){
+                foreach ($assist->medicines as $assistanceMedicine) {
                   if ($medicine->id == $assistanceMedicine->id && $assistance->id !== $assistanceMedicine->pivot->assistance_id){
                     $cantidadLibre = $cantidadLibre - $assistanceMedicine->pivot->amount;
                   }
@@ -60,9 +60,9 @@
               $cantidadLibre = $medicine->amount;
               foreach ($assistances as $assistance) {
                 if ($assistance->confirmed == 0 && $assistance->estimated_date >= date('Y-m-d') && !$assistance->medicines->isEmpty()){
-                  foreach ($assistance->medicines as $assistanceMedicine) {
-                    if ($medicine->id == $assistanceMedicine->id){
-                      $cantidadLibre = $cantidadLibre - $assistanceMedicine->pivot->amount;
+                  foreach ($assistance->medicines as $assistMedicine) {
+                    if ($medicine->id == $assistMedicine->id){
+                      $cantidadLibre = $cantidadLibre - $assistMedicine->pivot->amount;
                     }
                   }
                 }
@@ -86,6 +86,7 @@
         <input type="hidden" name="patient" value="{{$assistance->patient_id}}">
         <input type="hidden" name="nurse" value="{{$assistance->user_id}}">
         <input type="hidden" name="date" value="{{$assistance->estimated_date}}">
+        <input type="hidden" name="hour" value="{{$assistance->hour}}">
 				<input type="submit" class="btn btn-primary" value="{{__('messages.Añadir medicina')}}">
 			</div>
 		</div><br><br>
@@ -113,7 +114,7 @@
 			}
 		});
     $("#editarAsistencia").submit(function(){
-      let medicinas = $('medicinas');
+      let medicinas = $('medicinas').val();
       if (medicinas.length === 0){
         $("#texto2").show();
         $('#texto2').text("{{__('messages.Selecciona como mínimo un medicamento')}}");
