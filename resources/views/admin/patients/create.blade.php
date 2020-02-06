@@ -11,7 +11,7 @@
     <div class="form-group row">
       <label for="ss_number" class="col-md-4 col-form-label text-md-right">{{ __('messages.numeross') }}</label>
       <div class="col-md-6">
-        <input type="text" value="{{Request::old('ss_number')}}" class="form-control @error('ss_number') is-invalid @enderror" name="ss_number" id="ss_number">
+        <input type="number" value="{{Request::old('ss_number')}}" class="form-control @error('ss_number') is-invalid @enderror" name="ss_number" id="ss_number">
         @error('ss_number')
         <span class="invalid-feedback" role="alert">
           <strong>{{ $message }}</strong>
