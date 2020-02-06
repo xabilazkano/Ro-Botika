@@ -62,6 +62,10 @@ class PatientsRoomsController extends Controller
   }
 
   public function bedAdd(Request $request){
+    $validatedData = $request->validate([
+      'bed' => 'required'
+    ]);
+
     $patient_room = new PatientRoom;
 
     $patient_room->patient_id = $request->input('patient_id');
@@ -131,7 +135,21 @@ class PatientsRoomsController extends Controller
 
     $patientsRooms = PatientRoom::all();
 
-    return view ('admin.patientsrooms.selectBed',['patient_room' => $patient_room, 'patientsRooms' => $patientsRooms]);
+    return view ('admin.patientsrooms.selectBedEdit',['patient_room' => $patient_room, 'patientsRooms' => $patientsRooms]);
+  }
+
+  public function bedAddEdit(Request $request, $id){
+    $validatedData = $request->validate([
+      'bed' => 'required'
+    ]);
+
+    $patient_room = PatientRoom::find($id);
+
+    $patient_room->bed = $request->input('bed');
+
+    $patient_room->save();
+
+    return redirect()->route('adminPatientsRooms.index');
   }
 
   /**
@@ -146,5 +164,5 @@ class PatientsRoomsController extends Controller
     return redirect()->route('adminPatientsRooms.index');
 
   }
-  
+
 }

@@ -5,9 +5,9 @@
 ?>
 @section('content')
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pb-5">
-	<h2>{{__('messages.Editar medicinas de asistencia')}}</h2>
+	<h2>{{__('messages.Editar medicinas de la asistencia')}}</h2>
 	@if (!is_null($assistance->medicines))
-    <form id="modificarAsistencia" action="{{route('assistMedicines.update', $assistance->id)}}" method="post">
+    <form id="selectAmount" action="{{route('assistMedicines.update', $assistance->id)}}" method="post">
       @csrf
       @method('put')
       @if (!$assistance->medicines->isEmpty())
@@ -22,10 +22,10 @@
     		@foreach($assistance->medicines as $medicine)
           <?php
             $cantidadLibre = $medicine->amount;
-            foreach ($assistances as $assistance) {
-              if ($assistance->confirmed == 0 && $assistance->estimated_date >= date('Y-m-d') && !$assistance->medicines->isEmpty()){
-                foreach ($assistance->medicines as $assistanceMedicine) {
-                  if ($medicine->id == $assistanceMedicine->id){
+            foreach ($assistances as $assist) {
+              if ($assist->confirmed == 0 && $assist->estimated_date >= date('Y-m-d') && !$assist->medicines->isEmpty()){
+                foreach ($assist->medicines as $assistanceMedicine) {
+                  if ($medicine->id == $assistanceMedicine->id && $assistance->id !== $assistanceMedicine->pivot->assistance_id){
                     $cantidadLibre = $cantidadLibre - $assistanceMedicine->pivot->amount;
                   }
                 }
@@ -33,7 +33,7 @@
             }
           ?>
         	<tr>
-        		<td>{{$medicine->name}} ({{$medicine->amount}})</td>
+        		<td>{{$medicine->name}} ({{$cantidadLibre}})</td>
             <td><input type="number" name="{{$medicine->id}}" id="amount" value="{{$medicine->pivot->amount}}" min="0" max="{{$cantidadLibre}}"></td>
         	</tr>
     		@endforeach
@@ -44,6 +44,9 @@
   				<input type="submit" class="btn btn-primary" value="{{__('messages.Guardar cambios')}}">
   			</div>
   		</div><br><br>
+  		<div class="col-md-10 d-flex justify-content-center">
+  			<p class="red" id="texto1" style="display:none"></p>
+  		</div>
     </form>
 	@endif
 	<form id="editarAsistencia" method="POST" action="{{route('selectAmountEdit',$assistance->id)}}">
@@ -55,11 +58,11 @@
 					@foreach ($medicines as $medicine)
             <?php
               $cantidadLibre = $medicine->amount;
-              foreach ($assistances as $assistance) {
-                if ($assistance->confirmed == 0 && $assistance->estimated_date >= date('Y-m-d') && !$assistance->medicines->isEmpty()){
-                  foreach ($assistance->medicines as $assistanceMedicine) {
-                    if ($medicine->id == $assistanceMedicine->id){
-                      $cantidadLibre = $cantidadLibre - $assistanceMedicine->pivot->amount;
+              foreach ($assistances as $assistanc) {
+                if ($assistanc->confirmed == 0 && $assistanc->estimated_date >= date('Y-m-d') && !$assistanc->medicines->isEmpty()){
+                  foreach ($assistanc->medicines as $assistMedicine) {
+                    if ($medicine->id == $assistMedicine->id){
+                      $cantidadLibre = $cantidadLibre - $assistMedicine->pivot->amount;
                     }
                   }
                 }
@@ -83,26 +86,42 @@
         <input type="hidden" name="patient" value="{{$assistance->patient_id}}">
         <input type="hidden" name="nurse" value="{{$assistance->user_id}}">
         <input type="hidden" name="date" value="{{$assistance->estimated_date}}">
+        <input type="hidden" name="hour" value="{{$assistance->hour}}">
 				<input type="submit" class="btn btn-primary" value="{{__('messages.Añadir medicina')}}">
 			</div>
-		</div>
-		<br>
+		</div><br><br>
 		<div class="col-md-10 d-flex justify-content-center">
-			<p class="red" id="texto" style="display:none"></p>
+			<p class="red" id="texto2" style="display:none"></p>
 		</div>
 	</form>
 </main>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$("#editarAsistencia").submit(function(){
-			let medicinas = $('#medicinas').val();
-			if (typeof(medicinas) === "undefined"){
-				$("#texto").show();
-				$('#texto').text("{{__('messages.Seleccione una medicina')}}");
+    $("#selectAmount").submit(function(){
+      let medicinas = $('form#selectAmount input[type=number]');
+      let vacioEncontrado = false;
+      for (i=0; i<medicinas.length; i++){
+        if (medicinas[i].value < 0){
+          vacioEncontrado = true;
+        }
+      }
+      if (vacioEncontrado){
+				$("#texto1").show();
+				$('#texto1').text("{{__('messages.La cantidad de cada medicina debe ser como mínimo de')}} 0");
 				return false;
 			}else{
 				return true;
 			}
+		});
+    $("#editarAsistencia").submit(function(){
+      let medicinas = $('medicinas').val();
+      if (medicinas.length === 0){
+        $("#texto2").show();
+        $('#texto2').text("{{__('messages.Selecciona como mínimo un medicamento')}}");
+        return false;
+      }else{
+        return true;
+      }
 		});
 	});
 </script>

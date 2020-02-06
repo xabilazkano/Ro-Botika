@@ -155,7 +155,7 @@ class AssistanceController extends Controller
         $assistance->id = $id;
         $assistance->save();
         $assistances = Assistance::all();
-        return redirect()->route('assistances.index');
+        return view ('admin.assistances.index',['assistances' => $assistances]);
     }
     /**
     * Remove the specified resource from storage.
@@ -167,7 +167,7 @@ class AssistanceController extends Controller
     {
         Assistance::where('id',$id)->delete();
         $assistances = Assistance::all();
-        return redirect()->route('assistances.index');
+        return view ('admin.assistances.index',['assistances' => $assistances]);
     }
     public function confirmAssist($id)
     {
@@ -178,8 +178,20 @@ class AssistanceController extends Controller
           $medicine->amount = $medicine->amount - $assistanceMedicine->amount;
           $medicine->save();
         }
+
         $assistances = Assistance::all();
-        return redirect()->route('assistances.index');
+        foreach ($assistances as $a) {
+          $habitacion = PatientRoom::where([
+            ['patient_id', '=', $a->patient_id],
+            ['up_date', '<=', date('Y-m-d')]
+          ])
+          ->where(function ($query) {
+            $query->where('down_date', '>=', date('Y-m-d'))
+                  ->orWhere('down_date', '=', null);
+          })->get();
+          $a->room_id = $habitacion[0]->room_id;
+        }
+        return view ('assistances.index',['assistances' => $assistances]);
     }
     public function ir($id) {
       $asistencias = Assistance::all();

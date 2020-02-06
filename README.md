@@ -1,7 +1,7 @@
 <p align="center"><img src="public/img/logo.png" width="400"></p>
 
 <p align="center">
-	Xabi Lazkano. Ander Gonzalez. Ekain Susperregi.
+	<b>Xabi Lazkano. Ander Gonzalez. Ekain Susperregi.</b>
 </p>
 
 ## Ro-Botika

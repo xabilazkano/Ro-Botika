@@ -5,7 +5,7 @@ $_SESSION['section']="patientsRooms";
 @section('content')
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pb-5">
   <h2 class="row">
-    <span class="col-11">{{__('messages.Pacientes')}} - {{__('messages.Habitaciones')}}</span>
+    <span class="col-11">{{__('messages.Estancias')}}</span>
     @if (Auth::user()->hasRole("admin"))
     <a href="{{route('adminPatientsRooms.create')}}" class="col-1"><i class="fas fa-plus"></i></a>
     @endif

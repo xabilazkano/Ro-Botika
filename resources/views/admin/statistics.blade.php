@@ -50,7 +50,7 @@ $_SESSION['section']="statistics";
 
       var options = {
         title: "{{__('messages.Cantidad')}}",
-        width: 1500,
+        width: 1000,
         height: 600,
         bar: {groupWidth: "95%"},
         legend: { position: "none" },

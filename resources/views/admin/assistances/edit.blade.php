@@ -70,7 +70,7 @@
       <div class="form-group row">
         <label for="hour" class="col-md-4 col-form-label text-md-right">{{__('messages.Hora')}}</label>
         <div class="col-md-6">
-          <input id="hour" type="time" name="hour" value="{{$assistance->hour}}" class="form-control @error('hour') is-invalid @enderror">
+          <input id="hora" type="time" name="hour" value="{{$assistance->hour}}" class="form-control @error('hour') is-invalid @enderror">
 
           @error('hour')
           <span class="invalid-feedback" role="alert">
@@ -100,9 +100,10 @@
       $(document).ready(function(){
         $("#editAssist").submit(function(){
           let fecha = $('#fecha').val();
-          if (fecha === ""){
+          let hora = $('#hora').val();
+          if (fecha === "" || hora === ""){
             $("#texto").show();
-            $('#texto').text("{{__('messages.Inserta una fecha')}}");
+            $('#texto').text("{{__('messages.Inserta una fecha y una hora para la asistencia')}}");
             return false;
           }else{
             return true;

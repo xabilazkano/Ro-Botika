@@ -95,6 +95,7 @@
       'Movercarro' => 'Mugitu karroa',
       'Asistir' => 'Asistitu',
       'AsistenciasPasadas' => 'Iraungitako asistentziak',
+      'AsistenciasActuales' => 'Momentuko asistentziak',
       'AsistenciasHistoricas' => 'Asistentzia historikoak',
       'En camino' => 'Bidean',
       'Percentage of occupation' => 'Okupazio ehunekoa',
@@ -109,5 +110,12 @@
       'No hay registros de este día' => 'Ez dago egun horretako erregistrorik',
       'Guardar cambios' => 'Aldaketak gorde',
       'Hora' => 'Ordua',
+      'Seleccionar cantidad de medicinas de asistencia' => 'Aukeratu laguntza-sendagai kopurua',
+      'Estancias' => 'Egonaldiak',
+      'Añadir un paciente a una habitación' => 'Gehitu gaixo bat gela batera',
+      'Inserta una fecha y una hora para la asistencia' => 'Sartu asistentziarentzat data eta ordua',
+      'Selecciona como mínimo un medicamento' => 'Hautatu gutxienez botika bat',
+      'La cantidad de cada medicina debe ser como mínimo de' => 'Sendagai bakoitzaren kantitatea gutxienez izan behar da',
+      'Asistencias confirmadas' => 'Baieztatutako asistentziak',
   ];
 ?>

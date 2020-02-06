@@ -90,7 +90,7 @@
       </thead>
       @foreach ($assistances as $assist)
       <!-- Pendientes hoy -->
-      @if ($assist->estimated_date == date("Y-m-d") && $assist->confirmed != '1')
+      @if ($assist->estimated_date >= date("Y-m-d") && $assist->confirmed != '1')
       <tr>
         <td>{{$assist->patient->name}} {{$assist->patient->lastname}}</td>
         <td>{{$assist->user->name}}</td>

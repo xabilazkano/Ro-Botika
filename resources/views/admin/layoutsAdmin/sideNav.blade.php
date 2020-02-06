@@ -80,14 +80,14 @@
         <li class="nav-item">
           <a class="btn btn-outline-dark active w-100 sidebarBoton" href="{{route('adminPatientsRooms.index')}}">
             <i class="fas fa-person-booth"></i>
-            {{__('messages.Pacientes')}} - {{__('messages.Habitaciones')}}
+            {{__('messages.Estancias')}}
           </a>
         </li>
       @else
         <li class="nav-item">
           <a class="btn btn-outline-dark w-100 border-0 sidebarBoton" href="{{route('adminPatientsRooms.index')}}">
             <i class="fas fa-person-booth"></i>
-            {{__('messages.Pacientes')}} - {{__('messages.Habitaciones')}}
+            {{__('messages.Estancias')}}
           </a>
         </li>
       @endif

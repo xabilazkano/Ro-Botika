@@ -95,7 +95,6 @@ function cargarTabla(){
 @if (is_null($assist->confirmed))
 <form action="{{route('confirmAssist',$assist->id)}}" method="post">
 	@csrf
-
 	<div class="col-md-6 offset-md-3">
 		<input type="submit" class="btn btn-primary"
 		value="{{__('messages.Confirmar asistencia')}}">
