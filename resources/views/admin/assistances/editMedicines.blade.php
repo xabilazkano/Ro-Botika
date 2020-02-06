@@ -58,9 +58,9 @@
 					@foreach ($medicines as $medicine)
             <?php
               $cantidadLibre = $medicine->amount;
-              foreach ($assistances as $assistance) {
-                if ($assistance->confirmed == 0 && $assistance->estimated_date >= date('Y-m-d') && !$assistance->medicines->isEmpty()){
-                  foreach ($assistance->medicines as $assistMedicine) {
+              foreach ($assistances as $assistanc) {
+                if ($assistanc->confirmed == 0 && $assistanc->estimated_date >= date('Y-m-d') && !$assistanc->medicines->isEmpty()){
+                  foreach ($assistanc->medicines as $assistMedicine) {
                     if ($medicine->id == $assistMedicine->id){
                       $cantidadLibre = $cantidadLibre - $assistMedicine->pivot->amount;
                     }
