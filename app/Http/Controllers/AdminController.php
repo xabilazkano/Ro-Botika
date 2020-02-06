@@ -24,6 +24,6 @@ class AdminController extends Controller
    */
   public function index()
   {
-    return redirect()->route('statistics');
+    return redirect()->route('assistances.index');
   }
 }
