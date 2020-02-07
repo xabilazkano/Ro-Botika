@@ -20,15 +20,6 @@ DB_DATABASE=nombre_bbdd
 DB_USERNAME=usuario
 DB_PASSWORD=contraseña
 ```
-###### Correo electronico
-```html
-MAIL_DRIVER=smtp
-MAIL_HOST=smtp.mailtrap.io
-MAIL_PORT=587
-MAIL_USERNAME=ro.botika.zubiri@gmail.com
-MAIL_PASSWORD=ro.botika19
-MAIL_ENCRYPTION=tls
-```
 
 ------------
 
