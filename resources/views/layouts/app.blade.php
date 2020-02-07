@@ -12,7 +12,6 @@
     <div class="row">
       <div class="col-12 content">
         @include('layouts.nav')
-        @include('layouts.modals')
         <main class="">
           @yield('content')
         </main>
